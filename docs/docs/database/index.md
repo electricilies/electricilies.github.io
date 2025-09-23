@@ -17,3 +17,5 @@ disks: {
 
 objects.disk -> disks.id
 ```
+
+<!-- diagram id="database" -->
