@@ -1,0 +1,19 @@
+# Database
+
+```d2
+objects: {
+  shape: sql_table
+  id: int {constraint: primary_key}
+  disk: int {constraint: foreign_key}
+
+  json: jsonb {constraint: unique}
+  last_updated: timestamp with time zone
+}
+
+disks: {
+  shape: sql_table
+  id: int {constraint: primary_key}
+}
+
+objects.disk -> disks.id
+```
