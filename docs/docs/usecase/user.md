@@ -24,7 +24,7 @@ User -- UC1
 
 <!-- diagram id="usecase-user-application" -->
 
-## User
+## User and account system
 
 ```plantuml
 @startuml
@@ -32,22 +32,35 @@ left to right direction
 
 actor User
 
-rectangle "Authentication System" {
-  usecase UC1 as "Login with Email & Password"
-  usecase UC2 as "Login with Third-Party Provider\n(Google, etc.)"
-  usecase UC3 as "Stay Logged In\n(Remember Me / Session Persistence)"
-  usecase UC4 as "Enable Two-Step Verification\n(2FA during Registration/Login)"
+rectangle "Account System" {
+  usecase UC01 as "Register"
+  usecase UC02 as "Login"
+  usecase UC03 as "Logout"
+  usecase UC04 as "Two-Step Verification"
+  usecase UC05 as "Manage account"
+  usecase UC06 as "Edit profile"
+  usecase UC07 as "Link account with third party provider"
+  usecase UC08 as "Delete account"
+  usecase UC09 as "Reset Password"
+  usecase UC10 as "View Account Activity"
+  usecase UC11 as "Recover Account"
 }
 
-User -- UC1
-User -- UC2
-User -- UC3
-User -- UC4
+User -- UC01
+User -- UC02
+User -- UC03
+User -- UC05
+User -- UC09
+User -- UC10
+User -- UC11
 
-UC1 ..> UC4 : <<extend>>
-UC2 ..> UC4 : <<extend>>
+UC01 <.. UC04 : <<extend>>
+UC05 <.. UC04 : <<extend>>
+UC05 <.. UC06 : <<extend>>
+UC05 <.. UC07 : <<extend>>
+UC05 <.. UC08 : <<extend>>
 
 @enduml
 ```
 
-<!-- diagram id="usecase-user" -->
+<!-- diagram id="usecase-user-account-system" -->

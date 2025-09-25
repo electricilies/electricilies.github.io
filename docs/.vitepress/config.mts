@@ -1,6 +1,8 @@
 import { defineConfig } from "vitepress";
 import { configureDiagramsPlugin } from "vitepress-plugin-diagrams";
 
+console.log(process.env.KROKI_SERVER_URL);
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Electricilies Docs",
@@ -12,7 +14,9 @@ export default defineConfig({
       dark: "catppuccin-mocha",
     },
     config: (md) => {
-      configureDiagramsPlugin(md);
+      configureDiagramsPlugin(md, {
+        krokiServerUrl: process.env.KROKI_SERVER_URL ?? null,
+      });
     },
   },
 

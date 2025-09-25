@@ -8,6 +8,7 @@
     "@catppuccin/vitepress": "^0.1.2"
   },
   "devDependencies": {
+    "@types/node": "^24.5.2",
     "vitepress": "^1.6.4",
     "vitepress-plugin-diagrams": "^1.0.0"
   }
