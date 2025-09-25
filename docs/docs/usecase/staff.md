@@ -5,3 +5,5 @@
 ```
 
 <!-- diagram id="usecase-staff" -->
+
+<!-- Discount change -->
