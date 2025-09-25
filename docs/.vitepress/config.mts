@@ -37,10 +37,26 @@ export default defineConfig({
             link: "/docs/database",
           },
           {
-            text: "UML",
-            link: "/docs/uml",
+            text: "Usecase",
             collapsed: true,
-            items: [],
+            items: [
+              {
+                text: "User",
+                link: "/docs/usecase/user",
+              },
+              {
+                text: "Customer",
+                link: "/docs/usecase/customer",
+              },
+              {
+                text: "Staff",
+                link: "/docs/usecase/staff",
+              },
+              {
+                text: "Admin",
+                link: "/docs/usecase/admin",
+              },
+            ],
           },
         ],
       },
