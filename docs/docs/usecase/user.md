@@ -22,12 +22,14 @@ rectangle "Application" {
   usecase UC05 as "View Order"
   usecase UC06 as "Contact Support"
   usecase UC07 as "View User Report"
-  usecase UC08 as "Manage Product"
-  usecase UC09 as "Manage Review"
-  usecase UC10 as "Manage User"
-  usecase UC11 as "View Staff Report"
-  usecase UC12 as "Manage Staff"
-  usecase UC13 as "Monitoring System"
+  usecase UC08 as "View Document"
+  usecase UC09 as "Manage Product"
+  usecase UC10 as "Manage Review and Comment"
+  usecase UC11 as "Manage User"
+  usecase UC12 as "View Staff Report"
+  usecase UC13 as "Manage Staff"
+  usecase UC14 as "Monitoring System"
+  usecase UC15 as "Adjust Document"
 }
 
 Customer -- UC02
@@ -35,26 +37,26 @@ Customer -- UC04
 Customer -- UC05
 Customer -- UC06
 Customer -- UC07
-Staff -- UC08
-Staff -- UC10
+Customer -- UC08
+Staff -- UC09
 Staff -- UC11
-Admin -- UC12
+Staff -- UC12
 Admin -- UC13
+Admin -- UC14
+Admin -- UC15
 
-UC02 ..> UC01 : <<include>>
 UC02 <.. UC03 : <<extend>>
-UC03 ..> UC01 : <<include>>
+UC09 <.. UC10 : <<extend>>
+
 UC04 ..> UC01 : <<include>>
 UC05 ..> UC01 : <<include>>
-UC06 ..> UC01 : <<include>>
-UC07 ..> UC01 : <<include>>
 UC08 ..> UC01 : <<include>>
-UC08 <.. UC09 : <<extend>>
 UC09 ..> UC01 : <<include>>
 UC10 ..> UC01 : <<include>>
 UC11 ..> UC01 : <<include>>
 UC12 ..> UC01 : <<include>>
 UC13 ..> UC01 : <<include>>
+UC14 ..> UC01 : <<include>>
 
 @enduml
 ```
