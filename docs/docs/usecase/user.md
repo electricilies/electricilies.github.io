@@ -31,7 +31,6 @@ rectangle "Application" {
 }
 
 Customer -- UC02
-Customer -- UC03
 Customer -- UC04
 Customer -- UC05
 Customer -- UC06
@@ -43,6 +42,7 @@ Admin -- UC11
 Admin -- UC12
 
 UC02 ..> UC01 : <<include>>
+UC02 <.. UC03 : <<extend>>
 UC03 ..> UC01 : <<include>>
 UC04 ..> UC01 : <<include>>
 UC05 ..> UC01 : <<include>>
