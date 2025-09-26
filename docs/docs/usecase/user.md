@@ -27,8 +27,8 @@ rectangle "Application" {
   usecase UC10 as "Manage Review and Comment"
   usecase UC11 as "Manage User"
   usecase UC12 as "View Staff Report"
-  usecase UC13 as "Manage Staff"
-  usecase UC14 as "Monitoring System"
+  usecase UC13 as "View Shop Report"
+  usecase UC14 as "View System Monitoring"
   usecase UC15 as "Adjust Document"
 }
 
@@ -57,6 +57,7 @@ UC11 ..> UC01 : <<include>>
 UC12 ..> UC01 : <<include>>
 UC13 ..> UC01 : <<include>>
 UC14 ..> UC01 : <<include>>
+UC15 ..> UC01 : <<include>>
 
 @enduml
 ```
