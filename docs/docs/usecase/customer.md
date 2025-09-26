@@ -6,7 +6,7 @@ left to right direction
 actor Customer
 
 rectangle "Shopping System" {
-  usecase UC01 as "View homepage with latest, hottest product"
+  usecase UC01 as "View homepage"
   usecase UC02 as "Search products"
   usecase UC03 as "Search products filter by buys, rates"
   usecase UC04 as "Suggest product keywords"
@@ -39,33 +39,29 @@ Customer -- UC15
 Customer -- UC21
 Customer -- UC24
 
-
-UC01 ..> UC04 : <<include>>
+UC01 <.. UC04 : <<extend>>
 UC01 <.. UC05 : <<extend>>
-UC02 ..> UC04 : <<include>>
+UC02 <.. UC04 : <<extend>>
+UC02 <.. UC05 : <<extend>>
 UC02 <.. UC03 : <<extend>>
-UC05 ..> UC02 : <<include>>
-UC05 ..> UC06 : <<include>>
-UC05 ..> UC07 : <<include>>
-UC05 ..> UC08 : <<include>>
+UC05 <.. UC06 : <<extend>>
+UC05 <.. UC07 : <<extend>>
+UC05 <.. UC08 : <<extend>>
 UC05 <.. UC09 : <<extend>>
-UC09 ..> UC10 : <<include>>
-UC09 ..> UC20 : <<include>>
+UC05 <.. UC14 : <<extend>>
+UC09 <.. UC10 : <<extend>>
 UC09 <.. UC11 : <<extend>>
 UC09 <.. UC12 : <<extend>>
 UC09 <.. UC13 : <<extend>>
-UC15 ..> UC14 : <<include>>
-UC15 ..> UC19 : <<include>>
-UC15 ..> UC20 : <<include>>
+UC15 <.. UC19 : <<extend>>
 UC15 <.. UC16 : <<extend>>
 UC15 <.. UC17 : <<extend>>
 UC15 <.. UC18 : <<extend>>
+UC15 <.. UC20 : <<extend>>
 UC20 <.. UC11 : <<extend>>
 UC21 <.. UC22 : <<extend>>
 UC21 <.. UC23 : <<extend>>
-UC24 <.. UC25 : <<extend>>
-UC25 ..> UC20 : <<include>>
-UC25 ..> UC23 : <<extend>>
+UC23 <.. UC25 : <<extend>>
 
 @enduml
 ```
