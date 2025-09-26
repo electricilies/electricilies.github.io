@@ -5,7 +5,7 @@
 left to right direction
 actor Customer
 
-rectangle "Shopping System" {
+rectangle "Application" {
   usecase UC01 as "View Product"
   usecase UC02 as "Search Product"
   usecase UC03 as "View Product's Preview"
@@ -49,6 +49,12 @@ UC01 <.. UC08 : <<extend>>
 UC01 <.. UC09 : <<extend>>
 UC01 <.. UC10 : <<extend>>
 UC01 <.. UC11 : <<extend>>
+UC03 ..> UC02 : <<include>>
+UC04 ..> UC02 : <<include>>
+UC05 ..> UC02 : <<include>>
+UC06 ..> UC02 : <<include>>
+UC07 ..> UC02 : <<include>>
+UC08 ..> UC02 : <<include>>
 UC12 <.. UC13 : <<extend>>
 UC12 <.. UC14 : <<extend>>
 UC12 <.. UC15 : <<extend>>
@@ -57,4 +63,6 @@ UC16 <.. UC18 : <<extend>>
 UC18 <.. UC19 : <<extend>>
 UC18 <.. UC20 : <<extend>>
 UC18 <.. UC21 : <<extend>>
+
+@enduml
 ```
