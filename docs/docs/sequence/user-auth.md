@@ -2,7 +2,6 @@
 
 ```plantuml
 @startuml
-@startuml
 autonumber
 
 actor User
@@ -31,11 +30,10 @@ AMSignInView -> AMSignInView: Validate data format
 deactivate AMSignInView
 
 break invalid data format
-activate AMSignInView
+  activate AMSignInView
   AMSignInView -> AMSignInView: Display error notification
   deactivate AMSignInView
   User <-- AMSignInView: Error notification
-  deactivate AMSignInView
 end
 
 AMSignInView -> AMUserManagement: Send user credential
@@ -96,7 +94,7 @@ BackendUserController -> HomeView: Display home view
 deactivate BackendUserController
 deactivate User
 deactivate HomeView
-@endulm
+@enduml
 ```
 
 <!-- diagram id="sequence-credential-login" -->
