@@ -1,4 +1,4 @@
-# Login with Credential
+# Sign In with Credential
 
 ```plantuml
 @startuml
@@ -13,8 +13,7 @@ control BackendUserController as BUC
 entity BackendUserManagement as BUM
 
 SIV -> SIV: Display sign in view
-activate SIV
-note left of U: Generate code verifier(random)\nand hash it -> code challenge
+note left of SIV: Generate code verifier(random)\nand hash it -> code challenge
 U -> SIV: Click Login
 activate U
 SIV -> AMSIV: Redirect with code challenge
@@ -24,15 +23,15 @@ AMSIV -> AMSIV: Display sign in view
 activate AMSIV
 deactivate AMSIV
 U -> AMSIV : Enter credential
+deactivate U
 AMSIV -> AMSIV: Validate data format
 activate AMSIV
 deactivate AMSIV
 
 break invalid data format
-  AMSIV -> AMSIV: Display error notification
+  AMSIV -> AMSIV: Display error
   activate AMSIV
   deactivate AMSIV
-  U <-- AMSIV: Error notification
 end
 
 AMSIV -> AMUM: Send user credential
@@ -43,28 +42,32 @@ activate AMUM
 deactivate AMUM
 
 break invalid user credential
-  AMSIV <-- AMUM: Error notification
-  AMSIV -> U: Display error
+  AMSIV <-- AMUM: Error
+  AMSIV -> AMSIV: Display error
+  activate AMSIV
+  deactivate AMSIV
 end
 
-U <-- AMUM: Authorization code
+AMSIV <-- AMUM: Authorization code
 deactivate AMUM
 
-U -> AMUM: Send authorization code + verifier
+AMSIV -> AMUM: Send authorization code + verifier
 activate AMUM
 AMUM -> AMUM: Validate code + verifier + challenge
 activate AMUM
 deactivate AMUM
 
-break invalid
-  AMSIV <-- AMUM: Error notification
-  U <-- AMSIV: Display error
+break invalid code + verifier
+  AMSIV <-- AMUM: Error
+  AMSIV -> AMSIV: Display error
+  activate AMSIV
+  deactivate AMSIV
 end
 
-U <-- AMUM: JWT Token
+AMSIV <-- AMUM: JWT Token
 deactivate AMUM
 
-U -> BUC: Send JWT Token
+AMSIV -> BUC: Send JWT Token
 
 activate BUC
 
@@ -75,18 +78,18 @@ activate BUM
 deactivate BUM
 
 break invalid JWT Token
-  BUC <-- BUM: Error notification
-  AMSIV <-- BUC: Error notification
-  U <-- AMSIV: Display error
+  BUC <-- BUM: Error
+  AMSIV <-- BUC: Error
+  AMSIV -> AMSIV: Display error
+  activate AMSIV
+  deactivate AMSIV
 end
 
-BUC <-- BUM: User data + success
+BUC <-- BUM: Success
 deactivate BUM
-AMSIV <-- BUC: Success notification
-U <-- BUC: User data
+AMSIV <-- BUC: Success
 HV <-- BUC: Display home view
 deactivate BUC
-deactivate U
 deactivate HV
 @enduml
 ```
