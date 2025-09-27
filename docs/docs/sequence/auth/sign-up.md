@@ -26,38 +26,46 @@ deactivate AMSUV
 
 deactivate SUV
 
-U -> AMSUV: Enter User data
-deactivate U
+loop until valid data format
+  U -> AMSUV: Enter User data
+  deactivate U
 
-AMSUV -> AMSUV: Validate data format
-activate AMSUV
-deactivate AMSUV
-
-break invalid data format
-  AMSUV -> AMSUV: Display error
+  AMSUV -> AMSUV: Validate data format
   activate AMSUV
   deactivate AMSUV
+
+  alt invalid data format
+    AMSUV -> AMSUV: Display error
+    activate AMSUV
+    deactivate AMSUV
+  else valid
+    AMSUV -> AMSUV: Data OK
+    deactivate AMSUV
+  end
 end
 
-AMSUV -> AMUM: User data
-activate AMUM
-AMUM -> AMUM: Check if user/email exists
-activate AMUM
-deactivate AMUM
+loop until unique user/email
+  AMSUV -> AMUM: User data
+  activate AMUM
+  AMUM -> AMUM: Check if user/email exists
+  activate AMUM
+  deactivate AMUM
 
-break already exists
-  AMSUV <-- AMUM: Error
-  AMSUV -> AMSUV: Display error
-  activate AMSUV
-  deactivate AMSUV
+  alt already exists
+    AMSUV <-- AMUM: Error
+    AMSUV -> AMSUV: Display error
+    activate AMSUV
+    deactivate AMSUV
+    U -> AMSUV: Re-enter User data
+    deactivate U
+  else not exists
+    AMUM -> AMUM: Create new user + hash password
+    activate AMUM
+    deactivate AMUM
+    AMSUV <-- AMUM: Authorization code
+  end
+  deactivate AMUM
 end
-
-AMUM -> AMUM: Create new user + hash password
-activate AMUM
-deactivate AMUM
-
-AMSUV <-- AMUM: Authorization code
-deactivate AMUM
 
 AMSUV -> AMUM: Send authorization code + verifier
 activate AMUM
@@ -102,6 +110,7 @@ HV -> HV: Display home view
 deactivate BUC
 deactivate HV
 @enduml
+
 ```
 
 <!-- diagram id="sequence-auth-sign-up" -->

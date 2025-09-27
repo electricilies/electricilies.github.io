@@ -28,28 +28,43 @@ AMSIV -> AMSIV: Validate data format
 activate AMSIV
 deactivate AMSIV
 
-break invalid data format
-  AMSIV -> AMSIV: Display error
+loop until valid data format
+  U -> AMSIV : Enter credential
+  deactivate U
+  AMSIV -> AMSIV: Validate data format
   activate AMSIV
   deactivate AMSIV
+
+  alt invalid data format
+    AMSIV -> AMSIV: Display error
+    activate AMSIV
+    deactivate AMSIV
+  else valid
+    AMSIV -> AMSIV: Data OK
+
+  end
 end
 
-AMSIV -> AMUM: Send user credential
-activate AMUM
+loop until valid credential
+  AMSIV -> AMUM: Send user credential
+  activate AMUM
 
-AMUM -> AMUM: Validate user credential
-activate AMUM
-deactivate AMUM
+  AMUM -> AMUM: Validate user credential
+  activate AMUM
+  deactivate AMUM
 
-break invalid user credential
-  AMSIV <-- AMUM: Error
-  AMSIV -> AMSIV: Display error
-  activate AMSIV
-  deactivate AMSIV
+  alt invalid credential
+    AMSIV <-- AMUM: Error
+    AMSIV -> AMSIV: Display error
+    activate AMSIV
+    deactivate AMSIV
+    U -> AMSIV : Re-enter credential
+    deactivate U
+  else valid
+    AMSIV <-- AMUM: Authorization code
+  end
+  deactivate AMUM
 end
-
-AMSIV <-- AMUM: Authorization code
-deactivate AMUM
 
 AMSIV -> AMUM: Send authorization code + verifier
 activate AMUM
@@ -89,6 +104,7 @@ BUC <-- BUM: Success
 deactivate BUM
 AMSIV <-- BUC: Success
 HV <- AMSIV: redirect to HV
+deactivate AMSIV
 HV -> HV: Display home view
 activate HV
 deactivate HV
