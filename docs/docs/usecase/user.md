@@ -10,7 +10,8 @@ actor Customer
 actor Staff
 actor Admin
 
-Customer <|-- Staff
+User <|-- Customer
+User <|-- Staff
 Staff <|-- Admin
 
 rectangle "Application" {
@@ -22,7 +23,7 @@ rectangle "Application" {
   usecase UC06 as "View User Self Report"
   usecase UC07 as "View Document"
   usecase UC08 as "Manage Product"
-  usecase UC9 as "Manage Review and Comment"
+  usecase UC09 as "Manage Review and Comment"
   usecase UC10 as "Manage User"
   usecase UC11 as "View Staff Self Report"
   usecase UC12 as "View Shop Report"
@@ -31,19 +32,19 @@ rectangle "Application" {
 }
 
 Customer -- UC02
+Customer -- UC03
+Customer -- UC04
 Customer -- UC05
 Customer -- UC06
 Customer -- UC07
-Customer -- UC08
-Staff -- UC09
+Staff -- UC08
+Staff -- UC10
 Staff -- UC11
 Staff -- UC12
 Admin -- UC13
 Admin -- UC14
-Admin -- UC15
 
-UC02 <.. UC03 : <<extend>>
-UC09 <.. UC10 : <<extend>>
+UC08 <.. UC09 : <<extend>>
 
 UC04 ..> UC01 : <<include>>
 UC05 ..> UC01 : <<include>>
@@ -54,7 +55,6 @@ UC11 ..> UC01 : <<include>>
 UC12 ..> UC01 : <<include>>
 UC13 ..> UC01 : <<include>>
 UC14 ..> UC01 : <<include>>
-UC15 ..> UC01 : <<include>>
 
 @enduml
 ```
