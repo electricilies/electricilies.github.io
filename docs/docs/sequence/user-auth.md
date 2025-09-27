@@ -25,7 +25,7 @@ activate AMSignInView
 activate AMSignInView
 AMSignInView -> AMSignInView: Display sign in view
 deactivate AMSignInView
-AMSignInView <. User: Enter credential
+AMSignInView <-- User: Enter credential
 activate AMSignInView
 AMSignInView -> AMSignInView: Validate data format
 deactivate AMSignInView
@@ -34,7 +34,7 @@ break invalid data format
 activate AMSignInView
   AMSignInView -> AMSignInView: Display error notification
   deactivate AMSignInView
-  User <. AMSignInView: Error notification
+  User <-- AMSignInView: Error notification
   deactivate AMSignInView
 end
 
