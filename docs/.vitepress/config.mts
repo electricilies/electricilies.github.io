@@ -62,6 +62,16 @@ export default defineConfig({
               },
             ],
           },
+          {
+            text: "Sequence",
+            collapsed: true,
+            items: [
+              {
+                text: "User Authentication",
+                link: "/docs/sequence/user-auth",
+              },
+            ],
+          },
         ],
       },
     ],
