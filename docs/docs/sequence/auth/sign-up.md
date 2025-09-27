@@ -106,13 +106,11 @@ AMSUV <-- BUC: Success
 deactivate BUC
 deactivate AMSUV
 HV<-AMSUV: redirect to Home View
-activate HV
 deactivate AMSUV
 HV -> HV: Display Home View
 activate HV
 deactivate HV
 
-deactivate HV
 @enduml
 ```
 

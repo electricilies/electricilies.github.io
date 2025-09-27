@@ -14,7 +14,7 @@ entity BackendUserManagement as BUM
 
 SIV -> SIV: Display sign in view
 note left of SIV: Generate code verifier(random)\nand hash it -> code challenge
-U -> SIV: Click Login
+U -> SIV: Click Sign In
 activate U
 SIV -> AMSIV: Redirect with code challenge
 activate AMSIV
@@ -103,12 +103,12 @@ end
 BUC <-- BUM: Success
 deactivate BUM
 AMSIV <-- BUC: Success
+deactivate BUC
 HV <- AMSIV: redirect to HV
 deactivate AMSIV
 HV -> HV: Display home view
 activate HV
 deactivate HV
-deactivate BUC
 @enduml
 ```
 
