@@ -26,7 +26,7 @@ deactivate BPM
 PC <-- BPM: query result
 HV <--PC: query result
 
-HV -> PLV: redirect to PLV
+HV -> PLV: redirect to Product List View
 deactivate HV
 activate PLV
 PLV ->PLV: Show query result
