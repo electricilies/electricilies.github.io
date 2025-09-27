@@ -1,16 +1,17 @@
 # Sign Up
 
 ```plantuml
-@startuml
 autonumber
 
 actor User as U
 boundary SignUpView as SUV
 boundary HomeView as HV
-boundary AuthenticationManagerSignUpView as AMSUV
+boundary AuthenticationManager
+boundary SignUpView as AMSUV
 
 entity AuthenticationManagerUserManagement as AMUM
-control BackendUserController as BUC entity BackendUserManagement as BUM
+control BackendUserController as BUC
+entity BackendUserManagement as BUM
 
 SUV -> SUV: Display sign up view
 activate SUV
