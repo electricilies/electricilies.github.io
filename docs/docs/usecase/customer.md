@@ -15,20 +15,20 @@ rectangle "Application" {
   usecase UC07 as "View Product's Rate"
   usecase UC08 as "View Product's Reviews and Comments"
   usecase UC09 as "View Suggested Product"
-  usecase UC10 as "Add Comment to Product"
+  usecase UC10 as "Add Comment to Review"
   usecase UC11 as "Add Product to Cart"
   usecase UC12 as "Manage Cart"
   usecase UC13 as "Change Product Amount"
   usecase UC14 as "Remove Product from Cart"
   usecase UC15 as "Purchase"
   usecase UC16 as "View Order"
-  usecase UC17 as "View Order History"
+  usecase UC17 as "Search Order"
   usecase UC18 as "View Order Detail"
   usecase UC19 as "Cancel Order"
   usecase UC20 as "Review Product"
   usecase UC21 as "Return Product"
   usecase UC22 as "Contact Support"
-  usecase UC23 as "View User's Report"
+  usecase UC23 as "View Customer's Report"
   usecase UC24 as "View Document"
 }
 
@@ -60,9 +60,13 @@ UC12 <.. UC14 : <<extend>>
 UC12 <.. UC15 : <<extend>>
 UC16 <.. UC17 : <<extend>>
 UC16 <.. UC18 : <<extend>>
-UC18 <.. UC19 : <<extend>>
-UC18 <.. UC20 : <<extend>>
-UC18 <.. UC21 : <<extend>>
+UC16 <.. UC19 : <<extend>>
+UC16 <.. UC20 : <<extend>>
+UC16 <.. UC21 : <<extend>>
+UC18 ..> UC17 : <<include>>
+UC19 ..> UC17 : <<include>>
+UC20 ..> UC17 : <<include>>
+UC21 ..> UC17 : <<include>>
 
 @enduml
 ```

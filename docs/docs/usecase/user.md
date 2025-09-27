@@ -10,30 +10,27 @@ actor Customer
 actor Staff
 actor Admin
 
-User <|-- Customer
 Customer <|-- Staff
 Staff <|-- Admin
 
 rectangle "Application" {
   usecase UC01 as "Login"
   usecase UC02 as "View Product"
-  usecase UC03 as "View Review"
-  usecase UC04 as "View Cart"
-  usecase UC05 as "View Order"
-  usecase UC06 as "Contact Support"
-  usecase UC07 as "View User Report"
-  usecase UC08 as "View Document"
-  usecase UC09 as "Manage Product"
-  usecase UC10 as "Manage Review and Comment"
-  usecase UC11 as "Manage User"
-  usecase UC12 as "View Staff Report"
-  usecase UC13 as "View Shop Report"
-  usecase UC14 as "View System Monitoring"
-  usecase UC15 as "Adjust Document"
+  usecase UC03 as "View Cart"
+  usecase UC04 as "View Order"
+  usecase UC05 as "Contact Support"
+  usecase UC06 as "View User Self Report"
+  usecase UC07 as "View Document"
+  usecase UC08 as "Manage Product"
+  usecase UC9 as "Manage Review and Comment"
+  usecase UC10 as "Manage User"
+  usecase UC11 as "View Staff Self Report"
+  usecase UC12 as "View Shop Report"
+  usecase UC13 as "View System Monitoring"
+  usecase UC14 as "Adjust Document"
 }
 
 Customer -- UC02
-Customer -- UC04
 Customer -- UC05
 Customer -- UC06
 Customer -- UC07
@@ -89,16 +86,15 @@ rectangle "Account System" {
 User -- UC01
 User -- UC02
 User -- UC03
-User -- UC05
+User -- UC04
+User -- UC08
 User -- UC09
 User -- UC10
-User -- UC11
 
-UC01 <.. UC04 : <<extend>>
-UC05 <.. UC04 : <<extend>>
-UC05 <.. UC06 : <<extend>>
-UC05 <.. UC07 : <<extend>>
-UC05 <.. UC08 : <<extend>>
+UC04 <.. UC03 : <<extend>>
+UC04 <.. UC05 : <<extend>>
+UC04 <.. UC06 : <<extend>>
+UC04 <.. UC07 : <<extend>>
 
 @enduml
 ```
