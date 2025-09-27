@@ -25,27 +25,27 @@ activate PV
 PV -> PV: Show product information
 activate PV
 deactivate PV
-opt [Detail]
+opt Detail
   ref over C, BPM : View Product Detail
 end
 
-opt [Preview]
+opt Preview
   ref over C, BPM : View Product Preview
 end
 
-opt [Price]
+opt Price
   ref over C, BPM : View Product Price
 end
 
-opt [Rate]
+opt Rate
   ref over C, BPM : View Product Rate
 end
 
-opt [Reviews & Comments]
+opt Reviews & Comments
   ref over C, BPM : View Product Reviews Comments
 end
 
-opt [Variants]
+opt Variants
   ref over C, BPM : View Product Variants
 end
 
