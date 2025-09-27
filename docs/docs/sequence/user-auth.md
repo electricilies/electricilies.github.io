@@ -3,6 +3,8 @@
 ```plantuml
 @startuml
 @startuml
+autonumber
+
 actor User
 boundary SignInView
 boundary HomeView
@@ -20,82 +22,84 @@ SignInView -> AMSignInView: Redirect with code challenge
 deactivate SignInView
 activate AMSignInView
 
+activate AMSignInView
 AMSignInView -> AMSignInView: Display sign in view
-User -> AMSignInView: Enter credential
+deactivate AMSignInView
+AMSignInView <. User: Enter credential
+activate AMSignInView
 AMSignInView -> AMSignInView: Validate data format
+deactivate AMSignInView
 
-alt invalid data format
+break invalid data format
+activate AMSignInView
   AMSignInView -> AMSignInView: Display error notification
-  AMSignInView -> User: Error notification
   deactivate AMSignInView
-else valid data format
-  AMSignInView -> AMUserManagement: Send user credential
+  User <. AMSignInView: Error notification
   deactivate AMSignInView
-  activate AMUserManagement
-
-  AMUserManagement -> AMUserManagement: Validate user credential
-
-  alt invalid user credential
-    AMUserManagement -> AMSignInView: Error notification
-    deactivate AMUserManagement
-    activate AMSignInView
-    AMSignInView -> User: Display error
-    deactivate AMSignInView
-
-  else valid AMUserManagement
-    AMUserManagement -> User: Authorization code
-    deactivate AMUserManagement
-
-    User -> AMUserManagement: Send authorization code + verifier
-    activate AMUserManagement
-    AMUserManagement -> AMUserManagement: Validate code + verifier + challenge
-
-    alt invalid
-      AMUserManagement -> AMSignInView: Error notification
-      deactivate AMUserManagement
-      activate AMSignInView
-      AMSignInView -> User: Display error
-      deactivate AMSignInView
-
-    else valid
-      AMUserManagement -> User: JWT Token
-      deactivate AMUserManagement
-
-
-      User -> BackendUserController: Send JWT Token
-
-      activate BackendUserController
-
-      BackendUserController -> BackendUserManagement: Validate JWT
-      activate BackendUserManagement
-      BackendUserManagement -> BackendUserManagement: Verify JWT
-
-      alt invalid JWT Token
-        BackendUserManagement -> BackendUserController: Error notification
-        deactivate BackendUserManagement
-        BackendUserController -> AMSignInView: Error notification
-        deactivate BackendUserController
-        activate AMSignInView
-        AMSignInView -> User: Display error
-        deactivate AMSignInView
-
-      else valid JWT Token
-        BackendUserManagement -> BackendUserController: User data + success
-        deactivate BackendUserManagement
-        BackendUserController -> AMSignInView: Success notification
-        BackendUserController -> User: User data
-        BackendUserController -> HomeView: Display home view
-        deactivate BackendUserController
-        deactivate User
-        deactivate HomeView
-      end
-    end
-  end
 end
+
+AMSignInView -> AMUserManagement: Send user credential
+deactivate AMSignInView
+activate AMUserManagement
+
+AMUserManagement -> AMUserManagement: Validate user credential
+
+break invalid user credential
+  AMUserManagement -> AMSignInView: Error notification
+  deactivate AMUserManagement
+  activate AMSignInView
+  AMSignInView -> User: Display error
+  deactivate AMSignInView
+end
+
+AMUserManagement -> User: Authorization code
+deactivate AMUserManagement
+
+User -> AMUserManagement: Send authorization code + verifier
+activate AMUserManagement
+AMUserManagement -> AMUserManagement: Validate code + verifier + challenge
+
+break invalid
+  AMUserManagement -> AMSignInView: Error notification
+  deactivate AMUserManagement
+  activate AMSignInView
+  AMSignInView -> User: Display error
+  deactivate AMSignInView
+end
+
+AMUserManagement -> User: JWT Token
+deactivate AMUserManagement
+
+User -> BackendUserController: Send JWT Token
+
+activate BackendUserController
+
+BackendUserController -> BackendUserManagement: Validate JWT
+activate BackendUserManagement
+BackendUserManagement -> BackendUserManagement: Verify JWT
+
+break invalid JWT Token
+  BackendUserManagement -> BackendUserController: Error notification
+  deactivate BackendUserManagement
+  BackendUserController -> AMSignInView: Error notification
+  deactivate BackendUserController
+  activate AMSignInView
+  AMSignInView -> User: Display error
+  deactivate AMSignInView
+end
+
+BackendUserManagement -> BackendUserController: User data + success
+deactivate BackendUserManagement
+BackendUserController -> AMSignInView: Success notification
+BackendUserController -> User: User data
+BackendUserController -> HomeView: Display home view
+deactivate BackendUserController
+deactivate User
+deactivate HomeView
 @endulm
 ```
 
-<!-- diagram id="credential-login-sequence" -->
+<!-- diagram id="sequence-credential-login" -->
 
 # Register
 
@@ -197,4 +201,4 @@ end
 @enduml
 ```
 
-<!-- diagram id="credential-register-sequence" -->
+<!-- diagram id="sequence-credential-register" -->
