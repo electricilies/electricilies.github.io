@@ -6,8 +6,7 @@ autonumber
 actor User as U
 boundary SignUpView as SUV
 boundary HomeView as HV
-boundary AuthenticationManager
-boundary SignUpView as AMSUV
+boundary AuthenticationManagerSignUpView as AMSUV
 
 entity AuthenticationManagerUserManagement as AMUM
 control BackendUserController as BUC
@@ -19,12 +18,11 @@ note left of SUV: Generate code verifier(random)\nand hash it -> code challenge
 U -> SUV: Click Sign Up
 activate U
 SUV -> AMSUV: Redirect with code challenge
+deactivate SUV
 activate AMSUV
-AMSUV -> AMSUV: Display AMSUV
+AMSUV -> AMSUV: Display Authentication Manager Sign Up View
 activate AMSUV
 deactivate AMSUV
-
-deactivate SUV
 
 loop until valid data format
   U -> AMSUV: Enter User data
@@ -40,6 +38,7 @@ loop until valid data format
     deactivate AMSUV
   else valid
     AMSUV -> AMSUV: Data OK
+    activate AMSUV
     deactivate AMSUV
   end
 end
@@ -104,13 +103,17 @@ end
 BUC <-- BUM: Success
 deactivate BUM
 AMSUV <-- BUC: Success
-HV<-AMSUV: redirect to HV
-deactivate AMSUV
-HV -> HV: Display home view
 deactivate BUC
+deactivate AMSUV
+HV<-AMSUV: redirect to Home View
+activate HV
+deactivate AMSUV
+HV -> HV: Display Home View
+activate HV
+deactivate HV
+
 deactivate HV
 @enduml
-
 ```
 
 <!-- diagram id="sequence-auth-sign-up" -->
