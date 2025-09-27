@@ -4,96 +4,90 @@
 @startuml
 autonumber
 
-actor User
-boundary SignInView
-boundary HomeView
-boundary AuthenticationManagerSignInView as AMSignInView
-entity AuthenticationManagerUserManagement as AMUserManagement
-control BackendUserController
-entity BackendUserManagement
+actor User as U
+boundary SignInView as SIV
+boundary HomeView as HV
+boundary AuthenticationManagerSignInView as AMSIV
+entity AuthenticationManagerUserManagement as AMUM
+control BackendUserController as BUC
+entity BackendUserManagement as BUM
 
-SignInView -> SignInView: Display sign in view
-activate SignInView
-note left of User: Generate code verifier(random)\nand hash it -> code challenge
-User -> SignInView: Click Login
-activate User
-SignInView -> AMSignInView: Redirect with code challenge
-deactivate SignInView
-activate AMSignInView
+SIV -> SIV: Display sign in view
+activate SIV
+note left of U: Generate code verifier(random)\nand hash it -> code challenge
+U -> SIV: Click Login
+activate U
+SIV -> AMSIV: Redirect with code challenge
+activate AMSIV
 
-activate AMSignInView
-AMSignInView -> AMSignInView: Display sign in view
-deactivate AMSignInView
-AMSignInView <-- User: Enter credential
-activate AMSignInView
-AMSignInView -> AMSignInView: Validate data format
-deactivate AMSignInView
+AMSIV -> AMSIV: Display sign in view
+activate AMSIV
+deactivate AMSIV
+U -> AMSIV : Enter credential
+AMSIV -> AMSIV: Validate data format
+activate AMSIV
+deactivate AMSIV
 
 break invalid data format
-  activate AMSignInView
-  AMSignInView -> AMSignInView: Display error notification
-  deactivate AMSignInView
-  User <-- AMSignInView: Error notification
+  AMSIV -> AMSIV: Display error notification
+  activate AMSIV
+  deactivate AMSIV
+  U <-- AMSIV: Error notification
 end
 
-AMSignInView -> AMUserManagement: Send user credential
-deactivate AMSignInView
-activate AMUserManagement
+AMSIV -> AMUM: Send user credential
+activate AMUM
 
-AMUserManagement -> AMUserManagement: Validate user credential
+AMUM -> AMUM: Validate user credential
+activate AMUM
+deactivate AMUM
 
 break invalid user credential
-  AMUserManagement -> AMSignInView: Error notification
-  deactivate AMUserManagement
-  activate AMSignInView
-  AMSignInView -> User: Display error
-  deactivate AMSignInView
+  AMSIV <-- AMUM: Error notification
+  AMSIV -> U: Display error
 end
 
-AMUserManagement -> User: Authorization code
-deactivate AMUserManagement
+U <-- AMUM: Authorization code
+deactivate AMUM
 
-User -> AMUserManagement: Send authorization code + verifier
-activate AMUserManagement
-AMUserManagement -> AMUserManagement: Validate code + verifier + challenge
+U -> AMUM: Send authorization code + verifier
+activate AMUM
+AMUM -> AMUM: Validate code + verifier + challenge
+activate AMUM
+deactivate AMUM
 
 break invalid
-  AMUserManagement -> AMSignInView: Error notification
-  deactivate AMUserManagement
-  activate AMSignInView
-  AMSignInView -> User: Display error
-  deactivate AMSignInView
+  AMSIV <-- AMUM: Error notification
+  U <-- AMSIV: Display error
 end
 
-AMUserManagement -> User: JWT Token
-deactivate AMUserManagement
+U <-- AMUM: JWT Token
+deactivate AMUM
 
-User -> BackendUserController: Send JWT Token
+U -> BUC: Send JWT Token
 
-activate BackendUserController
+activate BUC
 
-BackendUserController -> BackendUserManagement: Validate JWT
-activate BackendUserManagement
-BackendUserManagement -> BackendUserManagement: Verify JWT
+BUC -> BUM: Validate JWT
+activate BUM
+BUM -> BUM: Verify JWT
+activate BUM
+deactivate BUM
 
 break invalid JWT Token
-  BackendUserManagement -> BackendUserController: Error notification
-  deactivate BackendUserManagement
-  BackendUserController -> AMSignInView: Error notification
-  deactivate BackendUserController
-  activate AMSignInView
-  AMSignInView -> User: Display error
-  deactivate AMSignInView
+  BUC <-- BUM: Error notification
+  AMSIV <-- BUC: Error notification
+  U <-- AMSIV: Display error
 end
 
-BackendUserManagement -> BackendUserController: User data + success
-deactivate BackendUserManagement
-BackendUserController -> AMSignInView: Success notification
-BackendUserController -> User: User data
-BackendUserController -> HomeView: Display home view
-deactivate BackendUserController
-deactivate User
-deactivate HomeView
+BUC <-- BUM: User data + success
+deactivate BUM
+AMSIV <-- BUC: Success notification
+U <-- BUC: User data
+HV <-- BUC: Display home view
+deactivate BUC
+deactivate U
+deactivate HV
 @enduml
 ```
 
