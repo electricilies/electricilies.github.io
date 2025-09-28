@@ -141,6 +141,10 @@ export default defineConfig({
                     link: "/docs/sequence/manage-product/change-product-price",
                   },
                   {
+                    text: "Remove Product",
+                    link: "/docs/sequence/manage-product/remove-product",
+                  },
+                  {
                     text: "Manage Product",
                     link: "/docs/sequence/manage-product/manage-product",
                   },
@@ -409,6 +413,10 @@ export default defineConfig({
                   {
                     text: "Change Product Price",
                     link: "/docs/activity/manage-product/change-product-price",
+                  },
+                  {
+                    text: "Remove Product",
+                    link: "/docs/activity/manage-product/remove-product",
                   },
                   {
                     text: "Manage Product",
