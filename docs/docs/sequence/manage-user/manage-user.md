@@ -1,4 +1,4 @@
-# Manage User
+# Sequence Manage User
 
 ```plantuml
 @startuml
@@ -7,7 +7,7 @@ autonumber
 actor "Admin/Staff" as AS
 boundary UserManagementView as UMV
 control UserController as UC
-entity User as U
+entity USER as U
 
 UC -> U: Get list of users
 activate UC
