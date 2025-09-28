@@ -1,56 +1,53 @@
 # View Product
 
-```plantulm
-@startulm
+```plantuml
+@startuml
 actor Customer as C
-boundary ProductViewList as PVL
-boundary ProductView as PV
+boundary ProductManagementView as PMV
 control ProductController as PC
-entity BackendProductManagemant as BPM
+entity PRODUCT as P
 
-C -> PVL: choose product from list
-activate PVL
-PVL -> PC: send request to get product information
+PC -> P: Get list of products
 activate PC
-PC -> BPM: get product
-activate BPM
-BPM -> BPM: search in database
-activate BPM
-deactivate BPM
-PC <-- BPM: product information
-PVL <-- PC: product information
-PVL -> PV: redirect to Product View
-deactivate PVL
-activate PV
-PV -> PV: Show product information
-activate PV
-deactivate PV
+activate P
+PC <-- P: List of products
+deactivate P
+deactivate PC
+
+PMV <-- PC: List of products
+activate PMV
+PMV -> PMV: Display list of products
+activate PMV
+deactivate PMV
+
+C -> PMV: choose function
+activate C
+
 opt Detail
-  ref over C, BPM : View Product Detail
+  ref over C, P : View Product Detail
 end
 
 opt Preview
-  ref over C, BPM : View Product Preview
+  ref over C, P : View Product Preview
 end
 
 opt Price
-  ref over C, BPM : View Product Price
+  ref over C, P : View Product Price
 end
 
 opt Rate
-  ref over C, BPM : View Product Rate
+  ref over C, P : View Product Rate
 end
 
 opt Reviews & Comments
-  ref over C, BPM : View Product Reviews Comments
+  ref over C, P : View Product Reviews Comments
 end
 
 opt Variants
-  ref over C, BPM : View Product Variants
+  ref over C, P : View Product Variants
 end
+deactivate PMV
+deactivate C
 
-deactivate PV
-deactivate PC
-deactivate BPM
-@endulm
+@enduml
 ```
