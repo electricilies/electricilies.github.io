@@ -3,37 +3,29 @@
 ```plantuml
 @startuml
 |Customer|
-start
-:Choose product from list;
 
 |System|
-:Send request;
+:(1)Display product info (Product View);
 
 |Database|
-:Search product in database;
-
-|System|
-:Display product info (Product View);
 
 |Customer|
-:View product information;
-:Choose options;
+:(2)Choose options;
 if () then (Detail)
-  :View Product Detail;
+  :(2.1) View Product Detail;
 elseif () then (Preview)
-  :View Product Preview;
+  :(2.2) View Product Preview;
 elseif () then (Price)
-  :View Product Price;
+  :(2.3) View Product Price;
 elseif () then (Rate)
-  :View Product Rate;
-elseif () then(Reviews & Comments)
-  :View Product Reviews & Comments;
+  :(2.4) View Product Rate;
+elseif () then (Reviews & Comments)
+  :(2.5) View Product Reviews & Comments;
 else (Variants)
-  :View Product Variants;
+  :(2.6) View Product Variants;
 endif
 
-|Customer|
+|System|
 stop
 @enduml
-
 ```
