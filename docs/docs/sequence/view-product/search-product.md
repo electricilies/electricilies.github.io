@@ -5,7 +5,7 @@
 actor Customer as C
 boundary ProductManagementView as PMV
 control ProductController as PC
-entity BackendProductManagemant as BPM
+entity PRODUCT as BPM
 
 C -> PMV: Enter the search criteria in search box
 activate PMV
