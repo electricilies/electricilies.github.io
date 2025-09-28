@@ -1,6 +1,7 @@
 # Sign Up
 
 ```plantuml
+@startuml
 autonumber
 
 actor User as U
