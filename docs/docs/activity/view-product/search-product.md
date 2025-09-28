@@ -1,25 +1,18 @@
 # Search Product
 
-```plantulm
+```plantuml
 @startuml
 |Customer|
 start
-:Select "Search Product";
-:Enter search keyword;
+:(1)Enter search keyword;
 
 |System|
-:Send search request (keyword, filters);
+:(2)Process search request (keyword, filters);
 
 |Database|
-:Search in database;
+:(3)Search in database;
 |System|
-:Display query result;
-
-
-|Customer|
-:View product list;
-|Customer|
-:Activity View Product;
+:(4)Display query result;
 
 stop
 @enduml
