@@ -26,6 +26,7 @@ UMV <-- UC: Query result
 UMV -> UMV: Display list of users
 deactivate UMV
 
+@enduml
 ```
 
 <!-- diagram id="sequence-manage-user-search-user" -->

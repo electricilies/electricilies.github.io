@@ -183,8 +183,8 @@ export default defineConfig({
                     link: "/docs/sequence/manage-user/remove-customer",
                   },
                   {
-                    text: "Remove User",
-                    link: "/docs/sequence/manage-user/remove-user",
+                    text: "Remove Staff",
+                    link: "/docs/sequence/manage-user/remove-staff",
                   },
                   {
                     text: "Search User",
@@ -453,8 +453,8 @@ export default defineConfig({
                     link: "/docs/activity/manage-user/remove-customer",
                   },
                   {
-                    text: "Remove User",
-                    link: "/docs/activity/manage-user/remove-user",
+                    text: "Remove Staff",
+                    link: "/docs/activity/manage-user/remove-staff",
                   },
                   {
                     text: "Search User",
