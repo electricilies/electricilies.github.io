@@ -29,3 +29,5 @@ endif
 stop
 @enduml
 ```
+
+<!-- diagram id="activity-view-product-view-product" -->

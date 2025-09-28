@@ -25,3 +25,5 @@ PMV ->PMV: Show query result
 deactivate PMV
 @enduml
 ```
+
+<!-- diagram id="sequence-search-product-search-product" -->

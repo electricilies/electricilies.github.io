@@ -17,3 +17,5 @@ start
 stop
 @enduml
 ```
+
+<!-- diagram id="activity-search-product-search-product" -->

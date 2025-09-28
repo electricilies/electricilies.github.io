@@ -51,3 +51,5 @@ deactivate C
 
 @enduml
 ```
+
+<!-- diagram id="sequence-view-product-view-product" -->
