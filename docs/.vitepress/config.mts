@@ -277,24 +277,8 @@ export default defineConfig({
                     link: "/docs/sequence/view-product/view-product",
                   },
                   {
-                    text: "View Product Preview",
-                    link: "/docs/sequence/view-product/view-product-preview",
-                  },
-                  {
-                    text: "View Product Price",
-                    link: "/docs/sequence/view-product/view-product-price",
-                  },
-                  {
-                    text: "View Product Rate",
-                    link: "/docs/sequence/view-product/view-product-rate",
-                  },
-                  {
                     text: "View Product Reviews Comments",
                     link: "/docs/sequence/view-product/view-product-reviews-comments",
-                  },
-                  {
-                    text: "View Product Variants",
-                    link: "/docs/sequence/view-product/view-product-variants",
                   },
                   {
                     text: "View Suggested Product",
@@ -403,14 +387,6 @@ export default defineConfig({
                   {
                     text: "Change Product Detail",
                     link: "/docs/activity/manage-product/change-product-detail",
-                  },
-                  {
-                    text: "Change Product Preview",
-                    link: "/docs/activity/manage-product/change-product-preview",
-                  },
-                  {
-                    text: "Change Product Price",
-                    link: "/docs/activity/manage-product/change-product-price",
                   },
                   {
                     text: "Remove Product",
@@ -551,24 +527,8 @@ export default defineConfig({
                     link: "/docs/activity/view-product/view-product",
                   },
                   {
-                    text: "View Product Preview",
-                    link: "/docs/activity/view-product/view-product-preview",
-                  },
-                  {
-                    text: "View Product Price",
-                    link: "/docs/activity/view-product/view-product-price",
-                  },
-                  {
-                    text: "View Product Rate",
-                    link: "/docs/activity/view-product/view-product-rate",
-                  },
-                  {
                     text: "View Product Reviews Comments",
                     link: "/docs/activity/view-product/view-product-reviews-comments",
-                  },
-                  {
-                    text: "View Product Variants",
-                    link: "/docs/activity/view-product/view-product-variants",
                   },
                   {
                     text: "View Suggested Product",
