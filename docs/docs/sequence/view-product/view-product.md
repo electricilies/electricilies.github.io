@@ -23,29 +23,26 @@ deactivate PMV
 C -> PMV: choose function
 activate C
 
+opt Comment to Review
+  ref over C, P : Add Comment to Review
+end
+
+opt Add to Cart
+  ref over C, P : Add Product to Cart
+end
+
 opt Detail
   ref over C, P : View Product Detail
-end
-
-opt Preview
-  ref over C, P : View Product Preview
-end
-
-opt Price
-  ref over C, P : View Product Price
-end
-
-opt Rate
-  ref over C, P : View Product Rate
 end
 
 opt Reviews & Comments
   ref over C, P : View Product Reviews Comments
 end
 
-opt Variants
-  ref over C, P : View Product Variants
+opt View Suggested Products
+  ref over C, P : View Suggested Products
 end
+
 deactivate PMV
 deactivate C
 

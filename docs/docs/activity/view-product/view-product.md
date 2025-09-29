@@ -11,18 +11,16 @@
 
 |Customer|
 :(2)Choose options;
-if () then (Detail)
-  :(2.1) View Product Detail;
-elseif () then (Preview)
-  :(2.2) View Product Preview;
-elseif () then (Price)
-  :(2.3) View Product Price;
-elseif () then (Rate)
-  :(2.4) View Product Rate;
-elseif () then (Reviews & Comments)
-  :(2.5) View Product Reviews & Comments;
-else (Variants)
-  :(2.6) View Product Variants;
+if () then (Comment)
+  :(2.1) Add Comment to Review;
+elseif () then (Cart)
+  :(2.2) Add Product to Card;
+elseif () then (Detail)
+  :(2.3) View Product Detail;
+elseif () then (Preview and Comments)
+  :(2.4) View Product Reviews and Comments;
+else (Suggested Products)
+  :(2.5) View Suggested Product;
 endif
 
 |System|
