@@ -48,8 +48,9 @@ Admin -- UC15
 
 UC09 <.. UC10 : <<extend>>
 
+UC04 ..> UC01 : <<include>>
 UC05 ..> UC01 : <<include>>
-UC06 ..> UC01 : <<include>>
+UC07 ..> UC01 : <<include>>
 UC09 ..> UC01 : <<include>>
 UC10 ..> UC01 : <<include>>
 UC11 ..> UC01 : <<include>>
