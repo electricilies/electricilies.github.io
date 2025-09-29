@@ -16,19 +16,20 @@ Staff <|-- Admin
 
 rectangle "Application" {
   usecase UC01 as "Login"
-  usecase UC02 as "View Product"
-  usecase UC03 as "View Cart"
-  usecase UC04 as "View Order"
-  usecase UC05 as "Contact Support"
-  usecase UC06 as "View User Self Report"
-  usecase UC07 as "View Document"
-  usecase UC08 as "Manage Product"
-  usecase UC09 as "Manage Review and Comment"
-  usecase UC10 as "Manage User"
-  usecase UC11 as "View Staff Self Report"
-  usecase UC12 as "View Shop Report"
-  usecase UC13 as "View System Monitoring"
-  usecase UC14 as "Adjust Document"
+  usecase UC02 as "Register for Customer"
+  usecase UC03 as "View Product"
+  usecase UC04 as "View Cart"
+  usecase UC05 as "View Order"
+  usecase UC06 as "Contact Support"
+  usecase UC07 as "View User Self Report"
+  usecase UC08 as "View Document"
+  usecase UC09 as "Manage Product"
+  usecase UC10 as "Manage Review and Comment"
+  usecase UC11 as "Manage User"
+  usecase UC12 as "View Staff Self Report"
+  usecase UC13 as "View Shop Report"
+  usecase UC14 as "View System Monitoring"
+  usecase UC15 as "Adjust Document"
 }
 
 Customer -- UC02
@@ -37,24 +38,25 @@ Customer -- UC04
 Customer -- UC05
 Customer -- UC06
 Customer -- UC07
-Staff -- UC08
-Staff -- UC10
+Customer -- UC08
+Staff -- UC09
 Staff -- UC11
 Staff -- UC12
-Admin -- UC13
+Staff -- UC13
 Admin -- UC14
+Admin -- UC15
 
-UC08 <.. UC09 : <<extend>>
+UC09 <.. UC10 : <<extend>>
 
-UC04 ..> UC01 : <<include>>
 UC05 ..> UC01 : <<include>>
-UC08 ..> UC01 : <<include>>
+UC06 ..> UC01 : <<include>>
 UC09 ..> UC01 : <<include>>
 UC10 ..> UC01 : <<include>>
 UC11 ..> UC01 : <<include>>
 UC12 ..> UC01 : <<include>>
 UC13 ..> UC01 : <<include>>
 UC14 ..> UC01 : <<include>>
+UC15 ..> UC01 : <<include>>
 
 @enduml
 ```
