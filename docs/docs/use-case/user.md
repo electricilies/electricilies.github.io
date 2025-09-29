@@ -1,4 +1,4 @@
-# User
+# Use Case User
 
 ## User and application
 

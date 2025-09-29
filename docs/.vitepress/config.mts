@@ -39,24 +39,24 @@ export default defineConfig({
             link: "/docs/database",
           },
           {
-            text: "Usecase",
+            text: "Use Case",
             collapsed: true,
             items: [
               {
                 text: "User",
-                link: "/docs/usecase/user",
+                link: "/docs/use-case/user",
               },
               {
                 text: "Customer",
-                link: "/docs/usecase/customer",
+                link: "/docs/use-case/customer",
               },
               {
                 text: "Staff",
-                link: "/docs/usecase/staff",
+                link: "/docs/use-case/staff",
               },
               {
                 text: "Admin",
-                link: "/docs/usecase/admin",
+                link: "/docs/use-case/admin",
               },
             ],
           },

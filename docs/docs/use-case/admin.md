@@ -1,4 +1,4 @@
-# Admin
+# Use Case Admin
 
 ```plantuml
 @startuml
