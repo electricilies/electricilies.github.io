@@ -1,4 +1,4 @@
-# View Product
+# Activity View Product
 
 ```plantuml
 @startuml

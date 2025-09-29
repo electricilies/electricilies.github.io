@@ -1,4 +1,4 @@
-# View Product
+# Sequence View Product
 
 ```plantuml
 @startuml
