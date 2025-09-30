@@ -12,14 +12,14 @@ entity AuthenticationManagerUserManagement as AMUM
 control BackendUserController as BUC
 entity BackendUserManagement as BUM
 
-SIV -> SIV: Display sign in view
+SIV -> SIV: Display SignInView
 note left of SIV: Generate code verifier(random)\nand hash it -> code challenge
 U -> SIV: Click Sign In
 activate U
 SIV -> AMSIV: Redirect with code challenge
 activate AMSIV
 
-AMSIV -> AMSIV: Display sign in view
+AMSIV -> AMSIV: Display SignInView
 activate AMSIV
 deactivate AMSIV
 U -> AMSIV : Enter credential
@@ -104,11 +104,11 @@ BUC <-- BUM: Success
 deactivate BUM
 AMSIV <-- BUC: Success
 deactivate BUC
-HV <- AMSIV: redirect to HV
+HV <- AMSIV: redirect to HomeView
 deactivate AMSIV
-HV -> HV: Display home view
 activate HV
 deactivate HV
+HV -> HV: Display HomeView
 @enduml
 ```
 

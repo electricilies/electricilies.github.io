@@ -2,8 +2,10 @@
 
 ```plantuml
 @startuml
+autonumber
+
 actor Customer as C
-boundary ProductManagementView as PMV
+boundary HomeView as HV
 control ProductController as PC
 entity PRODUCT as P
 
@@ -14,36 +16,40 @@ PC <-- P: List of products
 deactivate P
 deactivate PC
 
-PMV <-- PC: List of products
-activate PMV
-PMV -> PMV: Display list of products
-activate PMV
-deactivate PMV
+HV <-- PC: List of products
+activate HV
+HV -> HV: Display list of products
+activate HV
+deactivate HV
 
-C -> PMV: choose function
+C -> HV: choose function
 activate C
 
 opt Comment to Review
-  ref over C, P : Add Comment to Review
+  ref over C, P: Add Comment to Review
 end
 
 opt Add to Cart
-  ref over C, P : Add Product to Cart
+  ref over C, P: Add Product to Cart
+end
+
+opt Search Product
+  ref over C, P: Search Product
 end
 
 opt Detail
-  ref over C, P : View Product Detail
+  ref over C, P: View Product Detail
 end
 
 opt Reviews & Comments
-  ref over C, P : View Product Reviews Comments
+  ref over C, P: View Product Reviews Comments
 end
 
 opt View Suggested Products
-  ref over C, P : View Suggested Products
+  ref over C, P: View Suggested Products
 end
 
-deactivate PMV
+deactivate HV
 deactivate C
 
 @enduml

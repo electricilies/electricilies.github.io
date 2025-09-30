@@ -2,27 +2,39 @@
 
 ```plantuml
 @startuml
+autonumber
+
 actor Customer as C
-boundary ProductManagementView as PMV
+boundary HomeView as HV
+boundary ProductSearchView as PSV
 control ProductController as PC
-entity PRODUCT as BPM
+entity PRODUCT as P
 
-C -> PMV: Enter the search criteria in search box
-activate PMV
-PMV -> PC: Send searching product(keyword/filters) request
+C -> HV: Enter the search criteria in search box
+activate HV
+HV -> PC: Send searching product (keyword/filters) request
 activate PC
-PC -> BPM: Query products by keyword/filters
-activate BPM
-BPM -> BPM: Query data
-activate BPM
-deactivate BPM
-PC <-- BPM: query result
-deactivate BPM
-PMV <--PC: query result
-deactivate PC
+PC -> P: Query products by keyword/filters
+activate P
+P -> P: Query data
+activate P
+deactivate P
+PC <-- P: query result
+deactivate P
+HV <-- PC: query result
+HV -> HV: Show query result
+activate HV
+deactivate HV
 
-PMV ->PMV: Show query result
-deactivate PMV
+opt Enter
+  HV -> HV: Close HomeView
+  deactivate HV
+  PSV <- PC: Display ProductSearchView
+  activate PSV
+  deactivate PC
+  deactivate PSV
+end
+
 @enduml
 ```
 

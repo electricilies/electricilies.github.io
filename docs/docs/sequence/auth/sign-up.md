@@ -13,7 +13,7 @@ entity AuthenticationManagerUserManagement as AMUM
 control BackendUserController as BUC
 entity BackendUserManagement as BUM
 
-SUV -> SUV: Display sign up view
+SUV -> SUV: Display SignUpView
 activate SUV
 note left of SUV: Generate code verifier(random)\nand hash it -> code challenge
 U -> SUV: Click Sign Up
@@ -21,7 +21,7 @@ activate U
 SUV -> AMSUV: Redirect with code challenge
 deactivate SUV
 activate AMSUV
-AMSUV -> AMSUV: Display Authentication Manager Sign Up View
+AMSUV -> AMSUV: Display AuthenticationManagerSignUpView
 activate AMSUV
 deactivate AMSUV
 
@@ -106,11 +106,11 @@ deactivate BUM
 AMSUV <-- BUC: Success
 deactivate BUC
 deactivate AMSUV
-HV<-AMSUV: redirect to Home View
-deactivate AMSUV
-HV -> HV: Display Home View
+HV <- AMSIV: redirect to HomeView
+deactivate AMSIV
 activate HV
 deactivate HV
+HV -> HV: Display HomeView
 
 @enduml
 ```
