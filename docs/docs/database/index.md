@@ -24,7 +24,7 @@ user: {
 
 wishlist: {
   id: int {constraint: PK}
-  user_id: uuid {constraint: [UNQ; FK]}
+  user_id: uuid {constraint: [UNQ, FK]}
 }
 
 address: {
@@ -61,7 +61,7 @@ product: {
 
 product_review: {
   id: int {constraint: PK}
-  rating: int {constraint: 0<x<5}
+  rating: int {constraint: "0 &lt; x &lt; 5"}
   content: varchar
   created_at: timestamp
   updated_at: timestamp
@@ -71,24 +71,24 @@ product_review: {
 }
 
 product_comment: {
-  id: int{constraint: PK}
+  id: int {constraint: PK}
   content: varchar
-  created_at:   timestamp
-  updated_at:   timestamp
-  deleted_at:   timestamp
+  created_at: timestamp
+  updated_at: timestamp
+  deleted_at: timestamp
   review_id: int {constraint: FK}
   user_id: uuid {constraint: FK}
-  parent_id: int {constraint: [FK,Nullable]}
+  parent_id: int {constraint: [FK, Nullable]}
 }
 
 product_wishlist: {
-  product_id: int {constraint: [PK,FK]}
-  wishlist_id: int {constraint: [PK,FK]}
+  product_id: int {constraint: [PK, FK]}
+  wishlist_id: int {constraint: [PK, FK]}
 }
 
 product_category: {
-  product_id: int {constraint: [PK,FK]}
-  category_id: int {constraint: [PK,FK]}
+  product_id: int {constraint: [PK, FK]}
+  category_id: int {constraint: [PK, FK]}
 }
 
 product_variant: {
@@ -108,8 +108,8 @@ option_value: {
 }
 
 product_variant_option_value: {
-  product_variant_id: int {constraint: [PK,FK]}
-  option_value_id: int {constraint: [PK,FK]}
+  product_variant_id: int {constraint: [PK, FK]}
+  option_value_id: int {constraint: [PK, FK]}
 }
 
 option: {
