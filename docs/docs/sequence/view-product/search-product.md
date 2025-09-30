@@ -38,4 +38,4 @@ end
 @enduml
 ```
 
-<!-- diagram id="sequence-search-product-search-product" -->
+<!-- diagram id="sequence-view-product-search-product" -->
