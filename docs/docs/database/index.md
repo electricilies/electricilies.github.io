@@ -203,7 +203,7 @@ order_item.product_id -> product.id
 order_item.product_variant_id -> product_variant.id
 review.product_id -> product.id
 review.user_id -> user.id
-comment.review_id -> product_review.id
+comment.review_id -> review.id
 comment.user_id -> user.id
 ```
 
