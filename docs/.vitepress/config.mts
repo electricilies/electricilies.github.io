@@ -147,14 +147,6 @@ export default defineConfig({
                     link: "/docs/sequence/manage-product/change-product-detail",
                   },
                   {
-                    text: "Change Product Preview",
-                    link: "/docs/sequence/manage-product/change-product-preview",
-                  },
-                  {
-                    text: "Change Product Price",
-                    link: "/docs/sequence/manage-product/change-product-price",
-                  },
-                  {
                     text: "Remove Product",
                     link: "/docs/sequence/manage-product/remove-product",
                   },
