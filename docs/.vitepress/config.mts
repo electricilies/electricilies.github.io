@@ -119,8 +119,8 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                   {
-                    text: "Add Comment To Review Or Comment",
-                    link: "/docs/sequence/manage-product/add-comment-to-review-or-comment",
+                    text: "Add Comment To Review",
+                    link: "/docs/sequence/manage-product/add-comment-to-review",
                   },
                   {
                     text: "Add Product",
@@ -377,8 +377,8 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                   {
-                    text: "Add Comment To Review Or Comment",
-                    link: "/docs/activity/manage-product/add-comment-to-review-or-comment",
+                    text: "Add Comment To Review",
+                    link: "/docs/activity/manage-product/add-comment-to-review",
                   },
                   {
                     text: "Add Product",

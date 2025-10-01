@@ -12,7 +12,7 @@ rectangle "Application" {
   usecase UC04 as "Change Product's Detail"
   usecase UC05 as "Remove Product"
   usecase UC06 as "Manage Review and Comment"
-  usecase UC07 as "Add Comment to Review or Comment"
+  usecase UC07 as "Add Comment to Review"
   usecase UC08 as "Remove Review or Comment"
   usecase UC09 as "Manage User"
   usecase UC10 as "Search User"

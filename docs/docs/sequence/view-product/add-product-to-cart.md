@@ -14,7 +14,7 @@ C -> PDV: Add product to cart
 activate C
 activate PDV
 deactivate C
-break Product is sold out
+break Product unavailable or insufficient stock
   PDV -> PDV: Display error
   activate PDV
   deactivate PDV
@@ -26,7 +26,7 @@ activate Ca
 Ca -> Ca: Add product to cart
 activate Ca
 deactivate Ca
-break Product has been sold out
+break Product unavailable or insufficient stock
   CC <-- Ca: Error notification
   PDV <-- CC: Error notification
   PDV -> PDV: Display error notification
