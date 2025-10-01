@@ -1,0 +1,108 @@
+{
+  "$schema": "https://raw.githubusercontent.com/olimorris/codecompanion.nvim/refs/heads/main/lua/codecompanion/workspace-schema.json",
+  "name": "Electricilies Docs",
+  "version": "0.0.0",
+  "system_prompt": "This is documentation writen with diagram as code syntax. You are a proficient at diagram as code with knowledge of PlantUML, D2,...",
+  "groups": [
+    {
+      "name": "Generate sequence diagrams",
+      "system_prompt": "Here are some examples that you should follow the style.",
+      "description": "Generate sequence diagrams base on the style I give you.",
+      "data": [
+        "sequence-add-comment-to-review",
+        "sequence-add-product-to-cart",
+        "sequence-search-product",
+        "sequence-view-product-detail",
+        "sequence-view-product-reviews-comments",
+        "sequence-view-product",
+        "sequence-view-suggested-product"
+      ]
+    },
+    {
+      "name": "Generate activity diagrams",
+      "system_prompt": "Here are some examples that you should follow the style.",
+      "description": "Generate sequence activity base on the style I give you.",
+      "data": [
+        "activity-add-comment-to-review",
+        "activity-add-product-to-cart",
+        "activity-search-product",
+        "activity-view-product-detail",
+        "activity-view-product-reviews-comments",
+        "activity-view-product",
+        "activity-view-suggested-product"
+      ]
+    }
+  ],
+  "data": {
+    "sequence-add-comment-to-review": {
+      "type": "file",
+      "path": "./docs/docs/sequence/view-product/add-comment-to-review.md",
+      "description": "This is a CRUD sequence"
+    },
+    "sequence-add-product-to-cart": {
+      "type": "file",
+      "path": "./docs/docs/sequence/view-product/add-product-to-cart.md",
+      "description": "This is a CRUD sequence"
+    },
+    "sequence-search-product": {
+      "type": "file",
+      "path": "./docs/docs/sequence/view-product/search-product.md",
+      "description": "This is a search sequence"
+    },
+    "sequence-view-product-detail": {
+      "type": "file",
+      "path": "./docs/docs/sequence/view-product/view-product-detail.md",
+      "description": "This is a CRUD sequence"
+    },
+    "sequence-view-product-reviews-comments": {
+      "type": "file",
+      "path": "./docs/docs/sequence/view-product/view-product-reviews-comments.md",
+      "description": "This is a CRUD sequence"
+    },
+    "sequence-view-product": {
+      "type": "file",
+      "path": "./docs/docs/sequence/view-product/view-product.md",
+      "description": "This is a generic sequence"
+    },
+    "sequence-view-suggested-product": {
+      "type": "file",
+      "path": "./docs/docs/sequence/view-product/view-suggested-product.md",
+      "description": "This is a CRUD sequence"
+    },
+    "activity-add-comment-to-review": {
+      "type": "file",
+      "path": "./docs/docs/activity/view-product/add-comment-to-review.md",
+      "description": "This is a CRUD activity"
+    },
+    "activity-add-product-to-cart": {
+      "type": "file",
+      "path": "./docs/docs/activity/view-product/add-product-to-cart.md",
+      "description": "This is a CRUD activity"
+    },
+    "activity-search-product": {
+      "type": "file",
+      "path": "./docs/docs/activity/view-product/search-product.md",
+      "description": "This is a search activity"
+    },
+    "activity-view-product-detail": {
+      "type": "file",
+      "path": "./docs/docs/activity/view-product/view-product-detail.md",
+      "description": "This is a CRUD activity"
+    },
+    "activity-view-product-reviews-comments": {
+      "type": "file",
+      "path": "./docs/docs/activity/view-product/view-product-reviews-comments.md",
+      "description": "This is a CRUD activity"
+    },
+    "activity-view-product": {
+      "type": "file",
+      "path": "./docs/docs/activity/view-product/view-product.md",
+      "description": "This is a generic activity"
+    },
+    "activity-view-suggested-product": {
+      "type": "file",
+      "path": "./docs/docs/activity/view-product/view-suggested-product.md",
+      "description": "This is a CRUD activity"
+    }
+  }
+}
