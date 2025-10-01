@@ -7,7 +7,7 @@
     {
       "name": "Generate sequence diagrams",
       "system_prompt": "Here are some examples that you should follow the style.",
-      "description": "Generate sequence diagrams base on the style I give you.",
+      "description": "Generate sequence diagrams base on the style I give you. You should tell me your plan (create, edit what files), not showing the content.",
       "data": [
         "sequence-add-comment-to-review",
         "sequence-add-product-to-cart",
@@ -21,7 +21,7 @@
     {
       "name": "Generate activity diagrams",
       "system_prompt": "Here are some examples that you should follow the style.",
-      "description": "Generate sequence activity base on the style I give you.",
+      "description": "Generate sequence activity base on the style I give you. You should tell me your plan (create, edit what files), not showing the content.",
       "data": [
         "activity-add-comment-to-review",
         "activity-add-product-to-cart",

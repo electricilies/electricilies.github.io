@@ -72,6 +72,22 @@ export default defineConfig({
                     text: "Adjust Document",
                     link: "/docs/sequence/adjust-document/adjust-document",
                   },
+                  {
+                    text: "Create Document",
+                    link: "/docs/sequence/adjust-document/create-document",
+                  },
+                  {
+                    text: "Delete Document",
+                    link: "/docs/sequence/adjust-document/delete-document",
+                  },
+                  {
+                    text: "Search Document",
+                    link: "/docs/sequence/adjust-document/search-document",
+                  },
+                  {
+                    text: "Update Document",
+                    link: "/docs/sequence/adjust-document/update-document",
+                  },
                 ],
               },
               {
@@ -329,6 +345,22 @@ export default defineConfig({
                   {
                     text: "Adjust Document",
                     link: "/docs/activity/adjust-document/adjust-document",
+                  },
+                  {
+                    text: "Create Document",
+                    link: "/docs/activity/adjust-document/create-document",
+                  },
+                  {
+                    text: "Delete Document",
+                    link: "/docs/activity/adjust-document/delete-document",
+                  },
+                  {
+                    text: "Search Document",
+                    link: "/docs/activity/adjust-document/search-document",
+                  },
+                  {
+                    text: "Update Document",
+                    link: "/docs/activity/adjust-document/update-document",
                   },
                 ],
               },
