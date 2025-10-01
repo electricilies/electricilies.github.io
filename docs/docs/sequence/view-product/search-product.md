@@ -11,6 +11,8 @@ control ProductController as PC
 entity PRODUCT as P
 
 C -> HV: Enter the search criteria in search box
+activate C
+deactivate C
 activate HV
 HV -> PC: Send searching product (keyword/filters) request
 activate PC
