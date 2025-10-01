@@ -59,7 +59,7 @@ product: {
   branch_id: int {constraint: FK}
 }
 
-product_review: {
+review: {
   id: int {constraint: PK}
   rating: int {constraint: "0 &lt; x &lt; 5"}
   content: varchar
@@ -70,7 +70,7 @@ product_review: {
   product_id: int {constraint: FK}
 }
 
-product_comment: {
+comment: {
   id: int {constraint: PK}
   content: varchar
   created_at: timestamp
@@ -78,7 +78,6 @@ product_comment: {
   deleted_at: timestamp
   review_id: int {constraint: FK}
   user_id: uuid {constraint: FK}
-  parent_id: int {constraint: [FK, Nullable]}
 }
 
 product_wishlist: {
@@ -202,11 +201,10 @@ order.order_status_id -> order_status.id
 order_item.order_id -> order.id
 order_item.product_id -> product.id
 order_item.product_variant_id -> product_variant.id
-product_review.product_id -> product.id
-product_review.user_id -> user.id
-product_comment.review_id -> product_review.id
-product_comment.user_id -> user.id
-product_comment.parent_id -> product_comment.id
+review.product_id -> product.id
+review.user_id -> user.id
+comment.review_id -> product_review.id
+comment.user_id -> user.id
 ```
 
 <!-- diagram id="database" -->
