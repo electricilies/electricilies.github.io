@@ -9,6 +9,8 @@
       "system_prompt": "Here are some examples that you should follow the style.",
       "description": "Generate sequence diagrams base on the style I give you. You should tell me your plan (create, edit what files), not showing the content.",
       "data": [
+        "prompt-convention",
+        "prompt-sequence-rules",
         "sequence-add-comment-to-review",
         "sequence-add-product-to-cart",
         "sequence-search-product",
@@ -23,6 +25,8 @@
       "system_prompt": "Here are some examples that you should follow the style.",
       "description": "Generate sequence activity base on the style I give you. You should tell me your plan (create, edit what files), not showing the content.",
       "data": [
+        "prompt-convention",
+        "prompt-activity-rules",
         "activity-add-comment-to-review",
         "activity-add-product-to-cart",
         "activity-search-product",
@@ -34,6 +38,21 @@
     }
   ],
   "data": {
+    "prompt-convention": {
+      "type": "file",
+      "path": "./prompts/convention.md",
+      "description": "This is convention you need to read and follow it strictly."
+    },
+    "prompt-activity-rules": {
+      "type": "file",
+      "path": "./prompts/activity-rules.md",
+      "description": "This is rules for working on activity diagram."
+    },
+    "prompt-sequence-rules": {
+      "type": "file",
+      "path": "./prompts/sequence-rules.md",
+      "description": "This is rules for working on sequence diagram."
+    },
     "sequence-add-comment-to-review": {
       "type": "file",
       "path": "./docs/docs/sequence/view-product/add-comment-to-review.md",
