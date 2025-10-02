@@ -5,12 +5,12 @@
 |C|Customer
 
 |S|System
-:(1)Display product info (Product View);
+:(1) Display product info (Product View);
 
 |D|Database
 
 |C|
-:(2)Choose options;
+:(2) Choose options;
 if () then (Cart)
   :(2.1) Add Product to Card;
 elseif () then (Detail)
