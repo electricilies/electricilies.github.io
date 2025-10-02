@@ -22,7 +22,7 @@ DC <-- D: Query result
 deactivate D
 DMV <-- DC: Query result
 DMV -> DMV: Show query result
-activate DMV
+
 deactivate DMV
 
 @enduml
