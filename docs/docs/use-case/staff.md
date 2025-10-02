@@ -21,7 +21,7 @@ rectangle "Application" {
 }
 
 Staff -- UC01
-Staff -- UC8
+Staff -- UC08
 Staff -- UC12
 
 UC01 <.. UC02 : <<extend>>
