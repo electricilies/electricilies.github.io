@@ -11,8 +11,9 @@ entity CART as Ca
 
 C -> CV: Change product amount
 activate C
+deactivate C
 activate CV
-CV -> CC: Update product amount
+CV -> CC: Update product amount request
 activate CC
 CC -> Ca: Update product amount
 activate Ca
