@@ -22,9 +22,6 @@ PC <-- P: query result
 deactivate P
 PMV <-- PC: query result
 PMV -> PMV: Show query result
-activate PMV
-deactivate PMV
-deactivate PC
 deactivate PMV
 
 @enduml

@@ -14,6 +14,7 @@ S -> PMV: Select product to edit
 activate S
 activate PMV
 PMV -> PC: Get product detail
+deactivate PMV
 activate PC
 PC -> P: Get product detail
 activate P
@@ -23,6 +24,14 @@ PIV <-- PC: Display product detail
 deactivate PC
 activate PIV
 S -> PIV: Update product information
+PIV -> PIV: Validate product information
+activate PIV
+deactivate PIV
+break Invalid product information
+  PIV -> PIV: Display error notification
+  activate PIV
+  return
+end
 deactivate S
 PIV -> PC: Update product
 activate PC
