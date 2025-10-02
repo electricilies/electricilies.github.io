@@ -9,11 +9,10 @@
       "system_prompt": "Here are some examples that you should follow the style.",
       "description": "Generate sequence diagrams base on the style I give you. You should tell me your plan (create, edit what files) (after searching the target folder if required), not showing the content.",
       "data": [
-        "sequence-add-comment-to-review",
         "sequence-add-product-to-cart",
         "sequence-search-product",
         "sequence-view-product-detail",
-        "sequence-view-product-reviews-comments",
+        "sequence-view-product-reviews",
         "sequence-view-product",
         "sequence-view-suggested-product"
       ]
@@ -23,22 +22,16 @@
       "system_prompt": "Here are some examples that you should follow the style.",
       "description": "Generate sequence activity base on the style I give you. You should tell me your plan (create, edit what files)  (after searching the target folder if required), not showing the content.",
       "data": [
-        "activity-add-comment-to-review",
         "activity-add-product-to-cart",
         "activity-search-product",
         "activity-view-product-detail",
-        "activity-view-product-reviews-comments",
+        "activity-view-product-reviews",
         "activity-view-product",
         "activity-view-suggested-product"
       ]
     }
   ],
   "data": {
-    "sequence-add-comment-to-review": {
-      "type": "file",
-      "path": "./docs/docs/sequence/view-product/add-comment-to-review.md",
-      "description": "This is a CRUD sequence"
-    },
     "sequence-add-product-to-cart": {
       "type": "file",
       "path": "./docs/docs/sequence/view-product/add-product-to-cart.md",
@@ -54,9 +47,9 @@
       "path": "./docs/docs/sequence/view-product/view-product-detail.md",
       "description": "This is a CRUD sequence"
     },
-    "sequence-view-product-reviews-comments": {
+    "sequence-view-product-reviews": {
       "type": "file",
-      "path": "./docs/docs/sequence/view-product/view-product-reviews-comments.md",
+      "path": "./docs/docs/sequence/view-product/view-product-reviews.md",
       "description": "This is a CRUD sequence"
     },
     "sequence-view-product": {
@@ -68,11 +61,6 @@
       "type": "file",
       "path": "./docs/docs/sequence/view-product/view-suggested-product.md",
       "description": "This is a CRUD sequence"
-    },
-    "activity-add-comment-to-review": {
-      "type": "file",
-      "path": "./docs/docs/activity/view-product/add-comment-to-review.md",
-      "description": "This is a CRUD activity"
     },
     "activity-add-product-to-cart": {
       "type": "file",
@@ -89,9 +77,9 @@
       "path": "./docs/docs/activity/view-product/view-product-detail.md",
       "description": "This is a CRUD activity"
     },
-    "activity-view-product-reviews-comments": {
+    "activity-view-product-reviews": {
       "type": "file",
-      "path": "./docs/docs/activity/view-product/view-product-reviews-comments.md",
+      "path": "./docs/docs/activity/view-product/view-product-reviews.md",
       "description": "This is a CRUD activity"
     },
     "activity-view-product": {

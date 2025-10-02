@@ -24,7 +24,7 @@ rectangle "Application" {
   usecase UC07 as "View User Self Report"
   usecase UC08 as "View Document"
   usecase UC09 as "Manage Product"
-  usecase UC10 as "Manage Review and Comment"
+  usecase UC10 as "Manage Review"
   usecase UC11 as "Manage User"
   usecase UC12 as "View Staff Self Report"
   usecase UC13 as "View Shop Report"
@@ -62,7 +62,7 @@ UC15 ..> UC01 : <<include>>
 @enduml
 ```
 
-<!-- diagram id="usecase-user-application" -->
+<!-- diagram id="use-case-user-application" -->
 
 ## User and account system
 
@@ -102,4 +102,4 @@ UC04 <.. UC07 : <<extend>>
 @enduml
 ```
 
-<!-- diagram id="usecase-user-account-system" -->
+<!-- diagram id="use-case-user-account-system" -->

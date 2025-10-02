@@ -52,4 +52,4 @@ UC15 ..> UC12 : <<include>>
 @enduml
 ```
 
-<!-- diagram id="usecase-admin" -->
+<!-- diagram id="use-case-admin" -->

@@ -2,20 +2,21 @@
 
 ```plantuml
 @startuml
-|Customer|
+|C|Customer
 start
 :(1)Enter search keyword;
 
-|System|
+|S|System
 :(2)Process search request (keyword, filters);
 
-|Database|
+|D|Database
 :(3)Search in database;
-|System|
+
+|S|
 :(4)Display query result;
 
 stop
 @enduml
 ```
 
-<!-- diagram id="activity-search-product-search-product" -->
+<!-- diagram id="activity-view-product-search-product" -->

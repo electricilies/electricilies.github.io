@@ -135,10 +135,6 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                   {
-                    text: "Add Comment To Review",
-                    link: "/docs/sequence/manage-product/add-comment-to-review",
-                  },
-                  {
                     text: "Add Product",
                     link: "/docs/sequence/manage-product/add-product",
                   },
@@ -155,8 +151,8 @@ export default defineConfig({
                     link: "/docs/sequence/manage-product/manage-product",
                   },
                   {
-                    text: "Remove Review Or Comment",
-                    link: "/docs/sequence/manage-product/remove-review-or-comment",
+                    text: "Remove Review",
+                    link: "/docs/sequence/manage-product/remove-review",
                   },
                   {
                     text: "Search Product",
@@ -265,10 +261,6 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                   {
-                    text: "Add Comment To Review",
-                    link: "/docs/sequence/view-product/add-comment-to-review",
-                  },
-                  {
                     text: "Add Product To Cart",
                     link: "/docs/sequence/view-product/add-product-to-cart",
                   },
@@ -285,8 +277,8 @@ export default defineConfig({
                     link: "/docs/sequence/view-product/view-product",
                   },
                   {
-                    text: "View Product Reviews Comments",
-                    link: "/docs/sequence/view-product/view-product-reviews-comments",
+                    text: "View Product Reviews",
+                    link: "/docs/sequence/view-product/view-product-reviews",
                   },
                   {
                     text: "View Suggested Product",
@@ -401,10 +393,6 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                   {
-                    text: "Add Comment To Review",
-                    link: "/docs/activity/manage-product/add-comment-to-review",
-                  },
-                  {
                     text: "Add Product",
                     link: "/docs/activity/manage-product/add-product",
                   },
@@ -421,8 +409,8 @@ export default defineConfig({
                     link: "/docs/activity/manage-product/manage-product",
                   },
                   {
-                    text: "Remove Review Or Comment",
-                    link: "/docs/activity/manage-product/remove-review-or-comment",
+                    text: "Remove Review",
+                    link: "/docs/activity/manage-product/remove-review",
                   },
                   {
                     text: "Search Product",
@@ -531,10 +519,6 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                   {
-                    text: "Add Comment To Review",
-                    link: "/docs/activity/view-product/add-comment-to-review",
-                  },
-                  {
                     text: "Add Product To Cart",
                     link: "/docs/activity/view-product/add-product-to-cart",
                   },
@@ -551,8 +535,8 @@ export default defineConfig({
                     link: "/docs/activity/view-product/view-product",
                   },
                   {
-                    text: "View Product Reviews Comments",
-                    link: "/docs/activity/view-product/view-product-reviews-comments",
+                    text: "View Product Reviews",
+                    link: "/docs/activity/view-product/view-product-reviews",
                   },
                   {
                     text: "View Suggested Product",

@@ -2,28 +2,26 @@
 
 ```plantuml
 @startuml
-|Customer|
+|C|Customer
 
-|System|
+|S|System
 :(1)Display product info (Product View);
 
-|Database|
+|D|Database
 
-|Customer|
+|C|
 :(2)Choose options;
-if () then (Comment)
-  :(2.1) Add Comment to Review;
-elseif () then (Cart)
-  :(2.2) Add Product to Card;
+if () then (Cart)
+  :(2.1) Add Product to Card;
 elseif () then (Detail)
-  :(2.3) View Product Detail;
-elseif () then (Preview and Comments)
-  :(2.4) View Product Reviews and Comments;
+  :(2.2) View Product Detail;
+elseif () then (Reviews)
+  :(2.3) View Product Reviews;
 else (Suggested Products)
-  :(2.5) View Suggested Product;
+  :(2.4) View Suggested Products;
 endif
 
-|System|
+|S|
 stop
 @enduml
 ```

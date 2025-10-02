@@ -24,10 +24,6 @@ deactivate HV
 C -> HV: Choose function
 activate C
 
-opt Comment to Review
-  ref over C, P: Add Comment to Review
-end
-
 opt Add to Cart
   ref over C, P: Add Product to Cart
 end
@@ -40,8 +36,8 @@ opt Detail
   ref over C, P: View Product Detail
 end
 
-opt Reviews & Comments
-  ref over C, P: View Product Reviews Comments
+opt Reviews
+  ref over C, P: View Product Reviews
 end
 
 opt View Suggested Products

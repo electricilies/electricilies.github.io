@@ -24,10 +24,6 @@ deactivate PMV
 S -> PMV: Choose function
 activate S
 
-opt Add Comment to Review
-  ref over S, P: Add Comment to Review
-end
-
 opt Add Product
   ref over S, P: Add Product
 end
@@ -40,8 +36,8 @@ opt Remove Product
   ref over S, P: Remove Product
 end
 
-opt Remove Review or Comment
-  ref over S, P: Remove Review or Comment
+opt Remove Review
+  ref over S, P: Remove Review
 end
 
 opt Search Product
