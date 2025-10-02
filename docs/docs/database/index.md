@@ -70,16 +70,6 @@ review: {
   product_id: int {constraint: FK}
 }
 
-comment: {
-  id: int {constraint: PK}
-  content: varchar
-  created_at: timestamp
-  updated_at: timestamp
-  deleted_at: timestamp
-  review_id: int {constraint: FK}
-  user_id: uuid {constraint: FK}
-}
-
 product_wishlist: {
   product_id: int {constraint: [PK, FK]}
   wishlist_id: int {constraint: [PK, FK]}
@@ -203,8 +193,6 @@ order_item.product_id -> product.id
 order_item.product_variant_id -> product_variant.id
 review.product_id -> product.id
 review.user_id -> user.id
-comment.review_id -> review.id
-comment.user_id -> user.id
 ```
 
 <!-- diagram id="database" -->
