@@ -1,3 +1,5 @@
+# Convention
+
 # Naming convention
 
 - File in `docs/docs/activity/**/*.md` contains activity diagrams and they must have prefix markdown header with `Activity`
