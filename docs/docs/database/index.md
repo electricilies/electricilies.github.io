@@ -59,6 +59,24 @@ product: {
   branch_id: int {constraint: FK}
 }
 
+product_analytic: {
+  id: int {constraint: PK}
+  views_count: int
+  purchase_count: int
+  trending_score: float
+  product_id: int {constraint: [FK, UNQ]}
+}
+
+product_image: {
+  id: int {constraint: PK}
+  url: varchar
+  alt_text: varchar
+  created_at: timestamp
+  is_primary: boolean
+  product_id: int {constraint: FK}
+  product_variant_id: int {constraint: [FK, nullable]}
+}
+
 review: {
   id: int {constraint: PK}
   rating: int {constraint: "0 &lt; x &lt; 5"}
@@ -166,6 +184,35 @@ order_item: {
   product_variant_id: int {constraint: FK}
 }
 
+return_request: {
+  id: int {constraint: PK}
+  reason: varchar
+  created_at: timestamp
+  updated_at: timestamp
+  status_id: int {constraint: FK}
+  user_id: uuid {constraint: FK}
+  order_item_id: int {constraint: FK}
+}
+
+return_request_status: {
+  id: int {constraint: PK}
+  value: varchar {constraint: UNQ}
+}
+
+refund: {
+  id: int {constraint: PK}
+  created_at: timestamp
+  updated_at: timestamp
+  status_id: int {constraint: FK}
+  payment_detail_id: int {constraint: FK}
+  return_request_id: int {constraint: FK}
+}
+
+refund_status: {
+  id: int {constraint: PK}
+  value: varchar {constraint: UNQ}
+}
+
 address.user_id -> user.id
 product_category.product_id -> product.id
 product_category.category_id -> category.id
@@ -193,6 +240,15 @@ order_item.product_id -> product.id
 order_item.product_variant_id -> product_variant.id
 review.product_id -> product.id
 review.user_id -> user.id
+product_analytic.product_id -> product.id
+product_image.product_id -> product.id
+product_image.product_variant_id -> product_variant.id
+return_request.user_id -> user.id
+return_request.status_id -> return_request_status.id
+return_request.order_item_id -> order_item.id
+refund.status_id -> refund_status.id
+refund.return_request_id -> return_request.id
+refund.payment_detail_id -> payment_detail.id
 ```
 
 <!-- diagram id="database" -->
