@@ -81,6 +81,7 @@ review: {
   id: int {constraint: PK}
   rating: int {constraint: "0 &lt; x &lt; 5"}
   content: varchar
+  image_url: varchar
   created_at: timestamp
   updated_at: timestamp
   deleted_at: timestamp
