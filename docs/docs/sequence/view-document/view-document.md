@@ -6,7 +6,7 @@ autonumber
 
 actor Customer as C
 boundary DocumentManagementView as DMV
-boundary DocumentInformationView as DIV
+boundary DocumentDetailView as DDV
 control DocumentController as DC
 entity DOCUMENT as D
 
@@ -14,20 +14,18 @@ DC -> D: Get lists of documents
 activate DC
 activate D
 D -> D: Query data
-activate D
-deactivate D
 DC <-- D: List of documents
 deactivate D
 DMV <-- DC: List of documents
-activate DMV
 deactivate DC
+activate DMV
 DMV -> DMV: Display list of documents
 activate DMV
 deactivate DMV
 opt Search
   C -> DMV: Enter the search criteria in the search box
   activate C
-  DMV -> DC: Send searching documents information request
+  DMV -> DC: Send searching documents detail request
   activate DC
   DC -> D: Search document base on given keywords
   activate D
@@ -39,26 +37,21 @@ opt Search
   DMV <-- DC: Query result
   deactivate DC
   DMV -> DMV: Display list of documents
-  activate DMV
-  deactivate DMV
 end
 C -> DMV: Select to document want to view
 deactivate C
-DMV -> DC: Get selected document information
+DMV -> DC: Get selected document detail
 deactivate DMV
 activate DC
-DC -> D: Get selected document information
+DC -> D: Get selected document detail
 activate D
 DC <-- D: Query result
 deactivate D
-DIV <-- DC: Query result
+DDV <-- DC: Query result
 deactivate DC
-activate DIV
-deactivate DC
-DIV -> DIV: Display view with selected document information
-activate DIV
-deactivate DIV
-deactivate DIV
+activate DDV
+DDV -> DDV: Display view with selected document detail
+deactivate DDV
 
 @enduml
 ```

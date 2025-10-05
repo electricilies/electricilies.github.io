@@ -11,6 +11,7 @@ entity CUSTOMER_REPORT as CR
 
 C -> RV: View self report
 activate C
+deactivate C
 activate RV
 RV -> CRC: Get customer self report
 activate CRC
@@ -23,9 +24,8 @@ CRC <-- CR: Customer report data
 deactivate CR
 RV <-- CRC: Display customer report
 deactivate CRC
-C <-- RV: View report result
+RV -> RV: Display report result
 deactivate RV
-deactivate C
 
 @enduml
 ```

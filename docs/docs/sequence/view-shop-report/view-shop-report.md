@@ -11,6 +11,7 @@ entity SHOP_REPORT as SR
 
 A -> RV: View shop report
 activate A
+deactivate A
 activate RV
 RV -> SRC: Get shop report
 activate SRC
@@ -23,9 +24,8 @@ SRC <-- SR: Shop report data
 deactivate SR
 RV <-- SRC: Display shop report
 deactivate SRC
-A <-- RV: View report result
+RV -> RV: Display report result
 deactivate RV
-deactivate A
 
 @enduml
 ```

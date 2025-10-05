@@ -11,6 +11,7 @@ entity MONITORING_DATA as MD
 
 A -> SMV: View system monitoring
 activate A
+deactivate A
 activate SMV
 SMV -> MC: Get monitoring data
 activate MC
@@ -23,9 +24,8 @@ MC <-- MD: Monitoring data
 deactivate MD
 SMV <-- MC: Display monitoring data
 deactivate MC
-A <-- SMV: View monitoring result
+SMV -> SMV: Display monitoring result
 deactivate SMV
-deactivate A
 
 @enduml
 ```

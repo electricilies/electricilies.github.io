@@ -11,6 +11,7 @@ entity STAFF_REPORT as SR
 
 S -> RV: View self report
 activate S
+deactivate S
 activate RV
 RV -> SRC: Get staff self report
 activate SRC
@@ -23,9 +24,8 @@ SRC <-- SR: Staff report data
 deactivate SR
 RV <-- SRC: Display staff report
 deactivate SRC
-S <-- RV: View report result
+RV -> RV: Display report result
 deactivate RV
-deactivate S
 
 @enduml
 ```
