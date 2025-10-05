@@ -27,11 +27,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           cache: npm
-      - name: Cache docs/public
-        uses: actions/cache@v4
+      - name: Restore docs/public cache
+        uses: actions/cache/restore@v4
         with:
           path: docs/public
-          key: ${{ runner.os }}-docs-public-${{ hashFiles('docs/public/**') }}
+          key: ${{ runner.os }}-docs-public-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-docs-public-
       - name: Setup Pages
@@ -42,6 +42,11 @@ jobs:
         run: npm run docs:build
       - name: Build again to fix uml
         run: npm run docs:build
+      - name: Save docs/public cache
+        uses: actions/cache/save@v4
+        with:
+          path: docs/public
+          key: ${{ runner.os }}-docs-public-${{ github.sha }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
