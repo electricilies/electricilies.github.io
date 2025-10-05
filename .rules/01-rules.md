@@ -20,7 +20,7 @@
 
 ## Diagrams
 
-- Sequence diagrams contains actor, boundary (view, can be more than 1), controller (like the controller in backend), entity (database level)
+- Sequence diagrams contains actor, boundary (view, can be more than 1), controller (like the controller in backend), entity in UPPERCASE (database level)
 - Activity diagrams contains 3 "swimlanes": actor, system, database
 
 ## Steps
