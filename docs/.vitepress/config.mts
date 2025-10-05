@@ -165,6 +165,14 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                   {
+                    text: "Delete Customer",
+                    link: "/docs/sequence/manage-user/delete-customer",
+                  },
+                  {
+                    text: "Delete Staff",
+                    link: "/docs/sequence/manage-user/delete-staff",
+                  },
+                  {
                     text: "Demote Admin",
                     link: "/docs/sequence/manage-user/demote-admin",
                   },
@@ -183,14 +191,6 @@ export default defineConfig({
                   {
                     text: "Promote Staff",
                     link: "/docs/sequence/manage-user/promote-staff",
-                  },
-                  {
-                    text: "Remove Customer",
-                    link: "/docs/sequence/manage-user/remove-customer",
-                  },
-                  {
-                    text: "Remove Staff",
-                    link: "/docs/sequence/manage-user/remove-staff",
                   },
                   {
                     text: "Search User",
@@ -423,6 +423,14 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                   {
+                    text: "Delete Customer",
+                    link: "/docs/activity/manage-user/delete-customer",
+                  },
+                  {
+                    text: "Delete Staff",
+                    link: "/docs/activity/manage-user/delete-staff",
+                  },
+                  {
                     text: "Demote Admin",
                     link: "/docs/activity/manage-user/demote-admin",
                   },
@@ -441,14 +449,6 @@ export default defineConfig({
                   {
                     text: "Promote Staff",
                     link: "/docs/activity/manage-user/promote-staff",
-                  },
-                  {
-                    text: "Remove Customer",
-                    link: "/docs/activity/manage-user/remove-customer",
-                  },
-                  {
-                    text: "Remove Staff",
-                    link: "/docs/activity/manage-user/remove-staff",
                   },
                   {
                     text: "Search User",

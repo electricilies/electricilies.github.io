@@ -14,7 +14,7 @@ rectangle "Application" {
   usecase UC06 as "Delete Review"
   usecase UC07 as "Manage User"
   usecase UC08 as "Search User"
-  usecase UC09 as "Remove Customer"
+  usecase UC09 as "Delete Customer"
   usecase UC10 as "View Customer Report"
   usecase UC11 as "View Staff Report"
 }

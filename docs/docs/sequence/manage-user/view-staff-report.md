@@ -20,14 +20,12 @@ UMV -> UC: Get staff report request
 activate UC
 UC -> U: Get staff report data
 activate U
-U -> U: Validate staff access and generate report
+U -> U: Validate data
 activate U
 deactivate U
-break Staff not found or access denied
+break Invalid data
   UC <-- U: Error notification
-  deactivate U
   UMV <-- UC: Error notification
-  deactivate UC
   UMV -> UMV: Display error notification
   activate UMV
   deactivate UMV

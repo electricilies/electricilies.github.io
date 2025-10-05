@@ -47,6 +47,7 @@ PDV <-- PC: Success notification
 PDV -> PDV: Close view
 deactivate PDV
 PMV <- PC: Display success notification and list of products
+activate PMV
 
 @enduml
 ```

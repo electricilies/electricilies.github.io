@@ -1,4 +1,4 @@
-# Sequence Remove Customer
+# Sequence Delete Customer
 
 ```plantuml
 @startuml
@@ -12,48 +12,46 @@ entity USER as U
 opt Search
   ref over SA, U: Sequence Search User
 end
-SA -> UMV: Select customer to remove
+SA -> UMV: Select customer to delete
 activate SA
 activate UMV
-deactivate SA
-UMV -> UMV: Display confirmation dialog
+UMV -> UMV: Display confirmation message box
 activate UMV
 deactivate UMV
-SA -> UMV: Confirm or cancel removal
-activate SA
-break Cancel removal
-  UMV -> UMV: Close dialog
+break Cancel
+  SA -> UMV: Click "Cancel"
+  UMV -> UMV: Close confirmation message box
   activate UMV
   deactivate UMV
 end
+SA -> UMV: Click "Confirm"
 deactivate SA
-UMV -> UC: Remove customer request
+UMV -> UC: Send deleting customer request
 activate UC
-UC -> U: Remove customer from system
+UC -> U: Delete selected customer account
 activate U
-U -> U: Validate customer removal
+U -> U: Validate data
 activate U
 deactivate U
-break Customer has active orders or dependencies
+break Invalid data
   UC <-- U: Error notification
-  deactivate U
   UMV <-- UC: Error notification
-  deactivate UC
   UMV -> UMV: Display error notification
   activate UMV
   deactivate UMV
 end
-U -> U: Deactivate customer account
+U -> U: Delete user
 activate U
 deactivate U
 UC <-- U: Success notification
 deactivate U
 UMV <-- UC: Success notification
 deactivate UC
-UMV -> UMV: Display success notification and refresh list
+UMV -> UMV: Display success notification & update list
 deactivate UMV
+deactivate SA
 
 @enduml
 ```
 
-<!-- diagram id="sequence-manage-user-remove-customer" -->
+<!-- diagram id="sequence-manage-user-delete-customer" -->

@@ -10,36 +10,25 @@ boundary OrderDetailView as ODV
 control OrderController as OC
 entity ORDER as O
 
-ref over C, O: Sequence View Orders
+opt Search
+  ref over C, O: Sequence Search Order
+end
 C -> OV: Select order to view detail
 activate C
 activate OV
+deactivate C
 OV -> OC: Get selected order detail
 activate OC
 OC -> O: Get selected order detail
 activate O
 OC <-- O: Selected order detail
 deactivate O
-ODV <-- OC: Display order detail
+ODV <-- OC: Selected order detail
 deactivate OC
 activate ODV
-ODV -> ODV: Show order detail
+ODV -> ODV: Display order detail
 activate ODV
 deactivate ODV
-deactivate OV
-deactivate C
-
-opt Cancel Order
-  ref over C, O: Sequence Cancel Order
-end
-
-opt Return Product
-  ref over C, O: Sequence Return Product
-end
-
-opt Review Product
-  ref over C, O: Sequence Review Product
-end
 
 @enduml
 ```

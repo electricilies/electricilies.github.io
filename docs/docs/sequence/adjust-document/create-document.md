@@ -47,6 +47,7 @@ DDV <-- DC: Success notification
 DDV -> DDV: Close view
 deactivate DDV
 DMV <- DC: Display success notification and list of documents
+activate DMV
 
 @enduml
 ```

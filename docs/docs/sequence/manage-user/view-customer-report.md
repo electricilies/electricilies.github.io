@@ -20,14 +20,12 @@ UMV -> UC: Get customer report request
 activate UC
 UC -> U: Get customer report data
 activate U
-U -> U: Validate customer access and generate report
+U -> U: Validate data
 activate U
 deactivate U
-break Customer not found or access denied
+break Invalid data
   UC <-- U: Error notification
-  deactivate U
   UMV <-- UC: Error notification
-  deactivate UC
   UMV -> UMV: Display error notification
   activate UMV
   deactivate UMV

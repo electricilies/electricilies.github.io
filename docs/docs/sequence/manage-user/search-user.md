@@ -11,20 +11,19 @@ entity USER as U
 
 AS -> UMV: Enter the search criteria in the search box
 activate AS
-deactivate AS
 activate UMV
 UMV -> UC: Send searching user information request
 activate UC
 UC -> U: Search user base on given keywords
 activate U
 U -> U: Query data
-activate U
-deactivate U
 UC <-- U: Query result
-deactivate UC
+deactivate U
 UMV <-- UC: Query result
+deactivate UC
 UMV -> UMV: Display list of users
 deactivate UMV
+deactivate AS
 
 @enduml
 ```
