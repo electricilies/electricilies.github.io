@@ -13,10 +13,12 @@ control BackendUserController as BUC
 entity BackendUserManagement as BUM
 
 SIV -> SIV: Display SignInView
+activate SIV
 note left of SIV: Generate code verifier(random)\nand hash it -> code challenge
 U -> SIV: Click Sign In
 activate U
 SIV -> AMSIV: Redirect with code challenge
+deactivate SIV
 activate AMSIV
 
 AMSIV -> AMSIV: Display SignInView
