@@ -19,10 +19,14 @@ PC <-- P: Suggested products
 deactivate P
 PDV <-- PC: Display suggested products
 deactivate PC
+PDV -> PDV: Show suggested products
+activate PDV
+deactivate PDV
 C -> PDV: Click on suggested products
 activate C
-deactivate C
+deactivate PDV
 ref over C, P: Sequence View Product Detail
+deactivate C
 
 @enduml
 ```

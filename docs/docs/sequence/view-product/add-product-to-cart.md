@@ -9,36 +9,44 @@ boundary ProductDetailView as PDV
 control CartController as CC
 entity CART as Ca
 
-ref over C, PDV: Sequence View Product Detail
-C -> PDV: Add product to cart
+opt Search
+  ref over C, Ca: Sequence Search Product
+end
+C -> PDV: Enter product quantity and add to cart
 activate C
 activate PDV
-deactivate C
-break Product unavailable or insufficient stock
-  PDV -> PDV: Display error
+PDV -> PDV: Validate input
+activate PDV
+deactivate PDV
+break Invalid amount
+  PDV -> PDV: Display error notification
   activate PDV
   deactivate PDV
 end
-PDV -> CC: Add product to cart
+C -> PDV: Click button "Add to Cart" to confirm
+deactivate C
+PDV -> CC: Send add product to cart request
 activate CC
-CC -> Ca: Add product to cart
+CC -> Ca: Send product detail
 activate Ca
-Ca -> Ca: Add product to cart
+Ca -> Ca: Validate data
 activate Ca
 deactivate Ca
-break Product unavailable or insufficient stock
+break Invalid data
   CC <-- Ca: Error notification
   PDV <-- CC: Error notification
   PDV -> PDV: Display error notification
   activate PDV
   deactivate PDV
 end
+Ca -> Ca: Store data
+activate Ca
+deactivate Ca
 CC <-- Ca: Success notification
 deactivate Ca
 PDV <-- CC: Success notification
 deactivate CC
 PDV -> PDV: Display success notification
-deactivate CC
 deactivate PDV
 
 @enduml

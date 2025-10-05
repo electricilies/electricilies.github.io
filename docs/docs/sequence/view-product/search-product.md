@@ -1,4 +1,4 @@
-# Search product
+# Sequence Search Product
 
 ```plantuml
 @startuml
@@ -12,28 +12,27 @@ entity PRODUCT as P
 
 C -> HV: Enter the search criteria in search box
 activate C
-deactivate C
 activate HV
+deactivate C
 HV -> PC: Send searching product (keyword/filters) request
 activate PC
 PC -> P: Query products by keyword/filters
 activate P
 P -> P: Query data
-activate P
-deactivate P
 PC <-- P: query result
 deactivate P
 HV <-- PC: query result
+deactivate PC
 HV -> HV: Show query result
-activate HV
-deactivate HV
 
 opt Enter
   HV -> HV: Close HomeView
   deactivate HV
-  PSV <- PC: Display ProductSearchView
+  PSV -> PSV: Display ProductSearchView
   activate PSV
-  deactivate PC
+  PSV -> PSV: Display search results
+  activate PSV
+  deactivate PSV
   deactivate PSV
 end
 
