@@ -1,4 +1,4 @@
-# Activity Contact Support
+# Sequence Contact Support
 
 ```plantuml
 @startuml
@@ -11,14 +11,12 @@ boundary ThirdPartyChatView as TPCV
 C -> HV: Request support
 activate C
 activate HV
-deactivate C
 HV -> TPCV: Redirect to support chat
 deactivate HV
 activate TPCV
 C -> TPCV: Interact with support chat
-activate C
-deactivate C
 deactivate TPCV
+deactivate C
 
 @enduml
 ```

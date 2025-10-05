@@ -19,7 +19,7 @@ activate Ca
 Ca -> Ca: Remove product
 activate Ca
 deactivate Ca
-break Product already removed
+break Invalid product
   CC <-- Ca: Error notification
   CV <-- CC: Error notification
   CV -> CV: Display error notification

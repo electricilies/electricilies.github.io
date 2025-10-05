@@ -1,4 +1,4 @@
-# Search product
+# Sequence Search Product
 
 ```plantuml
 @startuml
@@ -9,6 +9,7 @@ boundary ProductManagementView as PMV
 control ProductController as PC
 entity PRODUCT as P
 
+activate S
 S -> PMV: Enter the search criteria in search box
 activate PMV
 PMV -> PC: Send searching product (keyword/filters) request
@@ -16,13 +17,13 @@ activate PC
 PC -> P: Query products by keyword/filters
 activate P
 P -> P: Query data
-activate P
-deactivate P
 PC <-- P: query result
 deactivate P
 PMV <-- PC: query result
+deactivate PC
 PMV -> PMV: Show query result
 deactivate PMV
+deactivate S
 
 @enduml
 ```

@@ -19,7 +19,7 @@ activate CC
 CC -> Ca: Validate cart items
 activate Ca
 
-break Empty cart
+break Invalid cart
   CC <-- Ca: Error notification
   CaV <-- CC: Error notification
   CaV -> CaV: Display error notification
@@ -27,7 +27,7 @@ break Empty cart
   deactivate CaV
 end
 
-break Product unavailable or insufficient stock
+break Invalid product
   CC <-- Ca: Error notification
   CaV <-- CC: Error notification
   CaV -> CaV: Display error notification

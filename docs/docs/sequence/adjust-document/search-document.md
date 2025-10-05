@@ -9,6 +9,7 @@ boundary DocumentManagementView as DMV
 control DocumentController as DC
 entity DOCUMENT as D
 
+activate A
 A -> DMV: Enter search criteria
 activate DMV
 DMV -> DC: Send searching document request
@@ -16,14 +17,14 @@ activate DC
 DC -> D: Query documents by criteria
 activate D
 D -> D: Query data
-activate D
-deactivate D
 DC <-- D: Query result
 deactivate D
 DMV <-- DC: Query result
+deactivate DC
 DMV -> DMV: Show query result
 
 deactivate DMV
+deactivate A
 
 @enduml
 ```

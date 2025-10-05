@@ -28,20 +28,20 @@ opt Add Product
   ref over S, P: Add Product
 end
 
-opt Change Product Detail
-  ref over S, P: Change Product Detail
+opt Delete Product
+  ref over S, P: Delete Product
 end
 
-opt Remove Product
-  ref over S, P: Remove Product
-end
-
-opt Remove Review
-  ref over S, P: Remove Review
+opt Delete Review
+  ref over S, P: Delete Review
 end
 
 opt Search Product
   ref over S, P: Search Product
+end
+
+opt Update Product
+  ref over S, P: Update Product
 end
 
 deactivate PMV

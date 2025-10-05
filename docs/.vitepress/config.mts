@@ -139,24 +139,24 @@ export default defineConfig({
                     link: "/docs/sequence/manage-product/add-product",
                   },
                   {
-                    text: "Change Product Detail",
-                    link: "/docs/sequence/manage-product/change-product-detail",
+                    text: "Delete Product",
+                    link: "/docs/sequence/manage-product/delete-product",
                   },
                   {
-                    text: "Remove Product",
-                    link: "/docs/sequence/manage-product/remove-product",
+                    text: "Delete Review",
+                    link: "/docs/sequence/manage-product/delete-review",
                   },
                   {
                     text: "Manage Product",
                     link: "/docs/sequence/manage-product/manage-product",
                   },
                   {
-                    text: "Remove Review",
-                    link: "/docs/sequence/manage-product/remove-review",
-                  },
-                  {
                     text: "Search Product",
                     link: "/docs/sequence/manage-product/search-product",
+                  },
+                  {
+                    text: "Update Product",
+                    link: "/docs/sequence/manage-product/update-product",
                   },
                 ],
               },
@@ -397,24 +397,24 @@ export default defineConfig({
                     link: "/docs/activity/manage-product/add-product",
                   },
                   {
-                    text: "Change Product Detail",
-                    link: "/docs/activity/manage-product/change-product-detail",
+                    text: "Delete Product",
+                    link: "/docs/activity/manage-product/delete-product",
                   },
                   {
-                    text: "Remove Product",
-                    link: "/docs/activity/manage-product/remove-product",
+                    text: "Delete Review",
+                    link: "/docs/activity/manage-product/delete-review",
                   },
                   {
                     text: "Manage Product",
                     link: "/docs/activity/manage-product/manage-product",
                   },
                   {
-                    text: "Remove Review",
-                    link: "/docs/activity/manage-product/remove-review",
-                  },
-                  {
                     text: "Search Product",
                     link: "/docs/activity/manage-product/search-product",
+                  },
+                  {
+                    text: "Update Product",
+                    link: "/docs/activity/manage-product/update-product",
                   },
                 ],
               },
