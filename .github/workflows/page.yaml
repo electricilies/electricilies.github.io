@@ -23,6 +23,7 @@ jobs:
         image: yuzutech/kroki
     env:
       KROKI_SERVER_URL: kroki:8080
+      OPTIONS: --network-family-autoselection-attempt-timeout=500
     steps:
       - name: Checkout
         uses: actions/checkout@v4
