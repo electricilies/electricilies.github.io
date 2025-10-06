@@ -33,6 +33,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           cache: npm
+          node-version-file: package.json
       - name: Restore docs/public cache
         uses: actions/cache/restore@v4
         with:
