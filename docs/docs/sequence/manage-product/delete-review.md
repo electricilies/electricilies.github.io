@@ -19,12 +19,12 @@ PMV -> PMV: Display confirmation message box
 activate PMV
 deactivate PMV
 break Cancel
-  S -> PMV: Click "Cancel"
+  S -> PMV: Click "Cancel" Button
   PMV -> PMV: Close confirmation message box
   activate PMV
   deactivate PMV
 end
-S -> PMV: Click "Confirm"
+S -> PMV: Click "Confirm" button
 deactivate S
 PMV -> PC: Send deleting review request
 activate PC

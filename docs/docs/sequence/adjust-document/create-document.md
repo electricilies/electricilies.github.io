@@ -12,9 +12,9 @@ entity DOCUMENT as D
 
 DDV -> DDV: Display with empty form
 activate DDV
-A -> DDV: Enter new document detail
+A -> DDV: Enter document detail
 activate A
-DDV -> DDV: Validate input
+DDV -> DDV: Validate data
 activate DDV
 deactivate DDV
 break Invalid data

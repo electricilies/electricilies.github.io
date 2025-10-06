@@ -19,12 +19,12 @@ DMV -> DMV: Display confirmation message box
 activate DMV
 deactivate DMV
 break Cancel
-  A -> DMV: Click "Cancel"
+  A -> DMV: Click "Cancel" Button
   DMV -> DMV: Close confirmation message box
   activate DMV
   deactivate DMV
 end
-A -> DMV: Click "Confirm"
+A -> DMV: Click "Confirm" button
 deactivate A
 DMV -> DC: Send deleting document request
 activate DC

@@ -19,12 +19,12 @@ UMV -> UMV: Display confirmation message box
 activate UMV
 deactivate UMV
 break Cancel
-  SA -> UMV: Click "Cancel"
+  SA -> UMV: Click "Cancel" Button
   UMV -> UMV: Close confirmation message box
   activate UMV
   deactivate UMV
 end
-SA -> UMV: Click "Confirm"
+SA -> UMV: Click "Confirm" button
 deactivate SA
 UMV -> UC: Send deleting customer request
 activate UC

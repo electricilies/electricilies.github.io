@@ -19,12 +19,12 @@ ODV -> ODV: Display confirmation message box
 activate ODV
 deactivate ODV
 break Cancel
-  C -> ODV: Click "Cancel"
+  C -> ODV: Click "Cancel" Button
   ODV -> ODV: Close confirmation message box
   activate ODV
   deactivate ODV
 end
-C -> ODV: Click "Confirm"
+C -> ODV: Click "Confirm" button
 deactivate C
 ODV -> OC: Send cancel order request
 activate OC

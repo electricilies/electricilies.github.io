@@ -20,7 +20,7 @@ ODV -> ODV: Display with empty review form
 activate ODV
 deactivate ODV
 C -> ODV: Enter review content
-ODV -> ODV: Validate input
+ODV -> ODV: Validate data
 activate ODV
 deactivate ODV
 break Invalid data

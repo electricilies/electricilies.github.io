@@ -19,12 +19,12 @@ UMV -> UMV: Display confirmation message box
 activate UMV
 deactivate UMV
 break Cancel
-  A -> UMV: Click "Cancel"
+  A -> UMV: Click "Cancel" Button
   UMV -> UMV: Close confirmation message box
   activate UMV
   deactivate UMV
 end
-A -> UMV: Click "Confirm"
+A -> UMV: Click "Confirm" button
 deactivate A
 UMV -> UC: Send deleting staff request
 activate UC

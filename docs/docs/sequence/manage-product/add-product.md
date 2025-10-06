@@ -12,9 +12,9 @@ entity PRODUCT as P
 
 PDV -> PDV: Display with empty form
 activate PDV
-S -> PDV: Enter new product detail
+S -> PDV: Enter product detail
 activate S
-PDV -> PDV: Validate input
+PDV -> PDV: Validate data
 activate PDV
 deactivate PDV
 break Invalid data

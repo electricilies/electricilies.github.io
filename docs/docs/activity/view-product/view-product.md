@@ -3,11 +3,11 @@
 ```plantuml
 @startuml
 |C|Customer
-
 |S|System
-:(1) Display product info (Product View);
-
 |D|Database
+
+|S|
+:(1) Display product info (Product View);
 
 |C|
 :(2) Choose options;

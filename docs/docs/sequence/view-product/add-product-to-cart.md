@@ -15,7 +15,7 @@ end
 C -> PDV: Enter product quantity and add to cart
 activate C
 activate PDV
-PDV -> PDV: Validate input
+PDV -> PDV: Validate data
 activate PDV
 deactivate PDV
 break Invalid amount
