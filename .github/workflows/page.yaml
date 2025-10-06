@@ -24,7 +24,7 @@ jobs:
         ports:
           - 8080:8080
     env:
-      KROKI_SERVER_URL: http://127.0.0.1:8080/
+      KROKI_SERVER_URL: http://kroki:8080/
     steps:
       - name: Checkout
         uses: actions/checkout@v4
