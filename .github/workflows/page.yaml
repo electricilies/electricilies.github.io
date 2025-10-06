@@ -21,8 +21,9 @@ jobs:
     services:
       kroki:
         image: yuzutech/kroki
+        ports: 8080:8080
     env:
-      KROKI_SERVER_URL: kroki:8080
+      KROKI_SERVER_URL: 127.0.0.1:8080
       OPTIONS: --network-family-autoselection-attempt-timeout=60000
     steps:
       - name: Checkout
