@@ -13,11 +13,16 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    services:
+      kroki:
+        image: yuzutech/kroki
+    env:
+      KROKI_SERVER_URL: kroki:8080
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -40,8 +45,8 @@ jobs:
         run: npm ci
       - name: Build with VitePress
         run: npm run docs:build
-      - name: Build again to fix uml
-        run: npm run docs:build
+      # - name: Build again
+      #   run: npm run docs:build
       - name: Save docs/public cache
         uses: actions/cache/save@v4
         with:
