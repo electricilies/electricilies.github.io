@@ -49,12 +49,12 @@ Below are the main sections of this document:
 
 ### 1.4 References
 
-| #   | Title             | Version | File Name / Link                    | Description                                        |
-| --- | ----------------- | ------- | ----------------------------------- | -------------------------------------------------- |
-| 1   | Use Case Diagrams | 0.1.0   | [Use Case Documentation](use-case/) | Complete use case diagrams for all user roles      |
-| 2   | Sequence Diagrams | 0.1.0   | [Sequence Documentation](sequence/) | Sequence flow diagrams for all major features      |
-| 3   | Activity Diagrams | 0.1.0   | [Activity Documentation](activity/) | Activity flow diagrams for business processes      |
-| 4   | Database Schema   | 0.1.0   | Database Design Document            | Entity-relationship diagrams and table definitions |
+| #   | Title             | Version | File Name / Link         | Description                                        |
+| --- | ----------------- | ------- | ------------------------ | -------------------------------------------------- |
+| 1   | Use Case Diagrams | 0.1.0   | Use Case Documentation   | Complete use case diagrams for all user roles      |
+| 2   | Sequence Diagrams | 0.1.0   | Sequence Documentation   | Sequence flow diagrams for all major features      |
+| 3   | Activity Diagrams | 0.1.0   | Activity Documentation   | Activity flow diagrams for business processes      |
+| 4   | Database Schema   | 0.1.0   | Database Design Document | Entity-relationship diagrams and table definitions |
 
 ## 2. Functional Requirements
 
