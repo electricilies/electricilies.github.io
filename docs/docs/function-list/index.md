@@ -1,0 +1,75 @@
+# Function List
+
+| ID  | FunctionID | Function Group    | Function                  | Description                                               | Input Data                                                      | Output Data                                        | Actor                  | Environment |
+| --- | ---------- | ----------------- | ------------------------- | --------------------------------------------------------- | --------------------------------------------------------------- | -------------------------------------------------- | ---------------------- | ----------- |
+| 1   | F-AU-01    | Authentication    | Sign In                   | User signs in to the system using their credentials       | Username, Password                                              | JWT Token, User session                            | Customer, Staff, Admin | Web         |
+| 2   | F-AU-02    | Authentication    | Sign Up                   | User registers a new account in the system                | Username, Password, Email, Full Name                            | User account, Confirmation notification            | Customer               | Web         |
+| 3   | F-AU-03    | Authentication    | Logout                    | User logs out from the system                             | User session                                                    | Logout confirmation                                | Customer, Staff, Admin | Web         |
+| 4   | F-AU-04    | Authentication    | Reset Password            | User resets their account password                        | Username, Email                                                 | Password reset link, Updated password              | Customer, Staff, Admin | Web         |
+| 5   | F-AU-05    | Authentication    | Delete Account            | User deletes their account from the system                | User confirmation                                               | Account deletion confirmation                      | Customer, Staff, Admin | Web         |
+| 6   | F-VP-01    | View Product      | View Product              | Customer views list of available products                 | -                                                               | List of products                                   | Customer               | Web         |
+| 7   | F-VP-02    | View Product      | Search Product            | Customer searches for products using keywords/filters     | Search keyword, Filters                                         | Query result (list of products)                    | Customer               | Web         |
+| 8   | F-VP-03    | View Product      | View Product Detail       | Customer views detailed information of a specific product | Selected product ID                                             | Product details (name, price, description, images) | Customer               | Web         |
+| 9   | F-VP-04    | View Product      | View Product Reviews      | Customer views reviews for a specific product             | Product ID                                                      | List of reviews for the product                    | Customer               | Web         |
+| 10  | F-VP-05    | View Product      | View Suggested Products   | Customer views suggested/related products                 | Current product ID                                              | List of suggested products                         | Customer               | Web         |
+| 11  | F-VP-06    | View Product      | Add Product to Cart       | Customer adds a product to their shopping cart            | Product ID, Quantity                                            | Success/Error notification, Updated cart           | Customer               | Web         |
+| 12  | F-MC-01    | Manage Cart       | Manage Cart               | Customer manages their shopping cart                      | -                                                               | List of cart items                                 | Customer               | Web         |
+| 13  | F-MC-02    | Manage Cart       | Change Product Amount     | Customer changes the quantity of a product in cart        | Product ID, New quantity                                        | Success/Error notification, Updated cart           | Customer               | Web         |
+| 14  | F-MC-03    | Manage Cart       | Remove Product from Cart  | Customer removes a product from cart                      | Product ID                                                      | Success/Error notification, Updated cart           | Customer               | Web         |
+| 15  | F-MC-04    | Manage Cart       | Purchase                  | Customer proceeds to checkout and purchases cart items    | Cart items, Delivery information, Payment method                | Order confirmation, Redirect to checkout           | Customer               | Web         |
+| 16  | F-VO-01    | View Order        | View Order                | Customer views their order history                        | -                                                               | List of orders                                     | Customer               | Web         |
+| 17  | F-VO-02    | View Order        | Search Order              | Customer searches for specific orders                     | Search criteria (order ID, date, status)                        | Query result (list of orders)                      | Customer               | Web         |
+| 18  | F-VO-03    | View Order        | View Order Detail         | Customer views detailed information of a specific order   | Order ID                                                        | Order details (products, status, delivery info)    | Customer               | Web         |
+| 19  | F-VO-04    | View Order        | Cancel Order              | Customer cancels a pending order                          | Order ID, Confirmation                                          | Success/Error notification, Updated order status   | Customer               | Web         |
+| 20  | F-VO-05    | View Order        | Return Product            | Customer returns a product from a completed order         | Order ID, Product ID, Confirmation                              | Success/Error notification, Updated product status | Customer               | Web         |
+| 21  | F-VO-06    | View Order        | Review Product            | Customer writes a review for a purchased product          | Order ID, Product ID, Review content, Rating, Images (optional) | Success/Error notification, Stored review          | Customer               | Web         |
+| 22  | F-CS-01    | Contact Support   | Contact Support           | Customer contacts support via third-party chat            | -                                                               | Redirect to support chat interface                 | Customer               | Web         |
+| 23  | F-CR-01    | Customer Report   | View Customer Self Report | Customer views their own activity report                  | Report type, Time range                                         | Report data (charts, statistics)                   | Customer               | Web         |
+| 24  | F-VD-01    | View Document     | View Document             | Customer views system documents and guides                | Search criteria (optional)                                      | List of documents, Document detail                 | Customer               | Web         |
+| 25  | F-MP-01    | Manage Product    | Manage Product            | Staff manages products in the system                      | -                                                               | List of products                                   | Staff                  | Web         |
+| 26  | F-MP-02    | Manage Product    | Add Product               | Staff adds a new product to the system                    | Product details (name, price, description, images, category)    | Success/Error notification, Updated product list   | Staff                  | Web         |
+| 27  | F-MP-03    | Manage Product    | Update Product            | Staff updates existing product information                | Product ID, Updated details                                     | Success/Error notification, Updated product list   | Staff                  | Web         |
+| 28  | F-MP-04    | Manage Product    | Delete Product            | Staff deletes a product from the system                   | Product ID, Confirmation                                        | Success/Error notification, Updated product list   | Staff                  | Web         |
+| 29  | F-MP-05    | Manage Product    | Search Product            | Staff searches for products using keywords/filters        | Search keyword, Filters                                         | Query result (list of products)                    | Staff                  | Web         |
+| 30  | F-MP-06    | Manage Product    | Delete Review             | Staff deletes inappropriate product reviews               | Review ID, Confirmation                                         | Success/Error notification, Updated review list    | Staff                  | Web         |
+| 31  | F-MU-01    | Manage User       | Manage User               | Admin/Staff manages user accounts in the system           | -                                                               | List of users                                      | Admin, Staff           | Web         |
+| 32  | F-MU-02    | Manage User       | Search User               | Admin/Staff searches for users using keywords             | Search keyword                                                  | Query result (list of users)                       | Admin, Staff           | Web         |
+| 33  | F-MU-03    | Manage User       | Promote Customer          | Admin promotes a customer to staff role                   | User ID, Confirmation                                           | Success/Error notification, Updated user role      | Admin                  | Web         |
+| 34  | F-MU-04    | Manage User       | Promote Staff             | Admin promotes a staff to admin role                      | User ID, Confirmation                                           | Success/Error notification, Updated user role      | Admin                  | Web         |
+| 35  | F-MU-05    | Manage User       | Demote Staff              | Admin demotes a staff to customer role                    | User ID, Confirmation                                           | Success/Error notification, Updated user role      | Admin                  | Web         |
+| 36  | F-MU-06    | Manage User       | Demote Admin              | Admin demotes an admin to staff role                      | User ID, Confirmation                                           | Success/Error notification, Updated user role      | Admin                  | Web         |
+| 37  | F-MU-07    | Manage User       | Delete Customer           | Admin/Staff deletes a customer account                    | User ID, Confirmation                                           | Success/Error notification, Updated user list      | Admin, Staff           | Web         |
+| 38  | F-MU-08    | Manage User       | Delete Staff              | Admin deletes a staff account                             | User ID, Confirmation                                           | Success/Error notification, Updated user list      | Admin                  | Web         |
+| 39  | F-MU-09    | Manage User       | View Customer Report      | Admin/Staff views customer activity report                | User ID, Report type, Time range                                | Report data (charts, statistics)                   | Admin, Staff           | Web         |
+| 40  | F-MU-10    | Manage User       | View Staff Report         | Admin views staff performance report                      | User ID, Report type, Time range                                | Report data (charts, statistics)                   | Admin                  | Web         |
+| 41  | F-SR-01    | Shop Report       | View Shop Report          | Admin views overall shop performance report               | Report type, Time range                                         | Report data (revenue, sales, analytics)            | Admin                  | Web         |
+| 42  | F-SM-01    | System Monitoring | View System Monitoring    | Admin monitors system performance and health              | -                                                               | Monitoring data (uptime, errors, usage)            | Admin                  | Web         |
+| 43  | F-AD-01    | Adjust Document   | Adjust Document           | Admin manages system documents                            | -                                                               | List of documents                                  | Admin                  | Web         |
+| 44  | F-AD-02    | Adjust Document   | Create Document           | Admin creates a new system document                       | Document details (title, content)                               | Success/Error notification, Updated document list  | Admin                  | Web         |
+| 45  | F-AD-03    | Adjust Document   | Update Document           | Admin updates existing document                           | Document ID, Updated details                                    | Success/Error notification, Updated document list  | Admin                  | Web         |
+| 46  | F-AD-04    | Adjust Document   | Delete Document           | Admin deletes a document from the system                  | Document ID, Confirmation                                       | Success/Error notification, Updated document list  | Admin                  | Web         |
+| 47  | F-AD-05    | Adjust Document   | Search Document           | Admin searches for documents using keywords               | Search criteria                                                 | Query result (list of documents)                   | Admin                  | Web         |
+| 48  | F-SR-02    | Staff Report      | View Staff Self Report    | Staff views their own performance report                  | Report type, Time range                                         | Report data (sales, activities)                    | Staff                  | Web         |
+
+::: info
+
+- All functions are web-based as specified
+- Input/Output data is derived from sequence diagrams
+- Function IDs follow the pattern: `F-[GroupCode]-[Number]`
+- Group codes:
+  - `AU` (Authentication)
+  - `VP` (View Product)
+  - `MC` (Manage Cart)
+  - `VO` (View Order)
+  - `CS` (Contact Support)
+  - `CR` (Customer Report)
+  - `VD` (View Document)
+  - `MP` (Manage Product)
+  - `MU` (Manage User)
+  - `SR` (Shop Report/Staff Report)
+  - `SM` (System Monitoring)
+  - `AD` (Adjust Document)
+- Actors are assigned based on use case diagrams
+- All validations and error handling are implicit in the Success/Error notifications
+
+:::
