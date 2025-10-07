@@ -35,10 +35,6 @@ export default defineConfig({
         text: "Docs",
         items: [
           {
-            text: "Database",
-            link: "/docs/database",
-          },
-          {
             text: "Use Case",
             collapsed: true,
             items: [
@@ -173,24 +169,8 @@ export default defineConfig({
                     link: "/docs/sequence/manage-user/delete-staff",
                   },
                   {
-                    text: "Demote Admin",
-                    link: "/docs/sequence/manage-user/demote-admin",
-                  },
-                  {
-                    text: "Demote Staff",
-                    link: "/docs/sequence/manage-user/demote-staff",
-                  },
-                  {
                     text: "Manage User",
                     link: "/docs/sequence/manage-user/manage-user",
-                  },
-                  {
-                    text: "Promote Customer",
-                    link: "/docs/sequence/manage-user/promote-customer",
-                  },
-                  {
-                    text: "Promote Staff",
-                    link: "/docs/sequence/manage-user/promote-staff",
                   },
                   {
                     text: "Search User",
@@ -431,24 +411,8 @@ export default defineConfig({
                     link: "/docs/activity/manage-user/delete-staff",
                   },
                   {
-                    text: "Demote Admin",
-                    link: "/docs/activity/manage-user/demote-admin",
-                  },
-                  {
-                    text: "Demote Staff",
-                    link: "/docs/activity/manage-user/demote-staff",
-                  },
-                  {
                     text: "Manage User",
                     link: "/docs/activity/manage-user/manage-user",
-                  },
-                  {
-                    text: "Promote Customer",
-                    link: "/docs/activity/manage-user/promote-customer",
-                  },
-                  {
-                    text: "Promote Staff",
-                    link: "/docs/activity/manage-user/promote-staff",
                   },
                   {
                     text: "Search User",
@@ -575,6 +539,18 @@ export default defineConfig({
                 ],
               },
             ],
+          },
+          {
+            text: "Database",
+            link: "/docs/database",
+          },
+          {
+            text: "Function Lists",
+            link: "/docs/function-list",
+          },
+          {
+            text: "SRS",
+            link: "/docs/srs",
           },
         ],
       },
