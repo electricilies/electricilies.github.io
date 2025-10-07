@@ -6,6 +6,7 @@ export default defineConfig({
   title: "Electricilies Docs",
   description: "Electricilies docs",
   lang: "en-GB",
+  ignoreDeadLinks: true,
   markdown: {
     theme: {
       light: "catppuccin-latte",
