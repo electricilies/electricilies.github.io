@@ -9,6 +9,7 @@ vars: {
 }
 
 **.shape: sql_table
+explanation.shape: rectangle
 
 user: {
   id: uuid {constraint: PK}
@@ -250,6 +251,13 @@ return_request.order_item_id -> order_item.id
 refund.status_id -> refund_status.id
 refund.return_request_id -> return_request.id
 refund.payment_detail_id -> payment_detail.id
+
+explanation: |md
+    # Note
+    - All FK are NOT NULL by default.
+    - Only FK marked with {constraint: [FK, nullable]} are nullable.
+  Only FK marked with {constraint: [FK, nullable]} are nullable.
+|
 ```
 
 <!-- diagram id="database" -->
