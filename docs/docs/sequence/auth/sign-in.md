@@ -25,48 +25,39 @@ AMSIV -> AMSIV: Display SignInView
 activate AMSIV
 deactivate AMSIV
 U -> AMSIV : Enter credential
-deactivate U
+
 AMSIV -> AMSIV: Validate data format
 activate AMSIV
 deactivate AMSIV
-
-loop until valid data format
-  U -> AMSIV : Enter credential
+loop invalid data format
+  AMSIV -> AMSIV: Display "Invalid data format" error
+  activate AMSIV
+  deactivate AMSIV
+  U -> AMSIV: Re-enter User credential
   deactivate U
   AMSIV -> AMSIV: Validate data format
   activate AMSIV
   deactivate AMSIV
-
-  alt invalid data format
-    AMSIV -> AMSIV: Display error
-    activate AMSIV
-    deactivate AMSIV
-  else valid
-    AMSIV -> AMSIV: Data OK
-
-  end
 end
+AMSIV -> AMSIV: Data OK
+activate AMSIV
+deactivate AMSIV
+AMSIV -> AMUM: Send user credential
+activate AMUM
 
-loop until valid credential
-  AMSIV -> AMUM: Send user credential
-  activate AMUM
+AMUM -> AMUM: Validate user credential
+activate AMUM
+deactivate AMUM
 
-  AMUM -> AMUM: Validate user credential
-  activate AMUM
-  deactivate AMUM
-
-  alt invalid credential
-    AMSIV <-- AMUM: Error
-    AMSIV -> AMSIV: Display error
-    activate AMSIV
-    deactivate AMSIV
-    U -> AMSIV : Re-enter credential
-    deactivate U
-  else valid
-    AMSIV <-- AMUM: Authorization code
-  end
-  deactivate AMUM
+break invalid credential
+  AMSIV <-- AMUM: Error
+  AMSIV -> AMSIV: Display error
+  activate AMSIV
+  deactivate AMSIV
+  deactivate U
 end
+AMSIV <-- AMUM: Authorization code
+deactivate AMUM
 
 AMSIV -> AMUM: Send authorization code + verifier
 activate AMUM

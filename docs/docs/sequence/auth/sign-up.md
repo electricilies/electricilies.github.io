@@ -24,48 +24,39 @@ activate AMSUV
 AMSUV -> AMSUV: Display AuthenticationManagerSignUpView
 activate AMSUV
 deactivate AMSUV
-
-loop until valid data format
   U -> AMSUV: Enter User data
-  deactivate U
 
+loop invalid data format
+  AMSUV -> AMSUV: Display "Invalid data format" error
+  activate AMSUV
+  deactivate AMSUV
+  U -> AMSUV: Re-enter User data
+  deactivate U
   AMSUV -> AMSUV: Validate data format
   activate AMSUV
   deactivate AMSUV
-
-  alt invalid data format
-    AMSUV -> AMSUV: Display error
-    activate AMSUV
-    deactivate AMSUV
-  else valid
-    AMSUV -> AMSUV: Data OK
-    activate AMSUV
-    deactivate AMSUV
-  end
 end
+AMSUV -> AMSUV: Data OK
+activate AMSUV
+deactivate AMSUV
 
-loop until unique user/email
-  AMSUV -> AMUM: User data
-  activate AMUM
-  AMUM -> AMUM: Check if user/email exists
-  activate AMUM
-  deactivate AMUM
+AMSUV -> AMUM: User data
+activate AMUM
+AMUM -> AMUM: Check if user/email exists
+activate AMUM
+deactivate AMUM
 
-  alt already exists
+break already exists
     AMSUV <-- AMUM: Error
     AMSUV -> AMSUV: Display error
     activate AMSUV
     deactivate AMSUV
-    U -> AMSUV: Re-enter User data
-    deactivate U
-  else not exists
-    AMUM -> AMUM: Create new user + hash password
-    activate AMUM
-    deactivate AMUM
-    AMSUV <-- AMUM: Authorization code
-  end
-  deactivate AMUM
 end
+AMUM -> AMUM: Create new user + hash password
+activate AMUM
+deactivate AMUM
+AMSUV <-- AMUM: Authorization code
+deactivate AMUM
 
 AMSUV -> AMUM: Send authorization code + verifier
 activate AMUM
