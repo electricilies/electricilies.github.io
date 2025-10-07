@@ -7,7 +7,15 @@
 |D|Database
 
 |C|
-:(1) Select product to view detail;
+start
+:(1) Select product to view;
+|S|
+:(2) Get selected product detail;
+|D|
+:(3) Query data;
+|S|
+:(4) Display product detail;
+stop
 
 @enduml
 ```

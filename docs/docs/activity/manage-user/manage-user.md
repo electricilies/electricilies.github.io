@@ -3,37 +3,37 @@
 ```plantuml
 @startuml
 |AS|Admin/Staff
-
 |S|System
+|D|Database
+
+|S|
 start
 :(1) Display user management view;
 
-|D|Database
-
 |AS|
-:(2) Choose function;
-if (Admin) then ((2.1) Demote Admin)
-  :Demote Admin;
-elseif (Admin) then ((2.2) Demote Staff)
-  :Demote Staff;
-elseif (Admin) then ((2.3) Promote Customer)
-  :Promote Customer;
-elseif (Admin) then ((2.4) Promote Staff)
-  :Promote Staff;
-elseif () then ((2.5) Remove Customer)
-  :Remove Customer;
-elseif (Admin) then ((2.6) Remove Staff)
-  :Remove Staff;
-elseif () then ((2.6) Search User)
-  :Search User;
-elseif () then ((2.7) View Customer Report)
-  :View Customer Report;
-elseif (Admin) then ((2.8) View Staff Report)
-  :View Staff Report;
+:(2) Choose options;
+if () then (Demote Admin)
+  :(2.1) Activity Demote Admin;
+elseif () then (Demote Staff)
+  :(2.2) Activity Demote Staff;
+elseif () then (Promote Customer)
+  :(2.3) Activity Promote Customer;
+elseif () then (Promote Staff)
+  :(2.4) Activity Promote Staff;
+elseif () then (Remove Customer)
+  :(2.5) Activity Remove Customer;
+elseif () then (Remove Staff)
+  :(2.6) Activity Remove Staff;
+elseif () then (Search User)
+  :(2.7) Activity Search User;
+elseif () then (View Customer Report)
+  :(2.8) Activity View Customer Report;
+else (View Staff Report)
+  :(2.9) Activity View Staff Report;
 endif
 
-|S|
 stop
+@enduml
 @enduml
 ```
 

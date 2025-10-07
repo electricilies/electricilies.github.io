@@ -1,21 +1,26 @@
-# Search Product
+# Activity Search Product
 
 ```plantuml
 @startuml
 |C|Customer
-start
-:(1) Enter search keyword;
-
 |S|System
-:(2) Process search request (keyword, filters);
-
 |D|Database
-:(3) Search in database;
 
+|C|
+start
+:(1) Enter the search criteria in search box;
 |S|
-:(4) Display query result;
-
+:(2) Process searching request;
+|D|
+:(3) Query products by keyword/filters;
+|S|
+:(4) Show query result;
+if () then (Enter)
+  :(4.1) Display product search view;
+  :(4.2) Display search results;
+endif
 stop
+
 @enduml
 ```
 

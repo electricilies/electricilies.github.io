@@ -7,21 +7,23 @@
 |D|Database
 
 |S|
-:(1) Display product info (Product View);
+start
+:(1) Display product view;
 
 |C|
 :(2) Choose options;
-if () then (Cart)
-  :(2.1) Add Product to Card;
+if () then (Add to Cart)
+  :(2.1) Activity Add Product to Cart;
 elseif () then (Detail)
-  :(2.2) View Product Detail;
+  :(2.2) Activity View Product Detail;
 elseif () then (Reviews)
-  :(2.3) View Product Reviews;
-else (Suggested Products)
-  :(2.4) View Suggested Products;
+  :(2.3) Activity View Product Reviews;
+elseif () then (Search Product)
+  :(2.4) Activity Search Product;
+else (View Suggested Products)
+  :(2.5) Activity View Suggested Product;
 endif
 
-|S|
 stop
 @enduml
 ```

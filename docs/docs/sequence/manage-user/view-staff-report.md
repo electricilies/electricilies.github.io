@@ -7,34 +7,30 @@ autonumber
 actor Admin as A
 boundary UserManagementView as UMV
 control UserController as UC
-entity USER as U
+entity STAFF_REPORT as SR
 
 opt Search
-  ref over A, U: Sequence Search User
+  ref over A, SR: Sequence Search User
 end
+UMV -> UMV: Display with empty information
+activate UMV
 A -> UMV: Select staff to view report
 activate A
-activate UMV
+A -> UMV: Choose which type of report
+A -> UMV: Choose timestamps
 deactivate A
-UMV -> UC: Get staff report request
+UMV -> UC: Send data and time of report
 activate UC
-UC -> U: Get staff report data
-activate U
-U -> U: Validate data
-activate U
-deactivate U
-break Invalid data
-  UC <-- U: Error notification
-  UMV <-- UC: Error notification
-  UMV -> UMV: Display error notification
-  activate UMV
-  deactivate UMV
-end
-UC <-- U: Staff report data
-deactivate U
-UMV <-- UC: Staff report data
+UC -> SR: Send data and time of report
+activate SR
+SR -> SR: Query data base on given option
+activate SR
+deactivate SR
+UC <-- SR: Query result
+deactivate SR
+UMV <-- UC: Report data
 deactivate UC
-UMV -> UMV: Display staff report
+UMV -> UMV: Display report data
 deactivate UMV
 
 @enduml

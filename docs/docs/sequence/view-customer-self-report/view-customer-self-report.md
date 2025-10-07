@@ -5,27 +5,29 @@
 autonumber
 
 actor Customer as C
-boundary ReportView as RV
+boundary CustomerReportView as CRV
 control CustomerReportController as CRC
 entity CUSTOMER_REPORT as CR
 
-C -> RV: View self report
+CRV -> CRV: Display with empty information
+activate CRV
+C -> CRV: Choose which type of report
 activate C
+C -> CRV: Choose timestamps
 deactivate C
-activate RV
-RV -> CRC: Get customer self report
+CRV -> CRC: Send data and time of report
 activate CRC
-CRC -> CR: Query customer self report
+CRC -> CR: Send data and time of report
 activate CR
-CR -> CR: Query data
+CR -> CR: Query data base on given option
 activate CR
 deactivate CR
-CRC <-- CR: Customer report data
+CRC <-- CR: Query result
 deactivate CR
-RV <-- CRC: Display customer report
+CRV <-- CRC: Report data
 deactivate CRC
-RV -> RV: Display report result
-deactivate RV
+CRV -> CRV: Display report data
+deactivate CRV
 
 @enduml
 ```

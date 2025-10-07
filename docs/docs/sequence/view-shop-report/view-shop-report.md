@@ -5,27 +5,29 @@
 autonumber
 
 actor Admin as A
-boundary ReportView as RV
+boundary ShopReportView as SRV
 control ShopReportController as SRC
 entity SHOP_REPORT as SR
 
-A -> RV: View shop report
+SRV -> SRV: Display with empty information
+activate SRV
+A -> SRV: Choose which type of report
 activate A
+A -> SRV: Choose timestamps
 deactivate A
-activate RV
-RV -> SRC: Get shop report
+SRV -> SRC: Send data and time of report
 activate SRC
-SRC -> SR: Query shop report
+SRC -> SR: Send data and time of report
 activate SR
-SR -> SR: Query data
+SR -> SR: Query data base on given option
 activate SR
 deactivate SR
-SRC <-- SR: Shop report data
+SRC <-- SR: Query result
 deactivate SR
-RV <-- SRC: Display shop report
+SRV <-- SRC: Report data
 deactivate SRC
-RV -> RV: Display report result
-deactivate RV
+SRV -> SRV: Display report data
+deactivate SRV
 
 @enduml
 ```
