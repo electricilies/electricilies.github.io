@@ -24,16 +24,12 @@ activate AMSIV
 AMSIV -> AMSIV: Display SignInView
 activate AMSIV
 deactivate AMSIV
-U -> AMSIV : Enter credential
 
-AMSIV -> AMSIV: Validate data format
-activate AMSIV
-deactivate AMSIV
 loop invalid data format
   AMSIV -> AMSIV: Display "Invalid data format" error
   activate AMSIV
   deactivate AMSIV
-  U -> AMSIV: Re-enter User credential
+  U -> AMSIV: Enter user credential
   deactivate U
   AMSIV -> AMSIV: Validate data format
   activate AMSIV

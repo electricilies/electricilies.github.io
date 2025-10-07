@@ -24,7 +24,6 @@ activate AMSUV
 AMSUV -> AMSUV: Display AuthenticationManagerSignUpView
 activate AMSUV
 deactivate AMSUV
-  U -> AMSUV: Enter User data
 
 loop invalid data format
   AMSUV -> AMSUV: Display "Invalid data format" error
