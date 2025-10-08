@@ -11,7 +11,7 @@ vars: {
 **.shape: sql_table
 explanation.shape: rectangle
 
-user: {
+users: {
   id: uuid {constraint: PK}
   avatar: varchar
   first_name: varchar
@@ -23,12 +23,7 @@ user: {
   created_at: timestamp
 }
 
-wishlist: {
-  id: int {constraint: PK}
-  user_id: uuid {constraint: [UNQ, FK]}
-}
-
-address: {
+addresses: {
   id: int {constraint: PK}
   address_line: varchar
   city: varchar
@@ -38,19 +33,19 @@ address: {
   user_id: uuid {constraint: FK}
 }
 
-category: {
+categories: {
   id: int {constraint: PK}
   description: varchar
   created_at: timestamp
   deleted_at: timestamp
 }
 
-brand: {
+brands: {
   id: int {constraint: PK}
   value: varchar {constraint: UNQ}
 }
 
-product: {
+products: {
   id: int {constraint: PK}
   name: varchar
   description: varchar
@@ -60,7 +55,7 @@ product: {
   branch_id: int {constraint: FK}
 }
 
-product_analytic: {
+product_analytics: {
   id: int {constraint: PK}
   views_count: int
   purchase_count: int
@@ -68,7 +63,7 @@ product_analytic: {
   product_id: int {constraint: [FK, UNQ]}
 }
 
-product_image: {
+product_images: {
   id: int {constraint: PK}
   url: varchar
   alt_text: varchar
@@ -78,7 +73,7 @@ product_image: {
   product_variant_id: int {constraint: [FK, nullable]}
 }
 
-review: {
+reviews: {
   id: int {constraint: PK}
   rating: int {constraint: "0 &lt; x &lt; 5"}
   content: varchar
@@ -90,17 +85,12 @@ review: {
   product_id: int {constraint: FK}
 }
 
-product_wishlist: {
-  product_id: int {constraint: [PK, FK]}
-  wishlist_id: int {constraint: [PK, FK]}
-}
-
-product_category: {
+product_categories: {
   product_id: int {constraint: [PK, FK]}
   category_id: int {constraint: [PK, FK]}
 }
 
-product_variant: {
+product_variants: {
   id: int {constraint: PK}
   sku: varchar {constraint: UNQ}
   price: decimal
@@ -110,29 +100,29 @@ product_variant: {
   product_id: int {constraint: FK}
 }
 
-option_value: {
+option_values: {
   id: int {constraint: PK}
   value: varchar
   option_id: int {constraint: FK}
 }
 
-product_variant_option_value: {
+product_variant_option_values: {
   product_variant_id: int {constraint: [PK, FK]}
   option_value_id: int {constraint: [PK, FK]}
 }
 
-option: {
+options: {
   id: int {constraint: PK}
   name: varchar {constraint: UNQ}
 }
 
-cart: {
+carts: {
   id: int {constraint: PK}
   user_id: uuid {constraint: [UNQ, FK]}
   updated_at: timestamp
 }
 
-cart_item: {
+cart_items: {
   id: int {constraint: PK}
   quantity: int
   cart_id: int {constraint: FK}
@@ -140,27 +130,27 @@ cart_item: {
   product_variant_id: int {constraint: FK}
 }
 
-order_status: {
+order_statuses: {
   id: int {constraint: PK}
   value: varchar {constraint: UNQ}
 }
 
-payment_method: {
+payment_methods: {
   id: int {constraint: PK}
   value: varchar {constraint: UNQ}
 }
 
-payment_status: {
+payment_statuses: {
   id: int {constraint: PK}
   value: varchar {constraint: UNQ}
 }
 
-payment_provider: {
+payment_providers: {
   id: int {constraint: PK}
   value: varchar {constraint: UNQ}
 }
 
-payment_detail: {
+payment_details: {
   id: int {constraint: PK}
   amount: decimal
   updated_at: timestamp
@@ -169,7 +159,7 @@ payment_detail: {
   payment_provider_id: int {constraint: FK}
 }
 
-order: {
+orders: {
   id: int {constraint: PK}
   created_at: timestamp
   updated_at: timestamp
@@ -178,7 +168,7 @@ order: {
   payment_detail_id: int {constraint: FK}
 }
 
-order_item: {
+order_items: {
   id: int {constraint: PK}
   quantity: int
   order_id: int {constraint: FK}
@@ -186,7 +176,7 @@ order_item: {
   product_variant_id: int {constraint: FK}
 }
 
-return_request: {
+return_requests: {
   id: int {constraint: PK}
   reason: varchar
   created_at: timestamp
@@ -196,12 +186,12 @@ return_request: {
   order_item_id: int {constraint: FK}
 }
 
-return_request_status: {
+return_request_statuses: {
   id: int {constraint: PK}
   value: varchar {constraint: UNQ}
 }
 
-refund: {
+refunds: {
   id: int {constraint: PK}
   created_at: timestamp
   updated_at: timestamp
@@ -210,47 +200,44 @@ refund: {
   return_request_id: int {constraint: FK}
 }
 
-refund_status: {
+refund_statuses: {
   id: int {constraint: PK}
   value: varchar {constraint: UNQ}
 }
 
-address.user_id -> user.id
-product_category.product_id -> product.id
-product_category.category_id -> category.id
-product_variant.product_id -> product.id
-product_variant_option_value.product_variant_id -> product_variant.id
-product_variant_option_value.option_value_id -> option_value.id
-option_value.option_id -> option.id
-wishlist.user_id -> user.id
-product_wishlist.product_id -> product.id
-product_wishlist.wishlist_id -> wishlist.id
-product.brand_id -> brand.id
-cart.user_id -> user.id
-cart_item.cart_id -> cart.id
-cart_item.product_variant_id -> product_variant.id
-cart_item.product_id -> product.id
-payment_detail.payment_provider_id -> payment_provider.id
-payment_detail.payment_status_id -> payment_status.id
-payment_detail.payment_provider_id -> payment_provider.id
-payment_detail.payment_method_id -> payment_method.id
-order.user_id -> user.id
-order.payment_detail_id -> payment_detail.id
-order.order_status_id -> order_status.id
-order_item.order_id -> order.id
-order_item.product_id -> product.id
-order_item.product_variant_id -> product_variant.id
-review.product_id -> product.id
-review.user_id -> user.id
-product_analytic.product_id -> product.id
-product_image.product_id -> product.id
-product_image.product_variant_id -> product_variant.id
-return_request.user_id -> user.id
-return_request.status_id -> return_request_status.id
-return_request.order_item_id -> order_item.id
-refund.status_id -> refund_status.id
-refund.return_request_id -> return_request.id
-refund.payment_detail_id -> payment_detail.id
+addresses.user_id -> users.id
+product_categories.product_id -> products.id
+product_categories.category_id -> categories.id
+product_variants.product_id -> products.id
+product_variant_option_values.product_variant_id -> product_variants.id
+product_variant_option_values.option_value_id -> option_values.id
+option_values.option_id -> options.id
+products.brand_id -> brands.id
+carts.user_id -> users.id
+cart_items.cart_id -> carts.id
+cart_items.product_variant_id -> product_variants.id
+cart_items.product_id -> products.id
+payment_details.payment_provider_id -> payment_providers.id
+payment_details.payment_status_id -> payment_statuses.id
+payment_details.payment_provider_id -> payment_providers.id
+payment_details.payment_method_id -> payment_methods.id
+orders.user_id -> users.id
+orders.payment_detail_id -> payment_details.id
+orders.order_status_id -> order_statuses.id
+order_items.order_id -> orders.id
+order_items.product_id -> products.id
+order_items.product_variant_id -> product_variants.id
+reviews.product_id -> products.id
+reviews.user_id -> users.id
+product_analytics.product_id -> products.id
+product_images.product_id -> products.id
+product_images.product_variant_id -> product_variants.id
+return_requests.user_id -> users.id
+return_requests.status_id -> return_request_statuses.id
+return_requests.order_item_id -> order_items.id
+refunds.status_id -> refund_statuses.id
+refunds.return_request_id -> return_requests.id
+refunds.payment_detail_id -> payment_details.id
 
 explanation: |md
     # Note
