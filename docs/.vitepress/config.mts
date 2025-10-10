@@ -161,6 +161,10 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                   {
+                    text: "Change User Roles",
+                    link: "/docs/sequence/manage-user/change-user-roles",
+                  },
+                  {
                     text: "Delete Customer",
                     link: "/docs/sequence/manage-user/delete-customer",
                   },
@@ -402,6 +406,10 @@ export default defineConfig({
                 text: "Manage User",
                 collapsed: true,
                 items: [
+                  {
+                    text: "Change User Roles",
+                    link: "/docs/activity/manage-user/change-user-roles",
+                  },
                   {
                     text: "Delete Customer",
                     link: "/docs/activity/manage-user/delete-customer",

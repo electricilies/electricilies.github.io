@@ -4,28 +4,28 @@
 @startuml
 autonumber
 
-actor "Staff/Admin" as SA
+actor "Admin/Staff" as AS
 boundary UserManagementView as UMV
 control UserController as UC
 entity USER as U
 
 opt Search
-  ref over SA, U: Sequence Search User
+  ref over AS, U: Sequence Search User
 end
-SA -> UMV: Select customer to delete
-activate SA
+AS -> UMV: Select customer to delete
+activate AS
 activate UMV
 UMV -> UMV: Display confirmation message box
 activate UMV
 deactivate UMV
 break Cancel
-  SA -> UMV: Click "Cancel" Button
+  AS -> UMV: Click "Cancel" Button
   UMV -> UMV: Close confirmation message box
   activate UMV
   deactivate UMV
 end
-SA -> UMV: Click "Confirm" button
-deactivate SA
+AS -> UMV: Click "Confirm" button
+deactivate AS
 UMV -> UC: Send deleting customer request
 activate UC
 UC -> U: Delete selected customer account
@@ -49,7 +49,7 @@ UMV <-- UC: Success notification
 deactivate UC
 UMV -> UMV: Display success notification & update list
 deactivate UMV
-deactivate SA
+deactivate AS
 
 @enduml
 ```

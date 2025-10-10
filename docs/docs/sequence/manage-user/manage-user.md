@@ -23,27 +23,15 @@ deactivate UMV
 AS -> UMV: Choose function
 activate AS
 
-opt Demote Admin - Admin only
-  ref over AS, U: Sequence Demote Admin
+opt Change User Roles - Admin only
+  ref over AS, U: Sequence Change User Roles
 end
 
-opt Demote Staff - Admin only
-  ref over AS, U: Sequence Demote Staff
-end
-
-opt Promote Customer - Admin only
-  ref over AS, U: Sequence Promote Customer
-end
-
-opt Promote Staff - Admin only
-  ref over AS, U: Sequence Promote Staff
-end
-
-opt Remove Customer
+opt Delete Customer
   ref over AS, U: Sequence Remove Customer
 end
 
-opt Remove Staff - Admin only
+opt Delete Staff - Admin only
   ref over AS, U: Sequence Remove Staff
 end
 

@@ -2,11 +2,11 @@
 
 ```plantuml
 @startuml
-|SA|Staff/Admin
+|AS|Admin/Staff
 |S|System
 |D|Database
 
-|SA|
+|AS|
 start
 :(1) Select customer to view report;
 :(2) Choose which type of report;

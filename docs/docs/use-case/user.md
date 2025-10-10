@@ -93,6 +93,7 @@ User -- UC04
 User -- UC08
 User -- UC09
 User -- UC10
+User -- UC11
 
 UC04 <.. UC03 : <<extend>>
 UC04 <.. UC05 : <<extend>>

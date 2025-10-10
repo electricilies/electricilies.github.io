@@ -2,17 +2,17 @@
 
 ```plantuml
 @startuml
-|SA|Staff/Admin
+|AS|Admin/Staff
 |S|System
 |D|Database
 
-|SA|
+|AS|
 start
 :(1) Select customer needs deleting;
 |S|
 :(2) Display confirmation message box;
 if () then (Cancel)
-  |SA|
+  |AS|
   :(2.1) Click "Cancel" Button;
   end
 else (Confirm)
