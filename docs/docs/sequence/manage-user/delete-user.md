@@ -1,4 +1,4 @@
-# Sequence Delete Staff
+# Sequence Delete User
 
 ```plantuml
 @startuml
@@ -12,7 +12,7 @@ entity USER as U
 opt Search
   ref over A, U: Sequence Search User
 end
-A -> UMV: Select staff to delete
+A -> UMV: Select user to delete
 activate A
 activate UMV
 UMV -> UMV: Display confirmation message box
@@ -26,9 +26,9 @@ break Cancel
 end
 A -> UMV: Click "Confirm" button
 deactivate A
-UMV -> UC: Send deleting staff request
+UMV -> UC: Send deleting user request
 activate UC
-UC -> U: Delete selected staff account
+UC -> U: Delete selected user account
 activate U
 U -> U: Validate data
 activate U
@@ -54,4 +54,4 @@ deactivate A
 @enduml
 ```
 
-<!-- diagram id="sequence-manage-user-delete-staff" -->
+<!-- diagram id="sequence-manage-user-delete-user" -->

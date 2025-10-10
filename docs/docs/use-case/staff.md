@@ -14,14 +14,13 @@ rectangle "Application" {
   usecase UC06 as "Delete Review"
   usecase UC07 as "Manage User"
   usecase UC08 as "Search User"
-  usecase UC09 as "Delete Customer"
-  usecase UC10 as "View Customer Report"
-  usecase UC11 as "View Staff Report"
+  usecase UC09 as "View Customer Report"
+  usecase UC10 as "View Staff Self Report"
 }
 
 Staff -- UC01
 Staff -- UC07
-Staff -- UC11
+Staff -- UC10
 
 UC01 <.. UC02 : <<extend>>
 UC01 <.. UC03 : <<extend>>
@@ -34,9 +33,7 @@ UC05 ..> UC02 : <<include>>
 UC06 ..> UC02 : <<include>>
 UC07 <.. UC08 : <<extend>>
 UC07 <.. UC09 : <<extend>>
-UC07 <.. UC10 : <<extend>>
 UC09 ..> UC08 : <<include>>
-UC10 ..> UC08 : <<include>>
 
 @enduml
 ```

@@ -1,4 +1,4 @@
-# Activity Delete Staff
+# Activity Delete User
 
 ```plantuml
 @startuml
@@ -8,7 +8,7 @@
 
 |A|
 start
-:(1) Select staff needs deleting;
+:(1) Select user needs deleting;
 |S|
 :(2) Display confirmation message box;
 if () then (Cancel)
@@ -37,4 +37,4 @@ stop
 @enduml
 ```
 
-<!-- diagram id="activity-manage-user-delete-staff" -->
+<!-- diagram id="activity-manage-user-delete-user" -->

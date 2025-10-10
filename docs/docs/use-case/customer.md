@@ -23,7 +23,7 @@ rectangle "Application" {
   usecase UC15 as "Review Product"
   usecase UC16 as "Return Product"
   usecase UC17 as "Contact Support"
-  usecase UC18 as "View Customer's Report"
+  usecase UC18 as "View Customer Self Report"
   usecase UC19 as "View Document"
 }
 

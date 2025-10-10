@@ -27,12 +27,8 @@ opt Change User Roles - Admin only
   ref over AS, U: Sequence Change User Roles
 end
 
-opt Delete Customer
-  ref over AS, U: Sequence Remove Customer
-end
-
-opt Delete Staff - Admin only
-  ref over AS, U: Sequence Remove Staff
+opt Delete User - Admin only
+  ref over AS, U: Sequence Remove User
 end
 
 opt Search User
