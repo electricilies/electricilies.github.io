@@ -12,8 +12,8 @@ entity USER as U
 UC -> U: Get list of users
 activate UC
 activate U
-deactivate U
 UC <-- U: List of users
+deactivate U
 deactivate UC
 UMV <-- UC: List of users
 activate UMV
