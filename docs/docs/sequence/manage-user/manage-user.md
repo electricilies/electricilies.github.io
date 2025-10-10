@@ -14,8 +14,8 @@ activate UC
 activate U
 UC <-- U: List of users
 deactivate U
-deactivate UC
 UMV <-- UC: List of users
+deactivate UC
 activate UMV
 UMV -> UMV: Display list of users
 activate UMV
