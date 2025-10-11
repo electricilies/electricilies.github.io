@@ -1232,11 +1232,11 @@ Not provided in activity diagrams.
 
 ###### Sequence Flow
 
-[sequence-view-shop-report-view-shop-report](../sequence/view-shop/report-view-shop-report)
+[sequence-view-shop-report-view-shop-report](../sequence/view-shop-report/view-shop-report)
 
 ###### Activities Flow
 
-[activity-view-shop-report-view-shop-report](../activity/view-shop/report-view-shop-report)
+[activity-view-shop-report-view-shop-report](../activity/view-shop-report/view-shop-report)
 
 ###### Business Rules
 
