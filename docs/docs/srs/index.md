@@ -1783,7 +1783,7 @@ Scheduled jobs and automated tasks in the Electricilies system:
 
 - **High Traffic Events:** System must handle traffic spikes during sales events (Black Friday, Flash Sales). Implement auto-scaling, CDN caching, and queue-based order processing to maintain performance.
 
-- **Large Product Catalog:** With 50,000+ products, search and filtering performance is critical. Elasticsearch indexing and optimized database queries with proper indexing are essential.
+- **Large Product Catalog:** With 50,000+ products, search and filtering performance is critical. ParadeDB indexing and optimized database queries with proper indexing are essential.
 
 - **Image Storage:** Large volume of product and review images can impact storage costs and performance. Implement image compression, lazy loading, CDN delivery, and tiered storage (hot/cold) strategy.
 
@@ -1791,7 +1791,7 @@ Scheduled jobs and automated tasks in the Electricilies system:
 
 - **Data Volume Growth:** 20% annual growth requires capacity planning for database, storage, and backup systems. Implement data archiving strategy for old orders and reviews.
 
-- **Search Performance:** Full-text search across products, documents, and users with complex filters requires optimized Elasticsearch configuration and query optimization.
+- **Search Performance:** Full-text search across products, documents, and users with complex filters requires optimized ParadeDB configuration and query optimization.
 
 - **Report Generation:** Complex reports with large datasets may impact database performance. Implement report caching, pre-aggregation of metrics, and scheduled report generation during off-peak hours.
 
