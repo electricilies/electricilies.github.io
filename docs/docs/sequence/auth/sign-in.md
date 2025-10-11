@@ -8,9 +8,9 @@ actor User as U
 boundary SignInView as SIV
 boundary HomeView as HV
 boundary AuthenticationManagerSignInView as AMSIV
-entity AuthenticationManagerUserManagement as AMUM
+entity ACCOUNT as A
 control BackendUserController as BUC
-entity BackendUserManagement as BUM
+entity USER as US
 
 SIV -> SIV: Display SignInView
 activate SIV
@@ -35,62 +35,64 @@ loop invalid data format
   activate AMSIV
   deactivate AMSIV
 end
+
 AMSIV -> AMSIV: Data OK
 activate AMSIV
 deactivate AMSIV
-AMSIV -> AMUM: Send user credential
-activate AMUM
 
-AMUM -> AMUM: Validate user credential
-activate AMUM
-deactivate AMUM
+AMSIV -> A: Send user credential
+activate A
+
+A -> A: Validate user credential
+activate A
+deactivate A
 
 break invalid credential
-  AMSIV <-- AMUM: Error
+  AMSIV <-- A: Error
   AMSIV -> AMSIV: Display error
   activate AMSIV
   deactivate AMSIV
   deactivate U
 end
-AMSIV <-- AMUM: Authorization code
-deactivate AMUM
 
-AMSIV -> AMUM: Send authorization code + verifier
-activate AMUM
-AMUM -> AMUM: Validate code + verifier + challenge
-activate AMUM
-deactivate AMUM
+AMSIV <-- A: Authorization code
+deactivate A
+
+AMSIV -> A: Send authorization code + verifier
+activate A
+A -> A: Validate code + verifier + challenge
+activate A
+deactivate A
 
 break invalid code + verifier
-  AMSIV <-- AMUM: Error
+  AMSIV <-- A: Error
   AMSIV -> AMSIV: Display error
   activate AMSIV
   deactivate AMSIV
 end
 
-AMSIV <-- AMUM: JWT Token
-deactivate AMUM
+AMSIV <-- A: JWT Token
+deactivate A
 
 AMSIV -> BUC: Send JWT Token
-
 activate BUC
 
-BUC -> BUM: Validate JWT
-activate BUM
-BUM -> BUM: Verify JWT
-activate BUM
-deactivate BUM
+BUC -> US: Validate JWT
+activate US
+US -> US: Verify JWT
+activate US
+deactivate US
 
 break invalid JWT Token
-  BUC <-- BUM: Error
+  BUC <-- US: Error
   AMSIV <-- BUC: Error
   AMSIV -> AMSIV: Display error
   activate AMSIV
   deactivate AMSIV
 end
 
-BUC <-- BUM: Success
-deactivate BUM
+BUC <-- US: Success
+deactivate US
 AMSIV <-- BUC: Success
 deactivate BUC
 HV <- AMSIV: redirect to HomeView
