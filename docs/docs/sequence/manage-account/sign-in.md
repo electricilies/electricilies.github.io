@@ -9,7 +9,7 @@ boundary SignInView as SIV
 boundary HomeView as HV
 boundary AuthenticationManagerSignInView as AMSIV
 entity ACCOUNT as A
-control BackendUserController as BUC
+control UserController as UC
 entity USER as US
 
 SIV -> SIV: Display SignInView
@@ -74,27 +74,27 @@ end
 AMSIV <-- A: JWT Token
 deactivate A
 
-AMSIV -> BUC: Send JWT Token
-activate BUC
+AMSIV -> UC: Send JWT Token
+activate UC
 
-BUC -> US: Validate JWT
+UC -> US: Validate JWT
 activate US
 US -> US: Verify JWT
 activate US
 deactivate US
 
 break invalid JWT Token
-  BUC <-- US: Error
-  AMSIV <-- BUC: Error
+  UC <-- US: Error
+  AMSIV <-- UC: Error
   AMSIV -> AMSIV: Display error
   activate AMSIV
   deactivate AMSIV
 end
 
-BUC <-- US: Success
+UC <-- US: Success
 deactivate US
-AMSIV <-- BUC: Success
-deactivate BUC
+AMSIV <-- UC: Success
+deactivate UC
 HV <- AMSIV: redirect to HomeView
 deactivate AMSIV
 activate HV

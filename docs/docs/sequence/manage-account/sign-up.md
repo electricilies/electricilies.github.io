@@ -10,7 +10,7 @@ boundary HomeView as HV
 boundary AuthenticationManagerSignUpView as AMSUV
 
 entity ACCOUNT as A
-control BackendUserController as BUC
+control UserController as UC
 entity USER as US
 
 SUV -> SUV: Display SignUpView
@@ -75,27 +75,27 @@ end
 AMSUV <-- A: JWT Token
 deactivate A
 
-AMSUV -> BUC: Send JWT Token
-activate BUC
+AMSUV -> UC: Send JWT Token
+activate UC
 
-BUC -> US: Validate JWT
+UC -> US: Validate JWT
 activate US
 US -> US: Verify JWT & Write data
 activate US
 deactivate US
 
 break invalid JWT Token
-  BUC <-- US: Error
-  AMSUV <-- BUC: Error
+  UC <-- US: Error
+  AMSUV <-- UC: Error
   AMSUV -> AMSUV: Display error
   activate AMSUV
   deactivate AMSUV
 end
 
-BUC <-- US: Success
+UC <-- US: Success
 deactivate US
-AMSUV <-- BUC: Success
-deactivate BUC
+AMSUV <-- UC: Success
+deactivate UC
 deactivate AMSUV
 HV <- AMSUV: redirect to HomeView
 deactivate AMSUV
