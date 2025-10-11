@@ -35,6 +35,10 @@ export default defineConfig({
         text: "Docs",
         items: [
           {
+            text: "User Story",
+            link: "/docs/user-story",
+          },
+          {
             text: "Use Case",
             collapsed: true,
             items: [
