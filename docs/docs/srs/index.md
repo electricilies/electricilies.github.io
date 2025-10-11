@@ -1521,11 +1521,11 @@ The Electricilies system provides the following main views/screens:
 | Sign Up                       |   X   |          |       |       |
 | Sign In                       |   X   |    X     |   X   |   X   |
 | Sign Out                      |       |    X     |   X   |   X   |
-| Edit Profile                  |       |    X     |   X   |   X   |
-| Link Account With Third Party |       |    X     |   X   |   X   |
-| Delete Account                |       |    X     |   X   |   X   |
-| Reset Password                |       |    X     |   X   |   X   |
-| View Account Activity         |       |    X     |   X   |   X   |
+| Edit Profile                  |       |  X(\*)   | X(\*) | X(\*) |
+| Link Account With Third Party |       |  X(\*)   | X(\*) | X(\*) |
+| Delete Account                |       |  X(\*)   | X(\*) | X(\*) |
+| Reset Password                |       |  X(\*)   | X(\*) | X(\*) |
+| View Account Activity         |       |  X(\*)   | X(\*) | X(\*) |
 | Recover Account               |   X   |    X     |   X   |   X   |
 | **View Product Functions**    |
 | View Product                  |   X   |    X     |   X   |   X   |
@@ -1535,20 +1535,20 @@ The Electricilies system provides the following main views/screens:
 | View Suggested Products       |   X   |    X     |   X   |   X   |
 | Add Product to Cart           |       |    X     |       |       |
 | **Manage Cart Functions**     |
-| Manage Cart                   |       |    X     |       |       |
-| Change Product Amount         |       |    X     |       |       |
-| Remove Product from Cart      |       |    X     |       |       |
-| Purchase                      |       |    X     |       |       |
+| Manage Cart                   |       |  X(\*)   |       |       |
+| Change Product Amount         |       |  X(\*)   |       |       |
+| Remove Product from Cart      |       |  X(\*)   |       |       |
+| Purchase                      |       |  X(\*)   |       |       |
 | **View Order Functions**      |
-| View Order                    |       |    X     |       |       |
-| Search Order                  |       |    X     |       |       |
-| View Order Detail             |       |    X     |       |       |
-| Cancel Order                  |       |    X     |       |       |
-| Return Product                |       |    X     |       |       |
-| Review Product                |       |    X     |       |       |
+| View Order                    |       |  X(\*)   |       |       |
+| Search Order                  |       |  X(\*)   |       |       |
+| View Order Detail             |       |  X(\*)   |       |       |
+| Cancel Order                  |       |  X(\*)   |       |       |
+| Return Product                |       |  X(\*)   |       |       |
+| Review Product                |       |  X(\*)   |       |       |
 | **Other Customer Functions**  |
 | Contact Support               |   X   |    X     |       |       |
-| View Customer Self Report     |       |    X     |       |       |
+| View Customer Self Report     |       |  X(\*)   |       |       |
 | View Document                 |   X   |    X     |   X   |   X   |
 | **Manage Product Functions**  |
 | Manage Product                |       |          |   X   |   X   |
@@ -1573,11 +1573,13 @@ The Electricilies system provides the following main views/screens:
 | Delete Document               |       |          |       |   X   |
 | Search Document (Admin)       |       |          |       |   X   |
 | **Staff Functions**           |
-| View Staff Self Report        |       |          |   X   |   X   |
+| View Staff Self Report        |       |          | X(\*) | X(\*) |
 
 **Legend:**
 
-- X: Full permission to perform the action
+- X: User has full permission to perform the action
+- X(\*): User has permission to perform the action on their own items only
+- X(\*\*): User has permission to perform the action on items sent to them only
 
 **Security Requirements:**
 
