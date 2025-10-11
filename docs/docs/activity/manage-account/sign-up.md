@@ -75,3 +75,5 @@ endif
 stop
 @enduml
 ```
+
+<!-- diagram id="activity-manage-account-sign-up" -->

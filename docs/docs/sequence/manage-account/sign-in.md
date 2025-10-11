@@ -1,4 +1,4 @@
-# Sign In
+# Sequence Sign In
 
 ```plantuml
 @startuml
@@ -103,4 +103,4 @@ HV -> HV: Display HomeView
 @enduml
 ```
 
-<!-- diagram id="sequence-auth-sign-in" -->
+<!-- diagram id="sequence-manage-account-sign-in" -->

@@ -39,6 +39,10 @@ export default defineConfig({
             collapsed: true,
             items: [
               {
+                text: "Generic",
+                link: "/docs/use-case/generic",
+              },
+              {
                 text: "User",
                 link: "/docs/use-case/user",
               },
@@ -87,20 +91,54 @@ export default defineConfig({
                 ],
               },
               {
-                text: "Auth",
-                collapsed: true,
-                items: [
-                  { text: "Sign In", link: "/docs/sequence/auth/sign-in" },
-                  { text: "Sign Up", link: "/docs/sequence/auth/sign-up" },
-                ],
-              },
-              {
                 text: "Contact Support",
                 collapsed: true,
                 items: [
                   {
                     text: "Contact Support",
                     link: "/docs/sequence/contact-support/contact-support",
+                  },
+                ],
+              },
+              {
+                text: "Manage Account",
+                collapsed: true,
+                items: [
+                  {
+                    text: "Delete Account",
+                    link: "/docs/sequence/manage-account/delete-account",
+                  },
+                  {
+                    text: "Edit Profile",
+                    link: "/docs/sequence/manage-account/edit-profile",
+                  },
+                  {
+                    text: "Link Account with Third Party",
+                    link: "/docs/sequence/manage-account/link-account-with-third-party",
+                  },
+                  {
+                    text: "Manage Account",
+                    link: "/docs/sequence/manage-account/manage-account",
+                  },
+                  {
+                    text: "Recover Account",
+                    link: "/docs/sequence/manage-account/recover-account",
+                  },
+                  {
+                    text: "Reset Password",
+                    link: "/docs/sequence/manage-account/reset-password",
+                  },
+                  {
+                    text: "Sign In",
+                    link: "/docs/sequence/manage-account/sign-in",
+                  },
+                  {
+                    text: "Sign Out",
+                    link: "/docs/sequence/manage-account/sign-out",
+                  },
+                  {
+                    text: "Sign Up",
+                    link: "/docs/sequence/manage-account/sign-up",
                   },
                 ],
               },
@@ -329,20 +367,54 @@ export default defineConfig({
                 ],
               },
               {
-                text: "Auth",
-                collapsed: true,
-                items: [
-                  { text: "Sign In", link: "/docs/activity/auth/sign-in" },
-                  { text: "Sign Up", link: "/docs/activity/auth/sign-up" },
-                ],
-              },
-              {
                 text: "Contact Support",
                 collapsed: true,
                 items: [
                   {
                     text: "Contact Support",
                     link: "/docs/activity/contact-support/contact-support",
+                  },
+                ],
+              },
+              {
+                text: "Manage Account",
+                collapsed: true,
+                items: [
+                  {
+                    text: "Delete Account",
+                    link: "/docs/activity/manage-account/delete-account",
+                  },
+                  {
+                    text: "Edit Profile",
+                    link: "/docs/activity/manage-account/edit-profile",
+                  },
+                  {
+                    text: "Link Account with Third Party",
+                    link: "/docs/activity/manage-account/link-account-with-third-party",
+                  },
+                  {
+                    text: "Manage Account",
+                    link: "/docs/activity/manage-account/manage-account",
+                  },
+                  {
+                    text: "Recover Account",
+                    link: "/docs/activity/manage-account/recover-account",
+                  },
+                  {
+                    text: "Reset Password",
+                    link: "/docs/activity/manage-account/reset-password",
+                  },
+                  {
+                    text: "Sign In",
+                    link: "/docs/activity/manage-account/sign-in",
+                  },
+                  {
+                    text: "Sign Out",
+                    link: "/docs/activity/manage-account/sign-out",
+                  },
+                  {
+                    text: "Sign Up",
+                    link: "/docs/activity/manage-account/sign-up",
                   },
                 ],
               },

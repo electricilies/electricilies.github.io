@@ -65,4 +65,4 @@ stop
 @enduml
 ```
 
-<!-- diagram id="activity-sign-in" -->
+<!-- diagram id="activity-manage-account-sign-in" -->
