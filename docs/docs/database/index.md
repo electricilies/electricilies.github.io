@@ -52,7 +52,7 @@ products: {
   created_at: timestamp
   updated_at: timestamp
   deleted_at: timestamp
-  branch_id: int {constraint: FK}
+  brand_id: int {constraint: FK}
 }
 
 product_analytics: {
