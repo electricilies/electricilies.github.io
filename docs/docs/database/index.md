@@ -52,7 +52,7 @@ products: {
   created_at: timestamp
   updated_at: timestamp
   deleted_at: timestamp
-  brand_id: int {constraint: FK}
+  branch_id: int {constraint: FK}
 }
 
 product_analytics: {
@@ -205,134 +205,39 @@ refund_statuses: {
   value: varchar {constraint: UNQ}
 }
 
-addresses.user_id -> users.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-product_categories.product_id -> products.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-product_categories.category_id -> categories.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-product_variants.product_id -> products.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-product_variant_option_values.product_variant_id -> product_variants.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-product_variant_option_values.option_value_id -> option_values.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-option_values.option_id -> options.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-products.brand_id -> brands.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-carts.user_id -> users.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..1
-}
-cart_items.cart_id -> carts.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-cart_items.product_variant_id -> product_variants.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-cart_items.product_id -> products.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-payment_details.payment_provider_id -> payment_providers.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-payment_details.payment_status_id -> payment_statuses.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-payment_details.payment_method_id -> payment_methods.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-orders.user_id -> users.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-orders.payment_detail_id -> payment_details.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-orders.order_status_id -> order_statuses.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-order_items.order_id -> orders.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-order_items.product_id -> products.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-order_items.product_variant_id -> product_variants.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-reviews.product_id -> products.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-reviews.user_id -> users.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-product_analytics.product_id -> products.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..1
-}
-product_images.product_id -> products.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-product_images.product_variant_id -> product_variants.id: {
-  source-arrowhead: 0..1
-  target-arrowhead: 0..n
-}
-return_requests.user_id -> users.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-return_requests.status_id -> return_request_statuses.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-return_requests.order_item_id -> order_items.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-refunds.status_id -> refund_statuses.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-refunds.return_request_id -> return_requests.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
-refunds.payment_detail_id -> payment_details.id: {
-  source-arrowhead: 1
-  target-arrowhead: 0..n
-}
+addresses.user_id -> users.id
+product_categories.product_id -> products.id
+product_categories.category_id -> categories.id
+product_variants.product_id -> products.id
+product_variant_option_values.product_variant_id -> product_variants.id
+product_variant_option_values.option_value_id -> option_values.id
+option_values.option_id -> options.id
+products.brand_id -> brands.id
+carts.user_id -> users.id
+cart_items.cart_id -> carts.id
+cart_items.product_variant_id -> product_variants.id
+cart_items.product_id -> products.id
+payment_details.payment_provider_id -> payment_providers.id
+payment_details.payment_status_id -> payment_statuses.id
+payment_details.payment_provider_id -> payment_providers.id
+payment_details.payment_method_id -> payment_methods.id
+orders.user_id -> users.id
+orders.payment_detail_id -> payment_details.id
+orders.order_status_id -> order_statuses.id
+order_items.order_id -> orders.id
+order_items.product_id -> products.id
+order_items.product_variant_id -> product_variants.id
+reviews.product_id -> products.id
+reviews.user_id -> users.id
+product_analytics.product_id -> products.id
+product_images.product_id -> products.id
+product_images.product_variant_id -> product_variants.id
+return_requests.user_id -> users.id
+return_requests.status_id -> return_request_statuses.id
+return_requests.order_item_id -> order_items.id
+refunds.status_id -> refund_statuses.id
+refunds.return_request_id -> return_requests.id
+refunds.payment_detail_id -> payment_details.id
 
 explanation: |md
     # Note
