@@ -13,42 +13,42 @@ explanation.shape: rectangle
 
 users: {
   id: uuid {constraint: PK}
-  avatar: varchar
-  first_name: varchar
-  last_name: varchar
-  username: varchar {constraint: UNQ}
-  email: varchar {constraint: UNQ}
-  birth_of_day: varchar
-  phone_number: varchar
+  avatar: varchar(255)
+  first_name: varchar(50)
+  last_name: varchar(50)
+  username: varchar(50) {constraint: UNQ}
+  email: varchar(100) {constraint: UNQ}
+  birth_of_day: varchar(20)
+  phone_number: varchar(20)
   created_at: timestamp
 }
 
 addresses: {
-  id: int {constraint: PK}
-  address_line: varchar
-  city: varchar
-  country: varchar
-  phone_number: varchar
+  id: serial {constraint: PK}
+  address_line: varchar(255)
+  city: varchar(100)
+  country: varchar(100)
+  phone_number: varchar(20)
   created_at: timestamp
   user_id: uuid {constraint: FK}
 }
 
 categories: {
-  id: int {constraint: PK}
-  description: varchar
+  id: serial {constraint: PK}
+  description: varchar(255)
   created_at: timestamp
   deleted_at: timestamp
 }
 
 brands: {
-  id: int {constraint: PK}
-  value: varchar {constraint: UNQ}
+  id: serial {constraint: PK}
+  value: varchar(100) {constraint: UNQ}
 }
 
 products: {
-  id: int {constraint: PK}
-  name: varchar
-  description: varchar
+  id: serial {constraint: PK}
+  name: varchar(100)
+  description: varchar(255)
   created_at: timestamp
   updated_at: timestamp
   deleted_at: timestamp
@@ -56,7 +56,7 @@ products: {
 }
 
 product_analytics: {
-  id: int {constraint: PK}
+  id: serial {constraint: PK}
   views_count: int
   purchase_count: int
   trending_score: float
@@ -64,9 +64,9 @@ product_analytics: {
 }
 
 product_images: {
-  id: int {constraint: PK}
-  url: varchar
-  alt_text: varchar
+  id: serial {constraint: PK}
+  url: varchar(255)
+  alt_text: varchar(100)
   created_at: timestamp
   is_primary: boolean
   product_id: int {constraint: FK}
@@ -74,10 +74,10 @@ product_images: {
 }
 
 reviews: {
-  id: int {constraint: PK}
-  rating: int {constraint: "0 &lt; x &lt; 5"}
-  content: varchar
-  image_url: varchar
+  id: serial {constraint: PK}
+  rating: int {constraint: "0 < x < 5"}
+  content: varchar(255)
+  image_url: varchar(255)
   created_at: timestamp
   updated_at: timestamp
   deleted_at: timestamp
@@ -91,8 +91,8 @@ product_categories: {
 }
 
 product_variants: {
-  id: int {constraint: PK}
-  sku: varchar {constraint: UNQ}
+  id: serial {constraint: PK}
+  sku: varchar(50) {constraint: UNQ}
   price: decimal
   quantity: int
   created_at: timestamp
@@ -101,8 +101,8 @@ product_variants: {
 }
 
 option_values: {
-  id: int {constraint: PK}
-  value: varchar
+  id: serial {constraint: PK}
+  value: varchar(100)
   option_id: int {constraint: FK}
 }
 
@@ -112,18 +112,18 @@ product_variant_option_values: {
 }
 
 options: {
-  id: int {constraint: PK}
-  name: varchar {constraint: UNQ}
+  id: serial {constraint: PK}
+  name: varchar(100) {constraint: UNQ}
 }
 
 carts: {
-  id: int {constraint: PK}
+  id: serial {constraint: PK}
   user_id: uuid {constraint: [UNQ, FK]}
   updated_at: timestamp
 }
 
 cart_items: {
-  id: int {constraint: PK}
+  id: serial {constraint: PK}
   quantity: int
   cart_id: int {constraint: FK}
   product_id: int {constraint: FK}
@@ -131,27 +131,27 @@ cart_items: {
 }
 
 order_statuses: {
-  id: int {constraint: PK}
-  value: varchar {constraint: UNQ}
+  id: serial {constraint: PK}
+  value: varchar(50) {constraint: UNQ}
 }
 
 payment_methods: {
-  id: int {constraint: PK}
-  value: varchar {constraint: UNQ}
+  id: serial {constraint: PK}
+  value: varchar(50) {constraint: UNQ}
 }
 
 payment_statuses: {
-  id: int {constraint: PK}
-  value: varchar {constraint: UNQ}
+  id: serial {constraint: PK}
+  value: varchar(50) {constraint: UNQ}
 }
 
 payment_providers: {
-  id: int {constraint: PK}
-  value: varchar {constraint: UNQ}
+  id: serial {constraint: PK}
+  value: varchar(50) {constraint: UNQ}
 }
 
 payment_details: {
-  id: int {constraint: PK}
+  id: serial {constraint: PK}
   amount: decimal
   updated_at: timestamp
   payment_method_id: int {constraint: FK}
@@ -160,7 +160,7 @@ payment_details: {
 }
 
 orders: {
-  id: int {constraint: PK}
+  id: serial {constraint: PK}
   created_at: timestamp
   updated_at: timestamp
   user_id: uuid {constraint: FK}
@@ -169,7 +169,7 @@ orders: {
 }
 
 order_items: {
-  id: int {constraint: PK}
+  id: serial {constraint: PK}
   quantity: int
   order_id: int {constraint: FK}
   product_id: int {constraint: FK}
@@ -177,8 +177,8 @@ order_items: {
 }
 
 return_requests: {
-  id: int {constraint: PK}
-  reason: varchar
+  id: serial {constraint: PK}
+  reason: varchar(255)
   created_at: timestamp
   updated_at: timestamp
   status_id: int {constraint: FK}
@@ -187,12 +187,12 @@ return_requests: {
 }
 
 return_request_statuses: {
-  id: int {constraint: PK}
-  value: varchar {constraint: UNQ}
+  id: serial {constraint: PK}
+  value: varchar(50) {constraint: UNQ}
 }
 
 refunds: {
-  id: int {constraint: PK}
+  id: serial {constraint: PK}
   created_at: timestamp
   updated_at: timestamp
   status_id: int {constraint: FK}
@@ -201,8 +201,8 @@ refunds: {
 }
 
 refund_statuses: {
-  id: int {constraint: PK}
-  value: varchar {constraint: UNQ}
+  id: serial {constraint: PK}
+  value: varchar(50) {constraint: UNQ}
 }
 
 addresses.user_id -> users.id
@@ -240,10 +240,9 @@ refunds.return_request_id -> return_requests.id
 refunds.payment_detail_id -> payment_details.id
 
 explanation: |md
-    # Note
-    - All FK are NOT NULL by default.
-    - Only FK marked with {constraint: [FK, nullable]} are nullable.
-  Only FK marked with {constraint: [FK, nullable]} are nullable.
+  # Note
+  - All FK are NOT NULL by default.
+  - Only FK marked with {constraint: [FK, nullable]} are nullable.
 |
 ```
 
