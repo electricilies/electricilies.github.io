@@ -75,7 +75,7 @@ product_images: {
 
 reviews: {
   id: serial {constraint: PK}
-  rating: int {constraint: "0 < x < 5"}
+  rating: int {constraint: "0 &lt; x &lt; 5"}
   content: varchar(255)
   image_url: varchar(255)
   created_at: timestamp
