@@ -21,6 +21,7 @@ users: {
   birthday: date
   phone_number: varchar(20)
   created_at: timestamp
+  deleted_at: timestamp
 }
 
 addresses: {
