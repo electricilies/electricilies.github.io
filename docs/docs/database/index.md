@@ -13,12 +13,12 @@ explanation.shape: rectangle
 
 users: {
   id: uuid {constraint: PK}
-  avatar: text 
+  avatar: text
   first_name: varchar(20)
   last_name: varchar(20)
   username: varchar(20) {constraint: UNQ}
   email: varchar(30) {constraint: UNQ}
-  birth_of_day: date
+  birthday: date
   phone_number: varchar(20)
   created_at: timestamp
 }
@@ -76,8 +76,8 @@ product_images: {
 reviews: {
   id: serial {constraint: PK}
   rating: int {constraint: "0 &lt; x &lt; 5"}
-  content: text 
-  image_url: text 
+  content: text
+  image_url: text
   created_at: timestamp
   updated_at: timestamp
   deleted_at: timestamp
