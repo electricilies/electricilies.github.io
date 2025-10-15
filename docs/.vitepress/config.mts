@@ -628,12 +628,21 @@ export default defineConfig({
             text: "SRS",
             link: "/docs/srs",
           },
+          {
+            text: "Module group",
+            link: "/docs/module-group",
+          },
         ],
       },
     ],
 
     search: {
       provider: "local",
+    },
+
+    editLink: {
+      pattern:
+        "https://github.com/electricilies/electricilies.github.io/edit/main/docs/:path",
     },
 
     socialLinks: [

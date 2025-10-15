@@ -1664,7 +1664,7 @@ The Electricilies system provides the following main views/screens:
 
 **Development Environment:**
 
-- Version Control: Git with GitFlow branching strategy
+- Version Control: Git with Github Flow branching strategy
 - CI/CD: GitHub Actions
 - Code Quality: SonarQube for code analysis
 - Testing: Jest for frontend, Go test for backend
@@ -1684,7 +1684,7 @@ The Electricilies system provides the following main views/screens:
 
 - Authentication: OAuth 2.0 / OpenID Connect via Keycloak
 - Authorization: Role-Based Access Control (RBAC)
-- API Security: JWT tokens with RS256 signing
+- API Security: JWT tokens
 - Communication: TLS 1.3 for all external connections
 - Database: Encrypted at rest and in transit
 - Secrets Management: HashiCorp Vault or AWS Secrets Manager, or encrypted secret on repositories
