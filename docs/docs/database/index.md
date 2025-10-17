@@ -14,10 +14,6 @@ explanation.shape: rectangle
 users: {
   id: uuid {constraint: PK}
   avatar: text
-  first_name: varchar(20)
-  last_name: varchar(20)
-  username: varchar(20) {constraint: UNQ}
-  email: varchar(30) {constraint: UNQ}
   birthday: date
   phone_number: varchar(20)
   created_at: timestamp
