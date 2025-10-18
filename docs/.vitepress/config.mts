@@ -23,7 +23,8 @@ export default defineConfig({
     nav: [
       { text: "Home", link: "/" },
       { text: "Overview", link: "/overview" },
-      { text: "Docs", link: "/docs" },
+      { text: "Software Docs", link: "/software-docs" },
+      { text: "Extra Docs", link: "/extra-docs" },
     ],
 
     sidebar: [
@@ -32,11 +33,11 @@ export default defineConfig({
         items: [{ text: "Overview", link: "/overview" }],
       },
       {
-        text: "Docs",
+        text: "Software Docs",
         items: [
           {
             text: "User Story",
-            link: "/docs/user-story",
+            link: "/software-docs/user-story",
           },
           {
             text: "Use Case",
@@ -44,23 +45,23 @@ export default defineConfig({
             items: [
               {
                 text: "Generic",
-                link: "/docs/use-case/generic",
+                link: "/software-docs/use-case/generic",
               },
               {
                 text: "User",
-                link: "/docs/use-case/user",
+                link: "/software-docs/use-case/user",
               },
               {
                 text: "Customer",
-                link: "/docs/use-case/customer",
+                link: "/software-docs/use-case/customer",
               },
               {
                 text: "Staff",
-                link: "/docs/use-case/staff",
+                link: "/software-docs/use-case/staff",
               },
               {
                 text: "Admin",
-                link: "/docs/use-case/admin",
+                link: "/software-docs/use-case/admin",
               },
             ],
           },
@@ -74,23 +75,23 @@ export default defineConfig({
                 items: [
                   {
                     text: "Adjust Document",
-                    link: "/docs/sequence/adjust-document/adjust-document",
+                    link: "/software-docs/sequence/adjust-document/adjust-document",
                   },
                   {
                     text: "Create Document",
-                    link: "/docs/sequence/adjust-document/create-document",
+                    link: "/software-docs/sequence/adjust-document/create-document",
                   },
                   {
                     text: "Delete Document",
-                    link: "/docs/sequence/adjust-document/delete-document",
+                    link: "/software-docs/sequence/adjust-document/delete-document",
                   },
                   {
                     text: "Search Document",
-                    link: "/docs/sequence/adjust-document/search-document",
+                    link: "/software-docs/sequence/adjust-document/search-document",
                   },
                   {
                     text: "Update Document",
-                    link: "/docs/sequence/adjust-document/update-document",
+                    link: "/software-docs/sequence/adjust-document/update-document",
                   },
                 ],
               },
@@ -100,7 +101,7 @@ export default defineConfig({
                 items: [
                   {
                     text: "Contact Support",
-                    link: "/docs/sequence/contact-support/contact-support",
+                    link: "/software-docs/sequence/contact-support/contact-support",
                   },
                 ],
               },
@@ -110,39 +111,39 @@ export default defineConfig({
                 items: [
                   {
                     text: "Delete Account",
-                    link: "/docs/sequence/manage-account/delete-account",
+                    link: "/software-docs/sequence/manage-account/delete-account",
                   },
                   {
                     text: "Edit Profile",
-                    link: "/docs/sequence/manage-account/edit-profile",
+                    link: "/software-docs/sequence/manage-account/edit-profile",
                   },
                   {
                     text: "Link Account with Third Party",
-                    link: "/docs/sequence/manage-account/link-account-with-third-party",
+                    link: "/software-docs/sequence/manage-account/link-account-with-third-party",
                   },
                   {
                     text: "Manage Account",
-                    link: "/docs/sequence/manage-account/manage-account",
+                    link: "/software-docs/sequence/manage-account/manage-account",
                   },
                   {
                     text: "Recover Account",
-                    link: "/docs/sequence/manage-account/recover-account",
+                    link: "/software-docs/sequence/manage-account/recover-account",
                   },
                   {
                     text: "Reset Password",
-                    link: "/docs/sequence/manage-account/reset-password",
+                    link: "/software-docs/sequence/manage-account/reset-password",
                   },
                   {
                     text: "Sign In",
-                    link: "/docs/sequence/manage-account/sign-in",
+                    link: "/software-docs/sequence/manage-account/sign-in",
                   },
                   {
                     text: "Sign Out",
-                    link: "/docs/sequence/manage-account/sign-out",
+                    link: "/software-docs/sequence/manage-account/sign-out",
                   },
                   {
                     text: "Sign Up",
-                    link: "/docs/sequence/manage-account/sign-up",
+                    link: "/software-docs/sequence/manage-account/sign-up",
                   },
                 ],
               },
@@ -152,19 +153,19 @@ export default defineConfig({
                 items: [
                   {
                     text: "Change Product Amount",
-                    link: "/docs/sequence/manage-cart/change-product-amount",
+                    link: "/software-docs/sequence/manage-cart/change-product-amount",
                   },
                   {
                     text: "Manage Cart",
-                    link: "/docs/sequence/manage-cart/manage-cart",
+                    link: "/software-docs/sequence/manage-cart/manage-cart",
                   },
                   {
                     text: "Purchase",
-                    link: "/docs/sequence/manage-cart/purchase",
+                    link: "/software-docs/sequence/manage-cart/purchase",
                   },
                   {
                     text: "Remove Product From Cart",
-                    link: "/docs/sequence/manage-cart/remove-product-from-cart",
+                    link: "/software-docs/sequence/manage-cart/remove-product-from-cart",
                   },
                 ],
               },
@@ -174,27 +175,27 @@ export default defineConfig({
                 items: [
                   {
                     text: "Add Product",
-                    link: "/docs/sequence/manage-product/add-product",
+                    link: "/software-docs/sequence/manage-product/add-product",
                   },
                   {
                     text: "Delete Product",
-                    link: "/docs/sequence/manage-product/delete-product",
+                    link: "/software-docs/sequence/manage-product/delete-product",
                   },
                   {
                     text: "Delete Review",
-                    link: "/docs/sequence/manage-product/delete-review",
+                    link: "/software-docs/sequence/manage-product/delete-review",
                   },
                   {
                     text: "Manage Product",
-                    link: "/docs/sequence/manage-product/manage-product",
+                    link: "/software-docs/sequence/manage-product/manage-product",
                   },
                   {
                     text: "Search Product",
-                    link: "/docs/sequence/manage-product/search-product",
+                    link: "/software-docs/sequence/manage-product/search-product",
                   },
                   {
                     text: "Update Product",
-                    link: "/docs/sequence/manage-product/update-product",
+                    link: "/software-docs/sequence/manage-product/update-product",
                   },
                 ],
               },
@@ -204,27 +205,27 @@ export default defineConfig({
                 items: [
                   {
                     text: "Change User Roles",
-                    link: "/docs/sequence/manage-user/change-user-roles",
+                    link: "/software-docs/sequence/manage-user/change-user-roles",
                   },
                   {
                     text: "Delete User",
-                    link: "/docs/sequence/manage-user/delete-user",
+                    link: "/software-docs/sequence/manage-user/delete-user",
                   },
                   {
                     text: "Manage User",
-                    link: "/docs/sequence/manage-user/manage-user",
+                    link: "/software-docs/sequence/manage-user/manage-user",
                   },
                   {
                     text: "Search User",
-                    link: "/docs/sequence/manage-user/search-user",
+                    link: "/software-docs/sequence/manage-user/search-user",
                   },
                   {
                     text: "View Customer Report",
-                    link: "/docs/sequence/manage-user/view-customer-report",
+                    link: "/software-docs/sequence/manage-user/view-customer-report",
                   },
                   {
                     text: "View Staff Report",
-                    link: "/docs/sequence/manage-user/view-staff-report",
+                    link: "/software-docs/sequence/manage-user/view-staff-report",
                   },
                 ],
               },
@@ -234,7 +235,7 @@ export default defineConfig({
                 items: [
                   {
                     text: "View Customer Self Report",
-                    link: "/docs/sequence/view-customer-self-report/view-customer-self-report",
+                    link: "/software-docs/sequence/view-customer-self-report/view-customer-self-report",
                   },
                 ],
               },
@@ -244,7 +245,7 @@ export default defineConfig({
                 items: [
                   {
                     text: "View Document",
-                    link: "/docs/sequence/view-document/view-document",
+                    link: "/software-docs/sequence/view-document/view-document",
                   },
                 ],
               },
@@ -254,27 +255,27 @@ export default defineConfig({
                 items: [
                   {
                     text: "Cancel Order",
-                    link: "/docs/sequence/view-order/cancel-order",
+                    link: "/software-docs/sequence/view-order/cancel-order",
                   },
                   {
                     text: "Return Product",
-                    link: "/docs/sequence/view-order/return-product",
+                    link: "/software-docs/sequence/view-order/return-product",
                   },
                   {
                     text: "Review Product",
-                    link: "/docs/sequence/view-order/review-product",
+                    link: "/software-docs/sequence/view-order/review-product",
                   },
                   {
                     text: "Search Order",
-                    link: "/docs/sequence/view-order/search-order",
+                    link: "/software-docs/sequence/view-order/search-order",
                   },
                   {
                     text: "View Order Detail",
-                    link: "/docs/sequence/view-order/view-order-detail",
+                    link: "/software-docs/sequence/view-order/view-order-detail",
                   },
                   {
                     text: "View Order",
-                    link: "/docs/sequence/view-order/view-order",
+                    link: "/software-docs/sequence/view-order/view-order",
                   },
                 ],
               },
@@ -284,27 +285,27 @@ export default defineConfig({
                 items: [
                   {
                     text: "Add Product To Cart",
-                    link: "/docs/sequence/view-product/add-product-to-cart",
+                    link: "/software-docs/sequence/view-product/add-product-to-cart",
                   },
                   {
                     text: "Search Product",
-                    link: "/docs/sequence/view-product/search-product",
+                    link: "/software-docs/sequence/view-product/search-product",
                   },
                   {
                     text: "View Product Detail",
-                    link: "/docs/sequence/view-product/view-product-detail",
+                    link: "/software-docs/sequence/view-product/view-product-detail",
                   },
                   {
                     text: "View Product",
-                    link: "/docs/sequence/view-product/view-product",
+                    link: "/software-docs/sequence/view-product/view-product",
                   },
                   {
                     text: "View Product Reviews",
-                    link: "/docs/sequence/view-product/view-product-reviews",
+                    link: "/software-docs/sequence/view-product/view-product-reviews",
                   },
                   {
                     text: "View Suggested Product",
-                    link: "/docs/sequence/view-product/view-suggested-product",
+                    link: "/software-docs/sequence/view-product/view-suggested-product",
                   },
                 ],
               },
@@ -314,7 +315,7 @@ export default defineConfig({
                 items: [
                   {
                     text: "View Shop Report",
-                    link: "/docs/sequence/view-shop-report/view-shop-report",
+                    link: "/software-docs/sequence/view-shop-report/view-shop-report",
                   },
                 ],
               },
@@ -324,7 +325,7 @@ export default defineConfig({
                 items: [
                   {
                     text: "View Staff Self Report",
-                    link: "/docs/sequence/view-staff-self-report/view-staff-self-report",
+                    link: "/software-docs/sequence/view-staff-self-report/view-staff-self-report",
                   },
                 ],
               },
@@ -334,7 +335,7 @@ export default defineConfig({
                 items: [
                   {
                     text: "View System Monitoring",
-                    link: "/docs/sequence/view-system-monitoring/view-system-monitoring",
+                    link: "/software-docs/sequence/view-system-monitoring/view-system-monitoring",
                   },
                 ],
               },
@@ -350,23 +351,23 @@ export default defineConfig({
                 items: [
                   {
                     text: "Adjust Document",
-                    link: "/docs/activity/adjust-document/adjust-document",
+                    link: "/software-docs/activity/adjust-document/adjust-document",
                   },
                   {
                     text: "Create Document",
-                    link: "/docs/activity/adjust-document/create-document",
+                    link: "/software-docs/activity/adjust-document/create-document",
                   },
                   {
                     text: "Delete Document",
-                    link: "/docs/activity/adjust-document/delete-document",
+                    link: "/software-docs/activity/adjust-document/delete-document",
                   },
                   {
                     text: "Search Document",
-                    link: "/docs/activity/adjust-document/search-document",
+                    link: "/software-docs/activity/adjust-document/search-document",
                   },
                   {
                     text: "Update Document",
-                    link: "/docs/activity/adjust-document/update-document",
+                    link: "/software-docs/activity/adjust-document/update-document",
                   },
                 ],
               },
@@ -376,7 +377,7 @@ export default defineConfig({
                 items: [
                   {
                     text: "Contact Support",
-                    link: "/docs/activity/contact-support/contact-support",
+                    link: "/software-docs/activity/contact-support/contact-support",
                   },
                 ],
               },
@@ -386,39 +387,39 @@ export default defineConfig({
                 items: [
                   {
                     text: "Delete Account",
-                    link: "/docs/activity/manage-account/delete-account",
+                    link: "/software-docs/activity/manage-account/delete-account",
                   },
                   {
                     text: "Edit Profile",
-                    link: "/docs/activity/manage-account/edit-profile",
+                    link: "/software-docs/activity/manage-account/edit-profile",
                   },
                   {
                     text: "Link Account with Third Party",
-                    link: "/docs/activity/manage-account/link-account-with-third-party",
+                    link: "/software-docs/activity/manage-account/link-account-with-third-party",
                   },
                   {
                     text: "Manage Account",
-                    link: "/docs/activity/manage-account/manage-account",
+                    link: "/software-docs/activity/manage-account/manage-account",
                   },
                   {
                     text: "Recover Account",
-                    link: "/docs/activity/manage-account/recover-account",
+                    link: "/software-docs/activity/manage-account/recover-account",
                   },
                   {
                     text: "Reset Password",
-                    link: "/docs/activity/manage-account/reset-password",
+                    link: "/software-docs/activity/manage-account/reset-password",
                   },
                   {
                     text: "Sign In",
-                    link: "/docs/activity/manage-account/sign-in",
+                    link: "/software-docs/activity/manage-account/sign-in",
                   },
                   {
                     text: "Sign Out",
-                    link: "/docs/activity/manage-account/sign-out",
+                    link: "/software-docs/activity/manage-account/sign-out",
                   },
                   {
                     text: "Sign Up",
-                    link: "/docs/activity/manage-account/sign-up",
+                    link: "/software-docs/activity/manage-account/sign-up",
                   },
                 ],
               },
@@ -428,19 +429,19 @@ export default defineConfig({
                 items: [
                   {
                     text: "Change Product Amount",
-                    link: "/docs/activity/manage-cart/change-product-amount",
+                    link: "/software-docs/activity/manage-cart/change-product-amount",
                   },
                   {
                     text: "Manage Cart",
-                    link: "/docs/activity/manage-cart/manage-cart",
+                    link: "/software-docs/activity/manage-cart/manage-cart",
                   },
                   {
                     text: "Purchase",
-                    link: "/docs/activity/manage-cart/purchase",
+                    link: "/software-docs/activity/manage-cart/purchase",
                   },
                   {
                     text: "Remove Product From Cart",
-                    link: "/docs/activity/manage-cart/remove-product-from-cart",
+                    link: "/software-docs/activity/manage-cart/remove-product-from-cart",
                   },
                 ],
               },
@@ -450,27 +451,27 @@ export default defineConfig({
                 items: [
                   {
                     text: "Add Product",
-                    link: "/docs/activity/manage-product/add-product",
+                    link: "/software-docs/activity/manage-product/add-product",
                   },
                   {
                     text: "Delete Product",
-                    link: "/docs/activity/manage-product/delete-product",
+                    link: "/software-docs/activity/manage-product/delete-product",
                   },
                   {
                     text: "Delete Review",
-                    link: "/docs/activity/manage-product/delete-review",
+                    link: "/software-docs/activity/manage-product/delete-review",
                   },
                   {
                     text: "Manage Product",
-                    link: "/docs/activity/manage-product/manage-product",
+                    link: "/software-docs/activity/manage-product/manage-product",
                   },
                   {
                     text: "Search Product",
-                    link: "/docs/activity/manage-product/search-product",
+                    link: "/software-docs/activity/manage-product/search-product",
                   },
                   {
                     text: "Update Product",
-                    link: "/docs/activity/manage-product/update-product",
+                    link: "/software-docs/activity/manage-product/update-product",
                   },
                 ],
               },
@@ -480,27 +481,27 @@ export default defineConfig({
                 items: [
                   {
                     text: "Change User Roles",
-                    link: "/docs/activity/manage-user/change-user-roles",
+                    link: "/software-docs/activity/manage-user/change-user-roles",
                   },
                   {
                     text: "Delete User",
-                    link: "/docs/activity/manage-user/delete-user",
+                    link: "/software-docs/activity/manage-user/delete-user",
                   },
                   {
                     text: "Manage User",
-                    link: "/docs/activity/manage-user/manage-user",
+                    link: "/software-docs/activity/manage-user/manage-user",
                   },
                   {
                     text: "Search User",
-                    link: "/docs/activity/manage-user/search-user",
+                    link: "/software-docs/activity/manage-user/search-user",
                   },
                   {
                     text: "View Customer Report",
-                    link: "/docs/activity/manage-user/view-customer-report",
+                    link: "/software-docs/activity/manage-user/view-customer-report",
                   },
                   {
                     text: "View Staff Report",
-                    link: "/docs/activity/manage-user/view-staff-report",
+                    link: "/software-docs/activity/manage-user/view-staff-report",
                   },
                 ],
               },
@@ -510,7 +511,7 @@ export default defineConfig({
                 items: [
                   {
                     text: "View Customer Self Report",
-                    link: "/docs/activity/view-customer-self-report/view-customer-self-report",
+                    link: "/software-docs/activity/view-customer-self-report/view-customer-self-report",
                   },
                 ],
               },
@@ -520,7 +521,7 @@ export default defineConfig({
                 items: [
                   {
                     text: "View Document",
-                    link: "/docs/activity/view-document/view-document",
+                    link: "/software-docs/activity/view-document/view-document",
                   },
                 ],
               },
@@ -530,27 +531,27 @@ export default defineConfig({
                 items: [
                   {
                     text: "Cancel Order",
-                    link: "/docs/activity/view-order/cancel-order",
+                    link: "/software-docs/activity/view-order/cancel-order",
                   },
                   {
                     text: "Return Product",
-                    link: "/docs/activity/view-order/return-product",
+                    link: "/software-docs/activity/view-order/return-product",
                   },
                   {
                     text: "Review Product",
-                    link: "/docs/activity/view-order/review-product",
+                    link: "/software-docs/activity/view-order/review-product",
                   },
                   {
                     text: "Search Order",
-                    link: "/docs/activity/view-order/search-order",
+                    link: "/software-docs/activity/view-order/search-order",
                   },
                   {
                     text: "View Order Detail",
-                    link: "/docs/activity/view-order/view-order-detail",
+                    link: "/software-docs/activity/view-order/view-order-detail",
                   },
                   {
                     text: "View Order",
-                    link: "/docs/activity/view-order/view-order",
+                    link: "/software-docs/activity/view-order/view-order",
                   },
                 ],
               },
@@ -560,27 +561,27 @@ export default defineConfig({
                 items: [
                   {
                     text: "Add Product To Cart",
-                    link: "/docs/activity/view-product/add-product-to-cart",
+                    link: "/software-docs/activity/view-product/add-product-to-cart",
                   },
                   {
                     text: "Search Product",
-                    link: "/docs/activity/view-product/search-product",
+                    link: "/software-docs/activity/view-product/search-product",
                   },
                   {
                     text: "View Product Detail",
-                    link: "/docs/activity/view-product/view-product-detail",
+                    link: "/software-docs/activity/view-product/view-product-detail",
                   },
                   {
                     text: "View Product",
-                    link: "/docs/activity/view-product/view-product",
+                    link: "/software-docs/activity/view-product/view-product",
                   },
                   {
                     text: "View Product Reviews",
-                    link: "/docs/activity/view-product/view-product-reviews",
+                    link: "/software-docs/activity/view-product/view-product-reviews",
                   },
                   {
                     text: "View Suggested Product",
-                    link: "/docs/activity/view-product/view-suggested-product",
+                    link: "/software-docs/activity/view-product/view-suggested-product",
                   },
                 ],
               },
@@ -590,7 +591,7 @@ export default defineConfig({
                 items: [
                   {
                     text: "View Shop Report",
-                    link: "/docs/activity/view-shop-report/view-shop-report",
+                    link: "/software-docs/activity/view-shop-report/view-shop-report",
                   },
                 ],
               },
@@ -600,7 +601,7 @@ export default defineConfig({
                 items: [
                   {
                     text: "View Staff Self Report",
-                    link: "/docs/activity/view-staff-self-report/view-staff-self-report",
+                    link: "/software-docs/activity/view-staff-self-report/view-staff-self-report",
                   },
                 ],
               },
@@ -610,27 +611,32 @@ export default defineConfig({
                 items: [
                   {
                     text: "View System Monitoring",
-                    link: "/docs/activity/view-system-monitoring/view-system-monitoring",
+                    link: "/software-docs/activity/view-system-monitoring/view-system-monitoring",
                   },
                 ],
               },
             ],
           },
           {
-            text: "Database",
-            link: "/docs/database",
-          },
-          {
             text: "Function Lists",
-            link: "/docs/function-list",
+            link: "/software-docs/function-list",
           },
           {
             text: "SRS",
-            link: "/docs/srs",
+            link: "/software-docs/srs",
           },
           {
+            text: "Database",
+            link: "/software-docs/database",
+          },
+        ],
+      },
+      {
+        text: "Extra docs",
+        items: [
+          {
             text: "Module group",
-            link: "/docs/module-group",
+            link: "/extra-docs/module-group",
           },
         ],
       },

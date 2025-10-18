@@ -34,62 +34,62 @@
   "data": {
     "sequence-add-product-to-cart": {
       "type": "file",
-      "path": "./docs/docs/sequence/view-product/add-product-to-cart.md",
+      "path": "./docs/software-docs/sequence/view-product/add-product-to-cart.md",
       "description": "This is a CRUD sequence"
     },
     "sequence-search-product": {
       "type": "file",
-      "path": "./docs/docs/sequence/view-product/search-product.md",
+      "path": "./docs/software-docs/sequence/view-product/search-product.md",
       "description": "This is a search sequence"
     },
     "sequence-view-product-detail": {
       "type": "file",
-      "path": "./docs/docs/sequence/view-product/view-product-detail.md",
+      "path": "./docs/software-docs/sequence/view-product/view-product-detail.md",
       "description": "This is a CRUD sequence"
     },
     "sequence-view-product-reviews": {
       "type": "file",
-      "path": "./docs/docs/sequence/view-product/view-product-reviews.md",
+      "path": "./docs/software-docs/sequence/view-product/view-product-reviews.md",
       "description": "This is a CRUD sequence"
     },
     "sequence-view-product": {
       "type": "file",
-      "path": "./docs/docs/sequence/view-product/view-product.md",
+      "path": "./docs/software-docs/sequence/view-product/view-product.md",
       "description": "This is a generic sequence"
     },
     "sequence-view-suggested-product": {
       "type": "file",
-      "path": "./docs/docs/sequence/view-product/view-suggested-product.md",
+      "path": "./docs/software-docs/sequence/view-product/view-suggested-product.md",
       "description": "This is a CRUD sequence"
     },
     "activity-add-product-to-cart": {
       "type": "file",
-      "path": "./docs/docs/activity/view-product/add-product-to-cart.md",
+      "path": "./docs/software-docs/activity/view-product/add-product-to-cart.md",
       "description": "This is a CRUD activity"
     },
     "activity-search-product": {
       "type": "file",
-      "path": "./docs/docs/activity/view-product/search-product.md",
+      "path": "./docs/software-docs/activity/view-product/search-product.md",
       "description": "This is a search activity"
     },
     "activity-view-product-detail": {
       "type": "file",
-      "path": "./docs/docs/activity/view-product/view-product-detail.md",
+      "path": "./docs/software-docs/activity/view-product/view-product-detail.md",
       "description": "This is a CRUD activity"
     },
     "activity-view-product-reviews": {
       "type": "file",
-      "path": "./docs/docs/activity/view-product/view-product-reviews.md",
+      "path": "./docs/software-docs/activity/view-product/view-product-reviews.md",
       "description": "This is a CRUD activity"
     },
     "activity-view-product": {
       "type": "file",
-      "path": "./docs/docs/activity/view-product/view-product.md",
+      "path": "./docs/software-docs/activity/view-product/view-product.md",
       "description": "This is a generic activity"
     },
     "activity-view-suggested-product": {
       "type": "file",
-      "path": "./docs/docs/activity/view-product/view-suggested-product.md",
+      "path": "./docs/software-docs/activity/view-product/view-suggested-product.md",
       "description": "This is a CRUD activity"
     }
   }
