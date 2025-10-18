@@ -632,10 +632,10 @@ export default defineConfig({
         ],
       },
       {
-        text: "Extra docs",
+        text: "Extra Docs",
         items: [
           {
-            text: "Module group",
+            text: "Module Group",
             link: "/extra-docs/module-group",
           },
         ],

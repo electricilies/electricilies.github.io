@@ -10,6 +10,9 @@ hero:
       text: Overview
       link: /overview/
     - theme: alt
-      text: Docs
-      link: /docs/
+      text: Software Docs
+      link: /software-docs/
+    - theme: alt
+      text: Extra Docs
+      link: /extra-docs/
 ---
