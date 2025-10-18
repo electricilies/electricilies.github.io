@@ -41,7 +41,7 @@ endif
 
 |Database|
 :(11) Validate code + verifier + challenge;
-if (Valid?) then (yes)
+if (Code + Verifier valid?) then (yes)
   :(12) Return JWT Token;
 else (no)
   |System|
@@ -51,16 +51,29 @@ endif
 
 |System|
 :(13) Validate JWT;
+
+|Database|
+:(14) Verify JWT signature;
 if (JWT valid?) then (yes)
-  :(14) Redirect to HomeView;
+  :(15) Extract user role from JWT;
+  :(16) Compare with actual user role;
+  if (Role valid?) then (yes)
+    :(17) Return success;
+  else (no)
+    |System|
+    :(16.1) Display "Invalid role" error;
+    stop
+  endif
 else (no)
-  :(13.1) Display "Invalid JWT" error;
+  |System|
+  :(14.1) Display "Invalid JWT" error;
   stop
 endif
 
 |System|
-:(15) Display HomeView;
-|Database|
+:(18) Redirect to HomeView;
+:(19) Display HomeView;
+
 stop
 @enduml
 ```

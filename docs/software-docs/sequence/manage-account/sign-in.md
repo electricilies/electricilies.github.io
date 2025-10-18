@@ -79,19 +79,34 @@ activate UC
 
 UC -> US: Validate JWT
 activate US
-US -> US: Verify JWT
-activate US
-deactivate US
+A <- US: Send and verify JWT
+activate A
+
 
 break invalid JWT Token
-  UC <-- US: Error
+  A --> US: Error
   AMSIV <-- UC: Error
   AMSIV -> AMSIV: Display error
   activate AMSIV
   deactivate AMSIV
 end
 
-UC <-- US: Success
+A --> US: JWT valid
+US -> US: Sign to get User role from JWT
+activate US
+deactivate US
+A <- US: Get actual user role
+A --> US: user role
+US -> US: Check role by comparing user role from jwt and actual user role
+activate US
+deactivate US
+break invalid role
+  US --> UC: Error
+  AMSIV <-- UC: Error
+  AMSIV -> AMSIV: Display error
+  activate AMSIV
+  deactivate AMSIV
+end
 deactivate US
 AMSIV <-- UC: Success
 deactivate UC
