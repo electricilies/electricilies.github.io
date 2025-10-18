@@ -13,11 +13,6 @@ explanation.shape: rectangle
 
 users: {
   id: uuid {constraint: PK}
-  avatar: text
-  birthday: date
-  phone_number: varchar(20)
-  created_at: timestamp
-  deleted_at: timestamp
 }
 
 addresses: {
