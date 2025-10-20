@@ -3,7 +3,9 @@
 **Electricilies - Website for Selling Electronic Products**
 
 **Version:** 1.0
+
 **Date:** November 1, 2025
+
 **Project Duration:** November 1, 2025 - November 26, 2025
 
 ---
@@ -308,8 +310,8 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 ### 5.1 Timeline Overview
 
-**Total Duration:** 26 days (November 1-26, 2025)
-**Resource Allocation:** ~2 hours/day per team member
+- **Total Duration:** 26 days (November 1-26, 2025)
+- **Resource Allocation:** ~2 hours/day per team member
 
 | Phase                            | Duration | Dates     | Activities                                  |
 | -------------------------------- | -------- | --------- | ------------------------------------------- |
@@ -391,8 +393,8 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 | **Backend Integration Tests**  | 23520161, 23521049 | Self-review in dev team | Testcontainers setup          |
 | **Frontend Integration Tests** | 23520956, 23521787 | Self-review in dev team | MSW setup                     |
 | **E2E Tests**                  | 23520161, 23520956 | All team members        | Collaborative review          |
-| **Performance Tests**          | 23520161           |                 | Manual execution              |
-| **CI/CD Configuration**        | 23520161           |                 | GitHub Actions workflows      |
+| **Performance Tests**          | 23520161           |                         | Manual execution              |
+| **CI/CD Configuration**        | 23520161           |                         | GitHub Actions workflows      |
 | **Test Documentation**         | 23520161           | All team members        | Test plan, summary report     |
 | **Code Coverage Monitoring**   | 23520161           | All team members        | Codecov integration           |
 
@@ -422,7 +424,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 | **Test Code**                | Go, TypeScript    | `backend/tests/`, `frontend/tests/`                   | All developers      |
 | **CI Workflows**             | YAML              | `.github/workflows/`                                  | 23520161            |
 | **Test Data Fixtures**       | Go, JSON          | `backend/tests/fixtures/`, `frontend/tests/fixtures/` | All developers      |
-| **Test Summary Report**      | HTML/PDF          |                                 | 23520161            |
+| **Test Summary Report**      | HTML/PDF          |                                                       | 23520161            |
 | **Code Coverage Reports**    | HTML, JSON        | Codecov dashboard                                     | Automated (Codecov) |
 | **Performance Test Results** | HTML, Screenshots | `kubernetes-manifest/tests/k6/reports/`               | 23520161            |
 | **E2E Test Reports**         | HTML              | Playwright HTML Report (GH Actions artifact)          | 23520161, 23520956  |
@@ -506,15 +508,15 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 ### 9.2 Risks and Mitigation
 
-| Risk                                | Impact                           | Probability | Mitigation Strategy                                                                                |
-| ----------------------------------- | -------------------------------- | ----------- | -------------------------------------------------------------------------------------------------- |
-| **Testcontainers fails on CI**      | High (blocks integration tests)  | Low         | - Test locally first<br>- Use Docker Compose fallback<br>- Document manual testing steps           |
-| **Kubernetes cluster downtime**     | High (blocks E2E and deployment) | Low         | - Schedule maintenance windows<br>- Keep local Docker setup as backup<br>- Document recovery steps |
-| **Time constraints (26 days)**      | Medium (reduced coverage)        | Medium      | - Prioritize critical paths<br>- Focus on high-value tests<br>- Document out-of-scope items        |
-| **CI pipeline timeouts**            | Medium (delays feedback)         | Medium      | - Optimize test parallelization<br>- Use CI caching effectively<br>- Split long test suites        |
-| **Flaky E2E tests**                 | Medium (false failures)          | High        | - Use Playwright auto-wait<br>- Add explicit waits where needed<br>- Retry failed tests (max 2)    |
-| **Coverage drops below threshold**  | Low (CI fails, but fixable)      | Low         | - Monitor coverage in PRs<br>- Require tests for new code<br>- Refactor to improve testability     |
-| **Team member unavailability**      | Medium (delays schedule)         | Low         | - Cross-train on test areas<br>- Document test approaches<br>- Re-prioritize tasks                 |
+| Risk                               | Impact                           | Probability | Mitigation Strategy                                                                                |
+| ---------------------------------- | -------------------------------- | ----------- | -------------------------------------------------------------------------------------------------- |
+| **Testcontainers fails on CI**     | High (blocks integration tests)  | Low         | - Test locally first<br>- Use Docker Compose fallback<br>- Document manual testing steps           |
+| **Kubernetes cluster downtime**    | High (blocks E2E and deployment) | Low         | - Schedule maintenance windows<br>- Keep local Docker setup as backup<br>- Document recovery steps |
+| **Time constraints (26 days)**     | Medium (reduced coverage)        | Medium      | - Prioritize critical paths<br>- Focus on high-value tests<br>- Document out-of-scope items        |
+| **CI pipeline timeouts**           | Medium (delays feedback)         | Medium      | - Optimize test parallelization<br>- Use CI caching effectively<br>- Split long test suites        |
+| **Flaky E2E tests**                | Medium (false failures)          | High        | - Use Playwright auto-wait<br>- Add explicit waits where needed<br>- Retry failed tests (max 2)    |
+| **Coverage drops below threshold** | Low (CI fails, but fixable)      | Low         | - Monitor coverage in PRs<br>- Require tests for new code<br>- Refactor to improve testability     |
+| **Team member unavailability**     | Medium (delays schedule)         | Low         | - Cross-train on test areas<br>- Document test approaches<br>- Re-prioritize tasks                 |
 
 ### 9.3 Contingency Plans
 
@@ -1174,24 +1176,6 @@ func (s *IntegrationSuite) SetupSuite() {
     // Connect
     connStr, _ := pgContainer.ConnectionString
 ```
-
-## Me
-
-> Context:
->
-> - <file>assets/test-plan-example.md</file>
-> - <file>assets/test-plan-template-01.md</file>
-> - <file>assets/sample-test-plan-template.md</file>
-> - <file>assets/se113-test-plan-slide.md</file>
-> - <file>docs/software-docs/user-story/index.md</file>
-> - <file>docs/software-docs/function-list/index.md</file>
-> - <file>docs/software-docs/srs/index.md</file>
-
-continue where you leave off, but don't gen code ok? keep doing docs
-
-## CodeCompanion (Copilot)
-
-# TEST PLAN (Continued)
 
 ### 10.3 Test Configuration Files (Continued)
 

@@ -631,6 +631,7 @@ export default defineConfig({
           },
           {
             text: "Test",
+            collapsed: true,
             items: [
               {
                 text: "Test Plan",
