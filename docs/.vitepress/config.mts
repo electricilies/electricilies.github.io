@@ -629,6 +629,15 @@ export default defineConfig({
             text: "Database",
             link: "/software-docs/database",
           },
+          {
+            text: "Test",
+            items: [
+              {
+                text: "Test Plan",
+                link: "/software-docs/test/test-plan",
+              },
+            ],
+          },
         ],
       },
       {
