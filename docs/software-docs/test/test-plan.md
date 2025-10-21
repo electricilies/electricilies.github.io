@@ -6,7 +6,7 @@
 
 **Date:** November 1, 2025
 
-**Project Duration:** November 1, 2025 - November 26, 2025
+**Project Duration:** November 1, 2025 - December 10, 2025
 
 ---
 
@@ -28,15 +28,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 **Project Name:** Electricilies - Website for Selling Electronic Products
 
-**Technology Stack:**
-
-- Frontend: Next.js, Node.js
-- Backend: Go with domain-driven architecture
-- Database: PostgreSQL
-- Deployment: Kubernetes on Arch Linux (16GB RAM, 256GB SSD)
-- CI/CD: GitHub Actions with FluxCD GitOps
-
-**Testing Period:** November 1, 2025 - November 26, 2025 (26 days)
+**Testing Period:** November 1, 2025 - December 10, 2025 (40 days)
 
 ### 1.3 Objectives
 
@@ -60,6 +52,8 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 ### 2.1 In Scope
 
 #### 2.1.1 Functional Modules
+
+**Note:** Unit tests can be extended to cover additional modules beyond those listed. Integration and E2E tests are restricted to the modules specified below.
 
 | Module              | Functions                                                                                     | Test Levels            |
 | ------------------- | --------------------------------------------------------------------------------------------- | ---------------------- |
@@ -310,66 +304,61 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 ### 5.1 Timeline Overview
 
-- **Total Duration:** 26 days (November 1-26, 2025)
+- **Total Duration:** 40 days (November 1 - December 10, 2025)
 - **Resource Allocation:** ~2 hours/day per team member
 
 | Phase                            | Duration | Dates     | Activities                                  |
 | -------------------------------- | -------- | --------- | ------------------------------------------- |
-| **Phase 1: Setup**               | 3 days   | Nov 1-3   | Test infrastructure setup, CI configuration |
-| **Phase 2: Unit Testing**        | 7 days   | Nov 4-10  | Write and execute unit tests                |
-| **Phase 3: Integration Testing** | 6 days   | Nov 11-16 | Write and execute integration tests         |
-| **Phase 4: E2E Testing**         | 5 days   | Nov 17-21 | Write and execute E2E tests                 |
-| **Phase 5: Performance Testing** | 2 days   | Nov 22-23 | Execute k6 load tests                       |
-| **Phase 6: Finalization**        | 3 days   | Nov 24-26 | Bug fixes, documentation, report generation |
+| **Phase 1: Setup**               | 5 days   | Nov 1-5   | Test infrastructure setup, CI configuration |
+| **Phase 2: Unit Testing**        | 10 days  | Nov 6-15  | Write and execute unit tests                |
+| **Phase 3: Integration Testing** | 8 days   | Nov 16-23 | Write and execute integration tests         |
+| **Phase 4: E2E Testing**         | 7 days   | Nov 24-30 | Write and execute E2E tests                 |
+| **Phase 5: Performance Testing** | 3 days   | Dec 1-3   | Execute k6 load tests                       |
+| **Phase 6: Finalization**        | 7 days   | Dec 4-10  | Bug fixes, documentation, report generation |
 
 ### 5.2 Detailed Schedule
 
-#### Week 1: November 1-7
+#### Week 1-2: November 1-15
 
-| Date    | Activity                                       | Owner                                         | Deliverable                           |
-| ------- | ---------------------------------------------- | --------------------------------------------- | ------------------------------------- |
-| Nov 1   | Setup CI workflows for backend                 | Trần Nguyễn Thái Bình                         | `.github/workflows/backend.yml`       |
-| Nov 2   | Setup CI workflows for frontend                | Trần Nguyễn Thái Bình                         | `.github/workflows/frontend.yml`      |
-| Nov 3   | Configure Codecov integration                  | Trần Nguyễn Thái Bình                         | Codecov badges on README              |
-| Nov 4-5 | Write unit tests for Manage Account (backend)  | Trần Nguyễn Thái Bình, Nguyễn Thái Gia Nguyễn | Tests for signup, login, logout logic |
-| Nov 6-7 | Write unit tests for Manage Account (frontend) | Trần Nguyễn Duy Minh, Đào Duy Vinh            | Tests for auth components             |
+| Date      | Activity                                       | Owner                                         | Deliverable                           |
+| --------- | ---------------------------------------------- | --------------------------------------------- | ------------------------------------- |
+| Nov 1     | Setup CI workflows for backend                 | Trần Nguyễn Thái Bình                         | `.github/workflows/backend.yml`       |
+| Nov 2     | Setup CI workflows for frontend                | Trần Nguyễn Thái Bình                         | `.github/workflows/frontend.yml`      |
+| Nov 3-5   | Configure Codecov integration                  | Trần Nguyễn Thái Bình                         | Codecov badges on README              |
+| Nov 6-8   | Write unit tests for Manage Account (backend)  | Trần Nguyễn Thái Bình, Nguyễn Thái Gia Nguyễn | Tests for signup, login, logout logic |
+| Nov 9-11  | Write unit tests for Manage Account (frontend) | Trần Nguyễn Duy Minh, Đào Duy Vinh            | Tests for auth components             |
+| Nov 12-13 | Write unit tests for Manage Cart (backend)     | Trần Nguyễn Thái Bình, Nguyễn Thái Gia Nguyễn | Tests for cart operations             |
+| Nov 14-15 | Write unit tests for Manage Cart (frontend)    | Trần Nguyễn Duy Minh, Đào Duy Vinh            | Tests for cart components             |
 
-#### Week 2: November 8-14
-
-| Date      | Activity                                    | Owner                                         | Deliverable                     |
-| --------- | ------------------------------------------- | --------------------------------------------- | ------------------------------- |
-| Nov 8-9   | Write unit tests for Manage Cart (backend)  | Trần Nguyễn Thái Bình, Nguyễn Thái Gia Nguyễn | Tests for cart operations       |
-| Nov 10    | Write unit tests for Manage Cart (frontend) | Trần Nguyễn Duy Minh, Đào Duy Vinh            | Tests for cart components       |
-| Nov 11-12 | Setup Testcontainers for integration tests  | Trần Nguyễn Thái Bình                         | Integration test suite skeleton |
-| Nov 13-14 | Write integration tests for auth endpoints  | Trần Nguyễn Thái Bình, Nguyễn Thái Gia Nguyễn | API integration tests           |
-
-#### Week 3: November 15-21
+#### Week 3-4: November 16-30
 
 | Date      | Activity                                   | Owner                                         | Deliverable                      |
 | --------- | ------------------------------------------ | --------------------------------------------- | -------------------------------- |
-| Nov 15-16 | Write integration tests for cart endpoints | Trần Nguyễn Thái Bình, Nguyễn Thái Gia Nguyễn | Cart API integration tests       |
-| Nov 17    | Setup Playwright E2E framework             | Trần Nguyễn Thái Bình                         | Playwright config and base tests |
-| Nov 18-19 | Write E2E tests for auth and cart flows    | Trần Nguyễn Thái Bình, Trần Nguyễn Duy Minh   | Critical user journey tests      |
-| Nov 20-21 | Write E2E tests for product and support    | Trần Nguyễn Thái Bình, Trần Nguyễn Duy Minh   | Remaining E2E scenarios          |
+| Nov 16-18 | Setup Testcontainers for integration tests | Trần Nguyễn Thái Bình                         | Integration test suite skeleton  |
+| Nov 19-20 | Write integration tests for auth endpoints | Trần Nguyễn Thái Bình, Nguyễn Thái Gia Nguyễn | API integration tests            |
+| Nov 21-23 | Write integration tests for cart endpoints | Trần Nguyễn Thái Bình, Nguyễn Thái Gia Nguyễn | Cart API integration tests       |
+| Nov 24-25 | Setup Playwright E2E framework             | Trần Nguyễn Thái Bình                         | Playwright config and base tests |
+| Nov 26-28 | Write E2E tests for auth and cart flows    | Trần Nguyễn Thái Bình, Trần Nguyễn Duy Minh   | Critical user journey tests      |
+| Nov 29-30 | Write E2E tests for product and support    | Trần Nguyễn Thái Bình, Trần Nguyễn Duy Minh   | Remaining E2E scenarios          |
 
-#### Week 4: November 22-26
+#### Week 5-6: December 1-10
 
-| Date   | Activity                             | Owner                 | Deliverable                           |
-| ------ | ------------------------------------ | --------------------- | ------------------------------------- |
-| Nov 22 | Write k6 performance test scripts    | Trần Nguyễn Thái Bình | Load test scripts                     |
-| Nov 23 | Execute k6 tests and capture results | Trần Nguyễn Thái Bình | Performance test report (screenshots) |
-| Nov 24 | Review test coverage, fix gaps       | All team              | Coverage > thresholds                 |
-| Nov 25 | Generate test summary report         | Trần Nguyễn Thái Bình | HTML/PDF test report                  |
-| Nov 26 | Final documentation and submission   | All team              | Complete test deliverables            |
+| Date     | Activity                             | Owner                 | Deliverable                           |
+| -------- | ------------------------------------ | --------------------- | ------------------------------------- |
+| Dec 1-2  | Write k6 performance test scripts    | Trần Nguyễn Thái Bình | Load test scripts                     |
+| Dec 3    | Execute k6 tests and capture results | Trần Nguyễn Thái Bình | Performance test report (screenshots) |
+| Dec 4-6  | Review test coverage, fix gaps       | All team              | Coverage > thresholds                 |
+| Dec 7-8  | Generate test summary report         | Trần Nguyễn Thái Bình | HTML/PDF test report                  |
+| Dec 9-10 | Final documentation and submission   | All team              | Complete test deliverables            |
 
 ### 5.3 Milestone Checklist
 
-- [ ] **Nov 3:** CI pipelines operational with unit tests running
-- [ ] **Nov 10:** Unit test coverage meets minimum thresholds (20% backend, 20% frontend)
-- [ ] **Nov 16:** Integration tests passing for critical paths
-- [ ] **Nov 21:** E2E tests passing for all critical user journeys
-- [ ] **Nov 23:** Performance test results documented
-- [ ] **Nov 26:** Test summary report completed and submitted
+- [ ] **Nov 5:** CI pipelines operational with unit tests running
+- [ ] **Nov 15:** Unit test coverage meets minimum thresholds (20% backend, 20% frontend)
+- [ ] **Nov 23:** Integration tests passing for critical paths
+- [ ] **Nov 30:** E2E tests passing for all critical user journeys
+- [ ] **Dec 3:** Performance test results documented
+- [ ] **Dec 10:** Test summary report completed and submitted
 
 ---
 
@@ -512,7 +501,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 | ---------------------------------- | -------------------------------- | ----------- | -------------------------------------------------------------------------------------------------- |
 | **Testcontainers fails on CI**     | High (blocks integration tests)  | Low         | - Test locally first<br>- Use Docker Compose fallback<br>- Document manual testing steps           |
 | **Kubernetes cluster downtime**    | High (blocks E2E and deployment) | Low         | - Schedule maintenance windows<br>- Keep local Docker setup as backup<br>- Document recovery steps |
-| **Time constraints (26 days)**     | Medium (reduced coverage)        | Medium      | - Prioritize critical paths<br>- Focus on high-value tests<br>- Document out-of-scope items        |
+| **Time constraints**               | Medium (reduced coverage)        | Medium      | - Prioritize critical paths<br>- Focus on high-value tests<br>- Document out-of-scope items        |
 | **CI pipeline timeouts**           | Medium (delays feedback)         | Medium      | - Optimize test parallelization<br>- Use CI caching effectively<br>- Split long test suites        |
 | **Flaky E2E tests**                | Medium (false failures)          | High        | - Use Playwright auto-wait<br>- Add explicit waits where needed<br>- Retry failed tests (max 2)    |
 | **Coverage drops below threshold** | Low (CI fails, but fixable)      | Low         | - Monitor coverage in PRs<br>- Require tests for new code<br>- Refactor to improve testability     |
@@ -642,25 +631,25 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 ### 10.5 Tools and Technologies Summary
 
-| Category                | Tool/Technology           | Purpose              | License                  |
-| ----------------------- | ------------------------- | -------------------- | ------------------------ |
-| **Unit Testing**        | Go testing                | Backend unit tests   | Open source (Go license) |
-|                         | testify/assert            | Test assertions      | MIT                      |
-|                         | Vitest                    | Frontend unit tests  | MIT                      |
-|                         | React Testing Library     | Component testing    | MIT                      |
-| **Integration Testing** | Testcontainers Go         | Ephemeral containers | MIT                      |
-|                         | MSW (Mock Service Worker) | API mocking          | MIT                      |
-| **E2E Testing**         | Playwright                | Browser automation   | Apache 2.0               |
-| **Performance Testing** | Grafana k6                | Load testing         | AGPL v3                  |
-| **Code Coverage**       | Go coverage               | Native coverage      | Open source (Go license) |
-|                         | Vitest coverage (v8)      | JS coverage          | MIT                      |
-|                         | Codecov                   | Coverage reporting   | Free for open source     |
-| **CI/CD**               | GitHub Actions            | CI pipeline          | Free for public repos    |
-| **Monitoring**          | Prometheus                | Metrics collection   | Apache 2.0               |
-|                         | Grafana                   | Visualization        | AGPL v3                  |
-|                         | Loki                      | Log aggregation      | AGPL v3                  |
-| **Version Control**     | Git                       | Source control       | GPL v2                   |
-|                         | GitHub                    | Repository hosting   | Free for public repos    |
+| Category                | Tool/Technology           | Purpose              |
+| ----------------------- | ------------------------- | -------------------- |
+| **Unit Testing**        | Go testing                | Backend unit tests   |
+|                         | testify/assert            | Test assertions      |
+|                         | Vitest                    | Frontend unit tests  |
+|                         | React Testing Library     | Component testing    |
+| **Integration Testing** | Testcontainers Go         | Ephemeral containers |
+|                         | MSW (Mock Service Worker) | API mocking          |
+| **E2E Testing**         | Playwright                | Browser automation   |
+| **Performance Testing** | Grafana k6                | Load testing         |
+| **Code Coverage**       | Go coverage               | Native coverage      |
+|                         | Vitest coverage (v8)      | JS coverage          |
+|                         | Codecov                   | Coverage reporting   |
+| **CI/CD**               | GitHub Actions            | CI pipeline          |
+| **Monitoring**          | Prometheus                | Metrics collection   |
+|                         | Grafana                   | Visualization        |
+|                         | Loki                      | Log aggregation      |
+| **Version Control**     | Git                       | Source control       |
+|                         | GitHub                    | Repository hosting   |
 
 ---
 
@@ -694,29 +683,26 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 **Testing Frameworks Documentation:**
 
-- Go Testing: https://pkg.go.dev/testing
-- Vitest: https://vitest.dev/
-- Playwright: https://playwright.dev/
-- React Testing Library: https://testing-library.com/react
-- Testcontainers: https://golang.testcontainers.org/
-
-**Best Practices:**
-
-- Google Testing Blog: https://testing.googleblog.com/
-- Martin Fowler - Testing Strategies: https://martinfowler.com/testing/
-- Playwright Best Practices: https://playwright.dev/docs/best-practices
+- Go Testing: <https://pkg.go.dev/testing>
+- Vitest: <https://vitest.dev/>
+- Playwright: <https://playwright.dev/>
+- React Testing Library: <https://testing-library.com/react>
+- Testcontainers: <https://golang.testcontainers.org/>
 
 **Tools:**
 
-- Codecov: https://docs.codecov.com/
-- GitHub Actions: https://docs.github.com/en/actions
-- Grafana k6: https://k6.io/docs/
+- Codecov: <https://docs.codecov.com/>
+- GitHub Actions: <https://docs.github.com/en/actions>
+- Grafana k6: <https://k6.io/docs/>
 
 **Project-Specific:**
 
-- Electricilies SRS: `docs/software-docs/srs/index.md`
-- User Story: `docs/software-docs/user-story/index.md`
-- Function List: `docs/software-docs/function-list/index.md`
+- [User Stories](https://electricilies.github.io/software-docs/user-story/)
+- [Use cases](https://electricilies.github.io/software-docs/use-case/)
+- [Functions List](https://electricilies.github.io/software-docs/function-list/)
+- [Activity Diagrams](https://electricilies.github.io/software-docs/activity/)
+- [Sequence Diagrams](https://electricilies.github.io/software-docs/sequence/)
+- [Electricilies SRS](https://electricilies.github.io/software-docs/srs/)
 
 ---
 
@@ -742,12 +728,12 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 This test plan is subject to review and approval by all team members before execution begins.
 
-| Name                   | Role          | Signature          | Date             |
-| ---------------------- | ------------- | ------------------ | ---------------- |
-| Trần Nguyễn Thái Bình  | Project Owner | **\*\***\_**\*\*** | \_\_\_\_/11/2025 |
-| Nguyễn Thái Gia Nguyễn | Project Owner | **\*\***\_**\*\*** | \_\_\_\_/11/2025 |
-| Trần Nguyễn Duy Minh   | Frontend Dev  | **\*\***\_**\*\*** | \_\_\_\_/11/2025 |
-| Đào Duy Vinh           | Frontend Dev  | **\*\***\_**\*\*** | \_\_\_\_/11/2025 |
+| Name                   | Signature | Date           |
+| ---------------------- | --------- | -------------- |
+| Trần Nguyễn Thái Bình  |           | \_\_/\_\_/2025 |
+| Nguyễn Thái Gia Nguyễn |           | \_\_/\_\_/2025 |
+| Trần Nguyễn Duy Minh   |           | \_\_/\_\_/2025 |
+| Đào Duy Vinh           |           | \_\_/\_\_/2025 |
 
 **Approval Status:**
 
@@ -764,7 +750,7 @@ This test plan is subject to review and approval by all team members before exec
 
 ### 10.10 Test Execution Checklist
 
-**Pre-Testing Phase (Nov 1-3):**
+**Pre-Testing Phase (Nov 1-5):**
 
 - [ ] All team members have reviewed test plan
 - [ ] CI/CD pipelines configured in GitHub Actions
@@ -775,7 +761,7 @@ This test plan is subject to review and approval by all team members before exec
 - [ ] Dev Kubernetes environment stable and accessible
 - [ ] Database seeded with initial test data
 
-**During Testing Phase (Nov 4-23):**
+**During Testing Phase (Nov 6 - Dec 3):**
 
 - [ ] Unit tests written for all in-scope modules
 - [ ] Integration tests cover critical API endpoints
@@ -786,7 +772,7 @@ This test plan is subject to review and approval by all team members before exec
 - [ ] Test failures investigated and fixed within 24 hours
 - [ ] Codecov badges updated on README
 
-**Post-Testing Phase (Nov 24-26):**
+**Post-Testing Phase (Dec 6-10):**
 
 - [ ] All test code committed to repositories
 - [ ] CI/CD workflows functioning correctly
@@ -803,7 +789,7 @@ This test plan is subject to review and approval by all team members before exec
 
 ## 11. Conclusion
 
-This test plan provides a comprehensive yet pragmatic approach to testing the Electricilies e-commerce platform within the constraints of a university project. The plan balances academic rigor with practical considerations such as limited time (26 days), small team size (4 members), and resource constraints (single Kubernetes node).
+This test plan provides a comprehensive yet pragmatic approach to testing the Electricilies e-commerce platform within the constraints of a university project. The plan balances academic rigor with practical considerations such as limited time (40 days), small team size (4 members), and resource constraints.
 
 ### 11.1 Key Success Factors
 
@@ -829,7 +815,7 @@ By following this test plan, the team will achieve:
 
 ### 11.3 Beyond the Project
 
-While this test plan is scoped for the November 2025 deadline, the testing infrastructure established will provide ongoing value:
+While this test plan is scoped for the December 2025 deadline, the testing infrastructure established will provide ongoing value:
 
 - **Maintainability:** Future features can be tested using the same framework
 - **Scalability:** Test suite can grow as the application evolves

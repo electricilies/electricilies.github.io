@@ -67,6 +67,7 @@ export default defineConfig({
           },
           {
             text: "Sequence",
+            link: "/software-docs/sequence",
             collapsed: true,
             items: [
               {
@@ -343,6 +344,7 @@ export default defineConfig({
           },
           {
             text: "Activity",
+            link: "/software-docs/activity",
             collapsed: true,
             items: [
               {
