@@ -185,7 +185,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 **Execution:**
 
-- Manual execution via command line: `k6 run tests/k6/home-load-test.js`
+- Manual execution via command line
 - Run against Kubernetes dev environment
 - Generate HTML report and screenshots for documentation
 - Not integrated in CI pipeline (resource constraints)
