@@ -103,8 +103,23 @@ This test plan defines the testing strategy, approach, resources, and schedule f
    - Tool: Grafana k6 (manual execution)
    - Endpoints: Home view, product search
    - Target: Max 1s response time, 500 requests/second
+   - Kubernetes Testing:
+     - Horizontal Pod Autoscaler (HPA) configuration validation
+     - Load testing to trigger auto-scaling
+     - Verify scaling up (increased load) and scaling down (reduced load)
+     - Monitor resource utilization during scaling events
 
-5. **Regression Testing**
+5. **Compatibility Testing**
+   - Browser Compatibility:
+     - Chromium (primary target)
+     - Firefox
+   - OS Compatibility:
+     - Linux
+     - Windows 11
+     - macOS
+   - Platform: Desktop only (no mobile testing)
+
+6. **Regression Testing**
    - Automated re-execution of all unit and integration tests on every commit
    - CI pipeline validation
 
@@ -112,7 +127,6 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 - User Acceptance Testing (no real stakeholders)
 - Security penetration testing
-- Browser compatibility testing (covered by Playwright)
 - Mobile responsive testing
 - Payment gateway integration testing (hard to test)
 - Disaster recovery testing
@@ -198,15 +212,81 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 - **Tool:** Grafana k6
 - **Test Scenarios:**
-  1. Home view load test
-  2. Product search load test
+  1. **Home view load test**
+     - Gradual ramp-up: 0 → 500 virtual users over 2 minutes
+     - Sustained load: 500 VUs for 5 minutes
+     - Ramp-down: 500 → 0 over 1 minute
+     - Metrics: Response time (p95, p99), throughput, error rate
+
+  2. **Product search load test**
+     - Simulate realistic search queries
+     - Mixed load: 200 VUs for product listing + 300 VUs for search
+     - Duration: 5 minutes sustained
+     - Metrics: Search response time, database query performance
+
+  3. **Horizontal Pod Autoscaling (HPA) test**
+     - **Prerequisites:**
+       - HPA configured for backend deployment (target CPU: 70%)
+       - Metrics server installed in Kubernetes cluster
+     - **Test Steps:**
+       1. Generate sustained high load (60-70% CPU utilization, 70-80% Memory Utilization)
+       2. Monitor pod count increase (max replicas: 3-4)
+       3. Verify load distribution across new pods
+       4. Reduce load and verify scale-down behavior
+       5. Monitor cool-down period (5 minutes default)
+     - **Metrics:**
+       - Time to scale up (target: < 2 minutes)
+       - CPU utilization across pods
+       - Request distribution during scaling
+       - Scale-down stability (no thrashing)
 
 **Execution:**
 
 - Manual execution via command line
 - Run against Kubernetes dev environment
-- Generate HTML report and screenshots for documentation
+- Generate HTML report
+- Monitor Kubernetes metrics: `kubectl get hpa -w` and Grafana dashboards
 - Not integrated in CI pipeline (resource constraints)
+
+**Evidence Collection:**
+
+- k6 HTML report screenshots
+- Kubernetes HPA event logs: `kubectl describe hpa backend-hpa`
+- Grafana dashboard screenshots showing:
+  - CPU utilization during load
+  - Pod count over time
+  - Request rate distribution
+  - Response time metrics
+
+#### Compatibility Testing
+
+**Purpose:** Ensure the application works correctly across different browsers and operating systems.
+
+**Approach:**
+
+- **Browser Compatibility:**
+  - Playwright projects configured for chromium, firefox, webkit
+  - Run E2E tests across all browser engines
+  - Verify UI rendering consistency
+  - Test JavaScript functionality compatibility
+
+- **OS Compatibility:**
+  - CI matrix testing: Ubuntu, Windows, macOS
+  - Verify application behavior on different platforms
+  - Test file path handling (Windows vs Unix)
+  - Validate environment-specific configurations
+
+**Execution:**
+
+- Browser tests: Run as part of E2E test suite in CI
+- OS tests: Unit and integration tests run on OS matrix in CI
+- Manual verification: Visual testing on different OS for critical UI flows
+
+**Scope Limitations:**
+
+- No mobile device testing (out of scope)
+- No older browser versions (only latest stable releases)
+- No screen reader/accessibility testing (future consideration)
 
 #### Regression Testing
 
@@ -226,13 +306,14 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 ### Test Strategy Summary
 
-| Test Level  | Tool                              | Trigger                    | Coverage Target             | Pass Criteria                            |
-| ----------- | --------------------------------- | -------------------------- | --------------------------- | ---------------------------------------- |
-| Unit        | Go test, Vitest                   | Every push/PR              | Backend: 50%, Frontend: 30% | All tests pass, coverage above threshold |
-| Integration | Go + Testcontainers, Vitest + MSW | Every push/PR (after unit) | Critical paths              | All tests pass                           |
-| E2E         | Playwright                        | Post-deployment            | Key user journeys           | All critical flows pass                  |
-| Performance | Grafana k6                        | Manual                     | Home, Search                | p95 < 1s, 500 req/s                      |
-| Regression  | All automated tests               | Every push/PR              | All                         | All tests pass                           |
+| Test Level    | Tool                              | Trigger                    | Coverage Target             | Pass Criteria                             |
+| ------------- | --------------------------------- | -------------------------- | --------------------------- | ----------------------------------------- |
+| Unit          | Go test, Vitest                   | Every push/PR              | Backend: 50%, Frontend: 30% | All tests pass, coverage above threshold  |
+| Integration   | Go + Testcontainers, Vitest + MSW | Every push/PR (after unit) | Critical paths              | All tests pass                            |
+| E2E           | Playwright                        | Post-deployment            | Key user journeys           | All critical flows pass                   |
+| Compatibility | Playwright, CI OS matrix          | Every push/PR              | 2 browsers, 3 OS            | Tests pass on all platforms               |
+| Performance   | Grafana k6, Kubernetes HPA        | Manual                     | Home, Search                | p95 < 1s, 500 req/s, HPA scales correctly |
+| Regression    | All automated tests               | Every push/PR              | All                         | All tests pass                            |
 
 ---
 
@@ -256,10 +337,10 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 **GitHub Actions Runners:**
 
 - **Unit Tests:** GitHub-hosted runners
-  - OS Matrix: linux, windows, macos
+  - OS Matrix: Linux, Windows, MacOS
   - Arch Matrix: AMD64, ARM64 (where supported)
-- **Integration Tests:** linux (Testcontainers requirement)
-- **E2E Tests:** linux with Playwright dependencies
+- **Integration Tests:** Linux (Testcontainers requirement)
+- **E2E Tests:** Linux with Playwright dependencies
 
 **Caching Strategy:**
 
@@ -282,6 +363,17 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 - Frontend pods: CPU 500m, RAM 500Mi
 - PostgreSQL: CPU 1000m, RAM 1Gi
 - Redis: CPU 200m, RAM 256Mi
+
+**Auto-scaling Configuration:**
+
+- **Backend HPA:**
+  - Min replicas: 2
+  - Max replicas: 3
+  - Target CPU utilization: 70%
+  - Scale-up policy: Increase 100% (double) when CPU > 70%
+  - Scale-down policy: Decrease 50% when CPU < 50% (5-minute stabilization)
+
+- **Metrics Server:** Required for HPA
 
 **Monitoring Stack:**
 
@@ -359,13 +451,14 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 #### Week 5-6: December 1-10
 
-| Date     | Activity                             | Owner                 | Deliverable                           |
-| -------- | ------------------------------------ | --------------------- | ------------------------------------- |
-| Dec 1-2  | Write k6 performance test scripts    | Trần Nguyễn Thái Bình | Load test scripts                     |
-| Dec 3    | Execute k6 tests and capture results | Trần Nguyễn Thái Bình | Performance test report (screenshots) |
-| Dec 4-6  | Review test coverage, fix gaps       | All team              | Coverage > thresholds                 |
-| Dec 7-8  | Generate test summary report         | Trần Nguyễn Thái Bình | HTML/PDF test report                  |
-| Dec 9-10 | Final documentation and submission   | All team              | Complete test deliverables            |
+| Date     | Activity                                    | Owner                 | Deliverable                                   |
+| -------- | ------------------------------------------- | --------------------- | --------------------------------------------- |
+| Dec 1    | Write k6 performance test scripts           | Trần Nguyễn Thái Bình | Load test scripts                             |
+| Dec 2    | Configure HPA for backend deployment        | Trần Nguyễn Thái Bình | HPA manifest and metrics server setup         |
+| Dec 3    | Execute k6 tests and HPA scaling validation | Trần Nguyễn Thái Bình | Performance test report, HPA scaling evidence |
+| Dec 4-6  | Review test coverage, fix gaps              | All team              | Coverage > thresholds                         |
+| Dec 7-8  | Generate test summary report                | Trần Nguyễn Thái Bình | HTML/PDF test report                          |
+| Dec 9-10 | Final documentation and submission          | All team              | Complete test deliverables                    |
 
 ### Milestone Checklist
 
@@ -446,9 +539,12 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 1. GitHub Actions CI job summary (unit + integration tests passing)
 2. Codecov dashboard showing coverage percentages
-3. k6 performance test output (terminal + HTML report)
-4. Playwright HTML report homepage
-5. Sample E2E test video (1-2 critical flows)
+3. Playwright HTML report showing browser matrix (Chromium, Firefox, WebKit)
+4. CI workflow showing OS matrix results (Linux, Windows, macOS)
+5. k6 performance test output (terminal + HTML report)
+6. Kubernetes HPA events showing scale-up and scale-down
+7. Grafana dashboard during load test (CPU, pods, response times)
+8. Sample E2E test video (1-2 critical flows)
 
 ---
 
@@ -462,8 +558,13 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 | **Unit Test Pass Rate**        | 100%                                                            | CI job status           |
 | **Integration Test Pass Rate** | 100%                                                            | CI job status           |
 | **E2E Test Pass Rate**         | 100% (critical paths)                                           | Playwright report       |
+| **Browser Compatibility**      | 100% pass on Chromium, Firefox                                  | Playwright projects     |
+| **OS Compatibility**           | 100% pass on Linux, Windows, macOS                              | CI OS matrix            |
 | **API Response Time (p95)**    | < 1 second                                                      | k6 metrics              |
 | **System Throughput**          | ≥ 500 req/s                                                     | k6 metrics              |
+| **HPA Scale-up Time**          | < 2 minutes to add pods                                         | Kubernetes events       |
+| **HPA Scale-down Stability**   | No thrashing (stable 5min cool-down)                            | Kubernetes HPA logs     |
+| **Pod CPU Utilization**        | Balanced across replicas (variance < 20%)                       | Prometheus/Grafana      |
 | **CI Pipeline Duration**       | < 15 minutes (unit+integration)                                 | GitHub Actions insights |
 | **Defect Detection Rate**      | N/A (no baseline)                                               | Manual tracking         |
 | **Test Execution Frequency**   | Every commit                                                    | CI trigger logs         |
@@ -513,15 +614,18 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 ### Risks and Mitigation
 
-| Risk                               | Impact                           | Probability | Mitigation Strategy                                                                                |
-| ---------------------------------- | -------------------------------- | ----------- | -------------------------------------------------------------------------------------------------- |
-| **Testcontainers fails on CI**     | High (blocks integration tests)  | Low         | - Test locally first<br>- Use Docker Compose fallback<br>- Document manual testing steps           |
-| **Kubernetes cluster downtime**    | High (blocks E2E and deployment) | Low         | - Schedule maintenance windows<br>- Keep local Docker setup as backup<br>- Document recovery steps |
-| **Time constraints**               | Medium (reduced coverage)        | Medium      | - Prioritize critical paths<br>- Focus on high-value tests<br>- Document out-of-scope items        |
-| **CI pipeline timeouts**           | Medium (delays feedback)         | Medium      | - Optimize test parallelization<br>- Use CI caching effectively<br>- Split long test suites        |
-| **Flaky E2E tests**                | Medium (false failures)          | High        | - Use Playwright auto-wait<br>- Add explicit waits where needed<br>- Retry failed tests (max 2)    |
-| **Coverage drops below threshold** | Low (CI fails, but fixable)      | Low         | - Monitor coverage in PRs<br>- Require tests for new code<br>- Refactor to improve testability     |
-| **Team member unavailability**     | Medium (delays schedule)         | Low         | - Cross-train on test areas<br>- Document test approaches<br>- Re-prioritize tasks                 |
+| Risk                               | Impact                           | Probability | Mitigation Strategy                                                                                     |
+| ---------------------------------- | -------------------------------- | ----------- | ------------------------------------------------------------------------------------------------------- |
+| **Testcontainers fails on CI**     | High (blocks integration tests)  | Low         | - Test locally first<br>- Use Docker Compose fallback<br>- Document manual testing steps                |
+| **Kubernetes cluster downtime**    | High (blocks E2E and deployment) | Low         | - Schedule maintenance windows<br>- Keep local Docker setup as backup<br>- Document recovery steps      |
+| **HPA not triggering correctly**   | Medium (performance test fails)  | Medium      | - Test HPA manually before k6 run<br>- Verify metrics server working<br>- Lower CPU threshold if needed |
+| **Browser compatibility failures** | Low (limited browser support)    | Low         | - Focus on Chromium as primary<br>- Manual fallback testing                                             |
+| **OS-specific test failures**      | Medium (CI fails on some OS)     | Medium      | - Test locally on multiple OS<br>- Use cross-platform libraries<br>- Document OS-specific workarounds   |
+| **Time constraints**               | Medium (reduced coverage)        | Medium      | - Prioritize critical paths<br>- Focus on high-value tests<br>- Document out-of-scope items             |
+| **CI pipeline timeouts**           | Medium (delays feedback)         | Medium      | - Optimize test parallelization<br>- Use CI caching effectively<br>- Split long test suites             |
+| **Flaky E2E tests**                | Medium (false failures)          | High        | - Use Playwright auto-wait<br>- Add explicit waits where needed<br>- Retry failed tests (max 2)         |
+| **Coverage drops below threshold** | Low (CI fails, but fixable)      | Low         | - Monitor coverage in PRs<br>- Require tests for new code<br>- Refactor to improve testability          |
+| **Team member unavailability**     | Medium (delays schedule)         | Low         | - Cross-train on test areas<br>- Document test approaches<br>- Re-prioritize tasks                      |
 
 ### Contingency Plans
 
@@ -636,6 +740,35 @@ This test plan defines the testing strategy, approach, resources, and schedule f
   11. Delete product and confirm
   12. Verify product no longer appears in list
 
+#### Compatibility Test Examples
+
+- **Browser Compatibility Test:**
+  - Run login flow on Chromium, Firefox
+  - Verify CSS rendering consistency (button styles, layouts)
+  - Test form validation across browsers
+  - Verify cookie/localStorage behavior
+  - Test file upload functionality on each browser
+
+- **OS Compatibility Test:**
+  - Run backend unit tests on Ubuntu, Windows, macOS
+  - Verify file path handling (forward slash vs backslash)
+  - Test environment variable loading on different OS
+  - Validate build process on all platforms
+
+#### Performance Test Examples
+
+- **HPA Scaling Test:**
+  1. Deploy backend with HPA (min: 1, max: 3, CPU: 70%)
+  2. Verify initial pod count is 1
+  3. Run k6 load test to generate 80% CPU load
+  4. Monitor `kubectl get hpa -w` output
+  5. Verify new pods are created within 2 minutes
+  6. Check load balancing: `kubectl top pods`
+  7. Stop load test
+  8. Wait 5 minutes (cool-down period)
+  9. Verify pods scale down to 1
+  10. Document scaling timeline and resource metrics
+
 ### Tools and Technologies Summary
 
 | Category                | Tool/Technology           | Purpose              |
@@ -668,6 +801,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 | **E2E Testing**       | End-to-End Testing - testing complete user workflows from UI to database                        |
 | **Flaky Test**        | Test that intermittently passes and fails without code changes                                  |
 | **GitOps**            | Infrastructure and deployment managed through Git commits                                       |
+| **HPA**               | Horizontal Pod Autoscaler - Kubernetes feature that automatically scales pods based on metrics  |
 | **Integration Test**  | Test that validates interaction between multiple components                                     |
 | **JWT**               | JSON Web Token - authentication token format                                                    |
 | **k6**                | Open-source load testing tool by Grafana                                                        |
