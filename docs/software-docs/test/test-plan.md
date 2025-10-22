@@ -1,3 +1,11 @@
+---
+geometry:
+  - top=2cm
+  - bottom=1.5cm
+  - left=3cm
+  - right=2cm
+---
+
 # TEST PLAN
 
 **Electricilies - Website for Selling Electronic Products**
@@ -408,15 +416,15 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 ### 7.1 Test Artifacts
 
-| Deliverable                  | Format            | Location                                              | Owner               |
-| ---------------------------- | ----------------- | ----------------------------------------------------- | ------------------- |
-| **Test Code**                | Go, TypeScript    | `backend/tests/`, `frontend/tests/`                   | All developers      |
-| **CI Workflows**             | YAML              | `.github/workflows/`                                  | 23520161            |
-| **Test Data Fixtures**       | Go, JSON          | `backend/tests/fixtures/`, `frontend/tests/fixtures/` | All developers      |
-| **Test Summary Report**      | HTML/PDF          |                                                       | 23520161            |
-| **Code Coverage Reports**    | HTML, JSON        | Codecov dashboard                                     | Automated (Codecov) |
-| **Performance Test Results** | HTML, Screenshots | `kubernetes-manifest/tests/k6/reports/`               | 23520161            |
-| **E2E Test Reports**         | HTML              | Playwright HTML Report (GH Actions artifact)          | 23520161, 23520956  |
+| Deliverable                  | Format            | Location                                     | Owner               |
+| ---------------------------- | ----------------- | -------------------------------------------- | ------------------- |
+| **Test Code**                | Go, TypeScript    |                                              | All developers      |
+| **CI Workflows**             | YAML              | `.github/workflows/`                         | 23520161            |
+| **Test Data Fixtures**       | Go, JSON          |                                              | All developers      |
+| **Test Summary Report**      | HTML/PDF          |                                              | 23520161            |
+| **Code Coverage Reports**    | HTML, JSON        | Codecov dashboard                            | Automated (Codecov) |
+| **Performance Test Results** | HTML, Screenshots | `kubernetes-manifest/tests/k6/reports/`      | 23520161            |
+| **E2E Test Reports**         | HTML              | Playwright HTML Report (GH Actions artifact) | 23520161, 23520956  |
 
 ### 7.2 Test Summary Report
 
