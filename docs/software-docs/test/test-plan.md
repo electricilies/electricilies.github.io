@@ -1,9 +1,12 @@
 ---
+outline: [1, 5]
 geometry:
   - top=2cm
   - bottom=1.5cm
   - left=3cm
   - right=2cm
+  - landscape
+  - a4paper
 ---
 
 # TEST PLAN
@@ -20,25 +23,25 @@ geometry:
 
 ## Document Change History
 
-| Version | Date       | Contributor                                   | Description                |
-| ------- | ---------- | --------------------------------------------- | -------------------------- |
-| 1.0     | 01/11/2025 | Trần Nguyễn Thái Bình, Nguyễn Thái Gia Nguyễn | Initial test plan creation |
+| Version | Date       | Contributor    | Description                |
+| ------- | ---------- | -------------- | -------------------------- |
+| 1.0     | 01/11/2025 | Buggilies Team | Initial test plan creation |
 
 ---
 
-## 1. Introduction
+## Introduction
 
-### 1.1 Purpose
+### Purpose
 
 This test plan defines the testing strategy, approach, resources, and schedule for the Electricilies e-commerce platform. As a university project with limited time and resources, this plan focuses on critical functionalities while maintaining practical testing standards suitable for academic evaluation.
 
-### 1.2 Project Overview
+### Project Overview
 
 **Project Name:** Electricilies - Website for Selling Electronic Products
 
 **Testing Period:** November 1, 2025 - December 10, 2025 (40 days)
 
-### 1.3 Objectives
+### Objectives
 
 **Primary Objectives:**
 
@@ -55,11 +58,11 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 ---
 
-## 2. Test Scope
+## Test Scope
 
-### 2.1 In Scope
+### In Scope
 
-#### 2.1.1 Functional Modules
+#### Functional Modules
 
 **Note:** Unit tests can be extended to cover additional modules beyond those listed. Integration and E2E tests are restricted to the modules specified below.
 
@@ -70,7 +73,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 | **Contact Support** | - Redirect to Facebook page                                                                   | Unit, E2E              |
 | **Manage Product**  | - Search Product<br>- Add Product<br>- Update Product<br>- Delete Product<br>- Delete Review  | Unit, Integration      |
 
-#### 2.1.2 Test Types
+#### Test Types
 
 1. **Unit Testing**
    - Backend: Go built-in testing tool
@@ -98,7 +101,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
    - Automated re-execution of all unit and integration tests on every commit
    - CI pipeline validation
 
-### 2.2 Out of Scope
+### Out of Scope
 
 - User Acceptance Testing (no real stakeholders)
 - Security penetration testing
@@ -110,11 +113,11 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 ---
 
-## 3. Test Approach
+## Test Approach
 
-### 3.1 Test Levels
+### Test Levels
 
-#### 3.1.1 Unit Testing
+#### Unit Testing
 
 **Purpose:** Verify individual functions, methods, and components in isolation.
 
@@ -135,10 +138,10 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 - Triggered on every `git push` to main and pull request
 - Run in parallel across OS matrix: Ubuntu, Windows, macOS
-- Architecture matrix: amd64, arm64
+- Architecture matrix: AMD64, ARM64
 - CI caching enabled for dependencies
 
-#### 3.1.2 Integration Testing
+#### Integration Testing
 
 **Purpose:** Validate interactions between components, services, and external dependencies.
 
@@ -161,7 +164,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 - Run on Ubuntu (Linux only for Testcontainers)
 - Separate CI job after unit tests pass
 
-#### 3.1.3 End-to-End Testing
+#### End-to-End Testing
 
 **Purpose:** Validate complete user workflows from UI to database.
 
@@ -180,7 +183,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 - Generate video recordings and screenshots on failure
 - Upload Playwright HTML report as artifact
 
-#### 3.1.4 Performance Testing
+#### Performance Testing
 
 **Purpose:** Validate system performance under expected load.
 
@@ -198,7 +201,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 - Generate HTML report and screenshots for documentation
 - Not integrated in CI pipeline (resource constraints)
 
-#### 3.1.5 Regression Testing
+#### Regression Testing
 
 **Purpose:** Ensure new changes don't break existing functionality.
 
@@ -214,9 +217,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 - Results visible in GitHub Actions job summary
 - Code coverage regression tracked via Codecov
 
----
-
-### 3.2 Test Strategy Summary
+### Test Strategy Summary
 
 | Test Level  | Tool                              | Trigger                    | Coverage Target             | Pass Criteria                            |
 | ----------- | --------------------------------- | -------------------------- | --------------------------- | ---------------------------------------- |
@@ -228,9 +229,9 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 ---
 
-## 4. Test Environment
+## Test Environment
 
-### 4.1 Development Environment
+### Development Environment
 
 **Local Development:**
 
@@ -243,13 +244,13 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 - Integration tests: Docker with Testcontainers
 - E2E tests: Against local Next.js dev server or deployed dev environment
 
-### 4.2 CI/CD Environment
+### CI/CD Environment
 
 **GitHub Actions Runners:**
 
 - **Unit Tests:** GitHub-hosted runners
   - OS Matrix: linux, windows, macos
-  - Arch Matrix: amd64, arm64 (where supported)
+  - Arch Matrix: AMD64, ARM64 (where supported)
 - **Integration Tests:** linux (Testcontainers requirement)
 - **E2E Tests:** linux with Playwright dependencies
 
@@ -259,7 +260,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 - Node modules: `actions/setup-node` with built-in cache
 - Playwright browsers: `actions/cache` with Playwright version key
 
-### 4.3 Deployment Environment (Test Target)
+### Deployment Environment (Test Target)
 
 **Kubernetes Cluster:**
 
@@ -287,7 +288,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 - Automatic deployment on manual trigger
 - E2E tests triggered via webhook after successful deployment
 
-### 4.4 Test Data Management
+### Test Data Management
 
 **Backend Test Data:**
 
@@ -308,9 +309,9 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 ---
 
-## 5. Test Schedule
+## Test Schedule
 
-### 5.1 Timeline Overview
+### Timeline Overview
 
 - **Total Duration:** 40 days (November 1 - December 10, 2025)
 - **Resource Allocation:** ~2 hours/day per team member
@@ -324,7 +325,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 | **Phase 5: Performance Testing** | 3 days   | Dec 1-3   | Execute k6 load tests                       |
 | **Phase 6: Finalization**        | 7 days   | Dec 4-10  | Bug fixes, documentation, report generation |
 
-### 5.2 Detailed Schedule
+### Detailed Schedule
 
 #### Week 1-2: November 1-15
 
@@ -359,7 +360,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 | Dec 7-8  | Generate test summary report         | Trần Nguyễn Thái Bình | HTML/PDF test report                  |
 | Dec 9-10 | Final documentation and submission   | All team              | Complete test deliverables            |
 
-### 5.3 Milestone Checklist
+### Milestone Checklist
 
 - [ ] **Nov 5:** CI pipelines operational with unit tests running
 - [ ] **Nov 15:** Unit test coverage meets minimum thresholds (20% backend, 20% frontend)
@@ -370,9 +371,9 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 ---
 
-## 6. Resources and Responsibilities
+## Resources and Responsibilities
 
-### 6.1 Team Structure
+### Team Structure
 
 | Team Member            | Role                               | User ID  | Responsibilities                                                                                                                     |
 | ---------------------- | ---------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------ |
@@ -381,7 +382,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 | Trần Nguyễn Duy Minh   | Frontend Dev                       | 23520956 | - Frontend unit tests<br>- E2E tests (co-author)<br>- Component testing                                                              |
 | Đào Duy Vinh           | Frontend Dev                       | 23521787 | - Frontend unit tests<br>- Integration testing with MSW<br>- UI component testing                                                    |
 
-### 6.2 Responsibility Matrix
+### Responsibility Matrix
 
 | Task                           | Owner              | Reviewer                | Notes                         |
 | ------------------------------ | ------------------ | ----------------------- | ----------------------------- |
@@ -395,7 +396,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 | **Test Documentation**         | 23520161           | All team members        | Test plan, summary report     |
 | **Code Coverage Monitoring**   | 23520161           | All team members        | Codecov integration           |
 
-### 6.3 Communication Channels
+### Communication Channels
 
 - **Daily Standups:** Facebook Message
 - **Code Reviews:** GitHub Pull Requests
@@ -403,7 +404,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 - **CI Status:** GitHub Actions notifications
 - **Test Reports:** GitHub Actions artifacts, Codecov status
 
-### 6.4 Escalation Process
+### Escalation Process
 
 1. **Test Failures:** Developer investigates and fixes within 24 hours
 2. **CI Blockers:** Team discussion, escalate to project owner if >1 day
@@ -412,27 +413,27 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 ---
 
-## 7. Test Deliverables
+## Test Deliverables
 
-### 7.1 Test Artifacts
+### Test Artifacts
 
 | Deliverable                  | Format            | Location                                     | Owner               |
 | ---------------------------- | ----------------- | -------------------------------------------- | ------------------- |
 | **Test Code**                | Go, TypeScript    |                                              | All developers      |
-| **CI Workflows**             | YAML              | `.github/workflows/`                         | 23520161            |
+| **CI Workflows**             | YAML              | `.github/workflows/` each repo               | 23520161            |
 | **Test Data Fixtures**       | Go, JSON          |                                              | All developers      |
 | **Test Summary Report**      | HTML/PDF          |                                              | 23520161            |
 | **Code Coverage Reports**    | HTML, JSON        | Codecov dashboard                            | Automated (Codecov) |
-| **Performance Test Results** | HTML, Screenshots | `kubernetes-manifest/tests/k6/reports/`      | 23520161            |
+| **Performance Test Results** | HTML, Screenshots | `tests/k6/reports/`                          | 23520161            |
 | **E2E Test Reports**         | HTML              | Playwright HTML Report (GH Actions artifact) | 23520161, 23520956  |
 
-### 7.2 Test Summary Report
+### Test Summary Report
 
 - Artifacts from CI outputs and Codecov
 - Screenshots captured during test execution
 - PDF of summary report
 
-### 7.3 Evidence Collection
+### Evidence Collection
 
 **Required Screenshots:**
 
@@ -444,9 +445,9 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 ---
 
-## 8. Test Metrics
+## Test Metrics
 
-### 8.1 Key Performance Indicators
+### Key Performance Indicators
 
 | Metric                         | Target                                                          | Measurement Method      |
 | ------------------------------ | --------------------------------------------------------------- | ----------------------- |
@@ -460,7 +461,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 | **Defect Detection Rate**      | N/A (no baseline)                                               | Manual tracking         |
 | **Test Execution Frequency**   | Every commit                                                    | CI trigger logs         |
 
-### 8.2 Test Execution Metrics
+### Test Execution Metrics
 
 **Tracked in GitHub Actions:**
 
@@ -473,9 +474,9 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 ---
 
-## 9. Risks and Assumptions
+## Risks and Assumptions
 
-### 9.1 Assumptions
+### Assumptions
 
 1. **Development Environment:**
    - Kubernetes cluster remains available and stable throughout testing period
@@ -500,10 +501,10 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 5. **External Services:**
    - Keycloak authentication service is stable
    - Redis caching is stable
-   - Minio S3 storage compatible is stable
+   - MinIO S3 storage compatible is stable
    - No breaking changes in third-party libraries during testing period
 
-### 9.2 Risks and Mitigation
+### Risks and Mitigation
 
 | Risk                               | Impact                           | Probability | Mitigation Strategy                                                                                |
 | ---------------------------------- | -------------------------------- | ----------- | -------------------------------------------------------------------------------------------------- |
@@ -515,7 +516,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 | **Coverage drops below threshold** | Low (CI fails, but fixable)      | Low         | - Monitor coverage in PRs<br>- Require tests for new code<br>- Refactor to improve testability     |
 | **Team member unavailability**     | Medium (delays schedule)         | Low         | - Cross-train on test areas<br>- Document test approaches<br>- Re-prioritize tasks                 |
 
-### 9.3 Contingency Plans
+### Contingency Plans
 
 **If Unit Test Coverage Falls Short:**
 
@@ -538,7 +539,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 **If CI Pipeline Exceeds Time Limits:**
 
 - Split tests into multiple parallel jobs
-- Reduce OS/architecture matrix (focus on Linux amd64)
+- Reduce OS/architecture matrix (focus on Linux AMD64)
 - Cache more aggressively
 
 **If Schedule Slips:**
@@ -549,9 +550,9 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 ---
 
-## 10. Appendix
+## Appendix
 
-### 10.4 Sample Test Cases
+### Sample Test Cases
 
 #### Unit Test Examples
 
@@ -635,9 +636,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 11. Delete product and confirm
 12. Verify product no longer appears in list
 
----
-
-### 10.5 Tools and Technologies Summary
+### Tools and Technologies Summary
 
 | Category                | Tool/Technology           | Purpose              |
 | ----------------------- | ------------------------- | -------------------- |
@@ -659,9 +658,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 | **Version Control**     | Git                       | Source control       |
 |                         | GitHub                    | Repository hosting   |
 
----
-
-### 10.6 Glossary
+### Glossary
 
 | Term                  | Definition                                                                                      |
 | --------------------- | ----------------------------------------------------------------------------------------------- |
@@ -685,9 +682,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 | **Unit Test**         | Test that validates individual functions or components in isolation                             |
 | **Vitest**            | Fast unit testing framework for Vite/Next.js projects                                           |
 
----
-
-### 10.7 References
+### References
 
 **Testing Frameworks Documentation:**
 
@@ -712,9 +707,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 - [Sequence Diagrams](https://electricilies.github.io/software-docs/sequence/)
 - [Electricilies SRS](https://electricilies.github.io/software-docs/srs/)
 
----
-
-### 10.8 Contact Information
+### Contact Information
 
 | Role                             | Name                   | User ID  | Email                  | Responsibilities                             |
 | -------------------------------- | ---------------------- | -------- | ---------------------- | -------------------------------------------- |
@@ -730,9 +723,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 - Facebook Messenger: Communicate
 - GitHub Actions: CI/CD notifications
 
----
-
-### 10.9 Approval and Sign-off
+### Approval and Sign-off
 
 This test plan is subject to review and approval by all team members before execution begins.
 
@@ -754,9 +745,7 @@ This test plan is subject to review and approval by all team members before exec
 - v1.0 (01/11/2025): Initial version created
 - [Future revisions to be documented here]
 
----
-
-### 10.10 Test Execution Checklist
+### Test Execution Checklist
 
 **Pre-Testing Phase (Nov 1-5):**
 
@@ -795,11 +784,11 @@ This test plan is subject to review and approval by all team members before exec
 
 ---
 
-## 11. Conclusion
+## Conclusion
 
 This test plan provides a comprehensive yet pragmatic approach to testing the Electricilies e-commerce platform within the constraints of a university project. The plan balances academic rigor with practical considerations such as limited time (40 days), small team size (4 members), and resource constraints.
 
-### 11.1 Key Success Factors
+### Key Success Factors
 
 1. **Automated Testing Pipeline:** CI/CD integration ensures tests run consistently on every commit, preventing regression bugs.
 
@@ -811,7 +800,7 @@ This test plan provides a comprehensive yet pragmatic approach to testing the El
 
 5. **Clear Responsibilities:** Each team member owns specific test areas, enabling parallel work and accountability.
 
-### 11.2 Expected Outcomes
+### Expected Outcomes
 
 By following this test plan, the team will achieve:
 
@@ -821,7 +810,7 @@ By following this test plan, the team will achieve:
 - **Learning Experience:** Hands-on experience with professional testing practices and tools
 - **Measurable Results:** Code coverage metrics and test pass rates provide objective quality indicators
 
-### 11.3 Beyond the Project
+### Beyond the Project
 
 While this test plan is scoped for the December 2025 deadline, the testing infrastructure established will provide ongoing value:
 
@@ -830,7 +819,7 @@ While this test plan is scoped for the December 2025 deadline, the testing infra
 - **Best Practices:** Team gains practical testing skills applicable to industry projects
 - **Portfolio Quality:** Well-tested code demonstrates professional software development practices
 
-### 11.4 Final Notes
+### Final Notes
 
 **Remember:** The goal is not 100% coverage or exhaustive testing of every edge case. For a university project, the focus should be on:
 
