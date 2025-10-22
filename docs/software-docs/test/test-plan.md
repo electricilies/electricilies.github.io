@@ -1,5 +1,6 @@
 ---
 outline: [1, 5]
+linkcolor: blue
 geometry:
   - top=2cm
   - bottom=1.5cm
