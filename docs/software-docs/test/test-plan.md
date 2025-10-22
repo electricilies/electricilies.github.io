@@ -42,6 +42,12 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 **Testing Period:** November 1, 2025 - December 10, 2025 (40 days)
 
+**Target Users:** The system is designed for users who are interested in electronic products, including tech enthusiasts, students, and general consumers.
+
+**Reason for Choosing the Topic:** We chose this topic to create a specialized and user-friendly website for selling electronics, providing a convenient and trustworthy shopping experience.
+
+**References:** The project takes inspiration from existing e-commerce platforms such as PCNgon, Tiki, Shopee, and TikTok Shop, but on a smaller scale and with a design and functionality style similar to PCNgon.
+
 ### Objectives
 
 **Primary Objectives:**
