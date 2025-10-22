@@ -557,85 +557,78 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 #### Unit Test Examples
 
-**Backend - User Domain Test:**
+- **Backend - User Domain Test:**
+  - Test user email validation (valid/invalid formats)
+  - Test password hashing and verification
+  - Test user creation with required fields
+  - Test user update validation
+  - Test edge cases (empty strings, special characters)
 
-- Test user email validation (valid/invalid formats)
-- Test password hashing and verification
-- Test user creation with required fields
-- Test user update validation
-- Test edge cases (empty strings, special characters)
-
-**Frontend - LoginForm Component Test:**
-
-- Renders email and password input fields
-- Displays validation errors for empty fields
-- Calls onSubmit handler with form data
-- Disables submit button during loading
-- Shows error message on failed login
-- Redirects to dashboard on success
+- **Frontend - LoginForm Component Test:**
+  - Renders email and password input fields
+  - Displays validation errors for empty fields
+  - Calls onSubmit handler with form data
+  - Disables submit button during loading
+  - Shows error message on failed login
+  - Redirects to dashboard on success
 
 #### Integration Test Examples
 
-**Backend - Auth Endpoint Test:**
+- **Backend - Auth Endpoint Test:**
+  - POST /auth/signup creates new user in database
+  - POST /auth/signup rejects duplicate email
+  - POST /auth/login returns JWT token for valid credentials
+  - POST /auth/login rejects invalid credentials
+  - POST /auth/logout invalidates JWT token
+  - Authentication requires valid JWT in headers
 
-- POST /auth/signup creates new user in database
-- POST /auth/signup rejects duplicate email
-- POST /auth/login returns JWT token for valid credentials
-- POST /auth/login rejects invalid credentials
-- POST /auth/logout invalidates JWT token
-- Authentication requires valid JWT in headers
-
-**Frontend - Cart Hook Integration Test:**
-
-- useCart fetches cart items from API on mount
-- addToCart sends POST request and updates state
-- removeFromCart sends DELETE request and updates state
-- updateQuantity sends PATCH request and recalculates total
-- Handles API errors gracefully with error state
+- **Frontend - Cart Hook Integration Test:**
+  - useCart fetches cart items from API on mount
+  - addToCart sends POST request and updates state
+  - removeFromCart sends DELETE request and updates state
+  - updateQuantity sends PATCH request and recalculates total
+  - Handles API errors gracefully with error state
 
 #### E2E Test Examples
 
-**Critical User Journey 1 - New User Registration and Login:**
+- **Critical User Journey 1 - New User Registration and Login:**
+  1. Navigate to signup page
+  2. Fill registration form with valid data
+  3. Submit form and verify redirect to home
+  4. Verify welcome message displays user name
+  5. Logout and verify redirect to login
+  6. Login with same credentials
+  7. Verify successful authentication
 
-1. Navigate to signup page
-2. Fill registration form with valid data
-3. Submit form and verify redirect to home
-4. Verify welcome message displays user name
-5. Logout and verify redirect to login
-6. Login with same credentials
-7. Verify successful authentication
+- **Critical User Journey 2 - Product to Cart Flow:**
+  1. Login as existing user
+  2. Navigate to product listing page
+  3. Search for "laptop" and verify results
+  4. Click on product to view details
+  5. Select quantity of 2
+  6. Click "Add to Cart" button
+  7. Verify success notification
+  8. Verify cart badge shows count of 2
+  9. Navigate to cart page
+  10. Verify product appears with correct quantity and price
+  11. Update quantity to 3
+  12. Verify total price updates correctly
+  13. Remove product from cart
+  14. Verify cart is empty
 
-**Critical User Journey 2 - Product to Cart Flow:**
-
-1. Login as existing user
-2. Navigate to product listing page
-3. Search for "laptop" and verify results
-4. Click on product to view details
-5. Select quantity of 2
-6. Click "Add to Cart" button
-7. Verify success notification
-8. Verify cart badge shows count of 2
-9. Navigate to cart page
-10. Verify product appears with correct quantity and price
-11. Update quantity to 3
-12. Verify total price updates correctly
-13. Remove product from cart
-14. Verify cart is empty
-
-**Critical User Journey 3 - Staff Product Management:**
-
-1. Login as staff user
-2. Navigate to product management page
-3. Click "Add Product" button
-4. Fill product form with all required fields
-5. Upload product images
-6. Submit form and verify success message
-7. Search for newly created product
-8. Click edit button
-9. Modify product description
-10. Save changes and verify update
-11. Delete product and confirm
-12. Verify product no longer appears in list
+- **Critical User Journey 3 - Staff Product Management:**
+  1. Login as staff user
+  2. Navigate to product management page
+  3. Click "Add Product" button
+  4. Fill product form with all required fields
+  5. Upload product images
+  6. Submit form and verify success message
+  7. Search for newly created product
+  8. Click edit button
+  9. Modify product description
+  10. Save changes and verify update
+  11. Delete product and confirm
+  12. Verify product no longer appears in list
 
 ### Tools and Technologies Summary
 
