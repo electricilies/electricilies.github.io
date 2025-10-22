@@ -285,7 +285,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 - **Unit Tests:** Mock data in test files
 - **Integration Tests:**
-  - Database seeded via SQL scripts in `tests/fixtures/`
+  - Database seeded
   - Testcontainers recreates clean database per test suite
   - Sample products, users, orders defined in fixtures
 
