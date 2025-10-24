@@ -15,16 +15,6 @@ users: {
   id: uuid {constraint: PK}
 }
 
-addresses: {
-  id: serial {constraint: PK}
-  address_line: varchar(100)
-  city: text
-  country: text
-  phone_number: varchar(20)
-  created_at: timestamp
-  user_id: uuid {constraint: FK}
-}
-
 categories: {
   id: serial {constraint: PK}
   description: text
@@ -34,7 +24,7 @@ categories: {
 
 brands: {
   id: serial {constraint: PK}
-  value: text {constraint: UNQ}
+  brand_name: text {constraint: UNQ}
 }
 
 products: {
@@ -45,14 +35,9 @@ products: {
   updated_at: timestamp
   deleted_at: timestamp
   brand_id: int {constraint: FK}
-}
-
-product_analytics: {
-  id: serial {constraint: PK}
   views_count: int
   purchase_count: int
   trending_score: float
-  product_id: int {constraint: [FK, UNQ]}
 }
 
 product_images: {
@@ -98,14 +83,14 @@ option_values: {
   option_id: int {constraint: FK}
 }
 
-product_variant_option_values: {
+option_values_product_variants: {
   product_variant_id: int {constraint: [PK, FK]}
   option_value_id: int {constraint: [PK, FK]}
 }
 
 options: {
   id: serial {constraint: PK}
-  name: text {constraint: UNQ}
+  option_name: text {constraint: UNQ}
 }
 
 carts: {
@@ -124,25 +109,25 @@ cart_items: {
 
 order_statuses: {
   id: serial {constraint: PK}
-  value: text {constraint: UNQ}
+  status_name: text {constraint: UNQ}
 }
 
 payment_methods: {
   id: serial {constraint: PK}
-  value: text {constraint: UNQ}
+  method_name: text {constraint: UNQ}
 }
 
 payment_statuses: {
   id: serial {constraint: PK}
-  value: text {constraint: UNQ}
+  status_name: text {constraint: UNQ}
 }
 
 payment_providers: {
   id: serial {constraint: PK}
-  value: text {constraint: UNQ}
+  provider_name: text {constraint: UNQ}
 }
 
-payment_details: {
+invoices: {
   id: serial {constraint: PK}
   amount: decimal
   updated_at: timestamp
@@ -157,7 +142,7 @@ orders: {
   updated_at: timestamp
   user_id: uuid {constraint: FK}
   order_status_id: int {constraint: FK}
-  payment_detail_id: int {constraint: FK}
+  invoice_id: int {constraint: FK}
 }
 
 order_items: {
@@ -180,7 +165,7 @@ return_requests: {
 
 return_request_statuses: {
   id: serial {constraint: PK}
-  value: text {constraint: UNQ}
+  status_name: text {constraint: UNQ}
 }
 
 refunds: {
@@ -188,40 +173,37 @@ refunds: {
   created_at: timestamp
   updated_at: timestamp
   status_id: int {constraint: FK}
-  payment_detail_id: int {constraint: FK}
+  invoice_id: int {constraint: FK}
   return_request_id: int {constraint: FK}
 }
 
 refund_statuses: {
   id: serial {constraint: PK}
-  value: text {constraint: UNQ}
+  status_name: text {constraint: UNQ}
 }
 
-addresses.user_id -> users.id
 product_categories.product_id -> products.id
 product_categories.category_id -> categories.id
 product_variants.product_id -> products.id
-product_variant_option_values.product_variant_id -> product_variants.id
-product_variant_option_values.option_value_id -> option_values.id
+option_values_product_variants.product_variant_id -> product_variants.id
+option_values_product_variants.option_value_id -> option_values.id
 option_values.option_id -> options.id
 products.brand_id -> brands.id
 carts.user_id -> users.id
 cart_items.cart_id -> carts.id
 cart_items.product_variant_id -> product_variants.id
 cart_items.product_id -> products.id
-payment_details.payment_provider_id -> payment_providers.id
-payment_details.payment_status_id -> payment_statuses.id
-payment_details.payment_provider_id -> payment_providers.id
-payment_details.payment_method_id -> payment_methods.id
+invoices.payment_provider_id -> payment_providers.id
+invoices.payment_status_id -> payment_statuses.id
+invoices.payment_method_id -> payment_methods.id
 orders.user_id -> users.id
-orders.payment_detail_id -> payment_details.id
+orders.invoice_id -> invoices.id
 orders.order_status_id -> order_statuses.id
 order_items.order_id -> orders.id
 order_items.product_id -> products.id
 order_items.product_variant_id -> product_variants.id
 reviews.product_id -> products.id
 reviews.user_id -> users.id
-product_analytics.product_id -> products.id
 product_images.product_id -> products.id
 product_images.product_variant_id -> product_variants.id
 return_requests.user_id -> users.id
@@ -229,7 +211,7 @@ return_requests.status_id -> return_request_statuses.id
 return_requests.order_item_id -> order_items.id
 refunds.status_id -> refund_statuses.id
 refunds.return_request_id -> return_requests.id
-refunds.payment_detail_id -> payment_details.id
+refunds.invoice_id -> invoices.id
 
 explanation: |md
   # Note
