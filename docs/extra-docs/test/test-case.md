@@ -48,4 +48,4 @@
 
 ## Delete a product (staff/admin)
 
-- Click and go go, expected disappear
+- Click and go go, expect disappear
