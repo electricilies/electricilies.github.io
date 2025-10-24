@@ -2,8 +2,8 @@
 
 ::: info
 
-- Fields aren't noted with `Optional` is required
-- Fields aren't noted with `Emptyable` is Non-emptyable???
+- Fields aren't noted with `Optional` are required
+- Fields aren't noted with `Emptyable` are Non-emptyable???
 
 :::
 
