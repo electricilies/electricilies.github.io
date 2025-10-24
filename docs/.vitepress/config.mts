@@ -650,6 +650,16 @@ export default defineConfig({
             text: "Module Group",
             link: "/extra-docs/module-group",
           },
+          {
+            text: "Test",
+            collapsed: true,
+            items: [
+              {
+                text: "Test cases",
+                link: "/extra-docs/test/test-case.md",
+              },
+            ],
+          },
         ],
       },
     ],
