@@ -1,4 +1,4 @@
-# State Product
+# State Product Variant
 
 ```plantuml
 hide empty description
@@ -11,4 +11,4 @@ Deleted --> [*]
 @enduml
 ```
 
-<!-- diagram id="state-product" -->
+<!-- diagram id="state-product-variant" -->

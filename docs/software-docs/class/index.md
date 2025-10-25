@@ -1,6 +1,6 @@
 # Class Diagram
 
-````plantuml
+```plantuml
 @startuml
 
 hide circle
@@ -10,177 +10,194 @@ skinparam packageStyle rectangle
 
 
 class User {
-    - id : string
-    - username : string
-    - firstName : string
-    - lastName : string
-    - email : string
-    - address : string
-    - dateOfBirth : Date
-    - phoneNumber : string
-    - createdAt : Date
-    - deletedAt : Date
+  - id : string
+  - username : string
+  - firstName : string
+  - lastName : string
+  - email : string
+  - dateOfBirth : date
+  - phoneNumber : string
+  - address : string
+  - role : string
+  - createdAt : date
+  - deletedAt : date
 
-    + signUp(username, password, email, fullName)
-    + signIn(username, password)
-    + signOut()
-    + editProfile(data)
-    + deleteAccount()
-    + recoverAccount(email)
-    + resetPassword(currentPassword, newPassword)
+  + signUp(username, password, firstName, lastName, email, dateOfBirth, phoneNumber, address)
+  + signIn(username, password)
+  + signOut()
+  + editProfile(username, password, firstName, lastName, email, dateOfBirth, phoneNumber, address)
+  + deleteAccount()
+  + changePassword(oldPassword, newPassword)
+  + recoverAccount(email)
+  + ban()
+  + unban()
 }
 
-
 class Product {
-    - id : int
-    - name : string
-    - description : string
-    - brand : string
-    - createdAt : Date
-    - updatedAt : Date
-    - deletedAt : Date
+  - id : int
+  - name : string
+  - description : string
+  - brand : string
+  - createdAt : date
+  - updatedAt : date
+  - deletedAt : date
 
-    + getDetails()
-    + getReviews()
-    + getSuggestedProducts()
-    + getVariants()
-    + getImages()
+  + create(name, description, brand)
+  + update(name, description, brand)
+  + delete()
+  + getDetails()
+  + getReviews()
+  + getSuggestedProducts()
+  + getVariants()
+  + getImages()
 }
 
 class ProductVariant {
-    - id : int
-    - sku : string
-    - price : decimal
-    - quantity : int
-    - createdAt : Date
-    - deletedAt : Date
-    - productId : int
+  - id : int
+  - sku : string
+  - price : decimal
+  - quantity : int
+  - createdAt : date
+  - deletedAt : date
+  - productId : int
 
-    + getPrice()
-    + checkAvailability()
+  + create(productId, sku, price, quantity)
+  + update(sku, price, quantity)
+  + delete()
+  + getPrice()
+  + checkAvailability()
 }
 
 class ProductImage {
-    - id : int
-    - url : string
-    - altText : string
-    - createdAt : Date
-    - isPrimary : boolean
-    - productId : int
+  - id : int
+  - url : string
+  - altText : string
+  - createdAt : date
+  - order: int
+  - productId : int
 
-    + getUrl()
-    + setPrimary()
+  + create(productId, url, altText, order)
+  + update(url, altText, order)
+  + delete()
+  + getUrl()
+  + changeOrder(order)
 }
 
 class Review {
-    - id : int
-    - rating : int
-    - content : string
-    - imageUrl : string
-    - createdAt : Date
-    - updatedAt : Date
-    - userId : string
-    - productId : int
+  - id : int
+  - rating : int
+  - content : string
+  - imageUrl : string
+  - createdAt : date
+  - updatedAt : date
+  - userId : string
+  - productId : int
 
-    + create(userId, productId, rating, content, images)
-    + update(content, rating)
-    + delete()
+  + create(userId, productId, rating, content, images)
+  + update(content, rating)
+  + delete()
 }
 
 
 class Cart {
-    - id : int
-    - userId : string
-    - updatedAt : Date
+  - id : int
+  - userId : string
+  - updatedAt : date
 
-    + addItem(productId, variantId, quantity)
-    + removeItem(itemId)
-    + updateQuantity(itemId, quantity)
-    + getItems()
-    + clear()
-    + calculateTotal()
+  + create(userId)
+  + addItem(productId, variantId, quantity)
+  + removeItem(itemId)
+  + updateQuantity(itemId, quantity)
+  + getItems()
+  + clear()
+  + calculateTotal()
 }
 
 class CartItem {
-    - id : int
-    - quantity : int
-    - cartId : int
-    - productId : int
-    - productVariantId : int
+  - id : int
+  - quantity : int
+  - cartId : int
+  - productId : int
+  - productVariantId : int
 
-    + updateQuantity(quantity)
-    + remove()
-    + getSubtotal()
+  + updateQuantity(quantity)
+  + remove()
+  + getSubtotal()
 }
 
 
 class Order {
-    - id : int
-    - createdAt : Date
-    - updatedAt : Date
-    - userId : string
-    - orderStatus : string
-    - paymentDetailId : int
+  - id : int
+  - createdAt : date
+  - updatedAt : date
+  - userId : string
+  - orderStatus : string
+  - paymentDetailId : int
 
-    + create(userId, items, paymentDetails)
-    + cancel()
-    + getDetails()
-    + getItems()
-    + updateStatus(status)
-    + getTrackingInfo()
+  + create(userId, items, paymentDetails)
+  + cancel()
+  + update(orderStatus)
+  + delete()
+  + getDetails()
+  + getItems()
+  + updateStatus(status)
+  + getTrackingInfo()
 }
 
 class OrderItem {
-    - id : int
-    - quantity : int
-    - orderId : int
-    - productId : int
-    - productVariantId : int
+  - id : int
+  - quantity : int
+  - orderId : int
+  - productId : int
+  - productVariantId : int
 
-    + getSubtotal()
-    + returnProduct(reason)
+  + getSubtotal()
+  + returnProduct(reason)
 }
 
 
 class PaymentDetail {
-    - id : int
-    - amount : decimal
-    - updatedAt : Date
-    - paymentMethod : string
-    - paymentStatus : string
-    - paymentProvider : string
+  - id : int
+  - amount : decimal
+  - updatedAt : date
+  - paymentMethod : string
+  - paymentStatus : string
+  - paymentProvider : string
 
-    + process()
-    + updateStatus(status)
-    + refund()
+  + create(amount, paymentMethod, paymentProvider)
+  + update(amount, paymentMethod)
+  + process()
+  + updateStatus(status)
+  + refund()
 }
 
 
 class ReturnRequest {
-    - id : int
-    - reason : string
-    - createdAt : Date
-    - updatedAt : Date
-    - status : string
-    - userId : string
-    - orderItemId : int
+  - id : int
+  - reason : string
+  - createdAt : date
+  - updatedAt : date
+  - status : string
+  - userId : string
+  - orderItemId : int
 
-    + create(userId, orderItemId, reason)
-    + updateStatus(status)
-    + approve()
-    + reject()
+  + create(userId, orderItemId, reason)
+  + updateStatus(status)
+  + approve()
+  + reject()
 }
 
 class Refund {
-    - id : int
-    - createdAt : Date
-    - updatedAt : Date
-    - status : string
-    - paymentDetailId : int
-    - returnRequestId : int
+  - id : int
+  - createdAt : date
+  - updatedAt : date
+  - status : string
+  - paymentDetailId : int
+  - returnRequestId : int
 
-    + process()
-    + updateStatus(status)
+  + create(paymentDetailId, returnRequestId)
+  + process()
+  + updateStatus(status)
 }
 
 
@@ -206,7 +223,8 @@ OrderItem "0..*" --> "1" ProductVariant : selects
 ReturnRequest "1" --> "1" OrderItem : for
 Refund "1" --> "1" ReturnRequest : processes
 Refund "0..*" --> "1" PaymentDetail : refunds to
-@enduml```
+
+@enduml
+```
 
 <!-- diagram id="class-diagram" -->
-````

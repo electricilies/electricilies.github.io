@@ -632,8 +632,16 @@ export default defineConfig({
             collapsed: true,
             items: [
               {
+                text: "Cart Item",
+                link: "/software-docs/state/cart-item",
+              },
+              {
                 text: "Cart",
                 link: "/software-docs/state/cart",
+              },
+              {
+                text: "Order Item",
+                link: "/software-docs/state/order-item",
               },
               {
                 text: "Order",
@@ -644,8 +652,24 @@ export default defineConfig({
                 link: "/software-docs/state/payment",
               },
               {
+                text: "Product Image",
+                link: "/software-docs/state/product-image",
+              },
+              {
                 text: "Product",
                 link: "/software-docs/state/product",
+              },
+              {
+                text: "Product Variant",
+                link: "/software-docs/state/product-variant",
+              },
+              {
+                text: "Refund",
+                link: "/software-docs/state/refund",
+              },
+              {
+                text: "Return Request",
+                link: "/software-docs/state/return-request",
               },
               {
                 text: "Review",

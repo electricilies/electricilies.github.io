@@ -1,18 +1,16 @@
-# State Payment
+# State Refund
 
 ```plantuml
 hide empty description
 
 [*] --> Pending : create
-Pending --> Pending : update
 Pending --> Processing : process
 Processing --> Completed : updateStatus
 Processing --> Failed : updateStatus
-Completed --> Refunded : refund
+Completed --> [*]
 Failed --> [*]
-Refunded --> [*]
 
 @enduml
 ```
 
-<!-- diagram id="state-payment" -->
+<!-- diagram id="state-refund" -->
