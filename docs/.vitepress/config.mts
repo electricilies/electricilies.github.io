@@ -629,6 +629,7 @@ export default defineConfig({
           },
           {
             text: "State",
+            collapsed: true,
             items: [
               {
                 text: "Cart",
