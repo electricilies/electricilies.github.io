@@ -624,6 +624,39 @@ export default defineConfig({
             link: "/software-docs/function-list",
           },
           {
+            text: "Class",
+            link: "/software-docs/class",
+          },
+          {
+            text: "State",
+            items: [
+              {
+                text: "Cart",
+                link: "/software-docs/state/cart",
+              },
+              {
+                text: "Order",
+                link: "/software-docs/state/order",
+              },
+              {
+                text: "Payment",
+                link: "/software-docs/state/payment",
+              },
+              {
+                text: "Product",
+                link: "/software-docs/state/product",
+              },
+              {
+                text: "Review",
+                link: "/software-docs/state/review",
+              },
+              {
+                text: "User",
+                link: "/software-docs/state/user",
+              },
+            ],
+          },
+          {
             text: "SRS",
             link: "/software-docs/srs",
           },
