@@ -46,6 +46,7 @@ product_images: {
   alt_text: text
   created_at: timestamp
   is_primary: boolean
+  order: int
   product_id: int {constraint: FK}
   product_variant_id: int {constraint: [FK, nullable]}
 }
@@ -53,7 +54,7 @@ product_images: {
 reviews: {
   id: serial {constraint: PK}
   rating: int {constraint: "0 &lt; x &lt; 5"}
-  content: text
+  content: text {constraint: nullable}
   image_url: text
   created_at: timestamp
   updated_at: timestamp
