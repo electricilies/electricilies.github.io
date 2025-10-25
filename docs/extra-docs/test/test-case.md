@@ -9,14 +9,15 @@
 
 ## Auth / Manage Account
 
-- First Name
-- Last name (Optional)
-- Email
-- Password (Length >= 4, Contains both uppercase/lowercase)
-- Date of birth (Date picker)
-- Phone number (Optional)
-- Address (Optional)
-  - Required from frontend while checking out
+- First Name (0 < x <=255)
+- Last name (Optional) (0 < x <=255)
+- Email (0 < x <=255, email form)
+- Password (4 <= x <= 255, Contains both uppercase/lowercase)
+- Date of birth (Date picker, 0 < x <= 255)
+- Phone number (Optional, 10 <=x <= 11, start with 0)
+- Address (Optional, 0 < x <= 255)
+  > - Required from frontend while checking out
+  > - Single, not multiple
 
 ## Add Product
 
