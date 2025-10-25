@@ -52,7 +52,7 @@ product_images: {
 
 reviews: {
   id: serial {constraint: PK}
-  rating: int {constraint: "0 < x < 5"}
+  rating: int {constraint: "0 &lt; x &lt; 5"}
   content: text
   image_url: text
   created_at: timestamp
