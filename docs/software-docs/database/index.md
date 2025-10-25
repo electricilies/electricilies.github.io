@@ -24,7 +24,7 @@ categories: {
 
 brands: {
   id: serial {constraint: PK}
-  brand_name: text {constraint: UNQ}
+  name: text {constraint: UNQ}
 }
 
 products: {
@@ -52,7 +52,7 @@ product_images: {
 
 reviews: {
   id: serial {constraint: PK}
-  rating: int {constraint: "0 &lt; x &lt; 5"}
+  rating: int {constraint: "0 < x < 5"}
   content: text
   image_url: text
   created_at: timestamp
@@ -90,7 +90,7 @@ option_values_product_variants: {
 
 options: {
   id: serial {constraint: PK}
-  option_name: text {constraint: UNQ}
+  name: text {constraint: UNQ}
 }
 
 carts: {
@@ -109,25 +109,25 @@ cart_items: {
 
 order_statuses: {
   id: serial {constraint: PK}
-  status_name: text {constraint: UNQ}
+  name: text {constraint: UNQ}
 }
 
 payment_methods: {
   id: serial {constraint: PK}
-  method_name: text {constraint: UNQ}
+  name: text {constraint: UNQ}
 }
 
 payment_statuses: {
   id: serial {constraint: PK}
-  status_name: text {constraint: UNQ}
+  name: text {constraint: UNQ}
 }
 
 payment_providers: {
   id: serial {constraint: PK}
-  provider_name: text {constraint: UNQ}
+  name: text {constraint: UNQ}
 }
 
-invoices: {
+payments: {
   id: serial {constraint: PK}
   amount: decimal
   updated_at: timestamp
@@ -142,7 +142,7 @@ orders: {
   updated_at: timestamp
   user_id: uuid {constraint: FK}
   order_status_id: int {constraint: FK}
-  invoice_id: int {constraint: FK}
+  payment_id: int {constraint: FK}
 }
 
 order_items: {
@@ -165,7 +165,7 @@ return_requests: {
 
 return_request_statuses: {
   id: serial {constraint: PK}
-  status_name: text {constraint: UNQ}
+  name: text {constraint: UNQ}
 }
 
 refunds: {
@@ -173,14 +173,16 @@ refunds: {
   created_at: timestamp
   updated_at: timestamp
   status_id: int {constraint: FK}
-  invoice_id: int {constraint: FK}
+  payment_id: int {constraint: FK}
   return_request_id: int {constraint: FK}
 }
 
 refund_statuses: {
   id: serial {constraint: PK}
-  status_name: text {constraint: UNQ}
+  name: text {constraint: UNQ}
 }
+
+# === Relationships ===
 
 product_categories.product_id -> products.id
 product_categories.category_id -> categories.id
@@ -193,11 +195,11 @@ carts.user_id -> users.id
 cart_items.cart_id -> carts.id
 cart_items.product_variant_id -> product_variants.id
 cart_items.product_id -> products.id
-invoices.payment_provider_id -> payment_providers.id
-invoices.payment_status_id -> payment_statuses.id
-invoices.payment_method_id -> payment_methods.id
+payments.payment_provider_id -> payment_providers.id
+payments.payment_status_id -> payment_statuses.id
+payments.payment_method_id -> payment_methods.id
 orders.user_id -> users.id
-orders.invoice_id -> invoices.id
+orders.payment_id -> payments.id
 orders.order_status_id -> order_statuses.id
 order_items.order_id -> orders.id
 order_items.product_id -> products.id
@@ -211,12 +213,12 @@ return_requests.status_id -> return_request_statuses.id
 return_requests.order_item_id -> order_items.id
 refunds.status_id -> refund_statuses.id
 refunds.return_request_id -> return_requests.id
-refunds.invoice_id -> invoices.id
+refunds.payment_id -> payments.id
 
 explanation: |md
-  # Note
-  - All FK are NOT NULL by default.
-  - Only FK marked with {constraint: [FK, nullable]} are nullable.
+  # Notes
+  - All foreign keys (FK) are **NOT NULL** by default.
+  - Only FK marked with `{constraint: [FK, nullable]}` can be null.
 |
 ```
 
