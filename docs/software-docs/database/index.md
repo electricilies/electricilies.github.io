@@ -17,6 +17,7 @@ users: {
 
 categories: {
   id: serial {constraint: PK}
+  name: text {constraint: UNQ}
   description: text
   created_at: timestamp
   deleted_at: timestamp {constraint: N}
