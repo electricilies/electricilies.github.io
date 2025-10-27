@@ -93,6 +93,7 @@ option_values_product_variants: {
 options: {
   id: serial {constraint: PK}
   name: text {constraint: UNQ}
+  product_id: int {constraint: FK}
 }
 
 carts: {
@@ -192,6 +193,7 @@ product_variants.product_id -> products.id
 option_values_product_variants.product_variant_id -> product_variants.id
 option_values_product_variants.option_value_id -> option_values.id
 option_values.option_id -> options.id
+options.product_id -> products.id
 products.brand_id -> brands.id
 carts.user_id -> users.id
 cart_items.cart_id -> carts.id
