@@ -19,7 +19,7 @@ categories: {
   id: serial {constraint: PK}
   description: text
   created_at: timestamp
-  deleted_at: timestamp
+  deleted_at: timestamp {constraint: N}
 }
 
 brands: {
@@ -31,13 +31,13 @@ products: {
   id: serial {constraint: PK}
   name: text
   description: text
-  created_at: timestamp
-  updated_at: timestamp
-  deleted_at: timestamp
   brand_id: int {constraint: FK}
   views_count: int
   purchase_count: int
   trending_score: float
+  created_at: timestamp
+  updated_at: timestamp
+  deleted_at: timestamp {constraint: N}
 }
 
 product_images: {
@@ -48,19 +48,19 @@ product_images: {
   is_primary: boolean
   order: int
   product_id: int {constraint: FK}
-  product_variant_id: int {constraint: [FK, nullable]}
+  product_variant_id: int {constraint: [FK, N]}
 }
 
 reviews: {
   id: serial {constraint: PK}
   rating: int {constraint: "0 &lt; x &#8804; 5"}
-  content: text {constraint: nullable}
+  content: text {constraint: N}
   image_url: text
-  created_at: timestamp
-  updated_at: timestamp
-  deleted_at: timestamp
   user_id: uuid {constraint: FK}
   product_id: int {constraint: FK}
+  created_at: timestamp
+  updated_at: timestamp
+  deleted_at: timestamp {constraint: N}
 }
 
 product_categories: {
@@ -73,9 +73,9 @@ product_variants: {
   sku: text {constraint: UNQ}
   price: decimal
   quantity: int
-  created_at: timestamp
-  deleted_at: timestamp
   product_id: int {constraint: FK}
+  created_at: timestamp
+  deleted_at: timestamp {constraint: N}
 }
 
 option_values: {
@@ -219,7 +219,7 @@ refunds.payment_id -> payments.id
 explanation: |md
   # Notes
   - All foreign keys (FK) are **NOT NULL** by default.
-  - Only FK marked with `{constraint: [FK, nullable]}` can be null.
+  - Only column marked with `{constraint: N}` can be null.
 |
 ```
 
