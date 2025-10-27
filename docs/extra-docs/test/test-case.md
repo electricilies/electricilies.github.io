@@ -25,17 +25,25 @@
   - Name
   - Description
   - Brand (Select available or create new)
-  - Product variant(s) (Create right after)
-  - Product option (Optional) (Matrix each other)
-  - Product image(s)
-  - Product category (Select available or create new)
+  - Product image(s)\*
+  - Product variant(s) (Create right after)\*
+  - Product option(s) (Optional)\*
+  - Product category/categories (Select available or create new)
 
-- Product variant:
+- Product image(s):
+  - Upload all first
+  - Set (only) one of those to be primary (aka banner?)
+
+- Product variant(s):
   - Price
-  - Stock
+  - Quantity
+  - Image (Select uploaded previously)
+    > 1 Product variant can have multiple images but how to show in the frontend?
 
-- Product Option:
-  - ...???
+- Product option(s):
+  - Select available or create new
+    > It means, we have a list of available options (globally for all products)
+  - Each option should have product option value
 
 ## Cart
 
