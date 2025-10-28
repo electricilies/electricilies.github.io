@@ -27,7 +27,6 @@ products: {
   id: serial {constraint: PK}
   name: text
   description: text
-  brand_id: int {constraint: FK}
   views_count: int
   purchase_count: int
   trending_score: float
@@ -207,7 +206,6 @@ option_values_product_variants.product_variant_id -> product_variants.id
 option_values_product_variants.option_value_id -> option_values.id
 option_values.option_id -> options.id
 options.product_id -> products.id
-products.brand_id -> brands.id
 carts.user_id -> users.id
 cart_items.cart_id -> carts.id
 cart_items.product_variant_id -> product_variants.id
