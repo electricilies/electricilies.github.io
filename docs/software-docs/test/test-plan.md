@@ -113,6 +113,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
    - Browser Compatibility:
      - Chromium (primary target)
      - Firefox
+     - WebKit
    - OS Compatibility:
      - Linux
      - Windows 11
@@ -558,7 +559,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 | **Unit Test Pass Rate**        | 100%                                                              | CI job status           |
 | **Integration Test Pass Rate** | 100%                                                              | CI job status           |
 | **E2E Test Pass Rate**         | 100% (critical paths)                                             | Playwright report       |
-| **Browser Compatibility**      | 100% pass on Chromium, Firefox                                    | Playwright projects     |
+| **Browser Compatibility**      | 100% pass on Chromium, Firefox, Webkit                            | Playwright projects     |
 | **OS Compatibility**           | 100% pass on Linux, Windows, macOS                                | CI OS matrix            |
 | **API Response Time (p95)**    | < 1 second                                                        | k6 metrics              |
 | **System Throughput**          | >= 500 req/s                                                      | k6 metrics              |
@@ -743,7 +744,7 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 #### Compatibility Test Examples
 
 - **Browser Compatibility Test:**
-  - Run login flow on Chromium, Firefox
+  - Run login flow on Chromium, Firefox, WebKit
   - Verify CSS rendering consistency (button styles, layouts)
   - Test form validation across browsers
   - Verify cookie/localStorage behavior
