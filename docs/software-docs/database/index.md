@@ -55,7 +55,6 @@ products_attribute_values: {
 product_images: {
   id: serial {constraint: PK}
   url: text
-  alt_text: text
   created_at: timestamp
   order: int
   product_id: int {constraint: FK}
