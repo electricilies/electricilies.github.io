@@ -23,11 +23,6 @@ categories: {
   deleted_at: timestamp {constraint: N}
 }
 
-brands: {
-  id: serial {constraint: PK}
-  name: text {constraint: UNQ}
-}
-
 products: {
   id: serial {constraint: PK}
   name: text
@@ -39,6 +34,23 @@ products: {
   created_at: timestamp
   updated_at: timestamp
   deleted_at: timestamp {constraint: N}
+}
+
+attributes: {
+  id: serial {constraint: PK}
+  code: varchar(100) {constraint: UNQ}
+  name: text
+}
+
+attribute_values: {
+  id: serial {constraint: PK}
+  attribute_id: int {constraint: FK}
+  value: text
+}
+
+product_attributes_values: {
+  product_id: int {constraint: [PK, FK]}
+  attribute_value_id: int {constraint: [PK, FK]}
 }
 
 product_images: {
@@ -64,7 +76,7 @@ reviews: {
   deleted_at: timestamp {constraint: N}
 }
 
-product_categories: {
+products_categories: {
   product_id: int {constraint: [PK, FK]}
   category_id: int {constraint: [PK, FK]}
 }
@@ -185,11 +197,12 @@ refund_statuses: {
   name: text {constraint: UNQ}
 }
 
-# === Relationships ===
-
-product_categories.product_id -> products.id
-product_categories.category_id -> categories.id
+products_categories.product_id -> products.id
+products_categories.category_id -> categories.id
 product_variants.product_id -> products.id
+product_attributes_values.product_id -> products.id
+product_attributes_values.attribute_value_id -> attribute_values.id
+attribute_values.attribute_id -> attributes.id
 option_values_product_variants.product_variant_id -> product_variants.id
 option_values_product_variants.option_value_id -> option_values.id
 option_values.option_id -> options.id
@@ -220,7 +233,7 @@ refunds.return_request_id -> return_requests.id
 refunds.payment_id -> payments.id
 
 explanation: |md
-  # Notes
+
   - All foreign keys (FK) are **NOT NULL** by default.
   - Only column marked with `{constraint: N}` can be null.
 |
