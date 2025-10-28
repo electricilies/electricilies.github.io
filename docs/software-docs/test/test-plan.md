@@ -116,8 +116,8 @@ This test plan defines the testing strategy, approach, resources, and schedule f
      - WebKit
    - OS Compatibility:
      - Linux
-     - Windows 11
-     - macOS
+     - Windows
+     - MacOS
    - Platform: Desktop only (no mobile testing)
 
 6. **Regression Testing**
