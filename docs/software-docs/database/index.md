@@ -47,7 +47,7 @@ attribute_values: {
   value: text
 }
 
-product_attributes_values: {
+products_attribute_values: {
   product_id: int {constraint: [PK, FK]}
   attribute_value_id: int {constraint: [PK, FK]}
 }
@@ -65,7 +65,7 @@ product_images: {
 
 reviews: {
   id: serial {constraint: PK}
-  rating: int {constraint: "0 &lt; x &#8804; 5"}
+  rating: int {constraint: "0  &#8804; x &#8804; 5"}
   content: text {constraint: N}
   image_url: text
   user_id: uuid {constraint: FK}
@@ -199,8 +199,8 @@ refund_statuses: {
 products_categories.product_id -> products.id
 products_categories.category_id -> categories.id
 product_variants.product_id -> products.id
-product_attributes_values.product_id -> products.id
-product_attributes_values.attribute_value_id -> attribute_values.id
+products_attribute_values.product_id -> products.id
+products_attribute_values.attribute_value_id -> attribute_values.id
 attribute_values.attribute_id -> attributes.id
 option_values_product_variants.product_variant_id -> product_variants.id
 option_values_product_variants.option_value_id -> option_values.id
