@@ -552,22 +552,22 @@ This test plan defines the testing strategy, approach, resources, and schedule f
 
 ### Key Performance Indicators
 
-| Metric                         | Target                                                          | Measurement Method      |
-| ------------------------------ | --------------------------------------------------------------- | ----------------------- |
-| **Unit Test Coverage**         | Backend: ≥50% (threshold 20%)<br>Frontend: ≥30% (threshold 20%) | Codecov                 |
-| **Unit Test Pass Rate**        | 100%                                                            | CI job status           |
-| **Integration Test Pass Rate** | 100%                                                            | CI job status           |
-| **E2E Test Pass Rate**         | 100% (critical paths)                                           | Playwright report       |
-| **Browser Compatibility**      | 100% pass on Chromium, Firefox                                  | Playwright projects     |
-| **OS Compatibility**           | 100% pass on Linux, Windows, macOS                              | CI OS matrix            |
-| **API Response Time (p95)**    | < 1 second                                                      | k6 metrics              |
-| **System Throughput**          | ≥ 500 req/s                                                     | k6 metrics              |
-| **HPA Scale-up Time**          | < 2 minutes to add pods                                         | Kubernetes events       |
-| **HPA Scale-down Stability**   | No thrashing (stable 5min cool-down)                            | Kubernetes HPA logs     |
-| **Pod CPU Utilization**        | Balanced across replicas (variance < 20%)                       | Prometheus/Grafana      |
-| **CI Pipeline Duration**       | < 15 minutes (unit+integration)                                 | GitHub Actions insights |
-| **Defect Detection Rate**      | N/A (no baseline)                                               | Manual tracking         |
-| **Test Execution Frequency**   | Every commit                                                    | CI trigger logs         |
+| Metric                         | Target                                                            | Measurement Method      |
+| ------------------------------ | ----------------------------------------------------------------- | ----------------------- |
+| **Unit Test Coverage**         | Backend: >=50% (threshold 20%)<br>Frontend: >=30% (threshold 20%) | Codecov                 |
+| **Unit Test Pass Rate**        | 100%                                                              | CI job status           |
+| **Integration Test Pass Rate** | 100%                                                              | CI job status           |
+| **E2E Test Pass Rate**         | 100% (critical paths)                                             | Playwright report       |
+| **Browser Compatibility**      | 100% pass on Chromium, Firefox                                    | Playwright projects     |
+| **OS Compatibility**           | 100% pass on Linux, Windows, macOS                                | CI OS matrix            |
+| **API Response Time (p95)**    | < 1 second                                                        | k6 metrics              |
+| **System Throughput**          | >= 500 req/s                                                      | k6 metrics              |
+| **HPA Scale-up Time**          | < 2 minutes to add pods                                           | Kubernetes events       |
+| **HPA Scale-down Stability**   | No thrashing (stable 5min cool-down)                              | Kubernetes HPA logs     |
+| **Pod CPU Utilization**        | Balanced across replicas (variance < 20%)                         | Prometheus/Grafana      |
+| **CI Pipeline Duration**       | < 15 minutes (unit+integration)                                   | GitHub Actions insights |
+| **Defect Detection Rate**      | N/A (no baseline)                                                 | Manual tracking         |
+| **Test Execution Frequency**   | Every commit                                                      | CI trigger logs         |
 
 ### Test Execution Metrics
 
