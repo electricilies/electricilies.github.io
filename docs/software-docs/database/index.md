@@ -57,7 +57,6 @@ product_images: {
   url: text
   alt_text: text
   created_at: timestamp
-  is_primary: boolean
   order: int
   product_id: int {constraint: FK}
   product_variant_id: int {constraint: [FK, N]}
