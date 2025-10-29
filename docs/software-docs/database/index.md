@@ -28,7 +28,7 @@ products: {
   name: text
   description: text
   views_count: int
-  purchase_count: int
+  total_purchase: int
   trending_score: float
   created_at: timestamp
   updated_at: timestamp
@@ -83,6 +83,7 @@ product_variants: {
   sku: text {constraint: UNQ}
   price: decimal
   quantity: int
+  purchase_count: int
   product_id: int {constraint: FK}
   created_at: timestamp
   deleted_at: timestamp {constraint: N}
