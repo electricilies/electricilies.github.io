@@ -18,7 +18,6 @@ users: {
 categories: {
   id: serial {constraint: PK}
   name: text {constraint: UNQ}
-  description: text
   created_at: timestamp
   deleted_at: timestamp {constraint: N}
 }
@@ -102,7 +101,7 @@ option_values_product_variants: {
 
 options: {
   id: serial {constraint: PK}
-  name: text {constraint: UNQ}
+  name: text
   product_id: int {constraint: FK}
 }
 
