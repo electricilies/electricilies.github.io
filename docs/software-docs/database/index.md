@@ -63,7 +63,7 @@ product_images: {
 
 reviews: {
   id: serial {constraint: PK}
-  rating: int {constraint: "0  &#8804; x &#8804; 5"}
+  rating: int {constraint: "1  &#8804; x &#8804; 5"}
   content: text {constraint: N}
   image_url: text
   user_id: uuid {constraint: FK}
