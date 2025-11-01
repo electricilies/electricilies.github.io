@@ -682,6 +682,16 @@ export default defineConfig({
             ],
           },
           {
+            text: "Estimate",
+            collapsed: true,
+            items: [
+              {
+                text: "Time Implementing",
+                link: "/software-docs/estimate/time-implementing",
+              },
+            ],
+          },
+          {
             text: "SRS",
             link: "/software-docs/srs",
           },
