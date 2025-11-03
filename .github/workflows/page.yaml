@@ -43,7 +43,7 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: docs/public
-          key: ${{ runner.os }}-docs-public-${{ github.sha }}
+          key: ${{ runner.os }}-docs-public-${{ hashFiles('docs/**') }}
           restore-keys: |
             ${{ runner.os }}-docs-public-
       - name: Setup Pages
