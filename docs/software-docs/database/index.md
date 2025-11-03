@@ -56,7 +56,6 @@ product_images: {
   url: text
   order: int
   created_at: timestamp
-  product_id: int {constraint: FK}
   product_variant_id: int {constraint: [FK, N]}
 }
 
@@ -115,7 +114,6 @@ cart_items: {
   id: serial {constraint: PK}
   quantity: int
   cart_id: int {constraint: FK}
-  product_id: int {constraint: FK}
   product_variant_id: int {constraint: FK}
 }
 
@@ -161,7 +159,6 @@ order_items: {
   id: serial {constraint: PK}
   quantity: int
   order_id: int {constraint: FK}
-  product_id: int {constraint: FK}
   product_variant_id: int {constraint: FK}
 }
 
@@ -207,7 +204,6 @@ options.product_id -> products.id
 carts.user_id -> users.id
 cart_items.cart_id -> carts.id
 cart_items.product_variant_id -> product_variants.id
-cart_items.product_id -> products.id
 payments.provider_id -> payment_providers.id
 payments.status_id -> payment_statuses.id
 payments.method_id -> payment_methods.id
@@ -215,11 +211,9 @@ orders.user_id -> users.id
 orders.payment_id -> payments.id
 orders.status_id -> order_statuses.id
 order_items.order_id -> orders.id
-order_items.product_id -> products.id
 order_items.product_variant_id -> product_variants.id
 reviews.product_id -> products.id
 reviews.user_id -> users.id
-product_images.product_id -> products.id
 product_images.product_variant_id -> product_variants.id
 return_requests.user_id -> users.id
 return_requests.status_id -> return_request_statuses.id
