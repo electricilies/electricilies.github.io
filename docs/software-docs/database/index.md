@@ -38,6 +38,7 @@ attributes: {
   id: serial {constraint: PK}
   code: varchar(100) {constraint: UNQ}
   name: text
+  deleted_at: timestamp
 }
 
 attribute_values: {
@@ -102,6 +103,7 @@ options: {
   id: serial {constraint: PK}
   name: text
   product_id: int {constraint: FK}
+  deleted_at: timestamp
 }
 
 carts: {
