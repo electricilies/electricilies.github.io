@@ -85,6 +85,7 @@ product_variants: {
   purchase_count: int
   product_id: int {constraint: FK}
   created_at: timestamp
+  updated_at: timestamp
   deleted_at: timestamp {constraint: N}
 }
 
