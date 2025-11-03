@@ -54,8 +54,8 @@ products_attribute_values: {
 product_images: {
   id: serial {constraint: PK}
   url: text
-  created_at: timestamp
   order: int
+  created_at: timestamp
   product_id: int {constraint: FK}
   product_variant_id: int {constraint: [FK, N]}
 }
