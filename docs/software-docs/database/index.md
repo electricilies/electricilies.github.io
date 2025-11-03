@@ -143,9 +143,9 @@ payments: {
   id: serial {constraint: PK}
   amount: decimal
   updated_at: timestamp
-  payment_method_id: int {constraint: FK}
-  payment_status_id: int {constraint: FK}
-  payment_provider_id: int {constraint: FK}
+  method_id: int {constraint: FK}
+  status_id: int {constraint: FK}
+  provider_id: int {constraint: FK}
 }
 
 orders: {
@@ -153,7 +153,7 @@ orders: {
   created_at: timestamp
   updated_at: timestamp
   user_id: uuid {constraint: FK}
-  order_status_id: int {constraint: FK}
+  status_id: int {constraint: FK}
   payment_id: int {constraint: FK}
 }
 
@@ -208,12 +208,12 @@ carts.user_id -> users.id
 cart_items.cart_id -> carts.id
 cart_items.product_variant_id -> product_variants.id
 cart_items.product_id -> products.id
-payments.payment_provider_id -> payment_providers.id
-payments.payment_status_id -> payment_statuses.id
-payments.payment_method_id -> payment_methods.id
+payments.provider_id -> payment_providers.id
+payments.status_id -> payment_statuses.id
+payments.method_id -> payment_methods.id
 orders.user_id -> users.id
 orders.payment_id -> payments.id
-orders.order_status_id -> order_statuses.id
+orders.status_id -> order_statuses.id
 order_items.order_id -> orders.id
 order_items.product_id -> products.id
 order_items.product_variant_id -> product_variants.id
