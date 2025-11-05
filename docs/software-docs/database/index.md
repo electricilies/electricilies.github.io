@@ -147,6 +147,7 @@ payments: {
   method_id: int {constraint: FK}
   status_id: int {constraint: FK}
   provider_id: int {constraint: FK}
+  order_id: int {constraint: FK}
 }
 
 orders: {
@@ -155,7 +156,6 @@ orders: {
   updated_at: timestamp
   user_id: uuid {constraint: FK}
   status_id: int {constraint: FK}
-  payment_id: int {constraint: FK}
 }
 
 order_items: {
@@ -211,7 +211,7 @@ payments.provider_id -> payment_providers.id
 payments.status_id -> payment_statuses.id
 payments.method_id -> payment_methods.id
 orders.user_id -> users.id
-orders.payment_id -> payments.id
+payments.order_id -> orders.id
 orders.status_id -> order_statuses.id
 order_items.order_id -> orders.id
 order_items.product_variant_id -> product_variants.id
