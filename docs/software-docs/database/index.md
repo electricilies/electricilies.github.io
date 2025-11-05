@@ -29,7 +29,8 @@ products: {
   description: text
   views_count: int
   total_purchase: int
-  trending_score: float
+  rating: real
+  trending_score: real
   created_at: timestamp
   updated_at: timestamp
   deleted_at: timestamp {constraint: N}
@@ -63,7 +64,7 @@ product_images: {
 
 reviews: {
   id: serial {constraint: PK}
-  rating: int {constraint: "1  &#8804; x &#8804; 5"}
+  rating: smallint {constraint: "1 &#8804; x &#8804; 5"}
   content: text {constraint: N}
   image_url: text
   user_id: uuid {constraint: FK}
