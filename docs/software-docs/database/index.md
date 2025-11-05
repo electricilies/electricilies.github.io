@@ -81,7 +81,7 @@ products_categories: {
 product_variants: {
   id: serial {constraint: PK}
   sku: text {constraint: UNQ}
-  price: decimal
+  price: decimal(12,0)
   quantity: int
   purchase_count: int
   product_id: int {constraint: FK}
@@ -138,7 +138,7 @@ payment_providers: {
 
 payments: {
   id: serial {constraint: PK}
-  amount: decimal
+  amount: decimal(12,0)
   updated_at: timestamp
   status_id: int {constraint: FK}
   provider_id: int {constraint: FK}
