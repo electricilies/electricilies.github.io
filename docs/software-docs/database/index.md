@@ -19,6 +19,7 @@ categories: {
   id: serial {constraint: PK}
   name: text {constraint: UNQ}
   created_at: timestamp
+  updated_at: timestamp
   deleted_at: timestamp {constraint: N}
 }
 
@@ -104,7 +105,7 @@ options: {
   id: serial {constraint: PK}
   name: text
   product_id: int {constraint: FK}
-  deleted_at: timestamp
+  deleted_at: timestamp {constraint: N}
 }
 
 carts: {
