@@ -125,11 +125,6 @@ order_statuses: {
   name: text {constraint: UNQ}
 }
 
-payment_methods: {
-  id: serial {constraint: PK}
-  name: text {constraint: UNQ}
-}
-
 payment_statuses: {
   id: serial {constraint: PK}
   name: text {constraint: UNQ}
@@ -144,7 +139,6 @@ payments: {
   id: serial {constraint: PK}
   amount: decimal
   updated_at: timestamp
-  method_id: int {constraint: FK}
   status_id: int {constraint: FK}
   provider_id: int {constraint: FK}
   order_id: int {constraint: FK}
@@ -209,7 +203,6 @@ cart_items.cart_id -> carts.id
 cart_items.product_variant_id -> product_variants.id
 payments.provider_id -> payment_providers.id
 payments.status_id -> payment_statuses.id
-payments.method_id -> payment_methods.id
 orders.user_id -> users.id
 payments.order_id -> orders.id
 orders.status_id -> order_statuses.id
