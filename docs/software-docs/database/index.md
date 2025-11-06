@@ -28,6 +28,7 @@ products: {
   name: text
   description: text
   views_count: int
+  price: decimal(12,0)
   total_purchase: int
   rating: real
   trending_score: real
