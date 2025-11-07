@@ -158,6 +158,7 @@ orders: {
 order_items: {
   id: serial {constraint: PK}
   quantity: int
+  price_at_order: decimal(12,0)
   order_id: int {constraint: FK}
   product_variant_id: int {constraint: FK}
 }
