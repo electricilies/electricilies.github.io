@@ -158,7 +158,7 @@ orders: {
 order_items: {
   id: serial {constraint: PK}
   quantity: int
-  price_at_order: decimal(12,0)
+  price_at_order: decimal(12,00)
   order_id: int {constraint: FK}
   product_variant_id: int {constraint: FK}
 }
@@ -184,6 +184,7 @@ refunds: {
   updated_at: timestamp
   status_id: int {constraint: FK}
   payment_id: int {constraint: FK}
+  order_item_id: int {constraint: FK}
   return_request_id: int {constraint: FK}
 }
 
@@ -221,6 +222,7 @@ return_requests.order_item_id -> order_items.id
 refunds.status_id -> refund_statuses.id
 refunds.return_request_id -> return_requests.id
 refunds.payment_id -> payments.id
+refunds.order_item_id -> order_items.id
 
 explanation: |md
 
