@@ -32,6 +32,7 @@ products: {
   total_purchase: int
   rating: real
   trending_score: real
+  category_id: int
   created_at: timestamp
   updated_at: timestamp
   deleted_at: timestamp {constraint: N}
@@ -75,11 +76,6 @@ reviews: {
   deleted_at: timestamp {constraint: N}
 }
 
-products_categories: {
-  product_id: int {constraint: [PK, FK]}
-  category_id: int {constraint: [PK, FK]}
-}
-
 product_variants: {
   id: serial {constraint: PK}
   sku: text {constraint: UNQ}
@@ -117,7 +113,7 @@ carts: {
 }
 
 cart_items: {
-  id: serial {constraint: PK}
+  id: uuid {constraint: PK}
   quantity: int
   cart_id: int {constraint: FK}
   product_variant_id: int {constraint: FK}
@@ -193,11 +189,10 @@ refund_statuses: {
   name: text {constraint: UNQ}
 }
 
-products_categories.product_id -> products.id
-products_categories.category_id -> categories.id
 product_variants.product_id -> products.id
 products_attribute_values.product_id -> products.id
 products_attribute_values.attribute_value_id -> attribute_values.id
+products.category_id -> categories.id
 attribute_values.attribute_id -> attributes.id
 option_values_product_variants.product_variant_id -> product_variants.id
 option_values_product_variants.option_value_id -> option_values.id
