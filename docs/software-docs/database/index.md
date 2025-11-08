@@ -61,6 +61,7 @@ product_images: {
   url: text
   order: int
   created_at: timestamp
+  product_id: int {constraint: FK}
   product_variant_id: int {constraint: [FK, N]}
 }
 
@@ -209,6 +210,7 @@ order_items.order_id -> orders.id
 order_items.product_variant_id -> product_variants.id
 reviews.product_id -> products.id
 reviews.user_id -> users.id
+product_images.product_id -> products.id
 product_images.product_variant_id -> product_variants.id
 return_requests.user_id -> users.id
 return_requests.status_id -> return_request_statuses.id
