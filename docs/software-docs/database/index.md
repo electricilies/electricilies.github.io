@@ -71,7 +71,7 @@ reviews: {
   content: text {constraint: N}
   image_url: text
   user_id: uuid {constraint: FK}
-  product_id: int {constraint: FK}
+  order_item_id: int {constraint: FK}
   created_at: timestamp
   updated_at: timestamp
   deleted_at: timestamp {constraint: N}
@@ -208,7 +208,7 @@ payments.order_id -> orders.id
 orders.status_id -> order_statuses.id
 order_items.order_id -> orders.id
 order_items.product_variant_id -> product_variants.id
-reviews.product_id -> products.id
+reviews.order_item_id -> order_items.id
 reviews.user_id -> users.id
 product_images.product_id -> products.id
 product_images.product_variant_id -> product_variants.id
