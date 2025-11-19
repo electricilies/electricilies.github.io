@@ -79,6 +79,7 @@ reviews: {
 
 product_variants: {
   id: serial {constraint: PK}
+  name: text
   sku: text {constraint: UNQ}
   price: decimal(12,0)
   quantity: int
