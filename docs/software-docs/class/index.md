@@ -7,10 +7,9 @@ skinparam classFontStyle bold
 skinparam classAttributeIconSize 0
 skinparam packageStyle rectangle
 /' skinparam linetype ortho '/
-skinparam linetype polyline
+/' skinparam linetype polyline '/
 
-
-package "User Domain" {
+package "User" {
     class User {
         +ID: string
         +FirstName: string
@@ -23,7 +22,7 @@ package "User Domain" {
     }
 }
 
-package "App Domain" {
+package "App" {
 
     ' ----- Category -----
     class Category {
@@ -145,53 +144,52 @@ package "App Domain" {
     ' ===== Relationships =====
 
     ' Product Composition (diamond filled)
-    Product "1" *-- "0..*" Option : contains
-    Product "1" *-- "1..*" ProductVariant : contains
-    Product "1" *-- "1..*" ProductImage : contains
+    Product "1" *--- "0..*" Option : contains
+    Product "1" *--- "1..*" ProductVariant : contains
+    Product "1" *--- "1..*" ProductImage : contains
 
     ' Option Composition
-    Option "1" *-- "1..*" OptionValue : contains
+    Option "1" *--- "1..*" OptionValue : contains
 
     ' Product Aggregation
-    Product "0..*" o-- "0..*" AttributeValue : has
+    Product "0..*" o--- "0..*" AttributeValue : has
 
     ' ProductVariant relationships
-    ProductVariant "0" -- "0" OptionValue : not configured by (no option)
-    ProductVariant "1..*" o--* "1..*" OptionValue : configured by
-    ProductVariant "1" o-- "0..*" ProductImage : has
-    ProductVariant <--> Product : belongs to
+    ProductVariant "0" --- "0" OptionValue : not configured by (no option)
+    ProductVariant "1..*" o---* "1..*" OptionValue : configured by
+    ProductVariant "1" o--- "0..*" ProductImage : has
 
     ' Category relationship
-    Product "0..*" --> "1" Category : categorized by
+    Product "0..*" ---> "1" Category : categorized by
 
     ' Attribute relationships
-    Attribute "1" *-- "0..*" AttributeValue : contains
+    Attribute "1" *--- "0..*" AttributeValue : contains
 
     ' Cart relationships
-    Cart "1" *-- "0..*" CartItem : contains
-    CartItem --> ProductVariant : references
+    Cart "1" *--- "0..*" CartItem : contains
+    CartItem ---> ProductVariant : references
 
     ' Order relationships
-    Order "1" *-- "1..*" OrderItem : contains
-    OrderItem --> ProductVariant : references
+    Order "1" *--- "1..*" OrderItem : contains
+    OrderItem ---> ProductVariant : references
 
     ' Order depends on Cart (dependency)
-    Order ..> Cart : <<creates from>>
+    Order ...> Cart : <<creates from>>
     Order --> OrderStatus : has status
 
     ' Payment relationships
-    Payment "0..1" <--* "1" Order : pays for
+    Payment "0..1" <---* "1" Order : pays for
     Payment --> PaymentStatus : has status
     Payment --> PaymentProvider : uses
 
     ' Review relationships
-    Review "0..1" --* "1" OrderItem : reviews
+    Review "0..1" ---* "1" OrderItem : reviews
 }
 
 ' ===== User References (by ID only) =====
-Cart --> User
-Order --> User
-Review --> User
+Cart ---> User
+Order ---> User
+Review ---> User
 
 @enduml
 ```
