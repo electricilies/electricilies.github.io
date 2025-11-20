@@ -101,7 +101,9 @@ package "App" {
         ID: int
         UserID: string
         Address: string
+        Provider: OrderProvider
         Status: OrderStatus
+        isPaid: bool
         TotalAmount: int
     }
 
@@ -120,21 +122,7 @@ package "App" {
         Price: int
     }
 
-    ' ----- Payment -----
-    class Payment {
-        ID: int
-        Amount: int
-        Status: PaymentStatus
-        Provider: PaymentProvider
-    }
-
-    enum PaymentStatus {
-        Pending
-        Completed
-        Failed
-    }
-
-    enum PaymentProvider {
+    enum OrderProvider {
         COD
         VNPAY
         MOMO
@@ -184,12 +172,8 @@ package "App" {
 
     ' Order depends on Cart (dependency)
     Order ...> Cart : <<creates from>>
+    Order --> OrderProvider : uses
     Order --> OrderStatus : has status
-
-    ' Payment relationships
-    Payment "0..1" <---* "1" Order : pays for
-    Payment --> PaymentStatus : has status
-    Payment --> PaymentProvider : uses
 
     ' Review relationships
     Review "0..1" ---* "1" OrderItem : reviews
