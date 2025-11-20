@@ -126,32 +126,21 @@ order_statuses: {
   name: text {constraint: UNQ}
 }
 
-payment_statuses: {
+order_providers: {
   id: serial {constraint: PK}
   name: text {constraint: UNQ}
-}
-
-payment_providers: {
-  id: serial {constraint: PK}
-  name: text {constraint: UNQ}
-}
-
-payments: {
-  id: serial {constraint: PK}
-  amount: decimal(12,0)
-  updated_at: timestamp
-  status_id: int {constraint: FK}
-  provider_id: int {constraint: FK}
-  order_id: int {constraint: FK}
 }
 
 orders: {
   id: serial {constraint: PK}
   address: text
+  total_amount: decimal(12,0)
+  is_paid: bool
   created_at: timestamp
   updated_at: timestamp
   user_id: uuid {constraint: FK}
   status_id: int {constraint: FK}
+  provider_id: int {constraint: FK}
 }
 
 order_items: {
@@ -179,11 +168,13 @@ return_request_statuses: {
 
 refunds: {
   id: serial {constraint: PK}
+  amount: decimal(12,0)
   created_at: timestamp
   updated_at: timestamp
+  updated_at: timestamp
   status_id: int {constraint: FK}
-  payment_id: int {constraint: FK}
   return_request_id: int {constraint: FK}
+  provider_id: int {constraint: FK}
 }
 
 refund_statuses: {
@@ -203,11 +194,9 @@ options.product_id -> products.id
 carts.user_id -> users.id
 cart_items.cart_id -> carts.id
 cart_items.product_variant_id -> product_variants.id
-payments.provider_id -> payment_providers.id
-payments.status_id -> payment_statuses.id
 orders.user_id -> users.id
-payments.order_id -> orders.id
 orders.status_id -> order_statuses.id
+orders.provider_id -> order_providers.id
 order_items.order_id -> orders.id
 order_items.product_variant_id -> product_variants.id
 reviews.order_item_id -> order_items.id
@@ -219,7 +208,6 @@ return_requests.status_id -> return_request_statuses.id
 return_requests.order_item_id -> order_items.id
 refunds.status_id -> refund_statuses.id
 refunds.return_request_id -> return_requests.id
-refunds.payment_id -> payments.id
 
 explanation: |md
 
