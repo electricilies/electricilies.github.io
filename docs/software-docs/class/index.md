@@ -1,228 +1,197 @@
 # Class Diagram
 
 ```plantuml
-@startuml
+@startuml E-Commerce Domain Model
 
-hide circle
 skinparam classFontStyle bold
 skinparam classAttributeIconSize 0
 skinparam packageStyle rectangle
+/' skinparam linetype ortho '/
+skinparam linetype polyline
 
 
-class User {
-  - id : string
-  - username : string
-  - firstName : string
-  - lastName : string
-  - email : string
-  - dateOfBirth : date
-  - phoneNumber : string
-  - address : string
-  - role : string
-  - createdAt : date
-  - deletedAt : date
-
-  + signUp(username, password, firstName, lastName, email, dateOfBirth, phoneNumber, address)
-  + signIn(username, password)
-  + signOut()
-  + editProfile(username, password, firstName, lastName, email, dateOfBirth, phoneNumber, address)
-  + deleteAccount()
-  + changePassword(oldPassword, newPassword)
-  + recoverAccount(email)
-  + ban()
-  + unban()
+package "User Domain" {
+    class User {
+        +ID: string
+        +FirstName: string
+        +LastName: string
+        +Username: string
+        +Email: string
+        +DateOfBirth: time.Time
+        +PhoneNumber: string
+        +Address: string
+    }
 }
 
-class Product {
-  - id : int
-  - name : string
-  - description : string
-  - brand : string
-  - createdAt : date
-  - updatedAt : date
-  - deletedAt : date
+package "App Domain" {
 
-  + create(name, description, brand)
-  + update(name, description, brand)
-  + delete()
-  + getDetails()
-  + getReviews()
-  + getSuggestedProducts()
-  + getVariants()
-  + getImages()
+    ' ----- Category -----
+    class Category {
+        +ID: int
+        +Name: string
+    }
+
+    ' ----- Product and Related -----
+    class Product {
+        +ID: int
+        +Name: string
+        +Description: string
+        +ViewsCount: int
+        +TotalPurchase: int
+        +TrendingScore: int
+        +Price: int
+        +Rating: float
+    }
+
+    class Option {
+        +ID: int
+        +Name: string
+    }
+
+    class OptionValue {
+        +ID: int
+        +Value: string
+    }
+
+    class ProductVariant {
+        +ID: int
+        +SKU: string
+        +Price: int
+        +Quantity: int
+        +PurchaseCount: int
+    }
+
+    class ProductImage {
+        +ID: int
+        +URL: string
+        +Order: int
+    }
+
+    class Attribute {
+        +ID: int
+        +Name: string
+    }
+
+    class AttributeValue {
+        +ID: int
+        +Value: string
+    }
+
+    ' ----- Cart -----
+    class Cart {
+        +ID: int
+        +UserID: string
+    }
+
+    class CartItem {
+        +ID: uuid.UUID
+        +Quantity: int
+    }
+
+    ' ----- Order -----
+    class Order {
+        +ID: int
+        +UserID: string
+        +Address: string
+        +Status: OrderStatus
+        +TotalAmount: int
+    }
+
+    enum OrderStatus {
+        Pending
+        Processing
+        Shipped
+        Delivered
+        Cancelled
+    }
+
+    class OrderItem {
+        +ID: int
+        +OrderID: int
+        +Quantity: int
+        +Price: int
+    }
+
+    ' ----- Payment -----
+    class Payment {
+        +ID: int
+        +Amount: int
+        +Status: PaymentStatus
+        +Provider: PaymentProvider
+    }
+
+    enum PaymentStatus {
+        Pending
+        Completed
+        Failed
+    }
+
+    enum PaymentProvider {
+        COD
+        VNPAY
+        MOMO
+        ZALOPAY
+    }
+
+    ' ----- Review -----
+    class Review {
+        +ID: int
+        +UserID: string
+        +Rating: int
+        +Content: *string
+        +ImageURL: *string
+    }
+
+    ' ===== Relationships =====
+
+    ' Product Composition (diamond filled)
+    Product "1" *-- "0..*" Option : contains
+    Product "1" *-- "1..*" ProductVariant : contains
+    Product "1" *-- "1..*" ProductImage : contains
+
+    ' Option Composition
+    Option "1" *-- "1..*" OptionValue : contains
+
+    ' Product Aggregation
+    Product "0..*" o-- "0..*" AttributeValue : has
+
+    ' ProductVariant relationships
+    ProductVariant "0" -- "0" OptionValue : not configured by (no option)
+    ProductVariant "1..*" o--* "1..*" OptionValue : configured by
+    ProductVariant "1" o-- "0..*" ProductImage : has
+    ProductVariant <--> Product : belongs to
+
+    ' Category relationship
+    Product "0..*" --> "1" Category : categorized by
+
+    ' Attribute relationships
+    Attribute "1" *-- "0..*" AttributeValue : contains
+
+    ' Cart relationships
+    Cart "1" *-- "0..*" CartItem : contains
+    CartItem --> ProductVariant : references
+
+    ' Order relationships
+    Order "1" *-- "1..*" OrderItem : contains
+    OrderItem --> ProductVariant : references
+
+    ' Order depends on Cart (dependency)
+    Order ..> Cart : <<creates from>>
+    Order --> OrderStatus : has status
+
+    ' Payment relationships
+    Payment "0..1" <--* "1" Order : pays for
+    Payment --> PaymentStatus : has status
+    Payment --> PaymentProvider : uses
+
+    ' Review relationships
+    Review "0..1" --* "1" OrderItem : reviews
 }
 
-class ProductVariant {
-  - id : int
-  - sku : string
-  - price : decimal
-  - quantity : int
-  - createdAt : date
-  - deletedAt : date
-  - productId : int
-
-  + create(productId, sku, price, quantity)
-  + update(sku, price, quantity)
-  + delete()
-  + getPrice()
-  + checkAvailability()
-}
-
-class ProductImage {
-  - id : int
-  - url : string
-  - altText : string
-  - createdAt : date
-  - order: int
-  - productId : int
-
-  + create(productId, url, altText, order)
-  + update(url, altText, order)
-  + delete()
-  + getUrl()
-  + changeOrder(order)
-}
-
-class Review {
-  - id : int
-  - rating : int
-  - content : string
-  - imageUrl : string
-  - createdAt : date
-  - updatedAt : date
-  - userId : string
-  - productId : int
-
-  + create(userId, productId, rating, content, images)
-  + update(content, rating)
-  + delete()
-}
-
-
-class Cart {
-  - id : int
-  - userId : string
-  - updatedAt : date
-
-  + create(userId)
-  + addItem(productId, variantId, quantity)
-  + removeItem(itemId)
-  + updateQuantity(itemId, quantity)
-  + getItems()
-  + clear()
-  + calculateTotal()
-}
-
-class CartItem {
-  - id : int
-  - quantity : int
-  - cartId : int
-  - productId : int
-  - productVariantId : int
-
-  + updateQuantity(quantity)
-  + remove()
-  + getSubtotal()
-}
-
-
-class Order {
-  - id : int
-  - createdAt : date
-  - updatedAt : date
-  - userId : string
-  - orderStatus : string
-  - paymentDetailId : int
-
-  + create(userId, items, paymentDetails)
-  + cancel()
-  + update(orderStatus)
-  + delete()
-  + getDetails()
-  + getItems()
-  + updateStatus(status)
-  + getTrackingInfo()
-}
-
-class OrderItem {
-  - id : int
-  - quantity : int
-  - orderId : int
-  - productId : int
-  - productVariantId : int
-
-  + getSubtotal()
-  + returnProduct(reason)
-}
-
-
-class PaymentDetail {
-  - id : int
-  - amount : decimal
-  - updatedAt : date
-  - paymentMethod : string
-  - paymentStatus : string
-  - paymentProvider : string
-
-  + create(amount, paymentMethod, paymentProvider)
-  + update(amount, paymentMethod)
-  + process()
-  + updateStatus(status)
-  + refund()
-}
-
-
-class ReturnRequest {
-  - id : int
-  - reason : string
-  - createdAt : date
-  - updatedAt : date
-  - status : string
-  - userId : string
-  - orderItemId : int
-
-  + create(userId, orderItemId, reason)
-  + updateStatus(status)
-  + approve()
-  + reject()
-}
-
-class Refund {
-  - id : int
-  - createdAt : date
-  - updatedAt : date
-  - status : string
-  - paymentDetailId : int
-  - returnRequestId : int
-
-  + create(paymentDetailId, returnRequestId)
-  + process()
-  + updateStatus(status)
-}
-
-
-
-User "1" --> "0..1" Cart : has
-User "1" --> "0..*" Order : places
-User "1" --> "0..*" Review : writes
-User "1" --> "0..*" ReturnRequest : submits
-
-Product "1" *-- "1..*" ProductVariant : has
-Product "1" *-- "0..*" ProductImage : has
-Product "1" --> "0..*" Review : receives
-
-Cart "1" *-- "0..*" CartItem : contains
-CartItem "0..*" --> "1" Product : references
-CartItem "0..*" --> "1" ProductVariant : selects
-
-Order "1" *-- "1..*" OrderItem : contains
-Order "1" --> "1" PaymentDetail : pays with
-OrderItem "0..*" --> "1" Product : references
-OrderItem "0..*" --> "1" ProductVariant : selects
-
-ReturnRequest "1" --> "1" OrderItem : for
-Refund "1" --> "1" ReturnRequest : processes
-Refund "0..*" --> "1" PaymentDetail : refunds to
+' ===== User References (by ID only) =====
+Cart --> User
+Order --> User
+Review --> User
 
 @enduml
 ```
