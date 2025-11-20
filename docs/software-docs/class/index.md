@@ -11,14 +11,14 @@ skinparam packageStyle rectangle
 
 package "User" {
     class User {
-        +ID: string
-        +FirstName: string
-        +LastName: string
-        +Username: string
-        +Email: string
-        +DateOfBirth: time.Time
-        +PhoneNumber: string
-        +Address: string
+        ID: string
+        FirstName: string
+        LastName: string
+        Username: string
+        Email: string
+        DateOfBirth: time.Time
+        PhoneNumber: string
+        Address: string
     }
 }
 
@@ -26,20 +26,20 @@ package "App" {
 
     ' ----- Category -----
     class Category {
-        +ID: int
-        +Name: string
+        ID: int
+        Name: string
     }
 
     ' ----- Product and Related -----
     class Product {
-        +ID: int
-        +Name: string
-        +Description: string
-        +ViewsCount: int
-        +TotalPurchase: int
-        +TrendingScore: int
-        +Price: int
-        +Rating: float
+        ID: int
+        Name: string
+        Description: string
+        ViewsCount: int
+        TotalPurchase: int
+        TrendingScore: int
+        Price: int
+        Rating: float
         AddVariant(ProductVariant)
         RemoveVariant(ProductVariant)
         AddImage(ProductImage)
@@ -47,62 +47,62 @@ package "App" {
     }
 
     class Option {
-        +ID: int
-        +Name: string
+        ID: int
+        Name: string
     }
 
     class OptionValue {
-        +ID: int
-        +Value: string
+        ID: int
+        Value: string
     }
 
     class ProductVariant {
-        +ID: int
-        +SKU: string
-        +Price: int
-        +Quantity: int
-        +PurchaseCount: int
+        ID: int
+        SKU: string
+        Price: int
+        Quantity: int
+        PurchaseCount: int
         AddImage(ProductImage)
         RemoveImage(ProductImage)
     }
 
     class ProductImage {
-        +ID: int
-        +URL: string
-        +Order: int
+        ID: int
+        URL: string
+        Order: int
     }
 
     class Attribute {
-        +ID: int
-        +Name: string
+        ID: int
+        Name: string
         AddValue(AttributeValue)
     }
 
     class AttributeValue {
-        +ID: int
-        +Value: string
+        ID: int
+        Value: string
     }
 
     ' ----- Cart -----
     class Cart {
-        +ID: int
-        +UserID: string
+        ID: int
+        UserID: string
         AddItem(ProductVariant, quantity: int)
         Remove(CartItem)
     }
 
     class CartItem {
-        +ID: uuid.UUID
-        +Quantity: int
+        ID: uuid.UUID
+        Quantity: int
     }
 
     ' ----- Order -----
     class Order {
-        +ID: int
-        +UserID: string
-        +Address: string
-        +Status: OrderStatus
-        +TotalAmount: int
+        ID: int
+        UserID: string
+        Address: string
+        Status: OrderStatus
+        TotalAmount: int
     }
 
     enum OrderStatus {
@@ -114,18 +114,18 @@ package "App" {
     }
 
     class OrderItem {
-        +ID: int
-        +OrderID: int
-        +Quantity: int
-        +Price: int
+        ID: int
+        OrderID: int
+        Quantity: int
+        Price: int
     }
 
     ' ----- Payment -----
     class Payment {
-        +ID: int
-        +Amount: int
-        +Status: PaymentStatus
-        +Provider: PaymentProvider
+        ID: int
+        Amount: int
+        Status: PaymentStatus
+        Provider: PaymentProvider
     }
 
     enum PaymentStatus {
@@ -143,11 +143,11 @@ package "App" {
 
     ' ----- Review -----
     class Review {
-        +ID: int
-        +UserID: string
-        +Rating: int
-        +Content: *string
-        +ImageURL: *string
+        ID: int
+        UserID: string
+        Rating: int
+        Content: *string
+        ImageURL: *string
     }
 
     ' ===== Relationships =====
