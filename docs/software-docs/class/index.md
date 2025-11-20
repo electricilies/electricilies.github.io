@@ -40,6 +40,10 @@ package "App" {
         +TrendingScore: int
         +Price: int
         +Rating: float
+        AddVariant(ProductVariant)
+        RemoveVariant(ProductVariant)
+        AddImage(ProductImage)
+        RemoveImage(ProductImage)
     }
 
     class Option {
@@ -58,6 +62,8 @@ package "App" {
         +Price: int
         +Quantity: int
         +PurchaseCount: int
+        AddImage(ProductImage)
+        RemoveImage(ProductImage)
     }
 
     class ProductImage {
@@ -69,6 +75,7 @@ package "App" {
     class Attribute {
         +ID: int
         +Name: string
+        AddValue(AttributeValue)
     }
 
     class AttributeValue {
@@ -80,6 +87,8 @@ package "App" {
     class Cart {
         +ID: int
         +UserID: string
+        AddItem(ProductVariant, quantity: int)
+        Remove(CartItem)
     }
 
     class CartItem {
