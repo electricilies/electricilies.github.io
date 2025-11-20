@@ -147,6 +147,7 @@ payments: {
 
 orders: {
   id: serial {constraint: PK}
+  address: text
   created_at: timestamp
   updated_at: timestamp
   user_id: uuid {constraint: FK}
