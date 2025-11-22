@@ -47,6 +47,7 @@ attributes: {
 
 attribute_values: {
   id: serial {constraint: PK}
+  deleted_at: timestamp {constraint: N}
   attribute_id: int {constraint: FK}
   value: text
 }
@@ -61,6 +62,7 @@ product_images: {
   url: text
   order: int
   created_at: timestamp
+  deleted_at: timestamp {constraint: N}
   product_id: int {constraint: FK}
   product_variant_id: int {constraint: [FK, N]}
 }
@@ -93,6 +95,7 @@ product_variants: {
 option_values: {
   id: serial {constraint: PK}
   value: text
+  deleted_at: timestamp {constraint: N}
   option_id: int {constraint: FK}
 }
 
