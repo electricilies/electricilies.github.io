@@ -11,12 +11,12 @@ skinparam packageStyle rectangle
 
 package "User" {
     class User {
-        ID: string
+        ID: UUID
         FirstName: string
         LastName: string
         Username: string
         Email: string
-        DateOfBirth: time.Time
+        DateOfBirth: timestamptz
         PhoneNumber: string
         Address: string
     }
@@ -26,13 +26,13 @@ package "App" {
 
     ' ----- Category -----
     class Category {
-        ID: int
+        ID: UUIDv7
         Name: string
     }
 
     ' ----- Product and Related -----
     class Product {
-        ID: int
+        ID: UUIDv7
         Name: string
         Description: string
         ViewsCount: int
@@ -47,17 +47,17 @@ package "App" {
     }
 
     class Option {
-        ID: int
+        ID: UUIDv7
         Name: string
     }
 
     class OptionValue {
-        ID: int
+        ID: UUIDv7
         Value: string
     }
 
     class ProductVariant {
-        ID: int
+        ID: UUIDv7
         SKU: string
         Price: int
         Quantity: int
@@ -67,25 +67,25 @@ package "App" {
     }
 
     class ProductImage {
-        ID: int
+        ID: UUIDv7
         URL: string
         Order: int
     }
 
     class Attribute {
-        ID: int
+        ID: UUIDv7
         Name: string
         AddValue(AttributeValue)
     }
 
     class AttributeValue {
-        ID: int
+        ID: UUIDv7
         Value: string
     }
 
     ' ----- Cart -----
     class Cart {
-        ID: int
+        ID: UUIDv7
         UserID: string
         AddItem(ProductVariant, quantity: int)
         Remove(CartItem)
@@ -98,7 +98,7 @@ package "App" {
 
     ' ----- Order -----
     class Order {
-        ID: int
+        ID: UUIDv7
         UserID: string
         Address: string
         Provider: OrderProvider
@@ -116,8 +116,8 @@ package "App" {
     }
 
     class OrderItem {
-        ID: int
-        OrderID: int
+        ID: UUIDv7
+        OrderID: UUIDv7
         Quantity: int
         Price: int
     }
@@ -131,7 +131,7 @@ package "App" {
 
     ' ----- Review -----
     class Review {
-        ID: int
+        ID: UUIDv7
         UserID: string
         Rating: int
         Content: *string
