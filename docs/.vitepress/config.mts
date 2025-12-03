@@ -25,7 +25,6 @@ export default defineConfig({
       { text: "Overview", link: "/overview" },
       { text: "Software Docs", link: "/software-docs" },
       { text: "Extra Docs", link: "/extra-docs" },
-      { text: "OpenAPI", link: "/extra-docs/openapi" },
     ],
 
     sidebar: [
