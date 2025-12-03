@@ -6,14 +6,15 @@
     "vpd": "vitepress-plugin-diagrams"
   },
   "dependencies": {
-    "@catppuccin/vitepress": "^0.1.2"
+    "@catppuccin/vitepress": "^0.1.2",
+    "vitepress-openapi": "^0.1.12"
   },
   "devDependencies": {
     "@types/node": "^24.5.2",
     "vitepress": "^1.6.4",
     "vitepress-plugin-diagrams": "^1.0.0"
   },
- "engines": {
+  "engines": {
     "node": ">=24.8.0"
   }
 }
