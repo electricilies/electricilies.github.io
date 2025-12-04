@@ -1,7 +1,7 @@
 # Class Diagram
 
 ```plantuml
-@startuml E-Commerce Domain Model
+@startuml Electricilies
 
 skinparam classFontStyle bold
 skinparam classAttributeIconSize 0
@@ -10,29 +10,17 @@ skinparam packageStyle rectangle
 /' skinparam linetype polyline '/
 
 package "User" {
-    class User {
-        ID: UUID
-        FirstName: string
-        LastName: string
-        Username: string
-        Email: string
-        DateOfBirth: timestamptz
-        PhoneNumber: string
-        Address: string
-    }
+    class User {}
 }
 
-package "App" {
-
-    ' ----- Category -----
+package "Electricilies" {
     class Category {
-        ID: UUIDv7
+        ID: uuid
         Name: string
     }
 
-    ' ----- Product and Related -----
     class Product {
-        ID: UUIDv7
+        ID: uuid
         Name: string
         Description: string
         ViewsCount: int
@@ -47,17 +35,17 @@ package "App" {
     }
 
     class Option {
-        ID: UUIDv7
+        ID: uuid
         Name: string
     }
 
     class OptionValue {
-        ID: UUIDv7
+        ID: uuid
         Value: string
     }
 
     class ProductVariant {
-        ID: UUIDv7
+        ID: uuid
         SKU: string
         Price: int
         Quantity: int
@@ -67,39 +55,36 @@ package "App" {
     }
 
     class ProductImage {
-        ID: UUIDv7
+        ID: uuid
         URL: string
         Order: int
     }
 
     class Attribute {
-        ID: UUIDv7
+        ID: uuid
         Name: string
         AddValue(AttributeValue)
     }
 
     class AttributeValue {
-        ID: UUIDv7
+        ID: uuid
         Value: string
     }
 
-    ' ----- Cart -----
     class Cart {
-        ID: UUIDv7
-        UserID: string
+        ID: uuid
         AddItem(ProductVariant, quantity: int)
         Remove(CartItem)
     }
 
     class CartItem {
-        ID: uuid.UUID
+        ID: uuid
         Quantity: int
     }
 
-    ' ----- Order -----
     class Order {
-        ID: UUIDv7
-        UserID: string
+        ID: uuid
+        Recipient: string
         Address: string
         Provider: OrderProvider
         Status: OrderStatus
@@ -116,8 +101,8 @@ package "App" {
     }
 
     class OrderItem {
-        ID: UUIDv7
-        OrderID: UUIDv7
+        ID: uuid
+        OrderID: uuid
         Quantity: int
         Price: int
     }
@@ -129,57 +114,42 @@ package "App" {
         ZALOPAY
     }
 
-    ' ----- Review -----
     class Review {
-        ID: UUIDv7
-        UserID: string
+        ID: uuid
         Rating: int
-        Content: *string
-        ImageURL: *string
+        Content: string?
+        ImageURL: string?
     }
 
-    ' ===== Relationships =====
-
-    ' Product Composition (diamond filled)
     Product "1" *--- "0..*" Option : contains
     Product "1" *--- "1..*" ProductVariant : contains
     Product "1" *--- "1..*" ProductImage : contains
 
-    ' Option Composition
     Option "1" *--- "1..*" OptionValue : contains
 
-    ' Product Aggregation
     Product "0..*" o--- "0..*" AttributeValue : has
 
-    ' ProductVariant relationships
     ProductVariant "0" --- "0" OptionValue : not configured by (no option)
     ProductVariant "1..*" o---* "1..*" OptionValue : configured by
     ProductVariant "1" o--- "0..*" ProductImage : has
 
-    ' Category relationship
     Product "0..*" ---> "1" Category : categorized by
 
-    ' Attribute relationships
     Attribute "1" *--- "0..*" AttributeValue : contains
 
-    ' Cart relationships
     Cart "1" *--- "0..*" CartItem : contains
     CartItem ---> ProductVariant : references
 
-    ' Order relationships
     Order "1" *--- "1..*" OrderItem : contains
     OrderItem ---> ProductVariant : references
 
-    ' Order depends on Cart (dependency)
     Order ...> Cart : <<creates from>>
-    Order --> OrderProvider : uses
-    Order --> OrderStatus : has status
+    Order --> OrderProvider
+    Order --> OrderStatus
 
-    ' Review relationships
     Review "0..1" ---* "1" OrderItem : reviews
 }
 
-' ===== User References (by ID only) =====
 Cart ---> User
 Order ---> User
 Review ---> User
