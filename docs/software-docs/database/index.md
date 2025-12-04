@@ -18,9 +18,9 @@ users: {
 categories: {
   id: serial {constraint: PK}
   name: text {constraint: UNQ}
-  created_at: timestamp
-  updated_at: timestamp
-  deleted_at: timestamp {constraint: N}
+  created_at: timestamptz
+  updated_at: timestamptz
+  deleted_at: timestamptz {constraint: N}
 }
 
 products: {
@@ -33,21 +33,21 @@ products: {
   rating: real
   trending_score: real
   category_id: int
-  created_at: timestamp
-  updated_at: timestamp
-  deleted_at: timestamp {constraint: N}
+  created_at: timestamptz
+  updated_at: timestamptz
+  deleted_at: timestamptz {constraint: N}
 }
 
 attributes: {
   id: serial {constraint: PK}
   code: varchar(100) {constraint: UNQ}
   name: text
-  deleted_at: timestamp
+  deleted_at: timestamptz
 }
 
 attribute_values: {
   id: serial {constraint: PK}
-  deleted_at: timestamp {constraint: N}
+  deleted_at: timestamptz {constraint: N}
   attribute_id: int {constraint: FK}
   value: text
 }
@@ -61,8 +61,8 @@ product_images: {
   id: serial {constraint: PK}
   url: text
   order: int
-  created_at: timestamp
-  deleted_at: timestamp {constraint: N}
+  created_at: timestamptz
+  deleted_at: timestamptz {constraint: N}
   product_id: int {constraint: FK}
   product_variant_id: int {constraint: [FK, N]}
 }
@@ -74,9 +74,9 @@ reviews: {
   image_url: text
   user_id: uuid {constraint: FK}
   order_item_id: int {constraint: FK}
-  created_at: timestamp
-  updated_at: timestamp
-  deleted_at: timestamp {constraint: N}
+  created_at: timestamptz
+  updated_at: timestamptz
+  deleted_at: timestamptz {constraint: N}
 }
 
 product_variants: {
@@ -87,15 +87,15 @@ product_variants: {
   quantity: int
   purchase_count: int
   product_id: int {constraint: FK}
-  created_at: timestamp
-  updated_at: timestamp
-  deleted_at: timestamp {constraint: N}
+  created_at: timestamptz
+  updated_at: timestamptz
+  deleted_at: timestamptz {constraint: N}
 }
 
 option_values: {
   id: serial {constraint: PK}
   value: text
-  deleted_at: timestamp {constraint: N}
+  deleted_at: timestamptz {constraint: N}
   option_id: int {constraint: FK}
 }
 
@@ -108,13 +108,13 @@ options: {
   id: serial {constraint: PK}
   name: text
   product_id: int {constraint: FK}
-  deleted_at: timestamp {constraint: N}
+  deleted_at: timestamptz {constraint: N}
 }
 
 carts: {
   id: serial {constraint: PK}
   user_id: uuid {constraint: [UNQ, FK]}
-  updated_at: timestamp
+  updated_at: timestamptz
 }
 
 cart_items: {
@@ -139,8 +139,8 @@ orders: {
   address: text
   total_amount: decimal(12,0)
   is_paid: bool
-  created_at: timestamp
-  updated_at: timestamp
+  created_at: timestamptz
+  updated_at: timestamptz
   user_id: uuid {constraint: FK}
   status_id: int {constraint: FK}
   provider_id: int {constraint: FK}
@@ -157,8 +157,8 @@ order_items: {
 return_requests: {
   id: serial {constraint: PK}
   reason: varchar(150)
-  created_at: timestamp
-  updated_at: timestamp
+  created_at: timestamptz
+  updated_at: timestamptz
   status_id: int {constraint: FK}
   user_id: uuid {constraint: FK}
   order_item_id: int {constraint: FK}
@@ -172,9 +172,9 @@ return_request_statuses: {
 refunds: {
   id: serial {constraint: PK}
   amount: decimal(12,0)
-  created_at: timestamp
-  updated_at: timestamp
-  updated_at: timestamp
+  created_at: timestamptz
+  updated_at: timestamptz
+  updated_at: timestamptz
   status_id: int {constraint: FK}
   return_request_id: int {constraint: FK}
   provider_id: int {constraint: FK}
