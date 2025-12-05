@@ -136,6 +136,8 @@ order_providers: {
 
 orders: {
   id: serial {constraint: PK}
+  recipient_name: text
+  phone_number: text
   address: text
   total_amount: decimal(12,0)
   is_paid: bool
