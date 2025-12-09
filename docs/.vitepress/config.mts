@@ -692,6 +692,10 @@ export default defineConfig({
             ],
           },
           {
+            text: "List Description",
+            link: "/software-docs/list-description",
+          },
+          {
             text: "SRS",
             link: "/software-docs/srs",
           },

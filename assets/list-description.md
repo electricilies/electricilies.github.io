@@ -20,3 +20,4 @@
 ## Note
 
 - Column type: Label, Single line Of Text, Multi line of Text, Date Time, Number, Checkbox, Radio Button, Drop-Down List, Address Book, Rich Text, Button, Hyperlink, Attachment, Password, Color Picker, Section, Tab Control, Grid View, View Dialog, Image, Table
+- UT: Unit Test
