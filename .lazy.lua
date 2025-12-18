@@ -29,6 +29,7 @@ return {
             "./.rules/23-srs-bestpractice.md",
             "./docs/software-docs/database/index.md",
             "./assets/WMS_SRS-shorten.md",
+            "./docs/software-docs/srs/index.md",
           },
         },
       },

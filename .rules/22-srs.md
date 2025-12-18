@@ -133,251 +133,255 @@ explain:
 ## Outline for eletricilies project
 
 ```
-# Software Requirements Specification (SRS)
+1. Introduction
+ 1.1 Purpose
+ 1.2 Scope
+ 1.3 Intended Audiences and Document Organization
+ 1.4 References
 
-## 1. Introduction
-   1.1 Purpose
-   1.2 Scope
-   1.3 Intended Audiences and Document Organization
-   1.4 References
+2. Functional Requirements
 
-## 2. Functional Requirements
+2.1.1 Adjust Document
+-   2.1.1.1 Adjust Document
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.1.2 Create Document
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.1.3 Delete Document
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.1.4 Search Document
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.1.5 Update Document
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
 
-   ### 2.1 Adjust Document
-   -   2.1.1 Adjust Document
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.1.2 Create Document
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.1.3 Delete Document
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.1.4 Search Document
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.1.5 Update Document
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
+2.1.2 Contact Support
+-   2.1.2.1 Contact Support
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
 
-   ### 2.2 Contact Support
-   -   2.2.1 Contact Support
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
+2.1.3 Manage Account
+-   2.1.3.1 Delete Account
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.3.2 Edit Profile
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.3.3 Link Account with Third Party
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.3.4 Manage Account
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.3.5 Recover Account
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.3.6 Reset Password
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.3.7 Sign In
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.3.8 Sign Out
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.3.9 Sign Up
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
 
-   ### 2.3 Manage Account
-   -   2.3.1 Delete Account
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.3.2 Edit Profile
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.3.3 Link Account with Third Party
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.3.4 Manage Account
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.3.5 Recover Account
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.3.6 Reset Password
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.3.7 Sign In
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.3.8 Sign Out
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.3.9 Sign Up
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
+2.1.4 Manage Cart
+-   2.1.4.1 Change Product Amount
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.4.2 Manage Cart
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.4.3 Purchase
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.4.4 Remove Product from Cart
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
 
-   ### 2.4 Manage Cart
-   -   2.4.1 Change Product Amount
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.4.2 Manage Cart
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.4.3 Purchase
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.4.4 Remove Product from Cart
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
+2.1.5 Manage Product
+-   2.1.5.1 Add Product
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.5.2 Delete Product
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.5.3 Delete Review
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.5.4 Manage Product
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.5.5 Search Product
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.5.6 Update Product
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
 
-   ### 2.5 Manage Product
-   -   2.5.1 Add Product
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.5.2 Delete Product
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.5.3 Delete Review
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.5.4 Manage Product
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.5.5 Search Product
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.5.6 Update Product
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
+2.1.6 Manage User
+-   2.1.6.1 Change User Roles
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.6.2 Delete User
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.6.3 Manage User
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.6.4 Search User
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.6.5 View Customer Report
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.6.6 View Staff Report
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
 
-   ### 2.6 Manage User
-   -   2.6.1 Change User Roles
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.6.2 Delete User
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.6.3 Manage User
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.6.4 Search User
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.6.5 View Customer Report
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.6.6 View Staff Report
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
+2.1.7 View Customer Self Report
+-   2.1.7.1 View Customer Self Report
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
 
-   ### 2.7 View Customer Self Report
-   -   2.7.1 View Customer Self Report
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
+2.1.8 View Document
+-   2.1.8.1 View Document
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
 
-   ### 2.8 View Document
-   -   2.8.1 View Document
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
+2.1.9 View Order
+-   2.1.9.1 Cancel Order
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.9.2 Return Product
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.9.3 Review Product
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.9.4 Search Order
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.9.5 View Order Detail
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.9.6 View Order
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
 
-   ### 2.9 View Order
-   -   2.9.1 Cancel Order
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.9.2 Return Product
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.9.3 Review Product
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.9.4 Search Order
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.9.5 View Order Detail
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.9.6 View Order
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
+2.1.10 View Product
+-   2.1.10.1 Add Product to Cart
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.10.2 Search Product
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.10.3 View Product Detail
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.10.4 View Product Reviews
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.10.5 View Product
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.10.6 View Suggested Product
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
 
-   ### 2.10 View Product
-   -   2.10.1 Add Product to Cart
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.10.2 Search Product
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.10.3 View Product Detail
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.10.4 View Product Reviews
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.10.5 View Product
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
-   -   2.10.6 View Suggested Product
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
+2.1.11 View Shop Report
+-   2.1.11.1 View Shop Report
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
 
-   ### 2.11 View Shop Report
-   -   2.11.1 View Shop Report
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
+2.1.12 View Staff Self Report
+-   2.1.12.1 View Staff Self Report
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
 
-   ### 2.12 View Staff Self Report
-   -   2.12.1 View Staff Self Report
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
+2.1.13 View System Monitoring
+-   2.1.13.1 View System Monitoring
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
 
-   ### 2.13 View System Monitoring
-   -   2.13.1 View System Monitoring
-       -   Use Case Description
-       -   Activities Flow
-       -   Business Rules
+2.2. List description
+  Empty here
 
-## 3. Non-functional Requirements
-   3.1 User Access and Security
-   3.2 Performance Requirements
-   3.3 Implementation Requirements
+2.3. View Description
+  Empty here
 
-## 4. Other Requirements
-   4.1 Archive Function
-   4.2 Security Audit Function
-   4.3 System Design
-       4.3.1 Architecture Layers
-       4.3.2 Database Tables
-       4.3.3 Technical Stack
+3. Non-functional Requirements
+ 3.1 User Access and Security
+ 3.2 Performance Requirements
+ 3.3 Implementation Requirements
 
-## 5. Appendixes
-   5.1 Glossary
-   5.2 Messages
-   5.3 Issues List
+4. Other Requirements
+ 4.1 Archive Function
+ 4.2 Security Audit Function
+ 4.3 System Design
+     4.3.1 Architecture Layers
+     4.3.2 Database Tables
+     4.3.3 Technical Stack
+
+5. Appendixes
+ 5.1 Glossary
+ 5.2 Messages
+ 5.3 Issues List
 ```
 
 ### Example

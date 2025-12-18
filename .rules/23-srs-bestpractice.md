@@ -95,6 +95,32 @@ To maintain readability in Markdown tables (especially for the Pseudocode), you 
 
 ---
 
+## 5. Pseudocode Conventions
+
+The above section is for formatting, this section show conventions on writing pseudocode itself.
+
+```
+product = createNewProduct(name, description)
+
+category = chooseCategory()
+product.setCategory(category)
+
+attributes = selectAttributes()
+product.addAttributes(attributes)
+
+options = createOptions(...)
+product.addOptions(options)
+
+for each variantInfo in variantInfos:
+    variant = createVariant(variantInfo.sku, variantInfo.price, variantInfo.quantity)
+    variant.setOptionValues(variantInfo.optionValues)
+    product.addVariant(variant)
+
+saveProduct(product)
+```
+
+---
+
 ## 5. Referencing Standards
 
 ### Referencing Activities
