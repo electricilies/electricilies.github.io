@@ -4,16 +4,17 @@
 @startuml
 |U|User
 |S|System
-|D|Database
 
 |U|
 start
-:(1) Click sign out button;
+:(1) Click button "Sign Out";
 |S|
 :(2) Clear user session data;
-:(3) Display sign out confirmation and redirect to sign in;
+:(3) Display sign out confirmation 
+and redirect to sign in;
+|U|
+:(4) Confirm notification;
 stop
-
 @enduml
 ```
 

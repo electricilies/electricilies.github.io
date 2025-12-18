@@ -4,35 +4,37 @@
 @startuml
 |St|Staff
 |S|System
-|D|Database
 
 |St|
 start
-:(1) Display product detail view;
+:(1) Select function add product;
+|S|
+:(2) Display product detail view;
 repeat
   |St|
-  :(2) Enter product detail;
+  :(3) Enter product detail;
   |S|
-  :(3) Validate data;
-backward: (3.1) Display error notification;
-repeat while () is (Invalid data) not (Valid data)
+  :(4) Validate data;
+backward: (4.1) Display error notification;
+repeat while () is (Invalid) not (Valid)
 |St|
-:(3.2) Click button "Save" to confirm;
+:(5) Click button "Save" to confirm;
 |S|
-:(4) Process creating request;
-|D|
-:(5) Validate data;
-if () then (Invalid data)
+:(6) Validate data;
+if () then (Invalid)
+  :(6.1) Display error notification;
+  |St|
+  :(7.1) Confirm error notification;
+  end
+else (Valid)
   |S|
-  :(5.1) Display error notification;
-else (Valid data)
-  |D|
-  :(5.2) Store data;
-  |S|
-  :(6) Display success notification and list of products;
+  :(6.2) Store data;
+  :(7.2) Display success notification 
+and list of products;
+  |St|
+  :(8) Confirm notification;
+  stop
 endif
-stop
-
 @enduml
 ```
 

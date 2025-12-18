@@ -2,77 +2,59 @@
 
 ```plantuml
 @startuml
-|User|
-start
-:(1) Open SignUpView;
+|U|User
+|S|System
 
-|System|
-:(2) Generate code verifier (random)\nand hash it -> code challenge;
+|U|
+start
+:(1) Click button "Sign Up" in menu;
+|S|
+:(2) Generate code verifier and code challenge;
 :(3) Redirect with code challenge;
 :(4) Display SignUpView;
-
-|User|
-:(5) Enter user data;
-
 repeat
-  |System|
+  |U|
+  :(5) Enter user data;
+  |S|
   :(6) Validate data format;
-  if (Data format valid?) then (yes)
-    --
-  else (no)
-    :(6.1) Display "Invalid data format" error;
-    |User|
-    :(6.2) Re-enter user data;
-  endif
-repeat while (Data format valid?) is (no) not (yes)
-
-|System|
-:(7) Send user data;
-
-|Database|
-:(8) Check if user/email exists;
-if (User/email exists?) then (yes)
-  |System|
-  :(8.1) Display "User already exists" error;
-  stop
-else (no)
-  :(9) Create new user + hash password;
-  :(10) Send authorization code;
+backward: (6.1) Display error notification;
+repeat while () is (Invalid) not (Valid)
+|U|
+:(7) Click button "Continue to Sign Up";
+|S|
+:(8) Check if user or email exists;
+if () then (Already exists)
+  :(8.1) Display error notification;
+  |U|
+  :(9.1) Confirm error notification;
+  end
+else (Not exists)
+  :(8.2) Create new user and hash password;
+  :(9.2) Send authorization code;
 endif
-
-|System|
-:(11) Send authorization code + verifier;
-
-|Database|
-:(12) Validate code + verifier + challenge;
-if (Valid?) then (yes)
-  :(13) Return JWT Token;
-else (no)
-  |System|
-  :(12.1) Display "Invalid verifier/code" error;
-  stop
+:(10) Validate code and verifier;
+if () then (Invalid)
+  :(10.1) Display error notification;
+  |U|
+  :(11.1) Confirm error notification;
+  end
+else (Valid)
+  :(10.2) Return JWT Token;
 endif
-
-|System|
-:(14) Send JWT Token;
-:(15) Validate JWT;
-
-|Database|
-:(16) Verify JWT & write data;
-if (JWT valid?) then (yes)
-  :(17) Return success;
-else (no)
-  |System|
-  :(16.1) Display "Invalid JWT" error;
+:(11.2) Verify JWT and write data;
+if () then (Invalid)
+  :(11.3) Display error notification;
+  |U|
+  :(12.1) Confirm error notification;
+  end
+else (Valid)
+  |S|
+  :(11.4) Redirect to HomeView;
+  :(12.2) Display HomeView;
+  |U|
+  :(13) Confirm notification;
   stop
 endif
-
-|System|
-:(18) Redirect to HomeView;
-:(19) Display HomeView;
-
-|Database|
-stop
 @enduml
 ```
 

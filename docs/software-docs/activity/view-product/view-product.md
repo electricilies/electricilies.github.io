@@ -4,26 +4,26 @@
 @startuml
 |C|Customer
 |S|System
-|D|Database
-
-|S|
-start
-:(1) Display product view;
 
 |C|
-:(2) Choose options;
+start
+:(1) Select function view product;
+|S|
+:(2) Display product view;
+|C|
+:(3) Choose options;
 if () then (Add to Cart)
-  :(2.1) Activity Add Product to Cart;
+  :(3.1) Activity Add Product to Cart;
 elseif () then (Detail)
-  :(2.2) Activity View Product Detail;
+  :(3.2) Activity View Product Detail;
 elseif () then (Reviews)
-  :(2.3) Activity View Product Reviews;
+  :(3.3) Activity View Product Reviews;
 elseif () then (Search Product)
-  :(2.4) Activity Search Product;
+  :(3.4) Activity Search Product;
 else (View Suggested Products)
-  :(2.5) Activity View Suggested Product;
+  :(3.5) Activity View Suggested Product;
 endif
-
+|C|
 stop
 @enduml
 ```

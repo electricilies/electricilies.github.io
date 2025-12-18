@@ -4,28 +4,34 @@
 @startuml
 |C|Customer
 |S|System
-|D|Database
 
 |C|
 start
-:(1) Click purchase;
+:(1) Click button "Purchase";
 |S|
-:(2) Process purchase request;
-|D|
-:(3) Validate cart items;
-if () then (Invalid cart)
-  |S|
-  :(3.1) Display error notification;
-elseif () then (Invalid product)
-  |S|
-  :(3.2) Display error notification;
+:(2) Validate cart items;
+if () then (Invalid)
+  :(2.1) Display error notification;
+  |C|
+  :(3.1) Confirm error notification;
+  end
 else (Valid)
   |S|
-  :(4) Redirect to checkout;
-  :(5) Display checkout view;
+  :(2.2) Validate products;
+  if () then (Invalid)
+    :(2.3) Display error notification;
+    |C|
+    :(3.2) Confirm error notification;
+    end
+  else (Valid)
+    |S|
+    :(2.4) Redirect to checkout;
+    :(3.3) Display checkout view;
+    |C|
+    :(4) Confirm notification;
+    stop
+  endif
 endif
-stop
-
 @enduml
 ```
 

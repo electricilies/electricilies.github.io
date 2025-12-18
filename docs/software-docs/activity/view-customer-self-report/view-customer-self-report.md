@@ -4,22 +4,21 @@
 @startuml
 |C|Customer
 |S|System
-|D|Database
 
-|S|
-start
-:(1) Display customer report view;
 |C|
-:(2) Choose which type of report;
-:(3) Choose timestamps;
+start
+:(1) Click view customer self report in menu;
 |S|
-:(4) Process report request;
-|D|
-:(5) Query data base on given option;
+:(2) Display customer report view;
+|C|
+:(3) Choose report type;
+:(4) Choose timestamps;
 |S|
+:(5) Query data based on given option;
 :(6) Display report data;
+|C|
+:(7) Confirm notification;
 stop
-
 @enduml
 ```
 

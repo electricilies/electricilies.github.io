@@ -4,36 +4,38 @@
 @startuml
 |U|User
 |S|System
-|D|Database
 
-|S|
+|U|
 start
-:(1) Display profile view;
+:(1) Select function edit profile;
+|S|
+:(2) Query profile data;
+:(3) Display profile view;
 repeat
   |U|
-  :(2) Enter new profile information;
+  :(4) Enter new profile information;
   |S|
-  :(3) Validate data;
-backward: (3.1) Display error notification;
-repeat while () is (Invalid input) not (Valid input)
+  :(5) Validate data;
+backward: (5.1) Display error notification;
+repeat while () is (Invalid) not (Valid)
 |U|
-:(3.2) Click button "Save Changes" to confirm;
+:(6) Click button "Save Changes" to confirm;
 |S|
-:(4) Process update profile request;
-|D|
-:(5) Validate data;
-if () then (Invalid data)
+:(7) Validate data;
+if () then (Invalid)
+  :(7.1) Display error notification;
+  |U|
+  :(8.1) Confirm error notification;
+  end
+else (Valid)
   |S|
-  :(5.1) Display error notification;
-else (Valid data)
-  |D|
-  :(5.2) Update profile data;
-  |S|
-  :(6) Display success notification and updated profile;
+  :(7.2) Update profile data;
+  :(8.2) Display success notification 
+and updated profile;
+  |U|
+  :(9) Confirm notification;
+  stop
 endif
-|D|
-stop
-
 @enduml
 ```
 

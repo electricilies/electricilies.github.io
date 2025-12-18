@@ -4,22 +4,21 @@
 @startuml
 |St|Staff
 |S|System
-|D|Database
 
 |St|
 start
-:(1) Display staff report view;
+:(1) Click view staff self report in menu;
+|S|
+:(2) Display staff report view;
 |St|
-:(2) Choose which type of report;
-:(3) Choose timestamps;
+:(3) Choose report type;
+:(4) Choose timestamps;
 |S|
-:(4) Process report request;
-|D|
-:(5) Query data base on given option;
-|S|
+:(5) Query data based on given option;
 :(6) Display report data;
+|St|
+:(7) Confirm notification;
 stop
-
 @enduml
 ```
 

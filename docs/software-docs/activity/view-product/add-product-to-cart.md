@@ -4,34 +4,32 @@
 @startuml
 |C|Customer
 |S|System
-|D|Database
 
 |C|
 start
-:(1) Enter product quantity and add to cart;
-|S|
-:(2) Validate data;
-if () then (Invalid amount)
-  :(2.1) Display error notification;
-endif
+repeat
+  :(1) Enter product quantity;
+  |S|
+  :(2) Validate data;
+backward: (2.1) Display error notification;
+repeat while () is (Invalid) not (Valid)
 |C|
 :(3) Click button "Add to Cart" to confirm;
 |S|
-:(4) Process add product to cart request;
-|D|
-:(5) Validate data;
-if () then (Invalid data)
+:(4) Validate data;
+if () then (Invalid)
+  :(4.1) Display error notification;
+  |C|
+  :(5.1) Confirm error notification;
+  end
+else (Valid)
   |S|
-  :(5.1) Display error notification;
-else (Valid data)
-  |D|
-  :(5.2) Store data;
-  |S|
-  :(6) Display success notification;
+  :(4.2) Store data;
+  :(5.2) Display success notification;
+  |C|
+  :(6) Confirm notification;
+  stop
 endif
-|D|
-stop
-
 @enduml
 ```
 

@@ -4,27 +4,24 @@
 @startuml
 |C|Customer
 |S|System
-|D|Database
 
 |C|
 start
 :(1) Change product amount;
 |S|
-:(2) Process update product amount request;
-|D|
-:(3) Update amount;
-:(4) Validate data;
-if () then (Invalid amount)
-  |S|
-  :(4.1) Display error notification;
-else (Valid amount)
-  |D|
-  :(4.2) Update cart data;
-  |S|
-  :(5) Display updated cart;
+:(2) Validate amount;
+if () then (Invalid)
+  :(2.1) Display error notification;
+  |C|
+  :(3.1) Confirm error notification;
+  end
+else (Valid)
+  :(2.2) Update cart data;
+  :(3.2) Display updated cart;
+  |C|
+  :(4) Confirm notification;
+  stop
 endif
-stop
-
 @enduml
 ```
 

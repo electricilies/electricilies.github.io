@@ -4,19 +4,16 @@
 @startuml
 |A|Admin
 |S|System
-|D|Database
 
 |A|
 start
-:(1) View system monitoring;
+:(1) Click view system monitoring in menu;
 |S|
-:(2) Get monitoring data;
-|D|
-:(3) Query monitoring data;
-|S|
-:(4) Display monitoring result;
+:(2) Query monitoring data;
+:(3) Display monitoring result;
+|A|
+:(4) Confirm notification;
 stop
-
 @enduml
 ```
 

@@ -4,7 +4,6 @@
 @startuml
 |U|User
 |S|System
-|D|Database
 
 |U|
 start
@@ -17,25 +16,24 @@ repeat
   |S|
   :(4) Validate password format;
 backward: (4.1) Display error notification;
-repeat while () is (Invalid password format) not (Valid password format)
+repeat while () is (Invalid) not (Valid)
 |U|
-:(4.2) Click "Update Password" button;
+:(5) Click button "Update Password";
 |S|
-:(5) Process password reset request;
-|D|
 :(6) Validate current password and data;
-if () then (Invalid current password or data)
-  |S|
+if () then (Invalid)
   :(6.1) Display error notification;
-else (Valid data)
-  |D|
-  :(6.2) Update password;
+  |U|
+  :(7.1) Confirm error notification;
+  end
+else (Valid)
   |S|
-  :(7) Display success notification;
+  :(6.2) Update password;
+  :(7.2) Display success notification;
+  |U|
+  :(8) Confirm notification;
+  stop
 endif
-|D|
-stop
-
 @enduml
 ```
 

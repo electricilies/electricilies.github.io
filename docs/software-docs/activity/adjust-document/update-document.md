@@ -4,42 +4,37 @@
 @startuml
 |A|Admin
 |S|System
-|D|Database
 
 |A|
 start
-:(1) Select document needs updating;
+:(1) Select document to update;
 |S|
-:(2) Get selected document detail;
-|D|
-:(3) Query data;
-|S|
-:(4) Display document detail;
+:(2) Query document detail;
+:(3) Display document detail;
 repeat
   |A|
-  :(5) Enter document detail;
+  :(4) Enter new document detail;
   |S|
-  :(6) Validate data;
-backward: (6.1) Display error notification;
-repeat while () is (Invalid data) not (Valid data)
+  :(5) Validate data;
+backward: (5.1) Display error notification;
+repeat while () is (Invalid) not (Valid)
 |A|
-:(6.2) Click button "Save" to confirm;
+:(6) Click button "Save" to confirm;
 |S|
-:(7) Process updating request;
-|D|
-:(8) Validate data;
-if () then (Invalid data)
+:(7) Validate data;
+if () then (Invalid)
+  :(7.1) Display error notification;
+  |A|
+  :(8.1) Confirm error notification;
+  end
+else (Valid)
   |S|
-  :(8.1) Display error notification;
-else (Valid data)
-  |D|
-  :(8.2) Store data;
-  |S|
-  :(9) Display success notification and list of documents;
+  :(7.2) Update data;
+  :(8.2) Display success notification;
+  |A|
+  :(9) Confirm notification;
+  stop
 endif
-|D|
-stop
-
 @enduml
 ```
 

@@ -4,36 +4,35 @@
 @startuml
 |C|Customer
 |S|System
-|D|Database
 
 |C|
 start
 :(1) Select product to return;
 |S|
 :(2) Display confirmation message box;
+|C|
 if () then (Cancel)
-  |C|
-  :(2.1) Click "Cancel" Button;
+  :(2.1) Click "Cancel" button;
   end
 else (Confirm)
-  :(2.2) Click "confirm" Button;
-endif
-|S|
-:(3) Process return product request;
-|D|
-:(4) Validate data;
-if () then (Invalid data)
+  :(2.2) Click "Confirm" button;
   |S|
-  :(4.1) Display error notification;
-else (Valid data)
-  |D|
-  :(4.2) Update product status;
-  |S|
-  :(5) Display success notification & update order;
+  :(3) Validate data;
+  if () then (Invalid)
+    :(3.1) Display error notification;
+    |C|
+    :(4.1) Confirm error notification;
+    end
+  else (Valid)
+    |S|
+    :(3.2) Update product status;
+    :(4.2) Display success notification 
+and update order;
+    |C|
+    :(5) Confirm notification;
+    stop
+  endif
 endif
-|D|
-stop
-
 @enduml
 ```
 

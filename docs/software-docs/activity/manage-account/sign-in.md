@@ -2,79 +2,67 @@
 
 ```plantuml
 @startuml
-|User|
+|U|User
+|S|System
+
+|U|
 start
-:(1) Enter credential;
-:(2) Click "Sign In";
-
-|System|
-:(3) Generate code verifier\nand code challenge;
-:(4) Redirect with code challenge;
-:(5) Display SignInView;
-
+:(1) Click button "Sign In" in menu;
+|S|
+:(2) Generate code verifier and code challenge;
+:(3) Redirect with code challenge;
+:(4) Display SignInView;
 repeat
+  |U|
+  :(5) Enter credential;
+  |S|
   :(6) Validate data format;
-  if (Data format valid?) then (yes)
-    --
-  else (no)
-    :(6.1) Display "Invalid data format" error;
-    |User|
-    :(6.2) Re-enter credential;
-  endif
-repeat while (Data format valid?) is (no) not (yes)
-
-|System|
-:(7) Send user credential;
-
-|Database|
+backward: (6.1) Display error notification;
+repeat while () is (Invalid) not (Valid)
+|U|
+:(7) Click button "Continue to Sign In";
+|S|
 :(8) Validate user credential;
-if (Credential valid?) then (yes)
-  :(9) Send authorization code;
-else (no)
-  |System|
-  :(8.1) Display "Invalid credential" error;
-  stop
+if () then (Invalid)
+  :(8.1) Display error notification;
+  |U|
+  :(9.1) Confirm error notification;
+  end
+else (Valid)
+  :(8.2) Send authorization code;
 endif
-
-|System|
-:(10) Send authorization code + verifier;
-
-|Database|
-:(11) Validate code + verifier + challenge;
-if (Code + Verifier valid?) then (yes)
-  :(12) Return JWT Token;
-else (no)
-  |System|
-  :(11.1) Display "Invalid verifier/code" error;
-  stop
+:(9.2) Validate code and verifier;
+if () then (Invalid)
+  :(9.3) Display error notification;
+  |U|
+  :(10.1) Confirm error notification;
+  end
+else (Valid)
+  :(9.4) Return JWT Token;
 endif
-
-|System|
-:(13) Validate JWT;
-
-|Database|
-:(14) Verify JWT signature;
-if (JWT valid?) then (yes)
-  :(15) Extract user role from JWT;
-  :(16) Compare with actual user role;
-  if (Role valid?) then (yes)
-    :(17) Return success;
-  else (no)
-    |System|
-    :(16.1) Display "Invalid role" error;
+:(10.2) Verify JWT signature;
+if () then (Invalid)
+  :(10.3) Display error notification;
+  |U|
+  :(11.1) Confirm error notification;
+  end
+else (Valid)
+  :(10.4) Extract user role from JWT;
+  :(11.2) Validate role;
+  if () then (Invalid)
+    :(11.3) Display error notification;
+    |U|
+    :(12.1) Confirm error notification;
+    end
+  else (Valid)
+    |S|
+    :(11.4) Redirect to HomeView;
+    :(12.2) Display HomeView;
+    |U|
+    :(13) Confirm notification;
     stop
   endif
-else (no)
-  |System|
-  :(14.1) Display "Invalid JWT" error;
-  stop
 endif
-
-|System|
-:(18) Redirect to HomeView;
-:(19) Display HomeView;
-
-stop
 @enduml
 ```
 

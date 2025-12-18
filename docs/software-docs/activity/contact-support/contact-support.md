@@ -4,7 +4,6 @@
 @startuml
 |C|Customer
 |S|System
-|D|Database
 
 |C|
 start
@@ -14,7 +13,6 @@ start
 |C|
 :(3) Interact with support chat;
 stop
-
 @enduml
 ```
 

@@ -4,19 +4,16 @@
 @startuml
 |C|Customer
 |S|System
-|D|Database
 
 |C|
 start
 :(1) Select product to view;
 |S|
-:(2) Get selected product detail;
-|D|
-:(3) Query data;
-|S|
-:(4) Display product detail;
+:(2) Query product detail;
+:(3) Display product detail;
+|C|
+:(4) Confirm notification;
 stop
-
 @enduml
 ```
 

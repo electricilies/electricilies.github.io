@@ -4,26 +4,26 @@
 @startuml
 |St|Staff
 |S|System
-|D|Database
-
-|S|
-start
-:(1) Display product management view;
 
 |St|
-:(2) Choose options;
+start
+:(1) Select function manage product;
+|S|
+:(2) Display product management view;
+|St|
+:(3) Choose options;
 if () then (Add)
-  :(2.1) Activity Add Product;
+  :(3.1) Activity Add Product;
 elseif () then (Delete Product)
-  :(2.2) Activity Delete Product;
+  :(3.2) Activity Delete Product;
 elseif () then (Delete Review)
-  :(2.3) Activity Delete Review;
+  :(3.3) Activity Delete Review;
 elseif () then (Search)
-  :(2.4) Activity Search Product;
+  :(3.4) Activity Search Product;
 else (Update)
-  :(2.5) Activity Update Product;
+  :(3.5) Activity Update Product;
 endif
-
+|St|
 stop
 @enduml
 ```

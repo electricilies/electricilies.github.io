@@ -4,23 +4,21 @@
 @startuml
 |C|Customer
 |S|System
-|D|Database
 
-|S|
+|C|
 start
-:(1) Get suggested products;
-|D|
-:(2) Query suggested products;
+:(1) View suggested products section;
 |S|
-:(3) Show suggested products;
+:(2) Query suggested products;
+:(3) Display suggested products;
 if () then (Select)
   |C|
-  :(3.1) Click on suggested products;
+  :(3.1) Click on suggested product;
   |S|
   :(3.2) Activity View Product Detail;
 endif
+|C|
 stop
-
 @enduml
 ```
 

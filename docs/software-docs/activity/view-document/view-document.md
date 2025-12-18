@@ -4,35 +4,28 @@
 @startuml
 |C|Customer
 |S|System
-|D|Database
 
-|S|
+|C|
 start
-:(1) Get lists of documents;
-|D|
-:(2) Query data;
+:(1) Click view document in menu;
 |S|
+:(2) Query list of documents;
 :(3) Display list of documents;
 if () then (Search)
   |C|
-  :(3.1) Enter the search criteria in the search box;
+  :(3.1) Enter search criteria;
   |S|
-  :(3.2) Process searching request;
-  |D|
-  :(3.3) Query data base on keywords;
-  |S|
-  :(3.4) Display list of documents;
+  :(3.2) Query data based on keywords;
+  :(3.3) Display list of documents;
 endif
 |C|
-:(4) Select document want to view;
+:(4) Select document to view;
 |S|
-:(5) Get selected document detail;
-|D|
-:(6) Query data;
-|S|
-:(7) Display selected document detail;
+:(5) Query document detail;
+:(6) Display document detail;
+|C|
+:(7) Confirm notification;
 stop
-
 @enduml
 ```
 

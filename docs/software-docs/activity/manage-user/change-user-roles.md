@@ -4,42 +4,38 @@
 @startuml
 |A|Admin
 |S|System
-|D|Database
 
 |A|
 start
-:(1) Select user needs role changes;
+:(1) Select user to change roles;
 |S|
-:(2) Get selected user detail;
-|D|
-:(3) Query data;
-|S|
-:(4) Display user detail;
+:(2) Query user detail;
+:(3) Display user detail;
 repeat
   |A|
-  :(5) Update user roles;
+  :(4) Update user roles;
   |S|
-  :(6) Validate data;
-backward: (6.1) Display error notification;
-repeat while () is (Invalid data) not (Valid data)
+  :(5) Validate data;
+backward: (5.1) Display error notification;
+repeat while () is (Invalid) not (Valid)
 |A|
-:(6.2) Click button "Change Roles" to confirm;
+:(6) Click button "Change Roles" to confirm;
 |S|
-:(7) Process role update request;
-|D|
-:(8) Validate roles;
-if () then (Invalid roles)
+:(7) Validate roles;
+if () then (Invalid)
+  :(7.1) Display error notification;
+  |A|
+  :(8.1) Confirm error notification;
+  end
+else (Valid)
   |S|
-  :(8.1) Display error notification;
-else (Valid roles)
-  |D|
-  :(8.2) Store updated roles;
-  |S|
-  :(9) Display success notification and list of users;
+  :(7.2) Update roles;
+  :(8.2) Display success notification 
+and list of users;
+  |A|
+  :(9) Confirm notification;
+  stop
 endif
-|D|
-stop
-
 @enduml
 ```
 

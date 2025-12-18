@@ -4,25 +4,24 @@
 @startuml
 |A|Admin
 |S|System
-|D|Database
-
-|S|
-start
-:(1) Display document management view;
 
 |A|
-:(2) Choose options;
-if () then (Create)
-  :(2.1) Activity Create Document;
-elseif () then (Delete)
-  :(2.2) Activity Delete Document;
-elseif () then (Search)
-  :(2.3) Activity Search Document;
-else (Update)
-  :(2.4) Activity Update Document;
-endif
-
+start
+:(1) Select function adjust document;
 |S|
+:(2) Display document management view;
+|A|
+:(3) Choose options;
+if () then (Create)
+  :(3.1) Activity Create Document;
+elseif () then (Delete)
+  :(3.2) Activity Delete Document;
+elseif () then (Search)
+  :(3.3) Activity Search Document;
+else (Update)
+  :(3.4) Activity Update Document;
+endif
+|A|
 stop
 @enduml
 ```

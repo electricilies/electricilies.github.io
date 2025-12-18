@@ -4,19 +4,16 @@
 @startuml
 |St|Staff
 |S|System
-|D|Database
 
 |St|
 start
-:(1) Enter the search criteria in the search box;
+:(1) Enter search criteria;
 |S|
-:(2) Process searching request;
-|D|
-:(3) Query data base on keywords;
-|S|
-:(4) Display search result;
+:(2) Query data based on keywords;
+:(3) Display search result;
+|St|
+:(4) Confirm notification;
 stop
-
 @enduml
 ```
 

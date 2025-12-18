@@ -4,27 +4,25 @@
 @startuml
 |C|Customer
 |S|System
-|D|Database
 
 |C|
 start
 :(1) Click remove product;
 |S|
-:(2) Process remove product request;
-|D|
-:(3) Remove product from cart;
-:(4) Validate product;
-if () then (Invalid product)
+:(2) Validate product;
+if () then (Invalid)
+  :(2.1) Display error notification;
+  |C|
+  :(3.1) Confirm error notification;
+  end
+else (Valid)
   |S|
-  :(4.1) Display error notification;
-else (Valid product)
-  |D|
-  :(4.2) Remove product data;
-  |S|
-  :(5) Update cart view;
+  :(2.2) Remove product data;
+  :(3.2) Update cart view;
+  |C|
+  :(4) Confirm notification;
+  stop
 endif
-stop
-
 @enduml
 ```
 

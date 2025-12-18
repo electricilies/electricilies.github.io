@@ -4,36 +4,35 @@
 @startuml
 |U|User
 |S|System
-|D|Database
 
 |U|
 start
 :(1) Click delete account;
 |S|
-:(2) Display confirmation dialog;
+:(2) Display confirmation message box;
+|U|
 if () then (Cancel)
-  |U|
   :(2.1) Click "Cancel" button;
   end
 else (Confirm)
   :(2.2) Click "Confirm" button;
-endif
-|S|
-:(3) Process delete account request;
-|D|
-:(4) Validate account data;
-if () then (Invalid data)
   |S|
-  :(4.1) Display error notification;
-else (Valid data)
-  |D|
-  :(4.2) Delete account data;
-  |S|
-  :(5) Display success notification and redirect to sign in;
+  :(3) Validate account data;
+  if () then (Invalid)
+    :(3.1) Display error notification;
+    |U|
+    :(4.1) Confirm error notification;
+    end
+  else (Valid)
+    |S|
+    :(3.2) Delete account data;
+    :(4.2) Display success notification 
+and redirect to sign in;
+    |U|
+    :(5) Confirm notification;
+    stop
+  endif
 endif
-|D|
-stop
-
 @enduml
 ```
 

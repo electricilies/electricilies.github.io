@@ -4,28 +4,27 @@
 @startuml
 |AS|Admin/Staff
 |S|System
-|D|Database
-
-|S|
-start
-:(1) Display user management view;
 
 |AS|
-:(2) Choose options;
-if (Admin) then (Change User Roles)
-  :(2.1) Activity Change User Roles;
-elseif (Admin) then (Delete User)
-  :(2.2) Activity Delete User;
+start
+:(1) Select function manage user;
+|S|
+:(2) Display user management view;
+|AS|
+:(3) Choose options;
+if () then (Change User Roles)
+  :(3.1) Activity Change User Roles;
+elseif () then (Delete User)
+  :(3.2) Activity Delete User;
 elseif () then (Search User)
-  :(2.3) Activity Search User;
+  :(3.3) Activity Search User;
 elseif () then (View Customer Report)
-  :(2.4) Activity View Customer Report;
-elseif (Admin) then (View Staff Report)
-  :(2.5) Activity View Staff Report;
+  :(3.4) Activity View Customer Report;
+else (View Staff Report)
+  :(3.5) Activity View Staff Report;
 endif
-
+|AS|
 stop
-@enduml
 @enduml
 ```
 

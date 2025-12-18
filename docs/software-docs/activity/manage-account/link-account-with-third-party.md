@@ -4,7 +4,6 @@
 @startuml
 |U|User
 |S|System
-|D|Database
 
 |U|
 start
@@ -12,23 +11,22 @@ start
 |S|
 :(2) Display available third party providers;
 |U|
-:(3) Select third party provider (Google, etc.);
+:(3) Select third party provider;
 |S|
-:(4) Process link account request;
-|D|
-:(5) Validate account linking;
-if () then (Invalid data or already linked)
-  |S|
-  :(5.1) Display error notification;
-else (Valid data)
-  |D|
-  :(5.2) Create third party account link;
-  |S|
-  :(6) Display success notification and linked account status;
+:(4) Validate account linking;
+if () then (Invalid)
+  :(4.1) Display error notification;
+  |U|
+  :(5.1) Confirm error notification;
+  end
+else (Valid)
+  :(4.2) Create third party account link;
+  :(5.2) Display success notification 
+and linked account status;
+  |U|
+  :(6) Confirm notification;
+  stop
 endif
-|D|
-stop
-
 @enduml
 ```
 

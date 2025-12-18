@@ -4,19 +4,16 @@
 @startuml
 |C|Customer
 |S|System
-|D|Database
 
 |C|
 start
 :(1) Select order to view detail;
 |S|
-:(2) Get selected order detail;
-|D|
-:(3) Query data;
-|S|
-:(4) Display order detail;
+:(2) Query order detail;
+:(3) Display order detail;
+|C|
+:(4) Confirm notification;
 stop
-
 @enduml
 ```
 

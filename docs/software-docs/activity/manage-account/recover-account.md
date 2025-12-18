@@ -4,7 +4,6 @@
 @startuml
 |U|User
 |S|System
-|D|Database
 
 |U|
 start
@@ -17,25 +16,24 @@ repeat
   |S|
   :(4) Validate email format;
 backward: (4.1) Display error notification;
-repeat while () is (Invalid email format) not (Valid email format)
+repeat while () is (Invalid) not (Valid)
 |U|
-:(4.2) Click "Send Reset Email" button;
+:(5) Click button "Send Reset Email";
 |S|
-:(5) Process password reset request;
-|D|
 :(6) Validate account exists;
-if () then (Account not found)
-  |S|
+if () then (Not found)
   :(6.1) Display error notification;
-else (Account found)
-  |D|
-  :(6.2) Generate reset token and send email;
+  |U|
+  :(7.1) Confirm error notification;
+  end
+else (Found)
   |S|
-  :(7) Display success notification;
+  :(6.2) Generate reset token and send email;
+  :(7.2) Display success notification;
+  |U|
+  :(8) Confirm notification;
+  stop
 endif
-|D|
-stop
-
 @enduml
 ```
 

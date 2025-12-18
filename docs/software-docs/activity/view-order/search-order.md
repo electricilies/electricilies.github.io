@@ -4,19 +4,16 @@
 @startuml
 |C|Customer
 |S|System
-|D|Database
 
 |C|
 start
 :(1) Enter search criteria;
 |S|
-:(2) Process search request;
-|D|
-:(3) Query orders by criteria;
-|S|
-:(4) Show query result;
+:(2) Query orders by criteria;
+:(3) Display search result;
+|C|
+:(4) Confirm notification;
 stop
-
 @enduml
 ```
 

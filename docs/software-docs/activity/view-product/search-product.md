@@ -4,23 +4,16 @@
 @startuml
 |C|Customer
 |S|System
-|D|Database
 
 |C|
 start
-:(1) Enter the search criteria in search box;
+:(1) Enter search criteria;
 |S|
-:(2) Process searching request;
-|D|
-:(3) Query products by keyword/filters;
-|S|
-:(4) Show query result;
-if () then (Enter)
-  :(4.1) Display product search view;
-  :(4.2) Display search results;
-endif
+:(2) Query products by keyword or filters;
+:(3) Display search result;
+|C|
+:(4) Confirm notification;
 stop
-
 @enduml
 ```
 

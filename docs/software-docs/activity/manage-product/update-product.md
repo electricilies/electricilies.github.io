@@ -4,41 +4,38 @@
 @startuml
 |St|Staff
 |S|System
-|D|Database
 
 |St|
 start
-:(1) Select product needs updating;
+:(1) Select product to update;
 |S|
-:(2) Get selected product detail;
-|D|
-:(3) Query data;
-|S|
-:(4) Display product detail;
+:(2) Query product detail;
+:(3) Display product detail;
 repeat
   |St|
-  :(5) Enter product detail;
+  :(4) Enter new product detail;
   |S|
-  :(6) Validate data;
-backward: (6.1) Display error notification;
-repeat while () is (Invalid data) not (Valid data)
+  :(5) Validate data;
+backward: (5.1) Display error notification;
+repeat while () is (Invalid) not (Valid)
 |St|
-:(6.2) Click button "Save" to confirm;
+:(6) Click button "Save" to confirm;
 |S|
-:(7) Process updating request;
-|D|
-:(8) Validate data;
-if () then (Invalid data)
+:(7) Validate data;
+if () then (Invalid)
+  :(7.1) Display error notification;
+  |St|
+  :(8.1) Confirm error notification;
+  end
+else (Valid)
   |S|
-  :(8.1) Display error notification;
-else (Valid data)
-  |D|
-  :(8.2) Store data;
-  |S|
-  :(9) Display success notification and list of products;
+  :(7.2) Update data;
+  :(8.2) Display success notification 
+and list of products;
+  |St|
+  :(9) Confirm notification;
+  stop
 endif
-stop
-
 @enduml
 ```
 
