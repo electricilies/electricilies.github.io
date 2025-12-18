@@ -19,194 +19,6 @@ Electricilies \- Website for Selling Electronic Products
 | Kevin Nitro | Electricilies | 0.1.0   | Project Manager | 20/09/2025 |
 | Kevin Nitro | Electricilies | 0.2.0   | Project Manager | 1/11/2025  |
 
-##
-
-# Table of Contents
-
-[**Revision and Signoff Sheet 2**](#revision-and-signoff-sheet)
-
-[Change Record 2](#change-record)
-
-[Reviewers 2](#reviewers)
-
-[**1\. Introduction 3**](#1.-introduction)
-
-[1.1 Purpose 3](#1.1-purpose)
-
-[1.2 Scope 3](#1.2-scope)j
-
-[1.3 Intended Audiences and Document Organization 3](#1.3-intended-audiences-and-document-organization)
-
-[1.4 References 4](#1.4-references)
-
-[**2\. Functional Requirements 5**](#2.-functional-requirements)
-
-[2.1 Use Case Description 5](#2.1-use-case-description)
-
-[2.1.1 Manage Account Use Case 5](#2.1.1-manage-account-use-case)
-
-[2.1.1.1 Manage Account 5](#2.1.1.1-manage-account)
-
-[2.1.1.2 Sign Up 7](#2.1.1.2-sign-up)
-
-[2.1.1.3 Sign In 10](#2.1.1.3-sign-in)
-
-[2.1.1.4 Sign Out 14](#2.1.1.4-sign-out)
-
-[2.1.1.5 Edit Profile 16](#2.1.1.5-edit-profile)
-
-[2.1.1.6 Link Account With Third Party Provider 19](#2.1.1.6-link-account-with-third-party-provider)
-
-[2.1.1.7 Delete Account 21](#2.1.1.7-delete-account)
-
-[2.1.1.8 Reset Password 24](#2.1.1.8-reset-password)
-
-[2.1.1.9 View Account Activity 27](#2.1.1.9-view-account-activity)
-
-[2.1.1.10 Recover Account 28](#2.1.1.10-recover-account)
-
-[2.1.2 View Product Use Case 31](#2.1.2-view-product-use-case)
-
-[2.1.2.1 View Product 31](#2.1.2.1-view-product)
-
-[2.1.2.2 Search Product 33](#2.1.2.2-search-product)
-
-[2.1.2.3 View Product Detail 36](#2.1.2.3-view-product-detail)
-
-[2.1.2.4 View Product Reviews 38](#2.1.2.4-view-product-reviews)
-
-[2.1.2.5 View Suggested Products 40](#2.1.2.5-view-suggested-products)
-
-[2.1.2.6 Add Product to Cart 43](#2.1.2.6-add-product-to-cart)
-
-[2.1.3 Manage Cart Use Case 46](#2.1.3-manage-cart-use-case)
-
-[2.1.3.1 Manage Cart 46](#2.1.3.1-manage-cart)
-
-[2.1.3.2 Change Product Amount 49](#2.1.3.2-change-product-amount)
-
-[2.1.3.3 Remove Product from Cart 51](#2.1.3.3-remove-product-from-cart)
-
-[2.1.3.4 Purchase 53](#2.1.3.4-purchase)
-
-[2.1.4 View Order Use Case 56](#2.1.4-view-order-use-case)
-
-[2.1.4.1 View Order 56](#2.1.4.1-view-order)
-
-[2.1.4.2 Search Order 59](#2.1.4.2-search-order)
-
-[2.1.4.3 View Order Detail 61](#2.1.4.3-view-order-detail)
-
-[2.1.4.4 Cancel Order 63](#2.1.4.4-cancel-order)
-
-[2.1.4.5 Return Product 66](#2.1.4.5-return-product)
-
-[2.1.4.6 Review Product 69](#2.1.4.6-review-product)
-
-[2.1.5 Contact Support Use Case 74](#2.1.5-contact-support-use-case)
-
-[2.1.5.1 Contact Support 74](#2.1.5.1-contact-support)
-
-[2.1.6 View Customer Self Report Use Case 76](#2.1.6-view-customer-self-report-use-case)
-
-[2.1.6.1 View Customer Self Report 76](#2.1.6.1-view-customer-self-report)
-
-[2.1.7 View Document Use Case 79](#2.1.7-view-document-use-case)
-
-[2.1.7.1 View Document 79](#2.1.7.1-view-document)
-
-[2.1.8 Manage Product Use Case (Staff) 82](<#2.1.8-manage-product-use-case-(staff)>)
-
-[2.1.8.1 Manage Product 82](#2.1.8.1-manage-product)
-
-[2.1.8.2 Add Product 85](#2.1.8.2-add-product)
-
-[2.1.8.3 Update Product 89](#2.1.8.3-update-product)
-
-[2.1.8.4 Delete Product 93](#2.1.8.4-delete-product)
-
-[2.1.8.5 Search Product 96](#2.1.8.5-search-product)
-
-[2.1.8.6 Delete Review 98](#2.1.8.6-delete-review)
-
-[2.1.9 Manage User Use Case 101](#2.1.9-manage-user-use-case)
-
-[2.1.9.1 Manage User 101](#2.1.9.1-manage-user)
-
-[2.1.9.2 Search User 104](#2.1.9.2-search-user)
-
-[2.1.9.3 Change User Roles (Admin only) 106](<#2.1.9.3-change-user-roles-(admin-only)>)
-
-[2.1.9.4 Delete User (Admin only) 110](<#2.1.9.4-delete-user-(admin-only)>)
-
-[2.1.9.5 View Customer Report 113](#2.1.9.5-view-customer-report)
-
-[2.1.9.6 View Staff Report (Admin only) 116](<#2.1.9.6-view-staff-report-(admin-only)>)
-
-[2.1.10 View Shop Report Use Case 120](#2.1.10-view-shop-report-use-case)
-
-[2.1.10.1 View Shop Report 120](#2.1.10.1-view-shop-report)
-
-[2.1.11 View System Monitoring Use Case 123](#2.1.11-view-system-monitoring-use-case)
-
-[2.1.11.1 View System Monitoring 123](#2.1.11.1-view-system-monitoring)
-
-[2.1.12 Adjust Document Use Case 126](#2.1.12-adjust-document-use-case)
-
-[2.1.12.1 Adjust Document 126](#2.1.12.1-adjust-document)
-
-[2.1.12.2 Create Document 129](#2.1.12.2-create-document)
-
-[2.1.12.3 Update Document 133](#2.1.12.3-update-document)
-
-[2.1.12.4 Delete Document 137](#2.1.12.4-delete-document)
-
-[2.1.12.5 Search Document 140](#2.1.12.5-search-document)
-
-[2.1.13 View Staff Self Report Use Case 142](#2.1.13-view-staff-self-report-use-case)
-
-[2.1.13.1 View Staff Self Report 142](#2.1.13.1-view-staff-self-report)
-
-[2.2 List Description 145](#2.2-list-description)
-
-[2.3 View Description 150](#2.3-view-description)
-
-[**3\. Non-functional Requirements 157**](#3.-non-functional-requirements)
-
-[3.1 User Access and Security 157](#3.1-user-access-and-security)
-
-[3.2 Performance Requirements 160](#3.2-performance-requirements)
-
-[3.3 Implementation Requirements 161](#3.3-implementation-requirements)
-
-[**4\. Other Requirements 163**](#4.-other-requirements)
-
-[4.1 Archive Function 163](#4.1-archive-function)
-
-[4.2 Security Audit Function 164](#4.2-security-audit-function)
-
-[4.3 Electricilies Sites 164](#4.3-electricilies-sites)
-
-[4.4 Electricilies Lists 165](#4.4-electricilies-lists)
-
-[4.5 Custom Pages 165](#4.5-custom-pages)
-
-[4.6 Scheduled Agents 166](#4.6-scheduled-agents)
-
-[4.7 Technical Concern 167](#4.7-technical-concern)
-
-[**5\. Appendixes 169**](#5.-appendixes)
-
-[5.1 Glossary 169](#5.1-glossary)
-
-[5.2 Mapping to Notes Application 171](#5.2-mapping-to-notes-application)
-
-[5.3 Messages 171](#5.3-messages)
-
-[5.4 Issues List 174](#5.4-issues-list)
-
-##
-
 ## 1\. Introduction {#1.-introduction}
 
 ### 1.1 Purpose {#1.1-purpose}
@@ -263,11 +75,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image1]
-
 ###### _Activities Flow_
-
-![][image2]
 
 ###### _Business Rules_
 
@@ -290,11 +98,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image3]
-
 ###### _Activities Flow_
-
-![][image4]
 
 ###### _Business Rules_
 
@@ -321,11 +125,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image5]
-
 ###### _Activities Flow_
-
-![][image6]
 
 ###### _Business Rules_
 
@@ -352,11 +152,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image7]
-
 ###### _Activities Flow_
-
-![][image8]
 
 ###### _Business Rules_
 
@@ -379,11 +175,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image9]
-
 ###### _Activities Flow_
-
-![][image10]
 
 ###### _Business Rules_
 
@@ -407,11 +199,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image11]
-
 ###### _Activities Flow_
-
-![][image12]
 
 ###### _Business Rules_
 
@@ -434,11 +222,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image13]
-
 ###### _Activities Flow_
-
-![][image14]
 
 ###### _Business Rules_
 
@@ -462,11 +246,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image15]
-
 ###### _Activities Flow_
-
-![][image16]
 
 ###### _Business Rules_
 
@@ -509,11 +289,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image17]
-
 ###### _Activities Flow_
-
-![][image18]
 
 ###### _Business Rules_
 
@@ -539,11 +315,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image19]
-
 ###### _Activities Flow_
-
-![][image20]
 
 ###### _Business Rules_
 
@@ -570,8 +342,6 @@ Below are the main sections of this document:
 
 ###### _Activities Flow_
 
-![][image22]
-
 ###### _Business Rules_
 
 | Activity | BR Code | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
@@ -593,11 +363,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image23]
-
 ###### _Activities Flow_
-
-![][image24]
 
 ###### _Business Rules_
 
@@ -620,11 +386,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image25]
-
 ###### _Activities Flow_
-
-![][image26]
 
 ###### _Business Rules_
 
@@ -647,11 +409,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image27]
-
 ###### _Activities Flow_
-
-![][image28]
 
 ###### _Business Rules_
 
@@ -675,11 +433,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image29]
-
 ###### _Activities Flow_
-
-![][image30]
 
 ###### _Business Rules_
 
@@ -704,11 +458,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image31]
-
 ###### _Activities Flow_
-
-![][image32]
 
 ###### _Business Rules_
 
@@ -732,11 +482,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image33]
-
 ###### _Activities Flow_
-
-![][image34]
 
 ###### _Business Rules_
 
@@ -759,11 +505,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image35]
-
 ###### _Activities Flow_
-
-![][image36]
 
 ###### _Business Rules_
 
@@ -786,11 +528,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image37]
-
 ###### _Activities Flow_
-
-![][image38]
 
 ###### _Business Rules_
 
@@ -815,11 +553,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image39]
-
 ###### _Activities Flow_
-
-![][image40]
 
 ###### _Business Rules_
 
@@ -843,11 +577,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image41]
-
 ###### _Activities Flow_
-
-![][image42]
 
 ###### _Business Rules_
 
@@ -870,11 +600,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image43]
-
 ###### _Activities Flow_
-
-![][image44]
 
 ###### _Business Rules_
 
@@ -897,11 +623,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image45]
-
 ###### _Activities Flow_
-
-![][image46]
 
 ###### _Business Rules_
 
@@ -925,11 +647,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image47]
-
 ###### _Activities Flow_
-
-![][image48]
 
 ###### _Business Rules_
 
@@ -953,11 +671,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image49]
-
 ###### _Activities Flow_
-
-![][image50]
 
 ###### _Business Rules_
 
@@ -983,11 +697,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image51]
-
 ###### _Activities Flow_
-
-![][image52]
 
 ###### _Business Rules_
 
@@ -1012,11 +722,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image53]
-
 ###### _Activities Flow_
-
-![][image54]
 
 ###### _Business Rules_
 
@@ -1042,11 +748,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image55]
-
 ###### _Activities Flow_
-
-![][image56]
 
 ###### _Business Rules_
 
@@ -1073,11 +775,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image57]
-
 ###### _Activities Flow_
-
-![][image58]
 
 ###### _Business Rules_
 
@@ -1101,11 +799,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image59]
-
 ###### _Activities Flow_
-
-![][image60]
 
 ###### _Business Rules_
 
@@ -1129,11 +823,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image61]
-
 ###### _Activities Flow_
-
-![][image62]
 
 ###### _Business Rules_
 
@@ -1158,11 +848,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image63]
-
 ###### _Activities Flow_
-
-![][image64]
 
 ###### _Business Rules_
 
@@ -1186,11 +872,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image65]
-
 ###### _Activities Flow_
-
-![][image66]
 
 ###### _Business Rules_
 
@@ -1213,11 +895,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image67]
-
 ###### _Activities Flow_
-
-![][image68]
 
 ###### _Business Rules_
 
@@ -1243,11 +921,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image69]
-
 ###### _Activities Flow_
-
-![][image70]
 
 ###### _Business Rules_
 
@@ -1271,11 +945,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image71]
-
 ###### _Activities Flow_
-
-![][image72]
 
 ###### _Business Rules_
 
@@ -1298,11 +968,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image73]
-
 ###### _Activities Flow_
-
-![][image74]
 
 ###### _Business Rules_
 
@@ -1327,11 +993,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image75]
-
 ###### _Activities Flow_
-
-![][image76]
 
 ###### _Business Rules_
 
@@ -1355,11 +1017,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image77]
-
 ###### _Activities Flow_
-
-![][image78]
 
 ###### _Business Rules_
 
@@ -1383,11 +1041,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image79]
-
 ###### _Activities Flow_
-
-![][image80]
 
 ###### _Business Rules_
 
@@ -1413,11 +1067,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image81]
-
 ###### _Activities Flow_
-
-![][image82]
 
 ###### _Business Rules_
 
@@ -1443,11 +1093,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image83]
-
 ###### _Activities Flow_
-
-![][image84]
 
 ###### _Business Rules_
 
@@ -1472,11 +1118,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image85]
-
 ###### _Activities Flow_
-
-![][image86]
 
 ###### _Business Rules_
 
@@ -1500,11 +1142,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image87]
-
 ###### _Activities Flow_
-
-![][image88]
 
 ###### _Business Rules_
 
@@ -1528,11 +1166,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image89]
-
 ###### _Activities Flow_
-
-![][image90]
 
 ###### _Business Rules_
 
@@ -1557,11 +1191,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image91]
-
 ###### _Activities Flow_
-
-![][image92]
 
 ###### _Business Rules_
 
@@ -1585,11 +1215,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image93]
-
 ###### _Activities Flow_
-
-![][image94]
 
 ###### _Business Rules_
 
@@ -1614,11 +1240,7 @@ Below are the main sections of this document:
 
 ###### _Sequence Flow_
 
-![][image95]
-
 ###### _Activities Flow_
-
-![][image96]
 
 ###### _Business Rules_
 
