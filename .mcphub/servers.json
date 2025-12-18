@@ -51,6 +51,7 @@
         "confluence_search_user"
       ],
       "command": "uvx",
+      "disabled": true,
       "disabled_tools": [
         "confluence_add_comment",
         "confluence_add_label",

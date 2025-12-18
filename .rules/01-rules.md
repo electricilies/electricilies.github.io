@@ -2,9 +2,9 @@
 
 ## Naming convention
 
-- File in `docs/docs/activity/**/*.md` contains activity diagrams and they must have prefix markdown header with `Activity`
-- File in `docs/docs/sequence/**/*.md` contains sequence diagrams and they must have prefix markdown header with `Sequence`
-- File in `docs/docs/use-case/**/*.md` contains use-case diagrams and they must have prefix markdown header with `Use Case`
+- File in `docs/software-docs/activity/**/*.md` contains activity diagrams and they must have prefix markdown header with `Activity`
+- File in `docs/software-docs/sequence/**/*.md` contains sequence diagrams and they must have prefix markdown header with `Sequence`
+- File in `docs/software-docs/use-case/**/*.md` contains use-case diagrams and they must have prefix markdown header with `Use Case`
 - Below each of diagram must have the following id
   - Syntax
     ```markdown
