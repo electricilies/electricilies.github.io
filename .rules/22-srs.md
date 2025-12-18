@@ -384,6 +384,8 @@ explain:
  5.3 Issues List
 ```
 
+The srs file is in `./docs/software-docs/srs/index.md`
+
 ### Example
 
 the `./assets/WMS_SRS-shorten.md` file contains an example of SRS outline. But it isn't adapt with the best practices, just reference it as an syntax, outline example
