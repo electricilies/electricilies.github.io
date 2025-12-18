@@ -64,34 +64,18 @@ This section maps the visual steps (Activities) to backend logic.
 
 | Activity | BR Code | Description |
 | :--- | :--- | :--- |
-| (1), (2) | **BR-050** | **Displaying Rules:**<br/>The system initializes the Order Form.<br/><br/>customer = session.getCurrentUser()<br/>cartItems = database.getCart(customer.id)<br/><br/>IF cartItems IS EMPTY:<br/>&nbsp;&nbsp;&nbsp;&nbsp;displayMessage(MSG-020)<br/>&nbsp;&nbsp;&nbsp;&nbsp;redirect(HomePage)<br/><br/>ELSE:<br/>&nbsp;&nbsp;&nbsp;&nbsp;form.display(customer.address)<br/>&nbsp;&nbsp;&nbsp;&nbsp;form.display(cartItems) |
-| (3) | **BR-051** | **Validation Rules:**<br/>Triggered when User clicks [Submit Order].<br/><br/>input = form.getData()<br/><br/>IF input.shippingAddress IS EMPTY:<br/>&nbsp;&nbsp;&nbsp;&nbsp;displayError(MSG-005)<br/>&nbsp;&nbsp;&nbsp;&nbsp;RETURN False<br/><br/>IF input.paymentMethod IS NOT SELECTED:<br/>&nbsp;&nbsp;&nbsp;&nbsp;displayError(MSG-006)<br/>&nbsp;&nbsp;&nbsp;&nbsp;RETURN False<br/><br/>inventoryStatus = database.checkStock(cartItems)<br/>IF inventoryStatus IS "Out of Stock":<br/>&nbsp;&nbsp;&nbsp;&nbsp;displayError(MSG-099)<br/>&nbsp;&nbsp;&nbsp;&nbsp;RETURN False |
-| (4), (5) | **BR-052** | **Processing Rules:**<br/>System processes the valid order.<br/><br/>order = createNewOrder()<br/>order.setCustomer(customer)<br/>order.setAddress(input.shippingAddress)<br/><br/>FOR EACH item IN cartItems:<br/>&nbsp;&nbsp;&nbsp;&nbsp;lineItem = createLineItem(item.id, item.price, item.qty)<br/>&nbsp;&nbsp;&nbsp;&nbsp;order.addItem(lineItem)<br/>&nbsp;&nbsp;&nbsp;&nbsp;database.reduceStock(item.id, item.qty)<br/><br/>total = calculateTotal(order)<br/>order.setTotal(total)<br/><br/>TRY:<br/>&nbsp;&nbsp;&nbsp;&nbsp;database.save(order)<br/>&nbsp;&nbsp;&nbsp;&nbsp;emailService.sendConfirmation(customer.email)<br/>&nbsp;&nbsp;&nbsp;&nbsp;displaySuccess(MSG-100)<br/>CATCH Exception:<br/>&nbsp;&nbsp;&nbsp;&nbsp;logError(Exception)<br/>&nbsp;&nbsp;&nbsp;&nbsp;displayError(MSG-500) |
+| (1), (2) | **BR-050** | **Displaying Rules:**<br/>The system initializes the Order Form.<br/><br/>customer = session.getCurrentUser()<br/>cartItems = database.getCart(customer.id)<br/><br/>IF cartItems IS EMPTY:<br/>displayMessage(MSG-020)<br/>redirect(HomePage)<br/><br/>ELSE:<br/>form.display(customer.address)<br/>form.display(cartItems) |
+| (3) | **BR-051** | **Validation Rules:**<br/>Triggered when User clicks [Submit Order].<br/><br/>input = form.getData()<br/><br/>IF input.shippingAddress IS EMPTY:<br/>displayError(MSG-005)<br/>RETURN False<br/><br/>IF input.paymentMethod IS NOT SELECTED:<br/>displayError(MSG-006)<br/>RETURN False<br/><br/>inventoryStatus = database.checkStock(cartItems)<br/>IF inventoryStatus IS "Out of Stock":<br/>displayError(MSG-099)<br/>RETURN False |
+| (4), (5) | **BR-052** | **Processing Rules:**<br/>System processes the valid order.<br/><br/>order = createNewOrder()<br/>order.setCustomer(customer)<br/>order.setAddress(input.shippingAddress)<br/><br/>FOR EACH item IN cartItems:<br/>lineItem = createLineItem(item.id, item.price, item.qty)<br/>order.addItem(lineItem)<br/>database.reduceStock(item.id, item.qty)<br/><br/>total = calculateTotal(order)<br/>order.setTotal(total)<br/><br/>TRY:<br/>database.save(order)<br/>emailService.sendConfirmation(customer.email)<br/>displaySuccess(MSG-100)<br/>CATCH Exception:<br/>logError(Exception)<br/>displayError(MSG-500) |
 
 ---
 
 ## 4. Formatting Guide for Tables
 
-To maintain readability in Markdown tables (especially for the Pseudocode), you must use HTML tags for line breaks and indentation.
+To maintain readability in Markdown tables (especially for the Pseudocode), you must use HTML tags for line breaks.
 
 ### The Syntax
 *   **Line Break:** Use `<br/>` to force a new line within a table cell.
-*   **Indentation:** Use `&nbsp;` (Non-Breaking Space). Use multiple for deeper indentation (e.g., `&nbsp;&nbsp;&nbsp;&nbsp;`).
-
-### Example Implementation
-
-**Raw Markdown:**
-```markdown
-| Logic Column |
-| :--- |
-| IF user.exists():<br/>&nbsp;&nbsp;&nbsp;&nbsp;login(user)<br/>ELSE:<br/>&nbsp;&nbsp;&nbsp;&nbsp;showError() |
-```
-
-**Rendered Output:**
-
-| Logic Column |
-| :--- |
-| IF user.exists():<br/>&nbsp;&nbsp;&nbsp;&nbsp;login(user)<br/>ELSE:<br/>&nbsp;&nbsp;&nbsp;&nbsp;showError() |
 
 ---
 
