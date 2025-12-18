@@ -141,24 +141,40 @@ explain:
 
 2. Functional Requirements
 
-2.1.1 Adjust Document
--   2.1.1.1 Adjust Document
+2.1.1 Manage Account
+-   2.1.1.1 Delete Account
  -   Use Case Description
  -   Activities Flow
  -   Business Rules
--   2.1.1.2 Create Document
+-   2.1.1.2 Edit Profile
  -   Use Case Description
  -   Activities Flow
  -   Business Rules
--   2.1.1.3 Delete Document
+-   2.1.1.3 Link Account with Third Party
  -   Use Case Description
  -   Activities Flow
  -   Business Rules
--   2.1.1.4 Search Document
+-   2.1.1.4 Manage Account
  -   Use Case Description
  -   Activities Flow
  -   Business Rules
--   2.1.1.5 Update Document
+-   2.1.1.5 Recover Account
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.1.6 Reset Password
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.1.7 Sign In
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.1.8 Sign Out
+ -   Use Case Description
+ -   Activities Flow
+ -   Business Rules
+-   2.1.1.9 Sign Up
  -   Use Case Description
  -   Activities Flow
  -   Business Rules
@@ -169,40 +185,24 @@ explain:
  -   Activities Flow
  -   Business Rules
 
-2.1.3 Manage Account
--   2.1.3.1 Delete Account
+2.1.3 Adjust Document
+-   2.1.3.1 Adjust Document
  -   Use Case Description
  -   Activities Flow
  -   Business Rules
--   2.1.3.2 Edit Profile
+-   2.1.3.2 Create Document
  -   Use Case Description
  -   Activities Flow
  -   Business Rules
--   2.1.3.3 Link Account with Third Party
+-   2.1.3.3 Delete Document
  -   Use Case Description
  -   Activities Flow
  -   Business Rules
--   2.1.3.4 Manage Account
+-   2.1.3.4 Search Document
  -   Use Case Description
  -   Activities Flow
  -   Business Rules
--   2.1.3.5 Recover Account
- -   Use Case Description
- -   Activities Flow
- -   Business Rules
--   2.1.3.6 Reset Password
- -   Use Case Description
- -   Activities Flow
- -   Business Rules
--   2.1.3.7 Sign In
- -   Use Case Description
- -   Activities Flow
- -   Business Rules
--   2.1.3.8 Sign Out
- -   Use Case Description
- -   Activities Flow
- -   Business Rules
--   2.1.3.9 Sign Up
+-   2.1.3.5 Update Document
  -   Use Case Description
  -   Activities Flow
  -   Business Rules

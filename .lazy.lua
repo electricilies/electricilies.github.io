@@ -21,15 +21,14 @@ return {
             "./.rules/refactor/activity.md",
           },
         },
-        ["Generate SRS"] = {
+        ["Re Generate SRS"] = {
           description = "Generate Software Requirements Specification",
           files = {
             "./.rules/01-rules.md",
             "./.rules/22-srs.md",
             "./.rules/23-srs-bestpractice.md",
             "./docs/software-docs/database/index.md",
-            "./assets/WMS_SRS-shorten.md",
-            "./docs/software-docs/srs/index.md",
+            "./docs/software-docs/srs/index-old.md",
           },
         },
       },
