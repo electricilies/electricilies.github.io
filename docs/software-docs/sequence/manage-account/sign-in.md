@@ -5,23 +5,32 @@
 autonumber
 
 actor User as U
-boundary SignInView as SIV
 boundary HomeView as HV
+boundary SignInView as SIV
 boundary AuthenticationManagerSignInView as AMSIV
 entity ACCOUNT as A
 control UserController as UC
 entity USER as US
 
+U -> HV: Click button "Sign In"
+activate U
+activate HV
+deactivate U
+HV -> SIV: Navigate to SignInView
+deactivate HV
+activate SIV
 SIV -> SIV: Display SignInView
 activate SIV
+deactivate SIV
 note left of SIV: Generate code verifier(random)\nand hash it -> code challenge
-U -> SIV: Click Sign In
+U -> SIV: Click button "Continue to Sign In"
 activate U
+deactivate U
 SIV -> AMSIV: Redirect with code challenge
 deactivate SIV
 activate AMSIV
 
-AMSIV -> AMSIV: Display SignInView
+AMSIV -> AMSIV: Display AuthenticationManagerSignInView
 activate AMSIV
 deactivate AMSIV
 

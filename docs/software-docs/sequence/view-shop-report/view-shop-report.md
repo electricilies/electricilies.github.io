@@ -9,11 +9,18 @@ boundary ShopReportView as SRV
 control ShopReportController as SRC
 entity SHOP_REPORT as SR
 
+A -> SRV: Navigate to Shop Report
+activate A
+activate SRV
+deactivate A
 SRV -> SRV: Display with empty information
 activate SRV
+deactivate SRV
 A -> SRV: Choose which type of report
 activate A
+deactivate A
 A -> SRV: Choose timestamps
+activate A
 deactivate A
 SRV -> SRC: Send data and time of report
 activate SRC

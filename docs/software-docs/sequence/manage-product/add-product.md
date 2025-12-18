@@ -10,10 +10,22 @@ boundary ProductDetailView as PDV
 control ProductController as PC
 entity PRODUCT as P
 
+S -> PMV: Click button "Create Product"
+activate S
+activate PMV
+deactivate S
+PMV -> PDV: Navigate to ProductDetailView
+deactivate PMV
+activate PDV
 PDV -> PDV: Display with empty form
 activate PDV
+deactivate PDV
 S -> PDV: Enter product detail
 activate S
+deactivate S
+S -> PDV: Click button "Save" to confirm
+activate S
+deactivate S
 PDV -> PDV: Validate data
 activate PDV
 deactivate PDV
@@ -22,8 +34,6 @@ break Invalid data
   activate PDV
   deactivate PDV
 end
-S -> PDV: Click button "Save" to confirm
-deactivate S
 PDV -> PC: Send creating product request
 activate PC
 PC -> P: Send detail
@@ -48,6 +58,7 @@ PDV -> PDV: Close view
 deactivate PDV
 PMV <- PC: Display success notification and list of products
 activate PMV
+deactivate PC
 
 @enduml
 ```

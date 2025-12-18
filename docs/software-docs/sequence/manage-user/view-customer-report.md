@@ -12,12 +12,21 @@ entity CUSTOMER_REPORT as CR
 opt Search
   ref over AS, CR: Sequence Search User
 end
+AS -> UMV: Click button "View Customer Report"
+activate AS
+activate UMV
+deactivate AS
 UMV -> UMV: Display with empty information
 activate UMV
+deactivate UMV
 AS -> UMV: Select customer to view report
 activate AS
+deactivate AS
 AS -> UMV: Choose which type of report
+activate AS
+deactivate AS
 AS -> UMV: Choose timestamps
+activate AS
 deactivate AS
 UMV -> UC: Send data and time of report
 activate UC

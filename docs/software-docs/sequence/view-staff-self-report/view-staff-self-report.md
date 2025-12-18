@@ -9,11 +9,18 @@ boundary StaffReportView as SRV
 control StaffReportController as SRC
 entity STAFF_REPORT as SR
 
+S -> SRV: Navigate to Staff Self Report
+activate S
+activate SRV
+deactivate S
 SRV -> SRV: Display with empty information
 activate SRV
+deactivate SRV
 S -> SRV: Choose which type of report
 activate S
+deactivate S
 S -> SRV: Choose timestamps
+activate S
 deactivate S
 SRV -> SRC: Send data and time of report
 activate SRC

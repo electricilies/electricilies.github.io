@@ -12,12 +12,21 @@ entity STAFF_REPORT as SR
 opt Search
   ref over A, SR: Sequence Search User
 end
+A -> UMV: Click button "View Staff Report"
+activate A
+activate UMV
+deactivate A
 UMV -> UMV: Display with empty information
 activate UMV
+deactivate UMV
 A -> UMV: Select staff to view report
 activate A
+deactivate A
 A -> UMV: Choose which type of report
+activate A
+deactivate A
 A -> UMV: Choose timestamps
+activate A
 deactivate A
 UMV -> UC: Send data and time of report
 activate UC

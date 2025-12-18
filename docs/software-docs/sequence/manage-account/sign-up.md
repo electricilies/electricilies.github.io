@@ -5,19 +5,28 @@
 autonumber
 
 actor User as U
-boundary SignUpView as SUV
 boundary HomeView as HV
+boundary SignUpView as SUV
 boundary AuthenticationManagerSignUpView as AMSUV
 
 entity ACCOUNT as A
 control UserController as UC
 entity USER as US
 
+U -> HV: Click button "Sign Up"
+activate U
+activate HV
+deactivate U
+HV -> SUV: Navigate to SignUpView
+deactivate HV
+activate SUV
 SUV -> SUV: Display SignUpView
 activate SUV
+deactivate SUV
 note left of SUV: Generate code verifier(random)\nand hash it -> code challenge
-U -> SUV: Click Sign Up
+U -> SUV: Click button "Continue to Sign Up"
 activate U
+deactivate U
 SUV -> AMSUV: Redirect with code challenge
 deactivate SUV
 activate AMSUV
@@ -96,7 +105,6 @@ UC <-- US: Success
 deactivate US
 AMSUV <-- UC: Success
 deactivate UC
-deactivate AMSUV
 HV <- AMSUV: redirect to HomeView
 deactivate AMSUV
 activate HV

@@ -9,14 +9,18 @@ boundary UserManagementView as UMV
 control UserController as UC
 entity USER as U
 
-UC -> U: Get list of users
+AS -> UMV: Navigate to User Management
+activate AS
+activate UMV
+deactivate AS
+UMV -> UC: Request list of users
 activate UC
+UC -> U: Get list of users
 activate U
 UC <-- U: List of users
 deactivate U
 UMV <-- UC: List of users
 deactivate UC
-activate UMV
 UMV -> UMV: Display list of users
 activate UMV
 deactivate UMV

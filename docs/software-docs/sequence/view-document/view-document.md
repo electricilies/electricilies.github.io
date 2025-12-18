@@ -10,15 +10,19 @@ boundary DocumentDetailView as DDV
 control DocumentController as DC
 entity DOCUMENT as D
 
-DC -> D: Get lists of documents
+C -> DMV: Navigate to View Documents
+activate C
+activate DMV
+deactivate C
+DMV -> DC: Request list of documents
 activate DC
+DC -> D: Get lists of documents
 activate D
 D -> D: Query data
 DC <-- D: List of documents
 deactivate D
 DMV <-- DC: List of documents
 deactivate DC
-activate DMV
 DMV -> DMV: Display list of documents
 activate DMV
 deactivate DMV

@@ -10,10 +10,22 @@ boundary DocumentDetailView as DDV
 control DocumentController as DC
 entity DOCUMENT as D
 
+A -> DMV: Click button "Create Document"
+activate A
+activate DMV
+deactivate A
+DMV -> DDV: Navigate to DocumentDetailView
+deactivate DMV
+activate DDV
 DDV -> DDV: Display with empty form
 activate DDV
+deactivate DDV
 A -> DDV: Enter document detail
 activate A
+deactivate A
+A -> DDV: Click button "Save" to confirm
+activate A
+deactivate A
 DDV -> DDV: Validate data
 activate DDV
 deactivate DDV
@@ -22,8 +34,6 @@ break Invalid data
   activate DDV
   deactivate DDV
 end
-A -> DDV: Click button "Save" to confirm
-deactivate A
 DDV -> DC: Send creating document request
 activate DC
 DC -> D: Send detail
@@ -48,6 +58,7 @@ DDV -> DDV: Close view
 deactivate DDV
 DMV <- DC: Display success notification and list of documents
 activate DMV
+deactivate DC
 
 @enduml
 ```
