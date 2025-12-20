@@ -1,8 +1,8 @@
 # Electricilies
 
 <div align=center>
-  <a href="https://wakatime.com/badge/github/electricilies/electricilies-githubio">
-    <img alt="Wakatime" src="https://wakatime.com/badge/github/electricilies/electricilies-githubio.svg"/>
+  <a href="https://wakatime.com/badge/github/electricilies/electricilies.github.io">
+    <img alt="Wakatime" src="https://wakatime.com/badge/github/electricilies/electricilies.github.io.svg"/>
   </a>
 </div>
 
