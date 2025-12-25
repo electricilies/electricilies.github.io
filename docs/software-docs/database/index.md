@@ -187,6 +187,45 @@ refund_statuses: {
   name: text {constraint: UNQ}
 }
 
+customer_reports: {
+  id: uuid {constraint: PK}
+  user_id: uuid {constraint: FK}
+  report_date: date {constraint: UNQ}
+  total_orders: int
+  total_spending: decimal(12,0)
+  average_order_value: decimal(12,0)
+  order_frequency: real
+  return_rate: real
+  most_purchased_category_id: uuid {constraint: [FK, N]}
+  created_at: timestamptz
+  updated_at: timestamptz
+}
+
+staff_activities: {
+  id: uuid {constraint: PK}
+  staff_id: uuid
+  activity_type: varchar(50)
+  activity_date: timestamptz
+  entity_type: varchar(50) {constraint: N}
+  entity_id: uuid {constraint: N}
+  details: jsonb {constraint: N}
+  created_at: timestamptz
+}
+
+staff_reports: {
+  id: uuid {constraint: PK}
+  staff_id: uuid
+  report_date: date {constraint: UNQ}
+  products_added: int
+  products_updated: int
+  products_deleted: int
+  reviews_moderated: int
+  users_managed: int
+  total_activities: int
+  created_at: timestamptz
+  updated_at: timestamptz
+}
+
 product_variants.product_id -> products.id
 products_attribute_values.product_id -> products.id
 products_attribute_values.attribute_value_id -> attribute_values.id
@@ -213,6 +252,7 @@ return_requests.status_id -> return_request_statuses.id
 return_requests.order_item_id -> order_items.id
 refunds.status_id -> refund_statuses.id
 refunds.return_request_id -> return_requests.id
+customer_reports.most_purchased_category_id -> categories.id
 
 explanation: |md
 
