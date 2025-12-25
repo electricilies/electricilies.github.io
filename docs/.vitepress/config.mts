@@ -147,7 +147,7 @@ export default defineConfig({
                     link: "/software-docs/sequence/manage-account/sign-up",
                   },
                   {
-                    text: "Sign Up",
+                    text: "View Account Activity",
                     link: "/software-docs/sequence/manage-account/view-account-activity",
                   },
                 ],
@@ -428,7 +428,7 @@ export default defineConfig({
                     link: "/software-docs/activity/manage-account/sign-up",
                   },
                   {
-                    text: "Sign Up",
+                    text: "View Account Activity",
                     link: "/software-docs/activity/manage-account/view-account-activity",
                   },
                 ],
