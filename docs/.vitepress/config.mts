@@ -179,6 +179,14 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                   {
+                    text: "Add Attribute",
+                    link: "/software-docs/sequence/manage-product/add-attribute",
+                  },
+                  {
+                    text: "Add Category",
+                    link: "/software-docs/sequence/manage-product/add-category",
+                  },
+                  {
                     text: "Add Product",
                     link: "/software-docs/sequence/manage-product/add-product",
                   },
@@ -459,6 +467,14 @@ export default defineConfig({
                 text: "Manage Product",
                 collapsed: true,
                 items: [
+                  {
+                    text: "Add Attribute",
+                    link: "/software-docs/activity/manage-product/add-attribute",
+                  },
+                  {
+                    text: "Add Category",
+                    link: "/software-docs/activity/manage-product/add-category",
+                  },
                   {
                     text: "Add Product",
                     link: "/software-docs/activity/manage-product/add-product",
