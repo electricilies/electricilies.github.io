@@ -11,6 +11,7 @@ Electricilies \- Website for Selling Electronic Products
 | :---- | :---- | :---- | :---- |
 | Buggilies Team | 0.1.0 | Initial project creation | 19/09/2025 |
 | Buggilies Team | 0.2.0 | Update more detail | 31/10/2025 |
+| Buggilies Team | 0.3.0 | Remove generic use cases, add additional use cases | 26/12/2025 |
 
 ### Reviewers {#reviewers}
 
@@ -18,194 +19,7 @@ Electricilies \- Website for Selling Electronic Products
 | :---- | :---- | :---- | :---- | :---- |
 | Kevin Nitro | Electricilies | 0.1.0 | Project Manager | 20/09/2025 |
 | NTGNguyen & Kevin Nitro | Electricilies | 0.2.0 | Electricilies Team Backend | 1/11/2025 |
-
-##
-
-# Table of Contents {#table-of-contents}
-
-[**Revision and Signoff Sheet	2**](#revision-and-signoff-sheet)
-
-[Change Record	2](#change-record)
-
-[Reviewers	2](#reviewers)
-
-[**Table of Contents	3**](#table-of-contents)
-
-[**1\. Introduction	6**](#1.-introduction)
-
-[1.1 Purpose	6](#1.1-purpose)
-
-[1.2 Scope	6](#1.2-scope)
-
-[1.3 Intended Audiences and Document Organization	6](#1.3-intended-audiences-and-document-organization)
-
-[1.4 References	7](#1.4-references)
-
-[**2\. Functional Requirements	7**](#heading=h.rw8wbq1sab1l)
-
-[2.1 Use Case Description	7](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.gc8g40fsaitq)
-
-[2.1.1 Manage Account Use Case	7](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.edtz5rp7oyuw)
-
-[2.1.1.1 Manage Account	7](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.a008na3cffw2)
-
-[2.1.1.2 Sign Up	9](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.x7l6uycksrrf)
-
-[2.1.1.3 Sign In	13](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.2fwuiwyfv49w)
-
-[2.1.1.4 Sign Out	16](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.thwti9pmgmt0)
-
-[2.1.1.5 Edit Profile	18](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.huhor1vxgfk8)
-
-[2.1.1.6 Link Account With Third Party Provider	21](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.f4drdaf6a049)
-
-[2.1.1.7 Delete Account	23](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.m01mgbdpu9nf)
-
-[2.1.1.8 Reset Password	25](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.tdlvwgtn3ek4)
-
-[2.1.1.9 View Account Activity	28](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.vldg1xifxcxt)
-
-[2.1.1.10 Recover Account	28](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.1wnkjxpih7q3)
-
-[2.1.2 View Product Use Case	31](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.2upho6uq9nmq)
-
-[2.1.2.1 View Product	31](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.l3d6a5s92mg6)
-
-[2.1.2.2 Search Product	33](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.pv3z3gc1lvvz)
-
-[2.1.2.3 View Product Detail	35](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.lgwoaoor7b21)
-
-[2.1.2.4 View Product Reviews	37](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.p9uds9iy7f95)
-
-[2.1.2.5 View Suggested Products	39](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.ccddc8wn5eq1)
-
-[2.1.2.6 Add Product to Cart	41](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.cl1ulwg7rja)
-
-[2.1.3 Manage Cart Use Case	44](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.amum1pwklpio)
-
-[2.1.3.1 Manage Cart	44](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.asovjryrcjbj)
-
-[2.1.3.2 Change Product Amount	46](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.z24pcmnbb368)
-
-[2.1.3.3 Remove Product from Cart	48](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.5myiug3ylbb6)
-
-[2.1.3.4 Purchase	50](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.kxznvup24y64)
-
-[2.1.4 View Order Use Case	52](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.to65xlfjj7kf)
-
-[2.1.4.1 View Order	52](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.xguj2g27kzk)
-
-[2.1.4.2 Search Order	54](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.6a3sg5psla4)
-
-[2.1.4.3 View Order Detail	56](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.dfcrhowyc7)
-
-[2.1.4.4 Cancel Order	59](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.nkifcfdb2jin)
-
-[2.1.4.5 Return Product	62](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.cgcfqbsxd118)
-
-[2.1.4.6 Review Product	65](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.7ns1ap9t5a91)
-
-[2.1.5 Contact Support Use Case	68](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.yni7s4unpi2g)
-
-[2.1.5.1 Contact Support	68](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.bkx7aivxeepu)
-
-[2.1.6 View Customer Self Report Use Case	70](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.1u6a4l3cdnh2)
-
-[2.1.6.1 View Customer Self Report	70](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.3xp00lmipu4l)
-
-[2.1.7 View Document Use Case	72](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.c1zwd553uqx0)
-
-[2.1.7.1 View Document	72](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.k1lhoezgebdi)
-
-[2.1.8 Manage Product Use Case (Staff)	74](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.twnnbain8g5k)
-
-[2.1.8.1 Manage Product	74](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.tdbo4estiiz)
-
-[2.1.8.2 Add Product	76](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.r1f106fq0fg0)
-
-[2.1.8.3 Update Product	79](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.4t60jj56ql6d)
-
-[2.1.8.4 Delete Product	82](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.qzfyt34sk9c6)
-
-[2.1.8.5 Search Product	85](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.gc5ppx51mp4p)
-
-[2.1.8.6 Delete Review	86](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.4c6ayvnfrt38)
-
-[2.1.9 Manage User Use Case	89](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.uvcvgpldl956)
-
-[2.1.9.1 Manage User	89](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.d1fakl25x4sv)
-
-[2.1.9.2 Search User	91](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.pbqj1y3z7970)
-
-[2.1.9.3 Change User Roles (Admin only)	93](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.vkrj1outyfq8)
-
-[2.1.9.4 Delete User (Admin only)	96](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.97fjxcqyf1zp)
-
-[2.1.9.5 View Customer Report	99](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.eh7mosxie513)
-
-[2.1.9.6 View Staff Report (Admin only)	101](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.edj52s7bt63m)
-
-[2.1.10 View Shop Report Use Case	103](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.nhoxie93pdu5)
-
-[2.1.10.1 View Shop Report	103](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.5hflozt0c4ug)
-
-[2.1.11 View System Monitoring Use Case	105](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.ujesv8u7huli)
-
-[2.1.11.1 View System Monitoring	105](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.sd2r9xlgs90l)
-
-[2.1.12 Adjust Document Use Case	107](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.rrqjmdgmw5qn)
-
-[2.1.12.1 Adjust Document	107](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.3t2320zvw4n)
-
-[2.1.12.2 Create Document	109](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.y9rmuugte5a8)
-
-[2.1.12.3 Update Document	112](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.dz4gk072a157)
-
-[2.1.12.4 Delete Document	115](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.sfcue58fpcdn)
-
-[2.1.12.5 Search Document	118](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.prw2hv6xsblj)
-
-[2.1.13 View Staff Self Report Use Case	119](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.tbrdgdgkjxah)
-
-[2.1.13.1 View Staff Self Report	119](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.dffxqw4gc186)
-
-[2.2 List Description	122](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.yhjs8xoepmxl)
-
-[2.3 View Description	124](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.k715zuz89r21)
-
-[**3\. Non-functional Requirements	128**](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.i006uplottee)
-
-[3.1 User Access and Security	128](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.14u0junmzbfo)
-
-[3.2 Performance Requirements	130](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.i7oj1copp15y)
-
-[3.3 Implementation Requirements	131](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.rtis9xbg230s)
-
-[**4\. Other Requirements	133**](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.kzpiz5b4xz7c)
-
-[4.1 Archive Function	133](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.w4hj7give57i)
-
-[4.2 Security Audit Function	133](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.pum9vtxtqskh)
-
-[4.3 Electricilies Sites	134](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.22j6e3gioui3)
-
-[4.4 Electricilies Lists	134](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.5s1gjwiixq2k)
-
-[4.5 Custom Pages	134](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.55y1g5pjqdix)
-
-[4.6 Scheduled Agents	135](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.74utbmbcqtxh)
-
-[4.7 Technical Concern	136](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.xv83iibr9zjh)
-
-[**5\. Appendixes	138**](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.dxuftka65orq)
-
-[5.1 Glossary	138](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.3xosj1hbgk52)
-
-[5.2 Mapping to Notes Application	139](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.47hnoi6avli4)
-
-[5.3 Messages	139](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.9ide0b4x887z)
-
-[5.4 Issues List	142](https://docs.google.com/document/d/1ENjT_4cki-6yPkfeKfxMkcVpRjpoRcmF0i-bJnL-8m4/edit?tab=t.0#heading=h.7qgt8sho8aso)
+| NTGNguyen & Kevin Nitro | Electricilies | 0.3.0 | Electricilies Team Backend | 26/12/2025 |
 
 ##
 
@@ -242,18 +56,18 @@ Below are the main sections of this document:
 
 | \# | Title | Version | File Name / Link | Description |
 | :---- | :---- | :---- | :---- | :---- |
-| 1 | Use Case Diagrams | 0.1.0 | [Use Case Documentation](https://electricilies.github.io/software-docs/use-case/generic.html) | Complete use case diagrams for all user roles |
-| 2 | Sequence Diagrams | 0.1.0 | [Sequence Documentation](https://electricilies.github.io/software-docs/sequence/) | Sequence flow diagrams for all major features |
-| 3 | Activity Diagrams | 0.1.0 | [Activity Documentation](https://electricilies.github.io/software-docs/activity/) | Activity flow diagrams for business processes |
-| 4 | Database Schema | 0.1.0 | [Database Design Document](https://electricilies.github.io/software-docs/database/) | Entity-relationship diagrams and table definitions |
+| 1 | Use Case Diagrams | 0.3.0 | [Use Case Documentation](https://electricilies.github.io/software-docs/use-case/generic.html) | Complete use case diagrams for all user roles |
+| 2 | Sequence Diagrams | 0.3.0 | [Sequence Documentation](https://electricilies.github.io/software-docs/sequence/) | Sequence flow diagrams for all major features |
+| 3 | Activity Diagrams | 0.3.0 | [Activity Documentation](https://electricilies.github.io/software-docs/activity/) | Activity flow diagrams for business processes |
+| 4 | Database Schema | 0.3.0 | [Database Design Document](https://electricilies.github.io/software-docs/database/) | Entity-relationship diagrams and table definitions |
 
-## 2\. Functional Requirements
+## 2\. Functional Requirements {#2.-functional-requirements}
 
-### 2.1 Use Case Description
+### 2.1 Use Case Description {#2.1-use-case-description}
 
-#### 2.1.1 Manage Account Use Case
+#### 2.1.1 Manage Account Use Case {#2.1.1-manage-account-use-case}
 
-##### 2.1.1.1 Sign Up
+##### 2.1.1.1 Sign Up {#2.1.1.1-sign-up}
 
 ###### *Use Case Description*
 
@@ -281,7 +95,7 @@ Below are the main sections of this document:
 | (10) | BR4 | **Validation Rules:** The system validates the authorization code, verifier, and challenge. If validation fails, system displays error message (Refer to MSG 3). Otherwise, system generates and returns JWT Token with 5-min expiration. if \!isValid(\[authorizationCode\],\[verifier\],\[challenge\]):     throw error(\[MSG3\]\]) move to step (10.2) |
 | (11.2) | BR5 | **Validation Rules:** The system verifies the JWT Token and writes user data to the database. If JWT is invalid, system displays error message (Refer to MSG 4). Otherwise, user data is stored in auth service’s data and system redirects to Home View. if \!isValid(\[token\]):     throw error(\[MSG4\]) move to step (11.4) |
 
-##### 2.1.1.2 Sign In
+##### 2.1.1.2 Sign In {#2.1.1.2-sign-in}
 
 ###### *Use Case Description*
 
@@ -309,7 +123,7 @@ Below are the main sections of this document:
 | (9.2) | BR9 | **Validation Rules:** The system validates the authorization code, verifier, and challenge. If validation fails, system displays error message (Refer to MSG 3). Otherwise, system generates and returns JWT Token with 5-min expiration. if \!isValid(\[authorizationCode\], \[verifier\], \[challenge\]):     throw error(\[MSG3\]\]) move to step (9.4) |
 | (10.2) | BR10 | **Validation Rules:** The system verifies the JWT Token. If JWT is invalid or expired, system displays error message (Refer to MSG 4). Otherwise, system creates user session and redirects to Home View. if \!isValid(\[token\]):     throw error(\[MSG4\]) move to step (10.4) |
 
-##### 2.1.1.3 Sign Out
+##### 2.1.1.3 Sign Out {#2.1.1.3-sign-out}
 
 ###### *Use Case Description*
 
@@ -338,7 +152,7 @@ Below are the main sections of this document:
 | (2) | BR11 | **Session Rules:** The system clears all user session data including JWT Token, cached user information, and temporary data from browser storage (localStorage and sessionStorage). |
 | (3) | BR12 | **Displaying Rules:** The system displays sign out confirmation message (Refer to MSG 6\) and automatically redirects to the Sign In page after 2 seconds. |
 
-##### 2.1.1.4 Edit Profile
+##### 2.1.1.4 Edit Profile {#2.1.1.4-edit-profile}
 
 ###### *Use Case Description*
 
@@ -362,11 +176,11 @@ Below are the main sections of this document:
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (3) | BR17 | **Displaying Rules:** The system displays a "Profile Edit" screen filled with current user information retrieved from auth service’s data. |
-| (5) | BR18 | **Validation Rules:** When the user enters new profile information, the system validates data format in real-time using Text\_change() method: \- First Name: alphabetic characters and spaces only, 2-255 characters \- Last Name: alphabetic characters and spaces only, 2-255 characters \- Email: valid email format, maximum 255 characters \- Phone: valid phone format (if provided) \- Address: alphanumeric with special characters allowed (if provided), maximum 255 characters if \!(isValid(\[username\]) && isValid(\[password\]) && isValid(\[email\]) && isValid(\[firstName\]) && isValid(\[lastName\]) && isValid(\[phone\]) && isValid(\[address\])):     display error(\[MSG1\]) move to step (6) |
-| (7) | BR19 | **Validation Rules:** When the user clicks the "Save Changes" button, system validates updated data against auth service’s data:  \- Check if the new email is not already registered by another user \- Check if new phone is not already registered by another user (if provided) If validation fails, system displays error message (Refer to MSG 7 or MSG 8). Otherwise, profile data is updated in the database and success message is displayed (Refer to MSG 9). if (isExisted(\[email\])):     throw error(\[MSG7\]) if (isExisted(\[phone\])):     throw error(\[MSG8\]) move to step(7.2) display(\[MSG9\]) |
+| (3) | BR13 | **Displaying Rules:** The system displays a "Profile Edit" screen filled with current user information retrieved from auth service’s data. |
+| (5) | BR14 | **Validation Rules:** When the user enters new profile information, the system validates data format in real-time using Text\_change() method: \- First Name: alphabetic characters and spaces only, 2-255 characters \- Last Name: alphabetic characters and spaces only, 2-255 characters \- Email: valid email format, maximum 255 characters \- Phone: valid phone format (if provided) \- Address: alphanumeric with special characters allowed (if provided), maximum 255 characters if \!(isValid(\[username\]) && isValid(\[password\]) && isValid(\[email\]) && isValid(\[firstName\]) && isValid(\[lastName\]) && isValid(\[phone\]) && isValid(\[address\])):     display error(\[MSG1\]) move to step (6) |
+| (7) | BR15 | **Validation Rules:** When the user clicks the "Save Changes" button, system validates updated data against auth service’s data:  \- Check if the new email is not already registered by another user \- Check if new phone is not already registered by another user (if provided) If validation fails, system displays error message (Refer to MSG 7 or MSG 8). Otherwise, profile data is updated in the database and success message is displayed (Refer to MSG 9). if (isExisted(\[email\])):     throw error(\[MSG7\]) if (isExisted(\[phone\])):     throw error(\[MSG8\]) move to step(7.2) display(\[MSG9\]) |
 
-##### 2.1.1.5 Link Account With Third Party Provider
+##### 2.1.1.5 Link Account With Third Party Provider {#2.1.1.5-link-account-with-third-party-provider}
 
 ###### *Use Case Description*
 
@@ -390,10 +204,10 @@ Below are the main sections of this document:
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR13 | **Displaying Rules:** The system displays available third-party providers (Google, Facebook, etc.) that can be linked to the user account. (Refer to "Link Account" view in "View Description" file) |
-| (4) | BR14 | **Validation Rules:** The system validates account linking request:  \- Check if selected provider is not already linked to this account \- Check if provider account is not already linked to another user account \- Verify provider authentication token if \!( hasLinkToOtherAccount(\[providerAccount\]) && isLinked(\[userId\], \[providerAccount\])):     throw error(MSG10) authService.LinkProvider(\[userId\], \[provider\]) display(MSG11) |
+| (2) | BR16 | **Displaying Rules:** The system displays available third-party providers (Google, Facebook, etc.) that can be linked to the user account. (Refer to "Link Account" view in "View Description" file) |
+| (4) | BR17 | **Validation Rules:** The system validates account linking request:  \- Check if selected provider is not already linked to this account \- Check if provider account is not already linked to another user account \- Verify provider authentication token if \!( hasLinkToOtherAccount(\[providerAccount\]) && isLinked(\[userId\], \[providerAccount\])):     throw error(MSG10) authService.LinkProvider(\[userId\], \[provider\]) display(MSG11) |
 
-##### 2.1.1.6 Delete Account
+##### 2.1.1.6 Delete Account {#2.1.1.6-delete-account}
 
 ###### *Use Case Description*
 
@@ -417,11 +231,11 @@ Below are the main sections of this document:
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR15 | **Displaying Rules:** The system displays a confirmation dialog warning the user about permanent account deletion and its consequences. |
-| (2.1), (2.2) | BR16 | **Selection Rules:** User must explicitly confirm account deletion. If user clicks "Cancel" button, the confirmation dialog closes and use case ends. If user clicks "Confirm" button, system proceeds with deletion process. |
-| (3) | BR17 | **Validation Rules:** The system validates account data before deletion: \- Check for pending orders (orders must be completed or cancelled) If validation fails, system displays error message (Refer to MSG 12\) listing issues that must be resolved. Otherwise, system performs deletion and displays success message (Refer to MSG 13), then redirects to sign-in page. if (listOrderByUserId(\[userId\]) \!= 0):     throw error(\[MSG12\]) display(\[MSG13\]) |
+| (2) | BR18 | **Displaying Rules:** The system displays a confirmation dialog warning the user about permanent account deletion and its consequences. |
+| (2.1), (2.2) | BR19 | **Selection Rules:** User must explicitly confirm account deletion. If user clicks "Cancel" button, the confirmation dialog closes and use case ends. If user clicks "Confirm" button, system proceeds with deletion process. |
+| (3) | BR20 | **Validation Rules:** The system validates account data before deletion: \- Check for pending orders (orders must be completed or cancelled) If validation fails, system displays error message (Refer to MSG 12\) listing issues that must be resolved. Otherwise, system performs deletion and displays success message (Refer to MSG 13), then redirects to sign-in page. if (listOrderByUserId(\[userId\]) \!= 0):     throw error(\[MSG12\]) display(\[MSG13\]) |
 
-##### 2.1.1.8 Reset Password
+##### 2.1.1.8 Reset Password {#2.1.1.8-reset-password}
 
 ###### *Use Case Description*
 
@@ -445,11 +259,19 @@ Below are the main sections of this document:
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR18 | **Displaying Rules:** The system displays a password change form with fields for current password and new password. |
-| (4) | BR19 | **Validation Rules:** The system validates password format in real-time:  \- New password must be at least 4 characters long \- Must contain at least one uppercase letter \- Must contain at least one lowercase letter \- Must contain at least one number \- Must contain at least one special character (\!@\#$%^&\\\*) \- New password must be different from current password if \!isValidPassword(\[newPassword\]):      throw error(\[MSG14\]) if oldPassword \!= newPassword:    authService.UpdatePassword(\[userId\], \[newPassword\]) |
-| (6) | BR20 | **Validation Rules:** When user clicks "Update Password" button, system validates current password against stored hash using bcrypt comparison. If current password is incorrect, system displays error message (Refer to MSG 15). Otherwise, auth service save the user data, and displays success message (Refer to MSG 16). if \[oldPassword\] \!= \[currentPassword\]:     throw error(\[MSG15\]) authService.Save(\[userId\], \[newPassword\]) display(MSG16) |
+| (2) | BR21 | **Displaying Rules:** The system displays a password change form with fields for current password and new password. |
+| (4) | BR22 | **Validation Rules:** The system validates password format in real-time:  \- New password must be at least 4 characters long \- Must contain at least one uppercase letter \- Must contain at least one lowercase letter \- Must contain at least one number \- Must contain at least one special character (\!@\#$%^&\\\*) \- New password must be different from current password if \!isValidPassword(\[newPassword\]):      throw error(\[MSG14\]) if oldPassword \!= newPassword:    authService.UpdatePassword(\[userId\], \[newPassword\]) |
+| (6) | BR23 | **Validation Rules:** When user clicks "Update Password" button, system validates current password against stored hash using bcrypt comparison. If current password is incorrect, system displays error message (Refer to MSG 15). Otherwise, auth service save the user data, and displays success message (Refer to MSG 16). if \[oldPassword\] \!= \[currentPassword\]:     throw error(\[MSG15\]) authService.Save(\[userId\], \[newPassword\]) display(MSG16) |
 
-##### 2.1.1.9 View Account Activity
+##### 2.1.1.9 View Account Activity {#2.1.1.9-view-account-activity}
+
+###### *Activities Flow*
+
+![][image15]
+
+###### *Sequence Flow*
+
+![][image16]
 
 ###### *Use Case Description*
 
@@ -467,10 +289,10 @@ Below are the main sections of this document:
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-|  | BR21 | **Querying Rules:** The system queries activity logs auth service data for the current user, ordered by timestamp descending. |
-|  | BR22 | **Displaying Rules:** The system displays account activity history including: timestamp, activity type, IP address, device information, and status. |
+|  | BR24 | **Querying Rules:** The system queries activity logs auth service data for the current user, ordered by timestamp descending. |
+|  | BR25 | **Displaying Rules:** The system displays account activity history including: timestamp, activity type, IP address, device information, and status. |
 
-##### 2.1.1.10 Recover Account
+##### 2.1.1.10 Recover Account {#2.1.1.10-recover-account}
 
 ###### *Use Case Description*
 
@@ -484,23 +306,23 @@ Below are the main sections of this document:
 
 ###### *Activities Flow*
 
-![][image15]
+![][image17]
 
 ###### *Sequence Flow*
 
-![][image16]
+![][image18]
 
 ###### *Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR23 | **Displaying Rules:** The system displays a password recovery form with email address field. |
-| (4) | BR24 | **Validation Rules:** The system validates email format:  \- Must not be empty \- Must follow valid email pattern ([user@domain.com](mailto:user@domain.com)) if isValid(\[email\]):     authService.SendRecoverEmail(\[email\]) else:     throw error(MSG1) |
-| (6) | BR25 | **Validation Rules:** The system checks if account exists in auth service data with the provided email. If account is not found, system displays generic error message for security reasons (Refer to MSG 17). Otherwise, system generates a unique reset token with 1-hour expiration, sends password reset email containing reset link, and displays success message (Refer to MSG 18). if \!isExisted(\[email\]):     display(\[MSG17\]) sendRecoverEmail(\[email\]) display(\[MSG18\]) |
+| (2) | BR26 | **Displaying Rules:** The system displays a password recovery form with email address field. |
+| (4) | BR27 | **Validation Rules:** The system validates email format:  \- Must not be empty \- Must follow valid email pattern ([user@domain.com](mailto:user@domain.com)) if isValid(\[email\]):     authService.SendRecoverEmail(\[email\]) else:     throw error(MSG1) |
+| (6) | BR28 | **Validation Rules:** The system checks if account exists in auth service data with the provided email. If account is not found, system displays generic error message for security reasons (Refer to MSG 17). Otherwise, system generates a unique reset token with 1-hour expiration, sends password reset email containing reset link, and displays success message (Refer to MSG 18). if \!isExisted(\[email\]):     display(\[MSG17\]) sendRecoverEmail(\[email\]) display(\[MSG18\]) |
 
-#### 2.1.2 View Product Use Case
+#### 2.1.2 View Product Use Case {#2.1.2-view-product-use-case}
 
-##### 2.1.2.2 Search Product
+##### 2.1.2.2 Search Product {#2.1.2.2-search-product}
 
 ###### *Use Case Description*
 
@@ -514,20 +336,20 @@ Below are the main sections of this document:
 
 ###### *Activities Flow*
 
-![][image17]
+![][image19]
 
 ###### *Sequence Flow*
 
-**![][image18]**
+**![][image20]**
 
 ###### *Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (1) | BR26 | **Searching Rules:** When the customer enters search criteria, the system handles the search request with debounce delay of 300ms. System queries data in "PRODUCTS" table (Refer to "Products" table in "DB Sheet" file). System uses Redis cache to store and retrieve search results for popular queries to improve performance. productService.ListProducts(\[params\]) \[params\] can include: \[keyword\], \[categories\], \[maxPrice\], \[minPrice\], \[rating\], \[sortByRate\], \[sortByPrice\], \[isDeleted\] |
-| (3) | BR27 | **Displaying Rules:** If search is triggered on "Home View", system displays results inline with autocomplete suggestions. If user presses Enter, system redirects to "Product Search View" (Refer to "Product Search" view in "View Description" file) showing filtered results with applied search criteria and filter options. |
+| (1) | BR29 | **Searching Rules:** When the customer enters search criteria, the system handles the search request with debounce delay of 300ms. System queries data in "PRODUCTS" table (Refer to "Products" table in "DB Sheet" file). System uses Redis cache to store and retrieve search results for popular queries to improve performance. productService.ListProducts(\[params\]) \[params\] can include: \[keyword\], \[categories\], \[maxPrice\], \[minPrice\], \[rating\], \[sortByRate\], \[sortByPrice\], \[isDeleted\] |
+| (3) | BR30 | **Displaying Rules:** If search is triggered on "Home View", system displays results inline with autocomplete suggestions. If user presses Enter, system redirects to "Product Search View" (Refer to "Product Search" view in "View Description" file) showing filtered results with applied search criteria and filter options. |
 
-##### 2.1.2.3 View Product Detail
+##### 2.1.2.3 View Product Detail {#2.1.2.3-view-product-detail}
 
 ###### *Use Case Description*
 
@@ -541,20 +363,20 @@ Below are the main sections of this document:
 
 ###### *Activities Flow*
 
-![][image19]
+![][image21]
 
 ###### *Sequence Flow*
 
-![][image20]
+![][image22]
 
 ###### *Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR28 | **Querying Rules:** System queries product details from "PRODUCTS" table (Refer to "Products" table in "DB Sheet" file)System also retrieves related data including product images, category, attributes, options, product variants.  System uses Redis cache to store and retrieve product detail data for frequently viewed products. productService.GetProduct(\[params\]) Params include: \[ProductId\] |
-| (3) | BR29 | **Displaying Rules:** The system displays "Product Detail" view showing: product images (with zoom functionality), name, full description, price, availability status, attribute table, category, SKU, quantity selector, Add to Cart button, rating summary, and related products section. (Refer to "Product Detail" view in "View Description" file) |
+| (2) | BR31 | **Querying Rules:** System queries product details from "PRODUCTS" table (Refer to "Products" table in "DB Sheet" file)System also retrieves related data including product images, category, attributes, options, product variants.  System uses Redis cache to store and retrieve product detail data for frequently viewed products. productService.GetProduct(\[params\]) Params include: \[ProductId\] |
+| (3) | BR32 | **Displaying Rules:** The system displays "Product Detail" view showing: product images (with zoom functionality), name, full description, price, availability status, attribute table, category, SKU, quantity selector, Add to Cart button, rating summary, and related products section. (Refer to "Product Detail" view in "View Description" file) |
 
-##### 2.1.2.4 View Product Reviews
+##### 2.1.2.4 View Product Reviews {#2.1.2.4-view-product-reviews}
 
 ###### *Use Case Description*
 
@@ -568,20 +390,20 @@ Below are the main sections of this document:
 
 ###### *Activities Flow*
 
-![][image21]
+![][image23]
 
 ###### *Sequence Flow*
 
-![][image22]
+![][image24]
 
 ###### *Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR30 | **Querying Rules:** System queries reviews from "REVIEWS" table (Refer to "Reviews" table in "DB Sheet" file). System also calculates rating distribution statistics. reviews \= reviewService.ListReviews(\[params\]) \[params\] can include: \[ProductId\] |
-| (3) | BR31 | **Displaying Rules:** The system displays reviews section showing: overall rating (1-5 stars), total review count, filter options (by rating, most recent), and list of reviews with reviewer name, rating, review text, images (if any), helpful count, and review date. Pagination loads 20 reviews at a time. (Refer to "Product Reviews" section in "View Description" file) |
+| (2) | BR33 | **Querying Rules:** System queries reviews from "REVIEWS" table (Refer to "Reviews" table in "DB Sheet" file). System also calculates rating distribution statistics. reviews \= reviewService.ListReviews(\[params\]) \[params\] can include: \[ProductId\] |
+| (3) | BR34 | **Displaying Rules:** The system displays reviews section showing: overall rating (1-5 stars), total review count, filter options (by rating, most recent), and list of reviews with reviewer name, rating, review text, images (if any), helpful count, and review date. Pagination loads 20 reviews at a time. (Refer to "Product Reviews" section in "View Description" file) |
 
-##### 2.1.2.5 View Suggested Products
+##### 2.1.2.5 View Suggested Products {#2.1.2.5-view-suggested-products}
 
 ###### *Use Case Description*
 
@@ -595,21 +417,21 @@ Below are the main sections of this document:
 
 ###### *Activities Flow*
 
-![][image23]
+![][image25]
 
 ###### *Sequence Flow*
 
-![][image24]
+![][image26]
 
 ###### *Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR32 | **Querying Rules:** System queries suggested products/related products using recommendation algorithm based on:  1\. Same category as current product 2\. Relate category by name to current category of the current product 3\. Relate product by name to current product 4\. Similar price range System queries from "PRODUCTS" table (Refer to "Products" table in "DB Sheet" file) products \= productService.ListSuggestedProducts(\[params\]) \[params\] can include: \[product\], \[category\], \[minPrice\], \[maxPrice\] |
-| (3) | BR33 | **Displaying Rules:**  The system returns ProductList. The system displays suggested products section at the bottom of product detail page showing: product thumbnail, name, price. The display is organized in a horizontal scrollable carousel. (Refer to "Suggested Products" section in "View Description" file) |
-| (3.2) | BR34 | **Navigation Rules:** When customer clicks on a suggested product, system redirects to that product's detail page and recursively executes the "View Product Detail" use case for the selected product. |
+| (2) | BR35 | **Querying Rules:** System queries suggested products/related products using recommendation algorithm based on:  1\. Same category as current product 2\. Relate category by name to current category of the current product 3\. Relate product by name to current product 4\. Similar price range System queries from "PRODUCTS" table (Refer to "Products" table in "DB Sheet" file) products \= productService.ListSuggestedProducts(\[params\]) \[params\] can include: \[product\], \[category\], \[minPrice\], \[maxPrice\] |
+| (3) | BR36 | **Displaying Rules:**  The system returns ProductList. The system displays suggested products section at the bottom of product detail page showing: product thumbnail, name, price. The display is organized in a horizontal scrollable carousel. (Refer to "Suggested Products" section in "View Description" file) |
+| (3.2) | BR37 | **Navigation Rules:** When customer clicks on a suggested product, system redirects to that product's detail page and recursively executes the "View Product Detail" use case for the selected product. |
 
-##### 2.1.2.6 Add Product to Cart
+##### 2.1.2.6 Add Product to Cart {#2.1.2.6-add-product-to-cart}
 
 ###### *Use Case Description*
 
@@ -623,22 +445,22 @@ Below are the main sections of this document:
 
 ###### *Activities Flow*
 
-![][image25]
+![][image27]
 
 ###### *Sequence Flow*
 
-![][image26]
+![][image28]
 
 ###### *Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR35 | **Validation Rules:** When customer enters quantity and clicks "Add to Cart", system validates:  \- Quantity must be a positive integer, greater than 0 \- Quantity must not exceed available stock \- Quantity must not exceed maximum purchase limit (if any) if \!isValid(\[product.quantity\]):     throw error(\[MSG19\]) |
-| (4) | BR36 | **Validation Rules:** System validates cart data before storing:  \- Check if product still exists and is active in "PRODUCTS" table \- Check if product is still in stock \- If product already exists in cart, add quantities together \- If total quantity exceeds stock Then display error (Refer to MSG 20). Otherwise, store/update cart item in "CARTS" table (Refer to "Carts" table in "DB Sheet" file) and display success notification with cart icon update showing new item count (Refer to MSG 21). if \!(isValid(\[product.quantity\]) && isExisted(\[product\])):     throw error(\[MSG20\]) if hasInCart(\[cart\], \[productId\]):     increaseQuantity(\[cart\], \[product.quantity\]) else:     addToCart(\[cart\], \[product\]) display(\[MSG21\]) |
+| (2) | BR38 | **Validation Rules:** When customer enters quantity and clicks "Add to Cart", system validates:  \- Quantity must be a positive integer, greater than 0 \- Quantity must not exceed available stock \- Quantity must not exceed maximum purchase limit (if any) if \!isValid(\[product.quantity\]):     throw error(\[MSG19\]) |
+| (4) | BR39 | **Validation Rules:** System validates cart data before storing:  \- Check if product still exists and is active in "PRODUCTS" table \- Check if product is still in stock \- If product already exists in cart, add quantities together \- If total quantity exceeds stock Then display error (Refer to MSG 20). Otherwise, store/update cart item in "CARTS" table (Refer to "Carts" table in "DB Sheet" file) and display success notification with cart icon update showing new item count (Refer to MSG 21). if \!(isValid(\[product.quantity\]) && isExisted(\[product\])):     throw error(\[MSG20\]) if hasInCart(\[cart\], \[productId\]):     increaseQuantity(\[cart\], \[product.quantity\]) else:     addToCart(\[cart\], \[product\]) display(\[MSG21\]) |
 
-#### 2.1.3 Manage Cart Use Case
+#### 2.1.3 Manage Cart Use Case {#2.1.3-manage-cart-use-case}
 
-##### 2.1.3.2 Change Product Amount
+##### 2.1.3.2 Change Product Amount {#2.1.3.2-change-product-amount}
 
 ###### *Use Case Description*
 
@@ -652,20 +474,20 @@ Below are the main sections of this document:
 
 ###### *Activities Flow*
 
-![][image27]
+![][image29]
 
 ###### *Sequence Flow*
 
-![][image28]
+![][image30]
 
 ###### *Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR37 | **Validation Rules:** When customer changes product quantity, system validates:  \- New quantity must be a positive integer \- New quantity must be greater than 0 \- New quantity must not exceed available stock \- New quantity must not exceed maximum purchase limit (100) If validation fails, system displays error message (Refer to MSG 19\) and reverts to previous quantity. Otherwise, system updates quantity in "CARTS" table and displays success notification (Refer to MSG 22). if isValid(\[newQuantity\]):     throw error(\[MSG19\]) cartItem \= updateCartItemQuantity(\[cartItem\], \[newQuantity\]) display(\[MSG22\]) |
-| (3.2) | BR38 | **Displaying Rules:** After successful update, system refreshes cart view showing: updated quantity, updated item total, updated cart total. All calculations are updated in real-time without page reload. |
+| (2) | BR40 | **Validation Rules:** When customer changes product quantity, system validates:  \- New quantity must be a positive integer \- New quantity must be greater than 0 \- New quantity must not exceed available stock \- New quantity must not exceed maximum purchase limit (100) If validation fails, system displays error message (Refer to MSG 19\) and reverts to previous quantity. Otherwise, system updates quantity in "CARTS" table and displays success notification (Refer to MSG 22). if isValid(\[newQuantity\]):     throw error(\[MSG19\]) cartItem \= updateCartItemQuantity(\[cartItem\], \[newQuantity\]) display(\[MSG22\]) |
+| (3.2) | BR41 | **Displaying Rules:** After successful update, system refreshes cart view showing: updated quantity, updated item total, updated cart total. All calculations are updated in real-time without page reload. |
 
-##### 2.1.3.3 Remove Product from Cart
+##### 2.1.3.3 Remove Product from Cart {#2.1.3.3-remove-product-from-cart}
 
 ###### *Use Case Description*
 
@@ -679,20 +501,20 @@ Below are the main sections of this document:
 
 ###### *Sequence Flow*
 
-![][image29]
+![][image31]
 
 ###### *Activities Flow*
 
-![][image30]
+![][image32]
 
 ###### *Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR39 | **Validation Rules:** System validates product exists in customer's cart by querying "CARTS" table (Refer to "Carts" table in "DB Sheet" file). If product is not found in cart, system displays error message (Refer to MSG 23). Otherwise, system deletes cart item from "CARTS" table and displays success notification (Refer to MSG 24). if \!isExisted(\[cart\], \[product\]):     throw error(\[MSG23\]) cart.RemoveItem(\[product\]) display(\[MSG24\]) |
-| (3.2) | BR40 | **Displaying Rules:** After successful removal, system updates cart view removing the item from display and recalculating: cart subtotal, shipping estimate, and total amount. If cart becomes empty, displays empty cart message. |
+| (2) | BR42 | **Validation Rules:** System validates product exists in customer's cart by querying "CARTS" table (Refer to "Carts" table in "DB Sheet" file). If product is not found in cart, system displays error message (Refer to MSG 23). Otherwise, system deletes cart item from "CARTS" table and displays success notification (Refer to MSG 24). if \!isExisted(\[cart\], \[product\]):     throw error(\[MSG23\]) cart.RemoveItem(\[product\]) display(\[MSG24\]) |
+| (3.2) | BR43 | **Displaying Rules:** After successful removal, system updates cart view removing the item from display and recalculating: cart subtotal, shipping estimate, and total amount. If cart becomes empty, displays empty cart message. |
 
-##### 2.1.3.4 Purchase
+##### 2.1.3.4 Purchase {#2.1.3.4-purchase}
 
 ###### *Use Case Description*
 
@@ -706,22 +528,22 @@ Below are the main sections of this document:
 
 ###### *Activities Flow*
 
-![][image31]
+![][image33]
 
 ###### *Sequence Flow*
 
-![][image32]
+![][image34]
 
 ###### *Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2.2) | BR41 | **Validation Rules:** Before proceeding to checkout, system validates: \- If from cart view, all selected products in cart:    \- All products must still exist and be active in "PRODUCTS" table   \- All products must be in stock with sufficient quantity   \- Cart total must meet minimum order amount (if applicable) \- If direct from product view:   \- All products must still exist and be active in "PRODUCTS" table   \- All products must be in stock with sufficient quantity if \!isValidCartItems(\[cartItems\]):     throw error(\[MSG25\]) productIds \= filterProductIds(\[cartItems\]) products \= listProductsByIds(\[productIds\]) if \!isValidProduct(\[products\]):     throw error(\[MSG26\])    cartService.Checkout(\[cartItems\])  |
-| (2.4) | BR42 | **Redirect Rules:** If all validations pass, system closes Cart View and redirects customer to Checkout View with order data. System creates order record with order items, calculated totals, and customer information. (Refer to "Checkout" view in "View Description" file) |
+| (2.2) | BR44 | **Validation Rules:** Before proceeding to checkout, system validates: \- If from cart view, all selected products in cart:    \- All products must still exist and be active in "PRODUCTS" table   \- All products must be in stock with sufficient quantity   \- Cart total must meet minimum order amount (if applicable) \- If direct from product view:   \- All products must still exist and be active in "PRODUCTS" table   \- All products must be in stock with sufficient quantity if \!isValidCartItems(\[cartItems\]):     throw error(\[MSG25\]) productIds \= filterProductIds(\[cartItems\]) products \= listProductsByIds(\[productIds\]) if \!isValidProduct(\[products\]):     throw error(\[MSG26\])    cartService.Checkout(\[cartItems\])  |
+| (2.4) | BR45 | **Redirect Rules:** If all validations pass, system closes Cart View and redirects customer to Checkout View with order data. System creates order record with order items, calculated totals, and customer information. (Refer to "Checkout" view in "View Description" file) |
 
-#### 2.1.4 View Order Use Case
+#### 2.1.4 View Order Use Case {#2.1.4-view-order-use-case}
 
-##### 2.1.4.2 Search Order
+##### 2.1.4.2 Search Order {#2.1.4.2-search-order}
 
 ###### *Use Case Description*
 
@@ -735,20 +557,20 @@ Below are the main sections of this document:
 
 ###### *Sequence Flow*
 
-![][image33]
+![][image35]
 
 ###### *Activities Flow*
 
-![][image34]
+![][image36]
 
 ###### *Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (1) ,(2) | BR43 | **Searching Rules:** When customer enters search criteria, system uses Text\_change() method with debounce delay of 300ms. System queries "ORDERS" table (Refer to "orders" table in "DB Sheet" file). orders \= listOrders(\[params\]) \[params\] can include: \[orderIds\], \[userId\], \[orderStatus\] \[orderStatus\]: \[Pending, Processing, Shipped, Delivered, Cancelled\] |
-| (4) | BR44 | **Displaying Rules:** System displays "Order Management" view with filtered results showing matching orders. If no results found, displays "No orders found" message with the "Clear Search" option. Active filters are displayed as removable tags above the order list. |
+| (1) ,(2) | BR46 | **Searching Rules:** When customer enters search criteria, system uses Text\_change() method with debounce delay of 300ms. System queries "ORDERS" table (Refer to "orders" table in "DB Sheet" file). orders \= listOrders(\[params\]) \[params\] can include: \[orderIds\], \[userId\], \[orderStatus\] \[orderStatus\]: \[Pending, Processing, Shipped, Delivered, Cancelled\] |
+| (4) | BR47 | **Displaying Rules:** System displays "Order Management" view with filtered results showing matching orders. If no results found, displays "No orders found" message with the "Clear Search" option. Active filters are displayed as removable tags above the order list. |
 
-##### 2.1.4.3 View Order Detail
+##### 2.1.4.3 View Order Detail {#2.1.4.3-view-order-detail}
 
 ###### *Use Case Description*
 
@@ -762,18 +584,18 @@ Below are the main sections of this document:
 
 ###### *Activities Flow*
 
-![][image35]
+![][image37]
 
 ###### *Sequence Flow*
 
-###### ![][image36]*Business Rules*
+###### ![][image38]*Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR45 | **Querying Rules:** System queries order details from "ORDERS" and "ORDER\_ITEMS" tables (Refer to "orders" and "order\_items" tables in "DB Sheet" file). System also retrieves order timeline, shipping information, and payment details. order \= orderService.GetOrder(\[params\]) \[params\] can include: \[orderId\] |
-| (3) | BR46 | **Displaying Rules:** The system displays "Order Detail" view showing: order header (order number, date, status), product list (each with image, name, quantity, price, review button if delivered), order summary (total, shipping), address, payment provider, and available actions (Cancel Order, Return Product, Contact Support). (Refer to "Order Detail" view in "View Description" file) |
+| (2) | BR48 | **Querying Rules:** System queries order details from "ORDERS" and "ORDER\_ITEMS" tables (Refer to "orders" and "order\_items" tables in "DB Sheet" file). System also retrieves order timeline, shipping information, and payment details. order \= orderService.GetOrder(\[params\]) \[params\] can include: \[orderId\] |
+| (3) | BR49 | **Displaying Rules:** The system displays "Order Detail" view showing: order header (order number, date, status), product list (each with image, name, quantity, price, review button if delivered), order summary (total, shipping), address, payment provider, and available actions (Cancel Order, Return Product, Contact Support). (Refer to "Order Detail" view in "View Description" file) |
 
-##### 2.1.4.4 Cancel Order
+##### 2.1.4.4 Cancel Order {#2.1.4.4-cancel-order}
 
 ###### *Use Case Description*
 
@@ -787,21 +609,21 @@ Below are the main sections of this document:
 
 ###### *Activities Flow*
 
-![][image37]
+![][image39]
 
 ###### *Sequence Flow*
 
-![][image38]
+![][image40]
 
 ###### *Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR47 | **Displaying Rules:** The system displays a confirmation dialog asking customer to confirm order cancellation with message: "Are you sure you want to cancel this order? This action cannot be undone." |
-| (2.1), (2.2) | BR48 | **Selection Rules:** Customer must confirm cancellation. If customer clicks "Cancel" button, dialog closes and use case ends. If customer clicks "Confirm" button, system proceeds with cancellation. |
-| (3) | BR49 | **Validation Rules:** System validates order can be cancelled by checking:  \- Order status must be "Pending" or "Processing" \- Order must not have been shipped \- Order must belong to the customer If validation fails, system displays error message (Refer to MSG 27). Otherwise, system updates order status to "Cancelled" in "ORDERS" table, restores product inventory, processes refund if payment was made, and displays success notification (Refer to MSG 28). if \! \[order.status\] in \[‘Pending’, ‘Processing’\]:     throw error(MSG27) orderService.Cancel(order) display(MSG28) |
+| (2) | BR50 | **Displaying Rules:** The system displays a confirmation dialog asking customer to confirm order cancellation with message: "Are you sure you want to cancel this order? This action cannot be undone." |
+| (2.1), (2.2) | BR51 | **Selection Rules:** Customer must confirm cancellation. If customer clicks "Cancel" button, dialog closes and use case ends. If customer clicks "Confirm" button, system proceeds with cancellation. |
+| (3) | BR52 | **Validation Rules:** System validates order can be cancelled by checking:  \- Order status must be "Pending" or "Processing" \- Order must not have been shipped \- Order must belong to the customer If validation fails, system displays error message (Refer to MSG 27). Otherwise, system updates order status to "Cancelled" in "ORDERS" table, restores product inventory, processes refund if payment was made, and displays success notification (Refer to MSG 28). if \! \[order.status\] in \[‘Pending’, ‘Processing’\]:     throw error(MSG27) orderService.Cancel(order) display(MSG28) |
 
-##### 2.1.4.5 Return Product
+##### 2.1.4.5 Return Product {#2.1.4.5-return-product}
 
 ###### *Use Case Description*
 
@@ -815,21 +637,21 @@ Below are the main sections of this document:
 
 ###### *Activities Flow*
 
-![][image39]
+![][image41]
 
 ###### *Sequence Flow*
 
-![][image40]
+![][image42]
 
 ###### *Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR50 | **Displaying Rules:** The system displays a confirmation dialog asking customer to confirm product return with message: "Do you want to return this product? Please ensure the product is in original condition with all accessories." Also displays return policy summary and estimated refund amount. (Refer to "Confirmation Dialog" view in "View Description" file) |
-| (2.1), (2.2) | BR51 | **Selection Rules:** Customer must confirm return. If customer clicks "Cancel" button, dialog closes and use case ends. If customer clicks "Confirm" button, system proceeds with return request. |
-| (3) | BR52 | **Validation Rules:** System validates product can be returned by checking:  \- Order status must be "Delivered" \- Product must be within return period (typically 30 days from delivery) \- Product must not be marked as non-returnable \- Product must not have been previously returned If validation fails, system displays error message (Refer to MSG 29). Otherwise, system creates return request in "RETURN\_REQUESTS" table, updates product status to "Return Requested" in "ORDER\_ITEMS" table, sends return instructions to customer's email, creates return record in "RETURN\_REQUEST" table, and displays success notification with return instructions (Refer to MSG 30). if \!isOrderValid(\[OrderItem\]):     throw(\[MSG29\]) \[product\] \= productService.get(\[orderItem.productId\]) if \!isProductValid(\[product\]):     throw error(\[MSG29\]) orderService.Return(\[orderItem\]) display(\[MSG30\]) |
+| (2) | BR53 | **Displaying Rules:** The system displays a confirmation dialog asking customer to confirm product return with message: "Do you want to return this product? Please ensure the product is in original condition with all accessories." Also displays return policy summary and estimated refund amount. (Refer to "Confirmation Dialog" view in "View Description" file) |
+| (2.1), (2.2) | BR54 | **Selection Rules:** Customer must confirm return. If customer clicks "Cancel" button, dialog closes and use case ends. If customer clicks "Confirm" button, system proceeds with return request. |
+| (3) | BR55 | **Validation Rules:** System validates product can be returned by checking:  \- Order status must be "Delivered" \- Product must be within return period (typically 30 days from delivery) \- Product must not be marked as non-returnable \- Product must not have been previously returned If validation fails, system displays error message (Refer to MSG 29). Otherwise, system creates return request in "RETURN\_REQUESTS" table, updates product status to "Return Requested" in "ORDER\_ITEMS" table, sends return instructions to customer's email, creates return record in "RETURN\_REQUEST" table, and displays success notification with return instructions (Refer to MSG 30). if \!isOrderValid(\[OrderItem\]):     throw error(\[MSG29\]) \[product\] \= productService.get(\[orderItem.productId\]) if \!isProductValid(\[product\]):     throw error(\[MSG29\]) orderService.Return(\[orderItem\]) display(\[MSG30\]) |
 
-##### 2.1.4.6 Review Product
+##### 2.1.4.6 Review Product {#2.1.4.6-review-product}
 
 ###### *Use Case Description*
 
@@ -843,23 +665,23 @@ Below are the main sections of this document:
 
 ###### *Sequence Flow*
 
-![][image41]
+![][image43]
 
 ###### *Activities Flow*
 
-![][image42]
+![][image44]
 
 ###### *Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR53 | **Displaying Rules:** The system displays "Product Review" form with empty fields including: star rating selector (1-5 stars), review text area (max 500 characters), image upload section (optional), and Submit button. (Refer to "Product Review" view in "View Description" file) |
-| (4) | BR54 | **Validation Rules:** System validates review content in real-time:  \- Star rating must be selected (required) \- Review text must not be empty and must be 50-500 characters \- If image is uploaded, it must be \< 2MB and in JPG/PNG format if isRatingValid(\[rating\]) && isReviewValid(\[review\]) && isImageValid(\[image\]):    productService.CreateReview(\[product\], \[review\], \[rating\], \[image\]) else:     throw error(\[MSG31\]) |
-| (7) | BR55 | **Validation Rules:** When customer clicks "Submit" button, system validates review data: \- Customer must have purchased the product \- Customer must not have reviewed this product before \- All required fields must be filled \- Image (if provided) must be valid If validation fails, system displays error message (Refer to MSG 32). Otherwise, system stores review in "REVIEWS" table, updates product rating statistics, and displays success notification (Refer to MSG 33\) with message "Thank you for your review\!." if \!(isPurchased(\[customerId\], \[product\]) && listProductReviews(\[product\], \[customerId\]) \== 0):     throw error(\[MSG32\]) createReview(\[review\], \[product\]) display(\[MSG33\]) |
+| (2) | BR56 | **Displaying Rules:** The system displays "Product Review" form with empty fields including: star rating selector (1-5 stars), review text area (max 500 characters), image upload section (optional), and Submit button. (Refer to "Product Review" view in "View Description" file) |
+| (4) | BR57 | **Validation Rules:** System validates review content in real-time:  \- Star rating must be selected (required) \- Review text must not be empty and must be 50-500 characters \- If image is uploaded, it must be \< 2MB and in JPG/PNG format if isRatingValid(\[rating\]) && isReviewValid(\[review\]) && isImageValid(\[image\]):    productService.CreateReview(\[product\], \[review\], \[rating\], \[image\]) else:     throw error(\[MSG31\]) |
+| (7) | BR58 | **Validation Rules:** When customer clicks "Submit" button, system validates review data: \- Customer must have purchased the product \- Customer must not have reviewed this product before \- All required fields must be filled \- Image (if provided) must be valid If validation fails, system displays error message (Refer to MSG 32). Otherwise, system stores review in "REVIEWS" table, updates product rating statistics, and displays success notification (Refer to MSG 33\) with message "Thank you for your review\!." if \!(isPurchased(\[customerId\], \[product\]) && listProductReviews(\[product\], \[customerId\]) \== 0):     throw error(\[MSG32\]) createReview(\[review\], \[product\]) display(\[MSG33\]) |
 
-#### 2.1.5 Contact Support Use Case
+#### 2.1.5 Contact Support Use Case {#2.1.5-contact-support-use-case}
 
-##### 2.1.5.1 Contact Support
+##### 2.1.5.1 Contact Support {#2.1.5.1-contact-support}
 
 ###### *Use Case Description*
 
@@ -873,22 +695,22 @@ Below are the main sections of this document:
 
 ###### *Activities Flow*
 
-![][image43]
+![][image45]
 
 ###### *Sequence Flow*
 
-![][image44]
+![][image46]
 
 ###### *Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR56 | **Redirect Rules:** The system redirects customer to third-party chat support interface (e.g., Facebook, Email). System passes customer context including: customer ID (if signed in), current page URL, and basic customer information to pre-populate chat. |
-| (3) | BR57 | **Interaction Rules:** Customer interacts with support chat independently. System does not control or monitor chat interactions. Chat history and support tickets are managed by the third-party support system. |
+| (2) | BR59 | **Redirect Rules:** The system redirects customer to third-party chat support interface (e.g., Facebook, Email). System passes customer context including: customer ID (if signed in), current page URL, and basic customer information to pre-populate chat. |
+| (3) | BR60 | **Interaction Rules:** Customer interacts with support chat independently. System does not control or monitor chat interactions. Chat history and support tickets are managed by the third-party support system. |
 
-#### 2.1.6 View Customer Self Report Use Case
+#### 2.1.6 View Customer Self Report Use Case {#2.1.6-view-customer-self-report-use-case}
 
-##### 2.1.6.1 View Customer Self Report
+##### 2.1.6.1 View Customer Self Report {#2.1.6.1-view-customer-self-report}
 
 ###### *Use Case Description*
 
@@ -902,23 +724,23 @@ Below are the main sections of this document:
 
 ###### *Activities Flow*
 
-![][image45]
+![][image47]
 
 ###### *Sequence Flow*
 
-![][image46]
+![][image48]
 
 ###### *Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR58 | **Displaying Rules:** The system displays "Customer Report" view with empty report charts and filter options. Available report types include: Purchase History, Spending Analysis, Order Statistics, Product Categories. Time range options include: Last 7 days, Last 30 days, Last 3 months, Last year, Custom range. |
-| (5) | BR59 | **Querying Rules:** When customer selects report type and time range, system queries data from "ORDERS", "ORDER\_ITEMS", and "CUSTOMER\_REPORT" tables (Refer to corresponding tables in "DB Sheet" file) using SQL based on selected options. System calculates statistics including: total orders, total spending, average order value, most purchased categories, spending trends. reportService.getCustomerReport(\[params\]) \[params\] can include: \[customerId\] |
-| (6) | BR60 | **Displaying Rules:** System displays report data in visual format using charts and graphs:  \- Bar chart for spending by time period \- Pie chart for spending by category \- Line chart for order trends \- Table for top purchased products System also displays summary statistics cards showing key metrics. |
+| (2) | BR61 | **Displaying Rules:** The system displays "Customer Report" view with empty report charts and filter options. Available report types include: Purchase History, Spending Analysis, Order Statistics, Product Categories. Time range options include: Last 7 days, Last 30 days, Last 3 months, Last year, Custom range. |
+| (5) | BR62 | **Querying Rules:** When customer selects report type and time range, system queries data from "ORDERS", "ORDER\_ITEMS", and "CUSTOMER\_REPORT" tables (Refer to corresponding tables in "DB Sheet" file) using SQL based on selected options. System calculates statistics including: total orders, total spending, average order value, most purchased categories, spending trends. reportService.getCustomerReport(\[params\]) \[params\] can include: \[customerId\] |
+| (6) | BR63 | **Displaying Rules:** System displays report data in visual format using charts and graphs:  \- Bar chart for spending by time period \- Pie chart for spending by category \- Line chart for order trends \- Table for top purchased products System also displays summary statistics cards showing key metrics. |
 
-#### 2.1.7 View Document Use Case
+#### 2.1.7 View Document Use Case {#2.1.7-view-document-use-case}
 
-##### 2.1.7.1 View Document
+##### 2.1.7.1 View Document {#2.1.7.1-view-document}
 
 ###### *Use Case Description*
 
@@ -932,22 +754,22 @@ Below are the main sections of this document:
 
 ###### *Activities Flow*
 
-![][image47]
+![][image49]
 
 ###### *Sequence Flow*
 
-###### ![][image48]*Business Rules*
+###### ![][image50]*Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR61 | **Querying Rules:** System queries documents from "DOCUMENT" table (Refer to "Document" table in "DB Sheet" file). Documents are organized by categories: Getting Started, Shopping Guide, Payment & Shipping, Returns & Refunds, Account Management, Terms & Policies. documentService.listDocuments(\[params\]) \[params\] can include: \[status\] |
-| (3) | BR62 | **Displaying Rules:** The system displays "Document Management" view showing: document categories in sidebar, document list with title and brief description, search box for filtering documents. |
-| (3.1) | BR63 | **Searching Rules:** If customer enters search criteria, system queries documents. documentService.Search(\[keyword\]) |
-| (6) | BR64 | **Displaying Rules:** When a customer selects a document, system displays "Document Detail" view showing: document title, last updated date, full document content (formatted with headings, lists, images), related documents section, "Was this helpful?" feedback buttons. |
+| (2) | BR64 | **Querying Rules:** System queries documents from "DOCUMENT" table (Refer to "Document" table in "DB Sheet" file). Documents are organized by categories: Getting Started, Shopping Guide, Payment & Shipping, Returns & Refunds, Account Management, Terms & Policies. documentService.listDocuments(\[params\]) \[params\] can include: \[status\] |
+| (3) | BR65 | **Displaying Rules:** The system displays "Document Management" view showing: document categories in sidebar, document list with title and brief description, search box for filtering documents. |
+| (3.1) | BR66 | **Searching Rules:** If customer enters search criteria, system queries documents. documentService.Search(\[keyword\]) |
+| (6) | BR67 | **Displaying Rules:** When a customer selects a document, system displays "Document Detail" view showing: document title, last updated date, full document content (formatted with headings, lists, images), related documents section, "Was this helpful?" feedback buttons. |
 
-#### 2.1.8 Manage Product Use Case (Staff)
+#### 2.1.8 Manage Product Use Case (Staff) {#2.1.8-manage-product-use-case-(staff)}
 
-##### 2.1.8.2 Add Product
+##### 2.1.8.2 Add Product {#2.1.8.2-add-product}
 
 ###### *Use Case Description*
 
@@ -961,21 +783,21 @@ Below are the main sections of this document:
 
 ###### *Activities Flow*
 
-![][image49]
+![][image51]
 
 ###### *Sequence Flow*
 
-![][image50]
+![][image52]
 
 ###### *Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR65 | **Displaying Rules:** The system displays "Product Detail" form with empty fields including: product name, category dropdown, description editor, price, stock quantity, SKU, brand, options, option values, product images uploader, attribute selector and attribute values selector (can create new value in place), Option creation section, creating Variant Section, and Save button. (Refer to "Add Product” view in "View Description" file) |
-| (4) | BR66 | **Validation Rules:** System validates product data in real-time:  \- Product name: required, 3-200 characters \- Category: required, must select from predefined categories \- Description: required, minimum 10 characters \- Price: required, must be positive number, maximum 10 digits \- Stock quantity: required, must be non-negative integer \- SKU: required, unique, alphanumeric, 5-30 characters \- Product images: at least 1 required, each \< 5MB, JPG/PNG format \- Options: If product has variants, there must be options with values, and variant must be formed by those option values. A variant cannot be formed by matrix of the same option’s values. Each variant cannot be formed by the same matrix option values. If product doesn’t have variants, it must have one variant (no option and option value) \- Attribute: Can be omitted, or multiple selected if \!(isNameValid(\[name\]) && isCategoryValid(\[category\]) && isDescriptionValid(\[Description\]) && isPriceValid(\[price\]) && isValid(\[stockQuantity\]) && isValid(\[sku\]) && isValid(\[images\]) && isValid(\[optionArgs\])):     throw error(\[MSG34\]) \[product\] \= createProduct(\[name\], \[description\], \[price\], \[stockQuantity\], \[sku\], \[images\]) \[product\].setCategory(category) \[product\].addAttributes(attributes) \[options\] \= createOptions(\[optionArgs\]) \[product\].addOptions(\[options\]) for each \[variantArg\] in \[variantArgs\]:     \[variant\] \= createVariant(\[variantArg.sku\], \[variantArg.price\], \[variantArg.quantity\])     \[variant\].setOptionValues(\[variantArg.optionValues\])     \[product\].addVariant(\[variant\]) saveProduct(\[product\]) |
-| (6) | BR66 | **Validation Rules:** When staff clicks "Save" button, system validates product data:  \- Check if SKU is unique in "PRODUCTS" table If validation fails, system displays error message (Refer to MSG 35). Otherwise, system stores product data in "PRODUCTS" table, stores product images in "PRODUCT\_IMAGES" table, and displays success notification (Refer to MSG 36). System then closes the form and refreshes product list. if isExisted(\[product.sku\]):     throw error(\[MSG36\]) productRepo(\[product\]) |
+| (2) | BR68 | **Displaying Rules:** The system displays "Product Detail" form with empty fields including: product name, category dropdown, description editor, price, stock quantity, SKU, brand, options, option values, product images uploader, attribute selector and attribute values selector (can create new value in place), Option creation section, creating Variant Section, and Save button. (Refer to "Add Product” view in "View Description" file) |
+| (4) | BR69 | **Validation Rules:** System validates product data in real-time:  \- Product name: required, 3-200 characters \- Category: required, must select from predefined categories \- Description: required, minimum 10 characters \- Price: required, must be positive number, maximum 10 digits \- Stock quantity: required, must be non-negative integer \- SKU: required, unique, alphanumeric, 5-30 characters \- Product images: at least 1 required, each \< 5MB, JPG/PNG format \- Options: If product has variants, there must be options with values, and variant must be formed by those option values. A variant cannot be formed by matrix of the same option’s values. Each variant cannot be formed by the same matrix option values. If product doesn’t have variants, it must have one variant (no option and option value) \- Attribute: Can be omitted, or multiple selected if \!(isNameValid(\[name\]) && isCategoryValid(\[category\]) && isDescriptionValid(\[Description\]) && isPriceValid(\[price\]) && isValid(\[stockQuantity\]) && isValid(\[sku\]) && isValid(\[images\]) && isValid(\[optionArgs\])):     throw error(\[MSG34\]) \[product\] \= createProduct(\[name\], \[description\], \[price\], \[stockQuantity\], \[sku\], \[images\]) \[product\].setCategory(category) \[product\].addAttributes(attributes) \[options\] \= createOptions(\[optionArgs\]) \[product\].addOptions(\[options\]) for each \[variantArg\] in \[variantArgs\]:     \[variant\] \= createVariant(\[variantArg.sku\], \[variantArg.price\], \[variantArg.quantity\])     \[variant\].setOptionValues(\[variantArg.optionValues\])     \[product\].addVariant(\[variant\]) saveProduct(\[product\]) |
+| (6) | BR70 | **Validation Rules:** When staff clicks "Save" button, system validates product data:  \- Check if SKU is unique in "PRODUCTS" table If validation fails, system displays error message (Refer to MSG 35). Otherwise, system stores product data in "PRODUCTS" table, stores product images in "PRODUCT\_IMAGES" table, and displays success notification (Refer to MSG 36). System then closes the form and refreshes product list. if isExisted(\[product.sku\]):     throw error(\[MSG36\]) productRepo(\[product\]) |
 
-##### 2.1.8.3 Update Product
+##### 2.1.8.3 Update Product {#2.1.8.3-update-product}
 
 ###### *Use Case Description*
 
@@ -989,22 +811,22 @@ Below are the main sections of this document:
 
 ###### *Activities Flow*
 
-![][image51]
+![][image53]
 
 ###### *Sequence Flow*
 
-![][image52]
+![][image54]
 
 ###### *Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR67 | **Querying Rules:** System queries product details from "PRODUCTS", "PRODUCT\_IMAGES" tables |
-| (3) | BR68 | **Displaying Rules:** The system displays "Product Detail" form filled with current product data including: product relate fields (name, description, images, attributes, options, variants), and Save button. (Refer to "Product Detail" view in "View Description" file) |
-| (5) | BR69 | **Validation Rules:** System validates updated product data in real-time using same validation rules as Add Product. If validation fails, system displays error message (Refer to MSG 34). |
-| (7) | BR70 | **Validation Rules:** When staff clicks "Save" button, system validates updated data:  \- Validate all required fields are filled and valid \- Validate new images (if uploaded) are valid \- At least 1 product image must remain \- Option and values can only be updated (name), no create or delete \- Variants can be deleted or created or updated \- Attribute value can be added or removed If validation fails, system displays error message (Refer to MSG 35). Otherwise, system updates product data in "PRODUCTS" table, adds/deletes product images in "PRODUCT\_IMAGES" “PRODUCT\_VARIANTS”, “OPTIONS”, “OPTION\_VALUES” and other related tables (the composition tables,...) as needed, updates modified timestamp, and displays success notification (Refer to MSG 37). System then closes the form and refreshes product list. validationErr \= productService.ValidateUpdate(\[updatedData\]) if validationErr:     throw error(\[MSG35\]) if len(\[updatedData.Images\]) \== 0:     throw error(MSG35) product.Update(\[updatedData.Name\], \[updatedData.Description, \[updatedData.CategoryID\]) product.AddImages(\[updatedData.Images\]) product.AddAttributeValueIDs(\[updatedData.AttributeValueIDs\]) for option in updatedData.Options:     product.UpdateOption(\[option.ID\], \[option.Name\]) product.AddVariants(\[updatedData.NewVariants\]) product.UpdateVariantFields(\[updatedData.UpdatedVariants\]) product.RemoveVariants(\[updatedData.DeletedVariantIDs\]) product.UpdatedAt \= now() productRepo.Save(\[product\]) display(\[MSG37\]) |
+| (2) | BR71 | **Querying Rules:** System queries product details from "PRODUCTS", "PRODUCT\_IMAGES" tables |
+| (3) | BR72 | **Displaying Rules:** The system displays "Product Detail" form filled with current product data including: product relate fields (name, description, images, attributes, options, variants), and Save button. (Refer to "Product Detail" view in "View Description" file) |
+| (5) | BR73 | **Validation Rules:** System validates updated product data in real-time using same validation rules as Add Product. If validation fails, system displays error message (Refer to MSG 34). |
+| (7) | BR74 | **Validation Rules:** When staff clicks "Save" button, system validates updated data:  \- Validate all required fields are filled and valid \- Validate new images (if uploaded) are valid \- At least 1 product image must remain \- Option and values can only be updated (name), no create or delete \- Variants can be deleted or created or updated \- Attribute value can be added or removed If validation fails, system displays error message (Refer to MSG 35). Otherwise, system updates product data in "PRODUCTS" table, adds/deletes product images in "PRODUCT\_IMAGES" “PRODUCT\_VARIANTS”, “OPTIONS”, “OPTION\_VALUES” and other related tables (the composition tables,...) as needed, updates modified timestamp, and displays success notification (Refer to MSG 37). System then closes the form and refreshes product list. validationErr \= productService.ValidateUpdate(\[updatedData\]) if validationErr:     throw error(\[MSG35\]) if len(\[updatedData.Images\]) \== 0:     throw error(MSG35) product.Update(\[updatedData.Name\], \[updatedData.Description, \[updatedData.CategoryID\]) product.AddImages(\[updatedData.Images\]) product.AddAttributeValues(\[updatedData.AttributeValues\]) for option in updatedData.Options:     product.UpdateOption(\[option.ID\], \[option.Name\]) product.AddVariants(\[updatedData.NewVariants\]) product.UpdateVariantFields(\[updatedData.UpdatedVariants\]) product.RemoveVariants(\[updatedData.DeletedVariantIDs\]) product.UpdatedAt \= now() productRepo.Save(\[product\]) display(\[MSG37\]) |
 
-##### 2.1.8.4 Delete Product
+##### 2.1.8.4 Delete Product {#2.1.8.4-delete-product}
 
 ###### *Use Case Description*
 
@@ -1018,21 +840,21 @@ Below are the main sections of this document:
 
 ###### *Activities Flow*
 
-![][image53]
+![][image55]
 
 ###### *Sequence Flow*
 
-![][image54]
+![][image56]
 
 ###### *Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR71 | **Displaying Rules:** The system displays a confirmation dialog asking staff to confirm product deletion with message: "Are you sure you want to delete this product? This action cannot be undone. All product data including reviews will be removed." (Refer to "Confirmation Dialog" view in "View Description" file) |
-| (2.1), (2.2) | BR72 | **Selection Rules:** Staff must confirm deletion. If staff clicks "Cancel" button, dialog closes and the use case ends. If staff clicks "Confirm" button, system proceeds with deletion. |
-| (3) | BR73 | **Validation Rules:** System validates product can be deleted by checking:  \- Product must not have pending orders The Delete method will soft delete the product, product variant, product options and product option values, product images. The attribute values linked with the product will not be affected. If validation fails, system displays error message (Refer to MSG 38). Otherwise, system performs soft delete by updating status to "Deleted" in "PRODUCTS" table (keeping data for audit purposes), removes product from search index, archives product images, archives product reviews, and displays success notification (Refer to MSG 39). System then refreshes product list. if orderService.IsPending(\[OrderItem\]):     throw error(\[MSG38\]) \[product\] \= productService.Get(\[OrderItem.productId\]) productService.Delete(\[product\]) display(\[MSG29\]) |
+| (2) | BR75 | **Displaying Rules:** The system displays a confirmation dialog asking staff to confirm product deletion with message: "Are you sure you want to delete this product? This action cannot be undone. All product data including reviews will be removed." (Refer to "Confirmation Dialog" view in "View Description" file) |
+| (2.1), (2.2) | BR76 | **Selection Rules:** Staff must confirm deletion. If staff clicks "Cancel" button, dialog closes and the use case ends. If staff clicks "Confirm" button, system proceeds with deletion. |
+| (3) | BR77 | **Validation Rules:** System validates product can be deleted by checking:  \- Product must not have pending orders The Delete method will soft delete the product, product variant, product options and product option values, product images. The attribute values linked with the product will not be affected. If validation fails, system displays error message (Refer to MSG 38). Otherwise, system performs soft delete by updating status to "Deleted" in "PRODUCTS" table (keeping data for audit purposes), removes product from search index, archives product images, archives product reviews, and displays success notification (Refer to MSG 39). System then refreshes product list. if orderService.IsPending(\[OrderItem\]):     throw error(\[MSG38\]) \[product\] \= productService.Get(\[OrderItem.productId\]) productService.Delete(\[product\]) display(\[MSG29\]) |
 
-##### 2.1.8.5 Search Product
+##### 2.1.8.5 Search Product {#2.1.8.5-search-product}
 
 ###### *Use Case Description*
 
@@ -1046,20 +868,20 @@ Below are the main sections of this document:
 
 ###### *Activities Flow*
 
-![][image55]
+![][image57]
 
 ###### *Sequence Flow*
 
-![][image56]
+![][image58]
 
 ###### *Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR74 | **Searching Rules:** When the customer enters search criteria, the system handles the search request with debounce delay of 300ms. System queries data in "PRODUCTS" table (Refer to "Products" table in "DB Sheet" file). System uses Redis cache to store and retrieve search results for popular queries to improve performance. productService.ListProducts(\[params\]) \[params\] can include: \[keyword\], \[categories\], \[sortByRate\], \[sortByPrice\], \[isDeleted\] |
-| (3) | BR75 | **Displaying Rules:** System displays "Product Management" view with filtered results showing matching products. Active filters are displayed as removable tags above the product table. Result count is displayed. If no results found, displays "No products found" message with "Clear Search" option.product |
+| (2) | BR78 | **Searching Rules:** When the customer enters search criteria, the system handles the search request with debounce delay of 300ms. System queries data in "PRODUCTS" table (Refer to "Products" table in "DB Sheet" file). System uses Redis cache to store and retrieve search results for popular queries to improve performance. productService.ListProducts(\[params\]) \[params\] can include: \[keyword\], \[categories\], \[sortByRate\], \[sortByPrice\], \[isDeleted\] |
+| (3) | BR79 | **Displaying Rules:** System displays "Product Management" view with filtered results showing matching products. Active filters are displayed as removable tags above the product table. Result count is displayed. If no results found, displays "No products found" message with "Clear Search" option.product |
 
-##### 2.1.8.6 Delete Review
+##### 2.1.8.6 Delete Review {#2.1.8.6-delete-review}
 
 ###### *Use Case Description*
 
@@ -1073,58 +895,29 @@ Below are the main sections of this document:
 
 ###### *Activities Flow*
 
-![][image57]
-
-###### *Sequence Flow*
-
-###### ![][image58]*Business Rules*
-
-| Activity | BR Code | Description |
-| :---- | :---- | :---- |
-| (2) | BR76 | **Displaying Rules:** The system displays a confirmation dialog asking staff to confirm review deletion with message: "Are you sure you want to delete this review? This action cannot be undone." Dialog also shows review content preview. (Refer to "Confirmation Dialog" view in "View Description" file) |
-| (2.1), (2.2) | BR77 | **Selection Rules:** Staff must confirm deletion. If staff clicks "Cancel" button, dialog closes and use case ends. If staff clicks "Confirm" button, system proceeds with deletion. |
-| (3) | BR78 | **Validation Rules:** System validates review exists in "REVIEWS" table (Refer to "Reviews" table in "DB Sheet" file) If review not found, system displays error message (Refer to MSG 40). Otherwise, system deletes review from "REVIEWS" table, deletes associated review images from "REVIEW\_IMAGE" table, updates product rating statistics (recalculates average rating without deleted review), sends notification to review author about deletion (if applicable), and displays success notification (Refer to MSG 41). System then refreshes review list. review \= reviewService.Get(\[ReviewID\]) if review \== null:     throw error(\[MSG40\]) reviewService.Delete(review) display(\[MSG41\]) \[product\] \= productService.Get(\[review.ProductId\]) productService.UpdateAvgRating(\[product\]) |
-
-#### 2.1.9 Manage User Use Case
-
-##### 2.1.9.2 Search User
-
-###### *Use Case Description*
-
-| Name | Search User |
-| :---- | :---- |
-| **Description** | This use case allows staff and admin to search for users in the system. |
-| **Actor** | Staff, Admin |
-| **Trigger** | When the actor enters search criteria in the user search box. |
-| **Pre-condition** | Actor's device must be connected to the internet. Actor must be signed in with appropriate privileges. |
-| **Post-condition** | Filtered user results are displayed. |
-
-###### *Activities Flow*
-
 ![][image59]
 
 ###### *Sequence Flow*
 
-![][image60]
-
-###### *Business Rules*
+###### ![][image60]*Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR79 | **Searching Rules:** When actor enters search criteria, system handles search with debounce delay of 300ms. System queries users from auth service persistent storage. userService.Search(\[params\]) \[params\] can include: \[name\], \[email\] |
-| (3) | BR80 | **Displaying Rules:** Result count is displayed. If no results found, displays "No users found" message with "Clear Search" option. |
+| (2) | BR80 | **Displaying Rules:** The system displays a confirmation dialog asking staff to confirm review deletion with message: "Are you sure you want to delete this review? This action cannot be undone." Dialog also shows review content preview. (Refer to "Confirmation Dialog" view in "View Description" file) |
+| (2.1), (2.2) | BR81 | **Selection Rules:** Staff must confirm deletion. If staff clicks "Cancel" button, dialog closes and use case ends. If staff clicks "Confirm" button, system proceeds with deletion. |
+| (3) | BR82 | **Validation Rules:** System validates review exists in "REVIEWS" table (Refer to "Reviews" table in "DB Sheet" file) If review not found, system displays error message (Refer to MSG 40). Otherwise, system deletes review from "REVIEWS" table, deletes associated review images from "REVIEW\_IMAGE" table, updates product rating statistics (recalculates average rating without deleted review), sends notification to review author about deletion (if applicable), and displays success notification (Refer to MSG 41). System then refreshes review list. review \= reviewService.Get(\[ReviewID\]) if review \== null:     throw error(\[MSG40\]) reviewService.Delete(review) display(\[MSG41\]) \[product\] \= productService.Get(\[review.ProductId\]) productService.UpdateAvgRating(\[product\]) |
 
-##### 2.1.9.3 Change User Roles (Admin only)
+##### 2.1.8.7 Add Category {#2.1.8.7-add-category}
 
 ###### *Use Case Description*
 
-| Name | Change User Roles |
+| Name | Add Category |
 | :---- | :---- |
-| **Description** | This use case allows admin to change a user's role in the system. |
-| **Actor** | Admin |
-| **Trigger** | When the admin clicks "Change Role" button for a user. |
-| **Pre-condition** | Admin's device must be connected to the internet. Admin must be signed in with admin privileges. User must exist in the system. |
-| **Post-condition** | User's role is updated in the system. |
+| **Description** | This use case allows staff to add a new product category to the system. |
+| **Actor** | Staff |
+| **Trigger** | When the staff clicks "Add Category" button. |
+| **Pre-condition** | Staff's device must be connected to the internet. Staff must be signed in with staff privileges. |
+| **Post-condition** | New category is created and stored in the system. |
 
 ###### *Activities Flow*
 
@@ -1132,28 +925,27 @@ Below are the main sections of this document:
 
 ###### *Sequence Flow*
 
-![][image62]
+###### *![][image62]*
 
 ###### *Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR103 | **Querying Rules:** System queries user details from auth service persistent storage. System retrieves current role and associated permissions. userService.List() |
-| (3) | BR104 | **Displaying Rules:** The system displays "User Detail" view showing: current user information, current role badge, role selector dropdown (Customer, Staff, Admin), role descriptions, and "Change Roles" button. |
-| (5) | BR105 | **Validation Rules:** System validates role change in real-time:  \- New role must be different from current role \- New role must be one of: Customer, Staff, Admin \- Admin cannot change their own role to prevent lockout if \!(\[newRole\] \== \[currentRole\] && \[newRole\] in \[‘Customer’, ‘Staff’, ‘Admin’\] && \[currentRole\] \!= ‘Admin’):     throw error(\[MSG42\]) userService.changeRole(\[user\], \[newRole\]) |
-| (7) | BR106 | **Validation Rules:** When admin clicks "Change Roles" button, system validates: \- User is not the current admin (self) \- New role is valid \- No pending administrative actions by user (if demoting from Staff/Admin) If validation fails, system displays error message (Refer to MSG 43). Otherwise, system updates role in auth service persistent storage, update the user session (invalidate current session, force user to get new session via refresh token), and displays success notification (Refer to MSG 44). System then refreshes user list. if \!(\[newRole\] \== \[currentRole\] && \[newRole\] in \[‘Customer’, ‘Staff’, ‘Admin’\] && \[currentRole\] \!= ‘Admin’):     throw error(\[MSG43\]) user.UpdateRole(\[newRole\]) userService.Save(\[user\]) session.Refresh() display(\[MSG44\]) |
+| (2) | BR83 | **Displaying Rules:** The system displays "Category Form" view with empty field for category name. |
+| (4) | BR84 | **Validation Rules:** System validates category name in real-time:  \- Category name: required, 2-100 characters, alphanumeric with spaces allowed  \- Category name must not contain only spaces  \- Category name must start with alphanumeric character  if \!isNameValid(\[name\]):          throw error(\[MSG53\]) move to step (5) |
+| (6) | BR85 | **Validation Rules:** When staff clicks "Save" button, system validates category data:  \- Check if category name already exists in "CATEGORIES" table (case-insensitive comparison)  \- Validate category name format If validation fails, system displays error message (Refer to MSG 54). Otherwise, system stores category data in "CATEGORIES" table with created\_at timestamp and displays success notification (Refer to MSG 55). System then closes the form and refreshes category list. if isExisted(\[categoryName\]):           throw error(\[MSG54\])  \[category\] \= createCategory(\[name\])  categoryRepo.Save(\[category\])  display(\[MSG55\]) |
 
-##### 2.1.9.4 Delete User (Admin only)
+##### 2.1.8.8 Add Attribute {#2.1.8.8-add-attribute}
 
 ###### *Use Case Description*
 
-| Name | Delete User |
+| Name | Add Attribute |
 | :---- | :---- |
-| **Description** | This use case allows admin to delete a user account from the system. |
-| **Actor** | Admin |
-| **Trigger** | When the admin clicks "Delete" button for a user. |
-| **Pre-condition** | Admin's device must be connected to the internet. Admin must be signed in with admin privileges. User must exist in the system. |
-| **Post-condition** | User account is deleted from the system. |
+| **Description** | This use case allows staff to add a new product attribute with its values to the system. |
+| **Actor** | Staff |
+| **Trigger** | When the staff clicks "Add Attribute" button. |
+| **Pre-condition** | Staff's device must be connected to the internet. Staff must be signed in with staff privileges. |
+| **Post-condition** | New attribute with its values is created and stored in the system. |
 
 ###### *Activities Flow*
 
@@ -1167,21 +959,23 @@ Below are the main sections of this document:
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR107 | **Displaying Rules:** The system displays a confirmation dialog asking admin to confirm user deletion with message: "Are you sure you want to delete this user account? This action cannot be undone. All user data will be removed." Dialog shows user's name and email for confirmation. (Refer to "Confirmation Dialog" view in "View Description" file) |
-| (2.1), (2.2) | BR108 | **Selection Rules:** Admin must confirm deletion. If admin clicks "Cancel" button, dialog closes and use case ends. If admin clicks "Confirm" button, system proceeds with deletion. |
-| (3) | BR109 | **Validation Rules:** System validates user can be deleted by checking: \- User is not the current admin (self) \- User must not have pending orders (orders must be completed or cancelled) If validation fails, system displays error message (Refer to MSG 45). Otherwise, system will delete user data (from auth service) permanently, and displays success notification (Refer to MSG 46). System then refreshes user list. if \!(\[currentRole\] \!= ‘Admin’) && hasPendingOrder(\[userId\]):     throw error(\[MSG45\]) display(\[MSG46\]) |
+| (2) | BR86 | **Displaying Rules:** The system displays "Attribute Form" view with fields for attribute name and a dynamic list for attribute values with "Add Value" button. |
+| (4) | BR87 | **Validation Rules:** System validates attribute data in real-time: \- Attribute code: required, 2-50 character \- Attribute name: required, 2-100 characters, alphanumeric with spaces allowed  \- Attribute name must not contain only spaces \- At least one attribute value must be provided  \- Attribute values: each value 1-100 characters, must not be empty or contain only spaces \- Attribute values must be unique within the attribute (case-insensitive)  if \!(isNameValid(\[attributeName\]) && len(\[attributeValues\]) \> 0 && areValuesValid(\[attributeValues\]) && areValuesUnique(\[attributeValues\])):          throw error(\[MSG56\])  move to step (5) |
+| (6) | BR88 | **Validation Rules:** When staff clicks "Save" button, system validates attribute data: \- Check if attribute name and attribute code already exists in "ATTRIBUTES" table \- Validate all attribute values are unique \- Validate attribute name and values format If validation fails, system displays error message (Refer to MSG 57). Otherwise, system do:  1\. Store attribute data in "ATTRIBUTES" table with created\_at timestamp  2\. Store each attribute value in "ATTRIBUTE\_VALUES" table linked to the attribute  3\. Displays success notification (Refer to MSG 58). System then closes the form and refreshes attribute list.  if isNameExisted(\[name\]) || isCodeExisted(\[code\]):     throw error(\[MSG57\])  \[attribute\] \= createAttribute(\[name\], \[code\]) for each \[value\] in \[attributeValues\]:     \[attribute\].AddValue(\[value\]) attributeRepo.Save(\[attribute\]) display(\[MSG58\]) |
 
-##### 2.1.9.5 View Customer Report
+#### 2.1.9 Manage User Use Case {#2.1.9-manage-user-use-case}
+
+##### 2.1.9.2 Search User {#2.1.9.2-search-user}
 
 ###### *Use Case Description*
 
-| Name | View Customer Report |
+| Name | Search User |
 | :---- | :---- |
-| **Description** | This use case allows staff and admin to view customer activity and purchase reports. |
+| **Description** | This use case allows staff and admin to search for users in the system. |
 | **Actor** | Staff, Admin |
-| **Trigger** | When the actor clicks "View Report" button for a customer. |
-| **Pre-condition** | Actor's device must be connected to the internet. Actor must be signed in with appropriate privileges. Customer must exist in the system. |
-| **Post-condition** | Customer activity report is displayed. |
+| **Trigger** | When the actor enters search criteria in the user search box. |
+| **Pre-condition** | Actor's device must be connected to the internet. Actor must be signed in with appropriate privileges. |
+| **Post-condition** | Filtered user results are displayed. |
 
 ###### *Activities Flow*
 
@@ -1195,21 +989,20 @@ Below are the main sections of this document:
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (1) | BR110 | **Displaying Rules:** The system displays "Customer Report" view with empty report charts and filter options. Available report types include: Purchase History, Spending Analysis, Order Statistics, Product Preferences, Account Activity. Time range options include: Last 7 days, Last 30 days, Last 3 months, Last year, Custom range. |
-| (4) | BR111 | **Querying Rules:** When actor selects customer, report type, and time range, system queries data from "ORDERS", "ORDER\_ITEMS", and "CUSTOMER\_REPORT" tables (Refer to corresponding tables in "DB Sheet" file). System calculates: total orders, total spending, average order value, order frequency, most purchased categories, spending trends, return rate. \[orders\] \= orderService.ListByUserId(\[customerId\]) \[customerReports\] \= reportService.GetCustomerReports(\[customerId\]) |
-| (5) | BR112 | **Displaying Rules:** System displays report data in visual format using charts and graphs:  \- Bar chart for spending by time period \- Pie chart for spending by category \- Line chart for order trends over time \- Table for top purchased products \- Summary statistics cards showing key metrics \- Customer lifetime value (CLV) indicator Report can be exported to PDF or Excel format. |
+| (2) | BR89 | **Searching Rules:** When actor enters search criteria, system handles search with debounce delay of 300ms. System queries users from auth service persistent storage. userService.Search(\[params\]) \[params\] can include: \[name\], \[email\] |
+| (3) | BR90 | **Displaying Rules:** Result count is displayed. If no results found, displays "No users found" message with "Clear Search" option. |
 
-##### 2.1.9.6 View Staff Report (Admin only)
+##### 2.1.9.3 Change User Roles (Admin only) {#2.1.9.3-change-user-roles-(admin-only)}
 
 ###### *Use Case Description*
 
-| Name | View Staff Report |
+| Name | Change User Roles |
 | :---- | :---- |
-| **Description** | This use case allows admin to view staff performance and activity reports. |
+| **Description** | This use case allows admin to change a user's role in the system. |
 | **Actor** | Admin |
-| **Trigger** | When the admin clicks "View Report" button for a staff member. |
-| **Pre-condition** | Admin's device must be connected to the internet. Admin must be signed in with admin privileges. Staff member must exist in the system. |
-| **Post-condition** | Staff performance report is displayed. |
+| **Trigger** | When the admin clicks "Change Role" button for a user. |
+| **Pre-condition** | Admin's device must be connected to the internet. Admin must be signed in with admin privileges. User must exist in the system. |
+| **Post-condition** | User's role is updated in the system. |
 
 ###### *Activities Flow*
 
@@ -1223,23 +1016,22 @@ Below are the main sections of this document:
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (1) | BR113 | **Displaying Rules:** The system displays "Staff Report" view with empty report charts and filter options. Available report types include: Product Management Activity, User Management Activity, Review Moderation Activity, Order Processing Activity, Overall Performance. Time range options include: Last 7 days, Last 30 days, Last 3 months, Last year, Custom range. (Refer to "Staff Report" view in "View Description" file) |
-| (4) | BR114 | **Querying Rules:** When admin selects staff, report type, and time range, system queries data from "STAFF\_ACTIVITY", "PRODUCTS", "REVIEWS" tables (Refer to corresponding tables in "DB Sheet" file). System calculates: total products added/updated, total reviews moderated, total users managed, average response time, activity distribution, performance metrics. \[staffActivities\] \= reportService.GetStaffActivities(\[StaffId\]) \[report\] \= reportService.GetStaffReport(\[StaffId\])  |
-| (5) | BR115 | **Displaying Rules:** System displays report data in visual format:  \- Bar chart for activities by type \- Line chart for activity trends over time \- Pie chart for time distribution by activity type \- Summary statistics cards showing key performance indicators Report can be exported to PDF or Excel format for performance reviews. |
+| (2) | BR91 | **Querying Rules:** System queries user details from auth service persistent storage. System retrieves current role and associated permissions. userService.List() |
+| (3) | BR92 | **Displaying Rules:** The system displays "User Detail" view showing: current user information, current role badge, role selector dropdown (Customer, Staff, Admin), role descriptions, and "Change Roles" button. |
+| (5) | BR93 | **Validation Rules:** System validates role change in real-time:  \- New role must be different from current role \- New role must be one of: Customer, Staff, Admin \- Admin cannot change their own role to prevent lockout if \!(\[newRole\] \== \[currentRole\] && \[newRole\] in \[‘Customer’, ‘Staff’, ‘Admin’\] && \[currentRole\] \!= ‘Admin’):     throw error(\[MSG42\]) userService.changeRole(\[user\], \[newRole\]) |
+| (7) | BR94 | **Validation Rules:** When admin clicks "Change Roles" button, system validates: \- User is not the current admin (self) \- New role is valid \- No pending administrative actions by user (if demoting from Staff/Admin) If validation fails, system displays error message (Refer to MSG 43). Otherwise, system updates role in auth service persistent storage, update the user session (invalidate current session, force user to get new session via refresh token), and displays success notification (Refer to MSG 44). System then refreshes user list. if \!(\[newRole\] \== \[currentRole\] && \[newRole\] in \[‘Customer’, ‘Staff’, ‘Admin’\] && \[currentRole\] \!= ‘Admin’):     throw error(\[MSG43\]) user.UpdateRole(\[newRole\]) userService.Save(\[user\]) session.Refresh() display(\[MSG44\]) |
 
-#### 2.1.10 View Shop Report Use Case
-
-##### 2.1.10.1 View Shop Report
+##### 2.1.9.4 Delete User (Admin only) {#2.1.9.4-delete-user-(admin-only)}
 
 ###### *Use Case Description*
 
-| Name | View Shop Report |
+| Name | Delete User |
 | :---- | :---- |
-| **Description** | This use case allows admin to view overall shop performance and analytics reports. |
+| **Description** | This use case allows admin to delete a user account from the system. |
 | **Actor** | Admin |
-| **Trigger** | When the admin navigates to "Shop Reports" or "Analytics" section. |
-| **Pre-condition** | Admin's device must be connected to the internet. Admin must be signed in with admin privileges. |
-| **Post-condition** | Shop performance report is displayed with selected metrics. |
+| **Trigger** | When the admin clicks "Delete" button for a user. |
+| **Pre-condition** | Admin's device must be connected to the internet. Admin must be signed in with admin privileges. User must exist in the system. |
+| **Post-condition** | User account is deleted from the system. |
 
 ###### *Activities Flow*
 
@@ -1253,23 +1045,21 @@ Below are the main sections of this document:
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (1) | BR116 | **Displaying Rules:** The system displays "Shop Report" view with empty report charts and filter options. Available report types include: Sales Overview, Revenue Analysis, Product Performance, Customer Analytics, Inventory Status, Order Statistics. Time range options include: Today, Yesterday, Last 7 days, Last 30 days, Last 3 months, Last year, Custom range. |
-| (4) | BR117 | **Querying Rules:** When admin selects report type and time range, system queries aggregated data from multiple tables including "ORDERS", "PRODUCTS", "USERS", "ORDER\_ITEMS" (Refer to corresponding tables in "DB Sheet" file). System calculates comprehensive metrics:  \- Total revenue and revenue trends \- Total orders and order status distribution \- Best-selling products \- Low stock alerts \- Customer acquisition and retention rates \- Return rate and return reasons \- Peak sales hours/days \- Conversion rate \[reports\] \= reportService.ListShopReports(\[startDate\], \[endDate\]) \[orders\] \= orderService.List(\[startDate\], \[endDate\]) \[products\] \= productService.List(\[startDate\], \[endDate\], \[sortByTrendingScore\], \[category\], \[sortByStockQuantity\]) \[returns\] \= returnService.List(\[startDate\], \[endDate\]) |
-| (6) | BR118 | **Displaying Rules:** System displays comprehensive shop report with multiple visualization components: \- Dashboard overview with key metrics cards (revenue, orders, customers, conversion rate) \- Line chart for revenue/sales trends \- Bar chart for top-selling products \- Pie chart for order status distribution \- Pie chart for revenue by category \- Table for product performance ranking \- Table for inventory alerts \- Heat map for sales by time period \- Comparison metrics vs. previous period Report supports drill-down functionality to view detailed data. Reports can be exported to PDF, Excel, or scheduled for automatic email delivery. |
+| (2) | BR95 | **Displaying Rules:** The system displays a confirmation dialog asking admin to confirm user deletion with message: "Are you sure you want to delete this user account? This action cannot be undone. All user data will be removed." Dialog shows user's name and email for confirmation. (Refer to "Confirmation Dialog" view in "View Description" file) |
+| (2.1), (2.2) | BR96 | **Selection Rules:** Admin must confirm deletion. If admin clicks "Cancel" button, dialog closes and use case ends. If admin clicks "Confirm" button, system proceeds with deletion. |
+| (3) | BR97 | **Validation Rules:** System validates user can be deleted by checking: \- User is not the current admin (self) \- User must not have pending orders (orders must be completed or cancelled) If validation fails, system displays error message (Refer to MSG 45). Otherwise, system will delete user data (from auth service) permanently, and displays success notification (Refer to MSG 46). System then refreshes user list. if \!(\[currentRole\] \!= ‘Admin’) && hasPendingOrder(\[userId\]):     throw error(\[MSG45\]) display(\[MSG46\]) |
 
-#### 2.1.11 View System Monitoring Use Case
-
-##### 2.1.11.1 View System Monitoring
+##### 2.1.9.5 View Customer Report {#2.1.9.5-view-customer-report}
 
 ###### *Use Case Description*
 
-| Name | View System Monitoring |
+| Name | View Customer Report |
 | :---- | :---- |
-| **Description** | This use case allows admin to monitor system performance, health, and usage statistics, log. |
-| **Actor** | Admin |
-| **Trigger** | When the admin navigates to "System Monitoring" or "System Health" section. |
-| **Pre-condition** | Admin's device must be connected to the internet. Admin must be signed in with admin privileges. |
-| **Post-condition** | System monitoring dashboard is displayed with real-time metrics. |
+| **Description** | This use case allows staff and admin to view customer activity and purchase reports. |
+| **Actor** | Staff, Admin |
+| **Trigger** | When the actor clicks "View Report" button for a customer. |
+| **Pre-condition** | Actor's device must be connected to the internet. Actor must be signed in with appropriate privileges. Customer must exist in the system. |
+| **Post-condition** | Customer activity report is displayed. |
 
 ###### *Activities Flow*
 
@@ -1283,22 +1073,21 @@ Below are the main sections of this document:
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR119 | **Querying Rules:** Monitoring system queries for metric, log from (metric and log storage). System collects real-time metrics, log:  \- System uptime and availability percentage \- Server response time (average, min, max) \- API endpoint performance \- Database query performance \- Active user sessions \- Memory and CPU usage \- Disk space usage \- Error rate and error logs \- Request rate (requests per second) \- Cache hit rate |
-| (3) | BR120 | **Displaying Rules:** System displays "System Monitoring" dashboard with real-time visualizations:  \- Status indicator (Healthy/Warning/Critical) at the top \- Real-time metrics cards showing: uptime percentage (target: 99.5%), average response time, active sessions, error rate \- Line chart for response time trends (last 24 hours) \- Line chart for memory/CPU usage over time \- Bar chart for API endpoint performance \- Table for recent error logs with severity levels \- Table for slow database queries \- System resource gauge charts (memory, CPU, disk) \- Alert notifications for threshold breaches Dashboard auto-refreshes every 30 seconds. Historical data can be viewed for up to 30 days. Critical alerts trigger email notifications to admin. |
+| (1) | BR98 | **Displaying Rules:** The system displays "Customer Report" view with empty report charts and filter options. Available report types include: Purchase History, Spending Analysis, Order Statistics, Product Preferences, Account Activity. Time range options include: Last 7 days, Last 30 days, Last 3 months, Last year, Custom range. |
+| (4) | BR99 | **Querying Rules:** When actor selects customer, report type, and time range, system queries data from "ORDERS", "ORDER\_ITEMS", and "CUSTOMER\_REPORT" tables (Refer to corresponding tables in "DB Sheet" file). System calculates: total orders, total spending, average order value, order frequency, most purchased categories, spending trends, return rate. \[orders\] \= orderService.ListByUserId(\[customerId\]) \[customerReports\] \= reportService.GetCustomerReports(\[customerId\]) |
+| (5) | BR100 | **Displaying Rules:** System displays report data in visual format using charts and graphs:  \- Bar chart for spending by time period \- Pie chart for spending by category \- Line chart for order trends over time \- Table for top purchased products \- Summary statistics cards showing key metrics \- Customer lifetime value (CLV) indicator Report can be exported to PDF or Excel format. |
 
-#### 2.1.12 Adjust Document Use Case
-
-##### 2.1.12.2 Create Document
+##### 2.1.9.6 View Staff Report (Admin only) {#2.1.9.6-view-staff-report-(admin-only)}
 
 ###### *Use Case Description*
 
-| Name | Create Document |
+| Name | View Staff Report |
 | :---- | :---- |
-| **Description** | This use case allows admin to create a new system document. |
+| **Description** | This use case allows admin to view staff performance and activity reports. |
 | **Actor** | Admin |
-| **Trigger** | When the admin clicks "Create Document" button. |
-| **Pre-condition** | Admin's device must be connected to the internet. Admin must be signed in with admin privileges. |
-| **Post-condition** | New document is created and stored in the system. |
+| **Trigger** | When the admin clicks "View Report" button for a staff member. |
+| **Pre-condition** | Admin's device must be connected to the internet. Admin must be signed in with admin privileges. Staff member must exist in the system. |
+| **Post-condition** | Staff performance report is displayed. |
 
 ###### *Activities Flow*
 
@@ -1312,11 +1101,100 @@ Below are the main sections of this document:
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR124 | **Displaying Rules:** The system displays "Document Detail" form with empty fields including: document title, category dropdown (Getting Started, Shopping Guide, Payment & Shipping, Returns & Refunds, Account Management, Terms & Policies), rich text content editor with formatting toolbar, target audience multi-select (Customer, Staff, Admin), status selector (Draft/Published), meta description (for SEO), and Save button. |
-| (4) | BR125 | **Validation Rules:** System validates document data in real-time:  \- Title: required, 5-200 characters \- Category: required, must select from predefined categories \- Content: required, minimum 100 characters \- Target audience: at least one must be selected \- Meta description: optional, maximum 300 characters if \!(isTitleValid(\[title\]) && isCategoryValid(\[category\]) && isContentValid(\[content\]) && len(audiences) \> 0 && isDesciptionValid(\[description\])):     throw error(\[MSG47\]) move to step(5) |
-| (6) | BR126 | **Validation Rules:** When admin clicks "Save" button, system validates document data:  \- All required fields are filled \- Content is properly formatted and valid HTML if \!(isTitleValid(\[title\]) && isCategoryValid(\[category\]) && isContentValid(\[content\]) && len(audiences) \> 0 && isDesciptionValid(\[description\])):     throw error(\[MSG48\]) display(\[MSG49\]) |
+| (1) | BR101 | **Displaying Rules:** The system displays "Staff Report" view with empty report charts and filter options. Available report types include: Product Management Activity, User Management Activity, Review Moderation Activity, Order Processing Activity, Overall Performance. Time range options include: Last 7 days, Last 30 days, Last 3 months, Last year, Custom range. (Refer to "Staff Report" view in "View Description" file) |
+| (4) | BR102 | **Querying Rules:** When admin selects staff, report type, and time range, system queries data from "STAFF\_ACTIVITY", "PRODUCTS", "REVIEWS" tables (Refer to corresponding tables in "DB Sheet" file). System calculates: total products added/updated, total reviews moderated, total users managed, average response time, activity distribution, performance metrics. \[staffActivities\] \= reportService.GetStaffActivities(\[StaffId\]) \[report\] \= reportService.GetStaffReport(\[StaffId\])  |
+| (5) | BR103 | **Displaying Rules:** System displays report data in visual format:  \- Bar chart for activities by type \- Line chart for activity trends over time \- Pie chart for time distribution by activity type \- Summary statistics cards showing key performance indicators Report can be exported to PDF or Excel format for performance reviews. |
 
-##### 2.1.12.3 Update Document
+#### 2.1.10 View Shop Report Use Case {#2.1.10-view-shop-report-use-case}
+
+##### 2.1.10.1 View Shop Report {#2.1.10.1-view-shop-report}
+
+###### *Use Case Description*
+
+| Name | View Shop Report |
+| :---- | :---- |
+| **Description** | This use case allows admin to view overall shop performance and analytics reports. |
+| **Actor** | Admin |
+| **Trigger** | When the admin navigates to "Shop Reports" or "Analytics" section. |
+| **Pre-condition** | Admin's device must be connected to the internet. Admin must be signed in with admin privileges. |
+| **Post-condition** | Shop performance report is displayed with selected metrics. |
+
+###### *Activities Flow*
+
+![][image75]
+
+###### *Sequence Flow*
+
+![][image76]
+
+###### *Business Rules*
+
+| Activity | BR Code | Description |
+| :---- | :---- | :---- |
+| (1) | BR104 | **Displaying Rules:** The system displays "Shop Report" view with empty report charts and filter options. Available report types include: Sales Overview, Revenue Analysis, Product Performance, Customer Analytics, Inventory Status, Order Statistics. Time range options include: Today, Yesterday, Last 7 days, Last 30 days, Last 3 months, Last year, Custom range. |
+| (4) | BR105 | **Querying Rules:** When admin selects report type and time range, system queries aggregated data from multiple tables including "ORDERS", "PRODUCTS", "USERS", "ORDER\_ITEMS" (Refer to corresponding tables in "DB Sheet" file). System calculates comprehensive metrics:  \- Total revenue and revenue trends \- Total orders and order status distribution \- Best-selling products \- Low stock alerts \- Customer acquisition and retention rates \- Return rate and return reasons \- Peak sales hours/days \- Conversion rate \[reports\] \= reportService.ListShopReports(\[startDate\], \[endDate\]) \[orders\] \= orderService.List(\[startDate\], \[endDate\]) \[products\] \= productService.List(\[startDate\], \[endDate\], \[sortByTrendingScore\], \[category\], \[sortByStockQuantity\]) \[returns\] \= returnService.List(\[startDate\], \[endDate\]) |
+| (6) | BR106 | **Displaying Rules:** System displays comprehensive shop report with multiple visualization components: \- Dashboard overview with key metrics cards (revenue, orders, customers, conversion rate) \- Line chart for revenue/sales trends \- Bar chart for top-selling products \- Pie chart for order status distribution \- Pie chart for revenue by category \- Table for product performance ranking \- Table for inventory alerts \- Heat map for sales by time period \- Comparison metrics vs. previous period Report supports drill-down functionality to view detailed data. Reports can be exported to PDF, Excel, or scheduled for automatic email delivery. |
+
+#### 2.1.11 View System Monitoring Use Case {#2.1.11-view-system-monitoring-use-case}
+
+##### 2.1.11.1 View System Monitoring {#2.1.11.1-view-system-monitoring}
+
+###### *Use Case Description*
+
+| Name | View System Monitoring |
+| :---- | :---- |
+| **Description** | This use case allows admin to monitor system performance, health, and usage statistics, log. |
+| **Actor** | Admin |
+| **Trigger** | When the admin navigates to "System Monitoring" or "System Health" section. |
+| **Pre-condition** | Admin's device must be connected to the internet. Admin must be signed in with admin privileges. |
+| **Post-condition** | System monitoring dashboard is displayed with real-time metrics. |
+
+###### *Activities Flow*
+
+![][image77]
+
+###### *Sequence Flow*
+
+![][image78]
+
+###### *Business Rules*
+
+| Activity | BR Code | Description |
+| :---- | :---- | :---- |
+| (2) | BR107 | **Querying Rules:** Monitoring system queries for metric, log from (metric and log storage). System collects real-time metrics, log:  \- System uptime and availability percentage \- Server response time (average, min, max) \- API endpoint performance \- Database query performance \- Active user sessions \- Memory and CPU usage \- Disk space usage \- Error rate and error logs \- Request rate (requests per second) \- Cache hit rate |
+| (3) | BR108 | **Displaying Rules:** System displays "System Monitoring" dashboard with real-time visualizations:  \- Status indicator (Healthy/Warning/Critical) at the top \- Real-time metrics cards showing: uptime percentage (target: 99.5%), average response time, active sessions, error rate \- Line chart for response time trends (last 24 hours) \- Line chart for memory/CPU usage over time \- Bar chart for API endpoint performance \- Table for recent error logs with severity levels \- Table for slow database queries \- System resource gauge charts (memory, CPU, disk) \- Alert notifications for threshold breaches Dashboard auto-refreshes every 30 seconds. Historical data can be viewed for up to 30 days. Critical alerts trigger email notifications to admin. |
+
+#### 2.1.12 Adjust Document Use Case {#2.1.12-adjust-document-use-case}
+
+##### 2.1.12.2 Create Document {#2.1.12.2-create-document}
+
+###### *Use Case Description*
+
+| Name | Create Document |
+| :---- | :---- |
+| **Description** | This use case allows admin to create a new system document. |
+| **Actor** | Admin |
+| **Trigger** | When the admin clicks "Create Document" button. |
+| **Pre-condition** | Admin's device must be connected to the internet. Admin must be signed in with admin privileges. |
+| **Post-condition** | New document is created and stored in the system. |
+
+###### *Activities Flow*
+
+![][image79]
+
+###### *Sequence Flow*
+
+![][image80]
+
+###### *Business Rules*
+
+| Activity | BR Code | Description |
+| :---- | :---- | :---- |
+| (2) | BR109 | **Displaying Rules:** The system displays "Document Detail" form with empty fields including: document title, category dropdown (Getting Started, Shopping Guide, Payment & Shipping, Returns & Refunds, Account Management, Terms & Policies), rich text content editor with formatting toolbar, target audience multi-select (Customer, Staff, Admin), status selector (Draft/Published), meta description (for SEO), and Save button. |
+| (4) | BR110 | **Validation Rules:** System validates document data in real-time:  \- Title: required, 5-200 characters \- Category: required, must select from predefined categories \- Content: required, minimum 100 characters \- Target audience: at least one must be selected \- Meta description: optional, maximum 300 characters if \!(isTitleValid(\[title\]) && isCategoryValid(\[category\]) && isContentValid(\[content\]) && len(audiences) \> 0 && isDesciptionValid(\[description\])):     throw error(\[MSG47\]) move to step(5) |
+| (6) | BR111 | **Validation Rules:** When admin clicks "Save" button, system validates document data:  \- All required fields are filled \- Content is properly formatted and valid HTML if \!(isTitleValid(\[title\]) && isCategoryValid(\[category\]) && isContentValid(\[content\]) && len(audiences) \> 0 && isDesciptionValid(\[description\])):     throw error(\[MSG48\]) display(\[MSG49\]) |
+
+##### 2.1.12.3 Update Document {#2.1.12.3-update-document}
 
 ###### *Use Case Description*
 
@@ -1330,20 +1208,20 @@ Below are the main sections of this document:
 
 ###### *Activities Flow*
 
-![][image75]
+![][image81]
 
 ###### *Sequence Flow*
 
-###### ![][image76]*Business Rules*
+###### ![][image82]*Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR127 | **Querying Rules:** System queries document details \[document\] \= documentService.Get(\[documentId\]) |
-| (3) | BR128 | **Displaying Rules:** The system displays "Document Detail" form filled with current document data including: all document fields, version history section showing previous versions with rollback option, and Save button. (Refer to "Document Detail" view in "View Description" file) |
-| (5) | BR129 | **Validation Rules:** System validates updated document data in real-time using same validation rules as Create Document. If validation fails, system displays error message (Refer to MSG 47). |
-| (7) | BR130 | **Validation Rules:** When admin clicks "Save" button, system validates updated data:  \- All required fields are filled \- Content is properly formatted if \!(isTitleValid(\[title\]) && isCategoryValid(\[category\]) && isContentValid(\[content\]) && len(audiences) \> 0 && isDesciptionValid(\[description\])):     throw error(\[MSG48\]) display(\[MSG50\]) If validation fails, system displays error message (Refer to MSG 48). Otherwise, system updates document slug if title changed, re-indexes document content for search, and displays success notification (Refer to MSG 50). System then closes the form and refreshes document list. |
+| (2) | BR112 | **Querying Rules:** System queries document details \[document\] \= documentService.Get(\[documentId\]) |
+| (3) | BR113 | **Displaying Rules:** The system displays "Document Detail" form filled with current document data including: all document fields, version history section showing previous versions with rollback option, and Save button. (Refer to "Document Detail" view in "View Description" file) |
+| (5) | BR114 | **Validation Rules:** System validates updated document data in real-time using same validation rules as Create Document. If validation fails, system displays error message (Refer to MSG 47). |
+| (7) | BR115 | **Validation Rules:** When admin clicks "Save" button, system validates updated data:  \- All required fields are filled \- Content is properly formatted if \!(isTitleValid(\[title\]) && isCategoryValid(\[category\]) && isContentValid(\[content\]) && len(audiences) \> 0 && isDesciptionValid(\[description\])):     throw error(\[MSG48\]) display(\[MSG50\]) refreshDocumentList() If validation fails, system displays error message (Refer to MSG 48). Otherwise, system displays success notification (Refer to MSG 50). System then closes the form and refreshes document list. |
 
-##### 2.1.12.4 Delete Document
+##### 2.1.12.4 Delete Document {#2.1.12.4-delete-document}
 
 ###### *Use Case Description*
 
@@ -1355,23 +1233,21 @@ Below are the main sections of this document:
 | **Pre-condition** | Admin's device must be connected to the internet. Admin must be signed in with admin privileges. Document must exist in the system. |
 | **Post-condition** | Document is deleted from the system. |
 
-###### *Sequence Flow*
-
-![][image77]
-
 ###### *Activities Flow*
 
-![][image78]
+![][image83]
 
-###### *Business Rules*
+###### *Sequence Flow*
+
+###### ![][image84]*Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR131 | **Displaying Rules:** The system displays a confirmation dialog asking admin to confirm document deletion with message: "Are you sure you want to delete this document? This action cannot be undone." Dialog shows document title for confirmation. (Refer to "Confirmation Dialog" view in "View Description" file) |
-| (2.1), (2.2) | BR132 | **Selection Rules:** Admin must confirm deletion. If admin clicks "Cancel" button, dialog closes and use case ends. If admin clicks "Confirm" button, system proceeds with deletion. |
-| (3) | BR133 | **Validation Rules:** System validates document exists in "DOCUMENT" table (Refer to "Document" table in "DB Sheet" file). If document not found, system displays error message (Refer to MSG 51). Otherwise, system performs soft delete by updating status to "Deleted" in "DOCUMENT" table (keeping data for audit purposes), removes document from search index, archives document versions in "DOCUMENT\_VERSION" table, creates deletion audit log in "DOCUMENT\_AUDIT" table with admin ID and timestamp, and displays success notification (Refer to MSG 52). System then refreshes document list. |
+| (2) | BR116 | **Displaying Rules:** The system displays a confirmation dialog asking admin to confirm document deletion with message: "Are you sure you want to delete this document? This action cannot be undone." Dialog shows document title for confirmation. (Refer to "Confirmation Dialog" view in "View Description" file) |
+| (2.1), (2.2) | BR117 | **Selection Rules:** Admin must confirm deletion. If admin clicks "Cancel" button, dialog closes and use case ends. If admin clicks "Confirm" button, system proceeds with deletion. |
+| (3) | BR118 | **Validation Rules:** System validates document exists. If document not found, system displays error message (Refer to MSG 51). Otherwise, system performs soft delete by updating status to "Deleted", removes document from search index, and displays success notification (Refer to MSG 52). System then refreshes document list. \[document\] \= documentService.Get(\[documentId\]) if \!document:     throw error(\[MSG51\]) documentService.SoftDelete(\[document\]) display(\[MSG52\]) refreshDocumentList() |
 
-##### 2.1.12.5 Search Document
+##### 2.1.12.5 Search Document {#2.1.12.5-search-document}
 
 ###### *Use Case Description*
 
@@ -1383,24 +1259,22 @@ Below are the main sections of this document:
 | **Pre-condition** | Admin's device must be connected to the internet. Admin must be signed in with admin privileges. |
 | **Post-condition** | Filtered document results are displayed. |
 
-###### *Sequence Flow*
-
-![][image79]
-
 ###### *Activities Flow*
 
-![][image80]
+![][image85]
 
-###### *Business Rules*
+###### *Sequence Flow*
+
+###### ![][image86]*Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR134 | **Searching Rules:** When admin enters search criteria, system uses Text\_change() method with debounce delay of 300ms. System queries "DOCUMENT" table (Refer to "Document" table in "DB Sheet" file) using SQL: "SELECT \* FROM Document WHERE status \!= 'Deleted' AND (title LIKE '%keyword%' OR content LIKE '%keyword%' OR category LIKE '%keyword%') ORDER BY title ASC". Filters can include: category, status (Draft/Published), target audience (Customer/Staff/Admin), last modified date range. |
-| (3) | BR135 | **Displaying Rules:** System displays "Document Management" view with filtered results showing matching documents. Active filters are displayed as removable tags. Result count is displayed. If no results found, displays "No documents found" message with "Clear Search" option. Search results highlight matched keywords in title and content preview. |
+| (2) | BR119 | **Searching Rules:** When admin enters search criteria, system handles debounce delay of 300ms… \[documents\] \= documentService.List(\[params\]) \[params\] can include:  \[documentId\], \[documentIds\], \[isDeleted\] |
+| (3) | BR120 | **Displaying Rules:** System displays "Document Management" view with filtered results showing matching documents. Active filters are displayed as removable tags. Result count is displayed. If no results found, displays "No documents found" message with "Clear Search" option. Search results highlight matched keywords in title and content preview. |
 
-#### 2.1.13 View Staff Self Report Use Case
+#### 2.1.13 View Staff Self Report Use Case {#2.1.13-view-staff-self-report-use-case}
 
-##### 2.1.13.1 View Staff Self Report
+##### 2.1.13.1 View Staff Self Report {#2.1.13.1-view-staff-self-report}
 
 ###### *Use Case Description*
 
@@ -1412,35 +1286,35 @@ Below are the main sections of this document:
 | **Pre-condition** | Staff's device must be connected to the internet. Staff must be signed in with staff privileges. |
 | **Post-condition** | Staff performance report is displayed. |
 
-###### *Sequence Flow*
-
-![][image81]
-
 ###### *Activities Flow*
 
-![][image82]
+![][image87]
+
+###### *Sequence Flow*
+
+![][image88]
 
 ###### *Business Rules*
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (2) | BR136 | **Displaying Rules:** The system displays "Staff Self Report" view with empty report charts and filter options. Available report types include: My Product Management Activity, My User Management Activity, My Review Moderation Activity, Overall My Performance. Time range options include: Today, Last 7 days, Last 30 days, Last 3 months, This year. (Refer to "Staff Self Report" view in "View Description" file) |
-| (5) | BR137 | **Querying Rules:** When staff selects report type and time range, system queries data from "STAFF\_ACTIVITY" table (Refer to "StaffActivity" table in "DB Sheet" file) filtered by current staff ID using SQL: "SELECT \* FROM StaffActivity WHERE staffID \= \[CurrentStaff.ID\] AND DATE(activity\_date) BETWEEN \[start\_date\] AND \[end\_date\]". System calculates: total products added/updated, total reviews moderated, total users managed, activity distribution, daily averages. |
-| (6) | BR138 | **Displaying Rules:** System displays staff self report with visualizations:  \- Summary cards showing: total activities, products managed, reviews moderated, users helped \- Line chart showing activity trends over selected period \- Bar chart showing activity distribution by type \- Calendar heat map showing daily activity intensity \- Table listing recent activities with timestamps \- Performance comparison vs. team average (if available) Report helps staff track their own productivity and identify improvement areas. |
+| (2) | BR121 | **Displaying Rules:** The system displays "Staff Self Report" view with empty report charts and filter options. Available report types include: My Product Management Activity, My User Management Activity, My Review Moderation Activity, Overall My Performance. Time range options include: Today, Last 7 days, Last 30 days, Last 3 months, This year. (Refer to "Staff Self Report" view in "View Description" file) |
+| (5) | BR122 | **Querying Rules:** When staff selects report type and time range, system queries data from "STAFF\_ACTIVITY" table (Refer to "StaffActivity" table in "DB Sheet" file). System calculates: total products added/updated, total reviews moderated, total users managed, activity distribution, daily averages. reportService.getStaffReport(\[params\]) \[params\] can include: \[staffId\], \[startDate\], \[endDate\], \[type\] \[type\]: \[‘productsManaged’, ‘reviewsModerated’\] |
+| (6) | BR123 | **Displaying Rules:** System displays staff self report with visualizations:  \- Summary cards showing:  activity totalities, products managed, reviews moderated \- Line chart showing activity trends over selected period \- Bar chart showing activity distribution by type \- Calendar heat map showing daily activity intensity \- Table listing recent activities with timestamps \- Performance comparison vs. team average (if available) Report helps staff track their own productivity and identify improvement areas. |
 
-### 2.2 List Description
+### 2.2 List Description {#2.2-list-description}
 
 [list description](https://docs.google.com/spreadsheets/d/1cj2hpflDFAKjSCCdVPaIyBcr1G2DxPVa/edit?usp=drive_link&ouid=100911792397330771782&rtpof=true&sd=true)
 
-### 2.3 View Description
+### 2.3 View Description {#2.3-view-description}
 
 [view description](https://docs.google.com/spreadsheets/d/1IY1xpIl34_e5T1E1dMMatWpxhNDwam-x/edit?rtpof=true)
 
-## 3\. Non-functional Requirements
+## 3\. Non-functional Requirements {#3.-non-functional-requirements}
 
-### 3.1 User Access and Security
+### 3.1 User Access and Security {#3.1-user-access-and-security}
 
-| Function | Guest | Customer | Staff | Admin |
+| Function | User | Customer | Staff | Admin |
 | :---- | :---: | :---: | :---: | :---: |
 | **Manage Account Functions** |  |  |  |  |
 | Sign Up | X |  |  |  |
@@ -1521,7 +1395,7 @@ Below are the main sections of this document:
 - Admin actions must be logged in audit trail
 - User sessions must be invalidated on password change or role change
 
-### 3.2 Performance Requirements
+### 3.2 Performance Requirements {#3.2-performance-requirements}
 
 **Response Time:**
 
@@ -1574,7 +1448,7 @@ Below are the main sections of this document:
 - Database query results cached for frequently accessed data
 - Cache invalidation on data updates
 
-### 3.3 Implementation Requirements
+### 3.3 Implementation Requirements {#3.3-implementation-requirements}
 
 **Technology Stack:**
 
@@ -1613,11 +1487,10 @@ Below are the main sections of this document:
 - Communication: TLS 1.3 for all external connections
 - Database: Encrypted at rest and in transit
 - Secrets Management: HashiCorp Vault or AWS Secrets Manager, or encrypted secret on repositories
-- Penetration Testing: Quarterly security audits
 
-## 4\. Other Requirements
+## 4\. Other Requirements {#4.-other-requirements}
 
-### 4.1 Archive Function
+### 4.1 Archive Function {#4.1-archive-function}
 
 | List | Actor | Condition |
 | :---- | :---- | :---- |
@@ -1629,7 +1502,7 @@ Below are the main sections of this document:
 | Staff Activity Log | Admin | The Admin is able to archive staff activity logs older than 1 year for audit compliance. |
 | System Monitoring Data | Admin | The Admin is able to archive system monitoring data older than 90 days to maintain database performance. |
 
-### 4.2 Security Audit Function
+### 4.2 Security Audit Function {#4.2-security-audit-function}
 
 Enable Security Audit Function for "Admin" to track critical system events:
 
@@ -1648,7 +1521,7 @@ Enable Security Audit Function for "Admin" to track critical system events:
 
 All audit logs include: timestamp, actor ID, action type, affected entity, IP address, user agent, and action result. Audit logs are immutable and retained for minimum 1 year for compliance purposes.
 
-### 4.3 Electricilies Sites
+### 4.3 Electricilies Sites {#4.3-electricilies-sites}
 
 | \# | Site Name | Description |
 | :---- | :---- | :---- |
@@ -1656,11 +1529,11 @@ All audit logs include: timestamp, actor ID, action type, affected entity, IP ad
 | 2 | Staff Site | This site is designed for staff members. It enables them to manage products (add, update, delete), moderate product reviews, search products with advanced filters, view and manage users (customers only), view customer reports, and view their own performance reports. |
 | 3 | Admin Site | This is the control console for administrators. It provides full access to manage users (including staff), change user roles, view comprehensive shop reports, monitor system health and performance, manage system documents, view staff performance reports, and access all staff functionalities. Admin site includes advanced analytics and system configuration options. |
 
-### 4.4 Electricilies Lists
+### 4.4 Electricilies Lists {#4.4-electricilies-lists}
 
 Refer to section 2.2 List Description for detailed information about all lists/tables used in the Electricilies system.
 
-### 4.5 Custom Pages
+### 4.5 Custom Pages {#4.5-custom-pages}
 
 Custom pages implemented in the Electricilies system:
 
@@ -1677,7 +1550,7 @@ Custom pages implemented in the Electricilies system:
 | 9 | Advanced Search | Advanced search page with multiple filter options | All |
 | 10 | Category Management | Product category hierarchy management | Admin |
 
-### 4.6 Scheduled Agents
+### 4.6 Scheduled Agents {#4.6-scheduled-agents}
 
 Scheduled jobs and automated tasks in the Electricilies system:
 
@@ -1694,7 +1567,7 @@ Scheduled jobs and automated tasks in the Electricilies system:
 | 11 | Product Recommendation Update | Daily at 5:00 AM | Updates product recommendation algorithm with latest purchase data |
 | 12 | Price Update | As configured | Processes scheduled price changes and promotional pricing |
 
-### 4.7 Technical Concern
+### 4.7 Technical Concern {#4.7-technical-concern}
 
 **Scalability Concerns:**
 
@@ -1742,9 +1615,9 @@ Scheduled jobs and automated tasks in the Electricilies system:
 
 - **Disaster Recovery:** RTO (Recovery Time Objective) of \< 1 hour requires automated backup verification, documented recovery procedures, and regular disaster recovery drills.
 
-## 5\. Appendixes
+## 5\. Appendixes {#5.-appendixes}
 
-### 5.1 Glossary
+### 5.1 Glossary {#5.1-glossary}
 
 The list below contains all the necessary terms to interpret the document, including acronyms and abbreviations.
 
@@ -1789,11 +1662,11 @@ The list below contains all the necessary terms to interpret the document, inclu
 | *UUID* | **U**niversally **U**nique **Id**entifier |
 | *XSS* | **C**ross-**S**ite **S**cripting |
 
-### 5.2 Mapping to Notes Application
+### 5.2 Mapping to Notes Application {#5.2-mapping-to-notes-application}
 
 There is no mapping between the Electricilies application and any source Notes application.
 
-### 5.3 Messages
+### 5.3 Messages {#5.3-messages}
 
 This section describes the details of messages used in business rules including error messages, confirmation messages, success messages, and informational messages.
 
@@ -1851,14 +1724,13 @@ This section describes the details of messages used in business rules including 
 | MSG 50 | Document updated successfully. | Ok |
 | MSG 51 | Document not found. | Ok |
 | MSG 52 | Document deleted successfully. | Ok |
+| MSG 53 | Invalid category name format. Category name must be 2-100 characters and start with alphanumeric character. | Ok |
+| MSG 54 | Category name already exists. Please use a different name. | Ok |
+| MSG 55 | Category created successfully. | Ok |
+| MSG 56 | Invalid attribute data. Please ensure attribute name and at least one unique value are provided. | Ok |
+| MSG 57 | Attribute name already exists or attribute values are not unique. Please check and try again. | Ok |
+| MSG 58 | Attribute and values created successfully. | Ok |
 
-### 5.4 Issues List
+### 5.4 Issues List {#5.4-issues-list}
 
 N/A
-
-###### *Business Rules*
-
-| Activity | BR Code | Description |
-| :---- | :---- | :---- |
-| *(1), (2)* | **BR-001** | **Displaying Rules:** When admin clicks \\\[DocumentCommand\\\], the system reinitializes database context by method \`resetDatabaseContext()\`, creates new DocumentManagementView with DocumentController as context. \`admin \= session.getCurrentUser()\` \`IF admin.hasPermission("Document") \= FALSE:\`     \`displayError(MSG-001)\`     \`redirect(HomePage)\` ELSE:     \`documents \= database.getDocuments()\`     \`view.display(documents)\` |
-| *(3), (3.1), (3.2), (3.3), (3.4)* | **BR-002** | **Action Selection Rules:** The system provides four document management options. IF admin selects "Create":     \`navigate(CreateDocumentView)\`     \`ref(BR-004)\` // Create Document rules IF admin selects "Delete":     \`ref(BR-009)\` // Delete Document rules IF admin selects "Search":     \`ref(BR-012)\` // Search Document rules IF admin selects "Update":     \`ref(BR-006)\` // Update Document rules |
