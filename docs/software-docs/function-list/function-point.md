@@ -4,12 +4,12 @@
 
 | #   | Đại lượng                        | Số đại lượng (Ci) | Simple (W=3) | Average (W=4) | Complex (W=6) | Sum     |
 | --- | -------------------------------- | ----------------- | ------------ | ------------- | ------------- | ------- |
-| 1   | Chức năng nhập liệu (C1)         | 19                | 12           | 6             | 1             | 86      |
-| 2   | Chức năng xuất dữ liệu (C2)      | 36                | 2            | 32            | 2             | 163     |
+| 1   | Chức năng nhập liệu (C1)         | 20                | 13           | 6             | 1             | 90      |
+| 2   | Chức năng xuất dữ liệu (C2)      | 37                | 2            | 33            | 2             | 167     |
 | 3   | Chức năng truy vấn dữ liệu (C3)  | 9                 | 3            | 0             | 6             | 51      |
 | 4   | Tập tin dữ liệu (C4)             | 4                 | 0            | 0             | 4             | 32      |
 | 5   | Giao tiếp với hệ thống khác (C5) | 1                 | 0            | 0             | 1             | 6       |
-|     |                                  |                   |              |               | **∆ Total**   | **338** |
+|     |                                  |                   |              |               | **∆ Total**   | **346** |
 
 ### Step 2: Complexity Adjustment Factors (Fi)
 
@@ -35,18 +35,18 @@
 
 **Formula:** FP = ∆ × (0.65 + 0.01 × ∑Fi)
 
-- ∆ = 338
+- ∆ = 346
 - ∑Fi = 38
-- FP = 338 × (0.65 + 0.01 × 38)
-- FP = 338 × (0.65 + 0.38)
-- FP = 338 × 1.03
-- **FP = 348.14**
+- FP = 346 × (0.65 + 0.01 × 38)
+- FP = 346 × (0.65 + 0.38)
+- FP = 346 × 1.03
+- **FP = 356.38**
 
 ### Summary
 
 | Metric                           | Value      |
 | -------------------------------- | ---------- |
-| Total Functions                  | 48         |
-| Complexity-Weighted Quantity (∆) | 338        |
+| Total Functions                  | 49         |
+| Complexity-Weighted Quantity (∆) | 346        |
 | Sum of Adjustment Factors (∑Fi)  | 38         |
-| Function Points (FP)             | **348.14** |
+| Function Points (FP)             | **356.38** |

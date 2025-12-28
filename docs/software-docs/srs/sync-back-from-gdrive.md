@@ -326,7 +326,7 @@ Below are the main sections of this document:
 
 | Name | Provide Account |
 | :---- | :---- |
-| **Description** | This use case allows admin to create new staff or admin accounts in the system. |
+| **Description** | This use case allows admin to create new staff or admin accounts in the system. Staff and Admin cannot register themselves; they must be created by another admin. |
 | **Actor** | Admin |
 | **Trigger** | When the admin clicks on the "Provide Account" button in the user management section. |
 | **Pre-condition** | Admin's device must be connected to the internet. Admin must be signed in with admin privileges. |
@@ -344,11 +344,9 @@ Below are the main sections of this document:
 
 | Activity | BR Code | Description |
 | :---- | :---- | :---- |
-| (4) | BR29a | **Displaying Rules:** The system displays a "Provide Account" screen with fields for Username, Password, Email, Full Name, and Role selector (Staff/Admin). |
-| (6) | BR30a | **Validation Rules:** When the admin enters registration data, the system validates data format using standard patterns:  \- Username: alphanumeric, 4-255 characters \- Password: 4-255 characters, at least one uppercase, one lowercase, one number, one special character \- Email: valid email format (e.g., [user@domain.com](mailto:user@domain.com)), maximum 255 characters \- First Name: alphabetic characters and spaces only, maximum 255 characters \- Last Name: alphabetic characters and spaces only, maximum 255 characters \- Role: must be either "Staff" or "Admin" if \!(isValid(\[username\]) && isValid(\[password\]) && isValid(\[email\]) && isValid(\[firstName\]) && isValid(\[lastName\]) && isValid(\[role\])):     display error(\[MSG1\]) move to step (6.2) |
-| (8) | BR31a | **Validation Rules:** The system checks if the username or email already exists in the auth service's data. If the username or email is already registered, system displays error message (Refer to MSG 2). if isExisted(\[username\]) \|\| isExisted(\[email\]):     display error(\[MSG2\]) move to step (8.2) |
-| (10) | BR32a | **Validation Rules:** The system validates the authorization code, verifier, and challenge. If validation fails, system displays error message (Refer to MSG 3). Otherwise, system generates and returns JWT Token with 5-min expiration. if \!isValid(\[authorizationCode\],\[verifier\],\[challenge\]):     throw error(\[MSG3\]\]) move to step (10.2) |
-| (11.2) | BR33a | **Validation Rules:** The system verifies the JWT Token and writes user data to the database with the specified role. If JWT is invalid, system displays error message (Refer to MSG 4). Otherwise, user data is stored in auth service's data with the assigned role (Staff or Admin), and system displays success notification (Refer to MSG59) and redirects to User Management View. if \!isValid(\[token\]):     throw error(\[MSG4\]) move to step (11.4) authService.CreateUser(\[username\], \[email\], \[firstName\], \[lastName\], \[hashedPassword\], \[role\]) display(\[MSG59\]) |
+| (2) | BR29a | **Displaying Rules:** The system displays a "Provide Account" form with fields for Username, Password, Email, First Name, Last Name, and Role selector (Staff/Admin). |
+| (4) | BR30a | **Validation Rules:** When the admin enters new user data, the system validates data format in real-time:  \- Username: alphanumeric, 4-255 characters \- Password: 4-255 characters, at least one uppercase, one lowercase, one number, one special character \- Email: valid email format (e.g., [user@domain.com](mailto:user@domain.com)), maximum 255 characters \- First Name: alphabetic characters and spaces only, maximum 255 characters \- Last Name: alphabetic characters and spaces only, maximum 255 characters \- Role: must be either "Staff" or "Admin" if \!(isValid(\[username\]) && isValid(\[password\]) && isValid(\[email\]) && isValid(\[firstName\]) && isValid(\[lastName\]) && isValid(\[role\])):     display error(\[MSG1\]) move to step (4.1) |
+| (6) | BR31a | **Validation Rules:** When admin clicks "Create Account" button, the system checks if the username or email already exists in the auth service's data. If the username or email is already registered, system displays error message (Refer to MSG 2). Otherwise, system creates new user account with hashed password and assigned role, stores in auth service's data, and displays success notification (Refer to MSG59). if isExisted(\[username\]) \|\| isExisted(\[email\]):     display error(\[MSG2\]) move to step (6.1) authService.CreateUser(\[username\], \[email\], \[firstName\], \[lastName\], \[hashedPassword\], \[role\]) display(\[MSG59\]) |
 
 #### 2.1.2 View Product Use Case {#2.1.2-view-product-use-case}
 
@@ -1760,6 +1758,7 @@ This section describes the details of messages used in business rules including 
 | MSG 56 | Invalid attribute data. Please ensure attribute name and at least one unique value are provided. | Ok |
 | MSG 57 | Attribute name already exists or attribute values are not unique. Please check and try again. | Ok |
 | MSG 58 | Attribute and values created successfully. | Ok |
+| MSG 59 | Account created successfully. The new user can now sign in with the provided credentials. | Ok |
 
 ### 5.4 Issues List {#5.4-issues-list}
 

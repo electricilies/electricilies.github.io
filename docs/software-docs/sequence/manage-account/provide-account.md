@@ -6,109 +6,69 @@ autonumber
 
 actor Admin as A
 boundary UserManagementView as UMV
-boundary ProvideAccountView as PAV
-boundary AuthenticationManagerProvideAccountView as AMPAV
-entity ACCOUNT as AC
 control UserController as UC
-entity USER as US
+entity ACCOUNT as AC
 
 A -> UMV: Click button "Provide Account"
 activate A
 activate UMV
 deactivate A
-UMV -> PAV: Navigate to ProvideAccountView
+UMV -> UMV: Display Provide Account form
+activate UMV
 deactivate UMV
-activate PAV
-PAV -> PAV: Display ProvideAccountView
-activate PAV
-deactivate PAV
-note left of PAV: Generate code verifier(random)\nand hash it -> code challenge
-A -> PAV: Click button "Continue to Provide Account"
-activate A
-deactivate A
-PAV -> AMPAV: Redirect with code challenge
-deactivate PAV
-activate AMPAV
-AMPAV -> AMPAV: Display AuthenticationManagerProvideAccountView
-activate AMPAV
-deactivate AMPAV
 
 loop invalid data format
-  AMPAV -> AMPAV: Display "Invalid data format" error
-  activate AMPAV
-  deactivate AMPAV
-  A -> AMPAV: Enter user data (username, password, email, full name, role)
+  UMV -> UMV: Display "Invalid data format" error
+  activate UMV
+  deactivate UMV
+  A -> UMV: Enter new user data (username, password, email, full name, role)
+  activate A
   deactivate A
-  AMPAV -> AMPAV: Validate data format
-  activate AMPAV
-  deactivate AMPAV
+  UMV -> UMV: Validate data format
+  activate UMV
+  deactivate UMV
 end
 
-AMPAV -> AMPAV: Data OK
-activate AMPAV
-deactivate AMPAV
+UMV -> UMV: Data OK
+activate UMV
+deactivate UMV
 
-AMPAV -> AC: Send user data
+A -> UMV: Click button "Create Account"
+activate A
+deactivate A
+
+UMV -> UC: Send create account request
+activate UC
+
+UC -> AC: Send new user data with role
 activate AC
 AC -> AC: Check if username/email exists
 activate AC
 deactivate AC
 
 break already exists
-  AMPAV <-- AC: Error
-  AMPAV -> AMPAV: Display error
-  activate AMPAV
-  deactivate AMPAV
+  UC <-- AC: Error
+  UMV <-- UC: Error
+  UMV -> UMV: Display error notification
+  activate UMV
+  deactivate UMV
 end
 
 AC -> AC: Create new user + hash password
 activate AC
 deactivate AC
-AMPAV <-- AC: Authorization code
+
+UC <-- AC: Success
 deactivate AC
 
-AMPAV -> AC: Send authorization code + verifier
-activate AC
-AC -> AC: Validate code + verifier + challenge
-activate AC
-deactivate AC
-
-break invalid code + verifier
-  AMPAV <-- AC: Error
-  AMPAV -> AMPAV: Display error
-  activate AMPAV
-  deactivate AMPAV
-end
-
-AMPAV <-- AC: JWT Token
-deactivate AC
-
-AMPAV -> UC: Send JWT Token
-activate UC
-
-UC -> US: Validate JWT
-activate US
-US -> US: Verify JWT & Write data
-activate US
-deactivate US
-
-break invalid JWT Token
-  UC <-- US: Error
-  AMPAV <-- UC: Error
-  AMPAV -> AMPAV: Display error
-  activate AMPAV
-  deactivate AMPAV
-end
-
-UC <-- US: Success
-deactivate US
-AMPAV <-- UC: Success
+UMV <-- UC: Success notification
 deactivate UC
-UMV <- AMPAV: redirect to UserManagementView
-deactivate AMPAV
+
+UMV -> UMV: Display success notification and refresh user list
 activate UMV
 deactivate UMV
-UMV -> UMV: Display UserManagementView with success notification
+deactivate UMV
+
 @enduml
 ```
 
