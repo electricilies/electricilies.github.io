@@ -127,6 +127,10 @@ export default defineConfig({
                     link: "/software-docs/sequence/manage-account/manage-account",
                   },
                   {
+                    text: "Provide Account",
+                    link: "/software-docs/sequence/manage-account/provide-account",
+                  },
+                  {
                     text: "Recover Account",
                     link: "/software-docs/sequence/manage-account/recover-account",
                   },
@@ -414,6 +418,10 @@ export default defineConfig({
                   {
                     text: "Manage Account",
                     link: "/software-docs/activity/manage-account/manage-account",
+                  },
+                  {
+                    text: "Provide Account",
+                    link: "/software-docs/activity/manage-account/provide-account",
                   },
                   {
                     text: "Recover Account",
