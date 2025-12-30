@@ -9,7 +9,7 @@
 start
 :(1) Select function add product;
 |S|
-:(2) Display product detail view;
+:(2) Display add product view;
 repeat
   |St|
   :(3) Enter product detail;
@@ -29,7 +29,7 @@ if () then (Invalid)
 else (Valid)
   |S|
   :(6.2) Store data;
-  :(7.2) Display success notification 
+  :(7.2) Display success notification
 and list of products;
   |St|
   :(8) Confirm notification;

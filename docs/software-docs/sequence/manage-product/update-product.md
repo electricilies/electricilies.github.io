@@ -6,7 +6,7 @@ autonumber
 
 actor Staff as S
 boundary ProductManagementView as PMV
-boundary ProductDetailView as PDV
+boundary UpdateProductView as UPV
 control ProductController as PC
 entity PRODUCT as P
 
@@ -22,25 +22,25 @@ PC -> P: Get selected product detail
 activate P
 PC <-- P: Selected product detail
 deactivate P
-PDV <-- PC: Selected product detail
+UPV <-- PC: Selected product detail
 deactivate PC
-activate PDV
-PDV -> PDV: Display product detail
-activate PDV
-deactivate PDV
-S -> PDV: Enter product detail
-PDV -> PDV: Validate data
-activate PDV
-deactivate PDV
+activate UPV
+UPV -> UPV: Display product detail
+activate UPV
+deactivate UPV
+S -> UPV: Enter product detail
+UPV -> UPV: Validate data
+activate UPV
+deactivate UPV
 break Invalid data
-  S <-- PDV: Error notification
-  PDV -> PDV: Display error notification
-  activate PDV
-  deactivate PDV
+  S <-- UPV: Error notification
+  UPV -> UPV: Display error notification
+  activate UPV
+  deactivate UPV
 end
-S -> PDV: Click button "Save" to confirm
+S -> UPV: Click button "Save" to confirm
 deactivate S
-PDV -> PC: Send update product request
+UPV -> PC: Send update product request
 activate PC
 PC -> P: Send detail
 activate P
@@ -49,19 +49,19 @@ activate P
 deactivate P
 break Invalid data
   PC <-- P: Error notification
-  PDV <-- PC: Error notification
-  PDV -> PDV: Display error notification
-  activate PDV
-  deactivate PDV
+  UPV <-- PC: Error notification
+  UPV -> UPV: Display error notification
+  activate UPV
+  deactivate UPV
 end
 P -> P: Store data
 activate P
 deactivate P
 PC <-- P: Success notification
 deactivate P
-PDV <-- PC: Success notification
-PDV -> PDV: Close view
-deactivate PDV
+UPV <-- PC: Success notification
+UPV -> UPV: Close view
+deactivate UPV
 PMV <- PC: Display success notification and list of products
 
 @enduml

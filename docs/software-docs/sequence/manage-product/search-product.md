@@ -12,6 +12,7 @@ entity PRODUCT as P
 activate S
 S -> PMV: Enter the search criteria in search box
 activate PMV
+deactivate S
 PMV -> PC: Send searching product (keyword/filters) request
 activate PC
 PC -> P: Query products by keyword/filters
@@ -23,7 +24,6 @@ PMV <-- PC: query result
 deactivate PC
 PMV -> PMV: Show query result
 deactivate PMV
-deactivate S
 
 @enduml
 ```
